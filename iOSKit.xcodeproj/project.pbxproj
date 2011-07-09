@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		39F5166313C8E3F3008A9732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F5166213C8E3F3008A9732 /* Foundation.framework */; };
+		39F5167813C8E597008A9732 /* UIApplication+NKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 39F5167713C8E597008A9732 /* UIApplication+NKConcise.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		39F5165F13C8E3F3008A9732 /* libiOSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiOSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F5166213C8E3F3008A9732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		39F5166613C8E3F3008A9732 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		39F5167713C8E597008A9732 /* UIApplication+NKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+NKConcise.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		39F5166413C8E3F3008A9732 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				39F5167713C8E597008A9732 /* UIApplication+NKConcise.h */,
 			);
 			name = Sources;
 			path = iOSKit;
@@ -78,6 +81,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39F5167813C8E597008A9732 /* UIApplication+NKConcise.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
