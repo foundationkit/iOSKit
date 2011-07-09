@@ -4,4 +4,7 @@
 
 
 
-#define $screen     [UIScreen mainScreen]
+#define $screen            [UIScreen mainScreen]
+#define $screenBounds      $screen.bounds
+#define $screenWidth       $screenBounds.size.width
+#define $screenHeight      $screenBounds.size.height
