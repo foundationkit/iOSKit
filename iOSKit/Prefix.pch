@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'iOSKit' target in the 'iOSKit' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
