@@ -7,17 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		399F4CA513C8FCB60008CC0E /* UIApplication+NKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 399F4CA313C8FCB60008CC0E /* UIApplication+NKConcise.h */; };
+		399F4CA613C8FCB60008CC0E /* UIScreen+NKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 399F4CA413C8FCB60008CC0E /* UIScreen+NKConcise.h */; };
+		399F4CAF13C8FD2A0008CC0E /* NKUniversal.h in Headers */ = {isa = PBXBuildFile; fileRef = 399F4CAD13C8FD2A0008CC0E /* NKUniversal.h */; };
+		399F4CB013C8FD2A0008CC0E /* NKUniversal.m in Sources */ = {isa = PBXBuildFile; fileRef = 399F4CAE13C8FD2A0008CC0E /* NKUniversal.m */; };
 		39F5166313C8E3F3008A9732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F5166213C8E3F3008A9732 /* Foundation.framework */; };
-		39F5167813C8E597008A9732 /* UIApplication+NKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 39F5167713C8E597008A9732 /* UIApplication+NKConcise.h */; };
-		39F5167C13C8E5BB008A9732 /* UIScreen+NKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 39F5167A13C8E5BB008A9732 /* UIScreen+NKConcise.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		399F4CA313C8FCB60008CC0E /* UIApplication+NKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+NKConcise.h"; sourceTree = "<group>"; };
+		399F4CA413C8FCB60008CC0E /* UIScreen+NKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+NKConcise.h"; sourceTree = "<group>"; };
+		399F4CAD13C8FD2A0008CC0E /* NKUniversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKUniversal.h; sourceTree = "<group>"; };
+		399F4CAE13C8FD2A0008CC0E /* NKUniversal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKUniversal.m; sourceTree = "<group>"; };
 		39F5165F13C8E3F3008A9732 /* libiOSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiOSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F5166213C8E3F3008A9732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		39F5166613C8E3F3008A9732 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		39F5167713C8E597008A9732 /* UIApplication+NKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+NKConcise.h"; sourceTree = "<group>"; };
-		39F5167A13C8E5BB008A9732 /* UIScreen+NKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+NKConcise.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		399F4CA213C8FCB60008CC0E /* Shorthands */ = {
+			isa = PBXGroup;
+			children = (
+				399F4CA313C8FCB60008CC0E /* UIApplication+NKConcise.h */,
+				399F4CA413C8FCB60008CC0E /* UIScreen+NKConcise.h */,
+			);
+			path = Shorthands;
+			sourceTree = "<group>";
+		};
+		399F4CAC13C8FD290008CC0E /* Universal */ = {
+			isa = PBXGroup;
+			children = (
+				399F4CAD13C8FD2A0008CC0E /* NKUniversal.h */,
+				399F4CAE13C8FD2A0008CC0E /* NKUniversal.m */,
+			);
+			path = Universal;
+			sourceTree = "<group>";
+		};
 		39F5165413C8E3F2008A9732 = {
 			isa = PBXGroup;
 			children = (
@@ -61,8 +83,8 @@
 		39F5166413C8E3F3008A9732 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				39F5167713C8E597008A9732 /* UIApplication+NKConcise.h */,
-				39F5167A13C8E5BB008A9732 /* UIScreen+NKConcise.h */,
+				399F4CA213C8FCB60008CC0E /* Shorthands */,
+				399F4CAC13C8FD290008CC0E /* Universal */,
 			);
 			name = Sources;
 			path = iOSKit;
@@ -84,8 +106,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39F5167813C8E597008A9732 /* UIApplication+NKConcise.h in Headers */,
-				39F5167C13C8E5BB008A9732 /* UIScreen+NKConcise.h in Headers */,
+				399F4CA513C8FCB60008CC0E /* UIApplication+NKConcise.h in Headers */,
+				399F4CA613C8FCB60008CC0E /* UIScreen+NKConcise.h in Headers */,
+				399F4CAF13C8FD2A0008CC0E /* NKUniversal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				399F4CB013C8FD2A0008CC0E /* NKUniversal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
