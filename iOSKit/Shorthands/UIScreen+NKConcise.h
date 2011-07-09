@@ -8,3 +8,7 @@
 #define $screenBounds      $screen.bounds
 #define $screenWidth       $screenBounds.size.width
 #define $screenHeight      $screenBounds.size.height
+
+
+NS_INLINE CGFloat NKScreenWidthForCurrentOrientation(void);
+NS_INLINE CGFloat NKScreenHeightForCurrentOrientation(void);

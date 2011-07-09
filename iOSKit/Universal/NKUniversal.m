@@ -8,12 +8,12 @@
 
 
 
-NS_INLINE BOOL NKIsIPad() {
+NS_INLINE BOOL NKIsIPad(void) {
     return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
 }
 
 
-NS_INLINE BOOL NKIsIPhone() {
+NS_INLINE BOOL NKIsIPhone(void) {
     return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone;
 }
 
@@ -86,7 +86,7 @@ NSString* NKDeviceSpecificNibName(NSString *name) {
 	// when on iPad, append "-iPad"
 	NSString *iPadAppendix = NKIsIPad() ? kNKDefaultIPadAppendix : @"";
 	NSString *nibName = [NSString stringWithFormat:@"%@%@",name, iPadAppendix];
-    
+
 	// fallback: no iPad-specific nib file? -> use iPhone-Nib
 	if([[NSBundle mainBundle] pathForResource:nibName ofType:@"nib"] == nil) {
 		// even no iPhone-nib? -> use no nib => return nil
