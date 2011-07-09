@@ -15,6 +15,7 @@
 		399F4CD113C903A30008CC0E /* UIApplication+NKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 399F4CD013C903A30008CC0E /* UIApplication+NKConcise.m */; };
 		399F4CD613C907610008CC0E /* NKiOSShorthands.h in Headers */ = {isa = PBXBuildFile; fileRef = 399F4CD513C907610008CC0E /* NKiOSShorthands.h */; };
 		399F4CD813C9096F0008CC0E /* NKMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 399F4CD713C9096F0008CC0E /* NKMath.h */; };
+		399F4CDB13C90C2F0008CC0E /* NKMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 399F4CDA13C90C2F0008CC0E /* NKMath.m */; };
 		39F5166313C8E3F3008A9732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F5166213C8E3F3008A9732 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		399F4CD013C903A30008CC0E /* UIApplication+NKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+NKConcise.m"; sourceTree = "<group>"; };
 		399F4CD513C907610008CC0E /* NKiOSShorthands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKiOSShorthands.h; sourceTree = "<group>"; };
 		399F4CD713C9096F0008CC0E /* NKMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKMath.h; sourceTree = "<group>"; };
+		399F4CDA13C90C2F0008CC0E /* NKMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKMath.m; sourceTree = "<group>"; };
 		39F5165F13C8E3F3008A9732 /* libiOSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiOSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F5166213C8E3F3008A9732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		39F5166613C8E3F3008A9732 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 				399F4CCE13C902F40008CC0E /* UIScreen+NKConcise.m */,
 				399F4CD513C907610008CC0E /* NKiOSShorthands.h */,
 				399F4CD713C9096F0008CC0E /* NKMath.h */,
+				399F4CDA13C90C2F0008CC0E /* NKMath.m */,
 			);
 			path = Shorthands;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				399F4CB013C8FD2A0008CC0E /* NKUniversal.m in Sources */,
 				399F4CCF13C902F40008CC0E /* UIScreen+NKConcise.m in Sources */,
 				399F4CD113C903A30008CC0E /* UIApplication+NKConcise.m in Sources */,
+				399F4CDB13C90C2F0008CC0E /* NKMath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
