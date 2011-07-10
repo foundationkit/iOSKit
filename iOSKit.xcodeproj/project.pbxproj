@@ -15,6 +15,7 @@
 		391393B013C9B84C0049DA61 /* UIScreen+NKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 391393A513C9B84C0049DA61 /* UIScreen+NKConcise.m */; };
 		391393B113C9B84C0049DA61 /* NKUniversal.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393A713C9B84C0049DA61 /* NKUniversal.h */; };
 		391393B213C9B84C0049DA61 /* NKUniversal.m in Sources */ = {isa = PBXBuildFile; fileRef = 391393A813C9B84C0049DA61 /* NKUniversal.m */; };
+		391393B413C9C1310049DA61 /* iOSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393B313C9C1310049DA61 /* iOSKit.h */; };
 		39F5166313C8E3F3008A9732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F5166213C8E3F3008A9732 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		391393A513C9B84C0049DA61 /* UIScreen+NKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+NKConcise.m"; sourceTree = "<group>"; };
 		391393A713C9B84C0049DA61 /* NKUniversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKUniversal.h; sourceTree = "<group>"; };
 		391393A813C9B84C0049DA61 /* NKUniversal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKUniversal.m; sourceTree = "<group>"; };
+		391393B313C9C1310049DA61 /* iOSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSKit.h; sourceTree = "<group>"; };
 		39F5165F13C8E3F3008A9732 /* libiOSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiOSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F5166213C8E3F3008A9732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -46,6 +48,7 @@
 		3913939A13C9B84C0049DA61 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				391393B313C9C1310049DA61 /* iOSKit.h */,
 				391393A013C9B84C0049DA61 /* Shorthands */,
 				391393A613C9B84C0049DA61 /* Universal */,
 			);
@@ -120,6 +123,7 @@
 				391393AD13C9B84C0049DA61 /* UIApplication+NKConcise.h in Headers */,
 				391393AF13C9B84C0049DA61 /* UIScreen+NKConcise.h in Headers */,
 				391393B113C9B84C0049DA61 /* NKUniversal.h in Headers */,
+				391393B413C9C1310049DA61 /* iOSKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
