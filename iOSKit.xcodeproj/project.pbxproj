@@ -7,27 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		399F4CA513C8FCB60008CC0E /* UIApplication+NKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 399F4CA313C8FCB60008CC0E /* UIApplication+NKConcise.h */; };
-		399F4CA613C8FCB60008CC0E /* UIScreen+NKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 399F4CA413C8FCB60008CC0E /* UIScreen+NKConcise.h */; };
-		399F4CAF13C8FD2A0008CC0E /* NKUniversal.h in Headers */ = {isa = PBXBuildFile; fileRef = 399F4CAD13C8FD2A0008CC0E /* NKUniversal.h */; };
-		399F4CB013C8FD2A0008CC0E /* NKUniversal.m in Sources */ = {isa = PBXBuildFile; fileRef = 399F4CAE13C8FD2A0008CC0E /* NKUniversal.m */; };
-		399F4CCF13C902F40008CC0E /* UIScreen+NKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 399F4CCE13C902F40008CC0E /* UIScreen+NKConcise.m */; };
-		399F4CD113C903A30008CC0E /* UIApplication+NKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 399F4CD013C903A30008CC0E /* UIApplication+NKConcise.m */; };
-		399F4CD613C907610008CC0E /* NKiOSShorthands.h in Headers */ = {isa = PBXBuildFile; fileRef = 399F4CD513C907610008CC0E /* NKiOSShorthands.h */; };
+		3913939913C9B8450049DA61 /* Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 3913939813C9B8450049DA61 /* Prefix.pch */; };
+		391393AC13C9B84C0049DA61 /* NKiOSShorthands.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393A113C9B84C0049DA61 /* NKiOSShorthands.h */; };
+		391393AD13C9B84C0049DA61 /* UIApplication+NKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393A213C9B84C0049DA61 /* UIApplication+NKConcise.h */; };
+		391393AE13C9B84C0049DA61 /* UIApplication+NKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 391393A313C9B84C0049DA61 /* UIApplication+NKConcise.m */; };
+		391393AF13C9B84C0049DA61 /* UIScreen+NKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393A413C9B84C0049DA61 /* UIScreen+NKConcise.h */; };
+		391393B013C9B84C0049DA61 /* UIScreen+NKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 391393A513C9B84C0049DA61 /* UIScreen+NKConcise.m */; };
+		391393B113C9B84C0049DA61 /* NKUniversal.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393A713C9B84C0049DA61 /* NKUniversal.h */; };
+		391393B213C9B84C0049DA61 /* NKUniversal.m in Sources */ = {isa = PBXBuildFile; fileRef = 391393A813C9B84C0049DA61 /* NKUniversal.m */; };
 		39F5166313C8E3F3008A9732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F5166213C8E3F3008A9732 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		399F4CA313C8FCB60008CC0E /* UIApplication+NKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+NKConcise.h"; sourceTree = "<group>"; };
-		399F4CA413C8FCB60008CC0E /* UIScreen+NKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+NKConcise.h"; sourceTree = "<group>"; };
-		399F4CAD13C8FD2A0008CC0E /* NKUniversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKUniversal.h; sourceTree = "<group>"; };
-		399F4CAE13C8FD2A0008CC0E /* NKUniversal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKUniversal.m; sourceTree = "<group>"; };
-		399F4CCE13C902F40008CC0E /* UIScreen+NKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+NKConcise.m"; sourceTree = "<group>"; };
-		399F4CD013C903A30008CC0E /* UIApplication+NKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+NKConcise.m"; sourceTree = "<group>"; };
-		399F4CD513C907610008CC0E /* NKiOSShorthands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKiOSShorthands.h; sourceTree = "<group>"; };
+		3913939813C9B8450049DA61 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = Sources/Prefix.pch; sourceTree = SOURCE_ROOT; };
+		391393A113C9B84C0049DA61 /* NKiOSShorthands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKiOSShorthands.h; sourceTree = "<group>"; };
+		391393A213C9B84C0049DA61 /* UIApplication+NKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+NKConcise.h"; sourceTree = "<group>"; };
+		391393A313C9B84C0049DA61 /* UIApplication+NKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+NKConcise.m"; sourceTree = "<group>"; };
+		391393A413C9B84C0049DA61 /* UIScreen+NKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+NKConcise.h"; sourceTree = "<group>"; };
+		391393A513C9B84C0049DA61 /* UIScreen+NKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+NKConcise.m"; sourceTree = "<group>"; };
+		391393A713C9B84C0049DA61 /* NKUniversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NKUniversal.h; sourceTree = "<group>"; };
+		391393A813C9B84C0049DA61 /* NKUniversal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NKUniversal.m; sourceTree = "<group>"; };
 		39F5165F13C8E3F3008A9732 /* libiOSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiOSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F5166213C8E3F3008A9732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		39F5166613C8E3F3008A9732 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,23 +43,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		399F4CA213C8FCB60008CC0E /* Shorthands */ = {
+		3913939A13C9B84C0049DA61 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				399F4CA313C8FCB60008CC0E /* UIApplication+NKConcise.h */,
-				399F4CD013C903A30008CC0E /* UIApplication+NKConcise.m */,
-				399F4CA413C8FCB60008CC0E /* UIScreen+NKConcise.h */,
-				399F4CCE13C902F40008CC0E /* UIScreen+NKConcise.m */,
-				399F4CD513C907610008CC0E /* NKiOSShorthands.h */,
+				391393A013C9B84C0049DA61 /* Shorthands */,
+				391393A613C9B84C0049DA61 /* Universal */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		391393A013C9B84C0049DA61 /* Shorthands */ = {
+			isa = PBXGroup;
+			children = (
+				391393A113C9B84C0049DA61 /* NKiOSShorthands.h */,
+				391393A213C9B84C0049DA61 /* UIApplication+NKConcise.h */,
+				391393A313C9B84C0049DA61 /* UIApplication+NKConcise.m */,
+				391393A413C9B84C0049DA61 /* UIScreen+NKConcise.h */,
+				391393A513C9B84C0049DA61 /* UIScreen+NKConcise.m */,
 			);
 			path = Shorthands;
 			sourceTree = "<group>";
 		};
-		399F4CAC13C8FD290008CC0E /* Universal */ = {
+		391393A613C9B84C0049DA61 /* Universal */ = {
 			isa = PBXGroup;
 			children = (
-				399F4CAD13C8FD2A0008CC0E /* NKUniversal.h */,
-				399F4CAE13C8FD2A0008CC0E /* NKUniversal.m */,
+				391393A713C9B84C0049DA61 /* NKUniversal.h */,
+				391393A813C9B84C0049DA61 /* NKUniversal.m */,
 			);
 			path = Universal;
 			sourceTree = "<group>";
@@ -66,7 +76,7 @@
 		39F5165413C8E3F2008A9732 = {
 			isa = PBXGroup;
 			children = (
-				39F5166413C8E3F3008A9732 /* Sources */,
+				3913939A13C9B84C0049DA61 /* Sources */,
 				39F5166513C8E3F3008A9732 /* Supporting Files */,
 				39F5166113C8E3F3008A9732 /* Frameworks */,
 				39F5166013C8E3F3008A9732 /* Products */,
@@ -89,20 +99,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		39F5166413C8E3F3008A9732 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				399F4CA213C8FCB60008CC0E /* Shorthands */,
-				399F4CAC13C8FD290008CC0E /* Universal */,
-			);
-			name = Sources;
-			path = iOSKit;
-			sourceTree = "<group>";
-		};
 		39F5166513C8E3F3008A9732 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				39F5166613C8E3F3008A9732 /* Prefix.pch */,
+				3913939813C9B8450049DA61 /* Prefix.pch */,
 			);
 			name = "Supporting Files";
 			path = iOSKit;
@@ -115,10 +115,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				399F4CA513C8FCB60008CC0E /* UIApplication+NKConcise.h in Headers */,
-				399F4CA613C8FCB60008CC0E /* UIScreen+NKConcise.h in Headers */,
-				399F4CAF13C8FD2A0008CC0E /* NKUniversal.h in Headers */,
-				399F4CD613C907610008CC0E /* NKiOSShorthands.h in Headers */,
+				3913939913C9B8450049DA61 /* Prefix.pch in Headers */,
+				391393AC13C9B84C0049DA61 /* NKiOSShorthands.h in Headers */,
+				391393AD13C9B84C0049DA61 /* UIApplication+NKConcise.h in Headers */,
+				391393AF13C9B84C0049DA61 /* UIScreen+NKConcise.h in Headers */,
+				391393B113C9B84C0049DA61 /* NKUniversal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,9 +173,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				399F4CB013C8FD2A0008CC0E /* NKUniversal.m in Sources */,
-				399F4CCF13C902F40008CC0E /* UIScreen+NKConcise.m in Sources */,
-				399F4CD113C903A30008CC0E /* UIApplication+NKConcise.m in Sources */,
+				391393AE13C9B84C0049DA61 /* UIApplication+NKConcise.m in Sources */,
+				391393B013C9B84C0049DA61 /* UIScreen+NKConcise.m in Sources */,
+				391393B213C9B84C0049DA61 /* NKUniversal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +229,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/iOSKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = iOSKit/Prefix.pch;
+				GCC_PREFIX_HEADER = Sources/Prefix.pch;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -244,7 +245,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/iOSKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = iOSKit/Prefix.pch;
+				GCC_PREFIX_HEADER = Sources/Prefix.pch;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
