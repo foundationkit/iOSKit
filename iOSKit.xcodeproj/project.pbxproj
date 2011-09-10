@@ -19,6 +19,7 @@
 		39F5166313C8E3F3008A9732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F5166213C8E3F3008A9732 /* Foundation.framework */; };
 		9B297203141B7F1B006124A2 /* UIView+FKRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297201141B7F1B006124A2 /* UIView+FKRotation.h */; };
 		9B297204141B7F1B006124A2 /* UIView+FKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B297202141B7F1B006124A2 /* UIView+FKRotation.m */; };
+		9B297207141B8317006124A2 /* NSValue+FKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297205141B8317006124A2 /* NSValue+FKConcise.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		39F5166213C8E3F3008A9732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9B297201141B7F1B006124A2 /* UIView+FKRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FKRotation.h"; sourceTree = "<group>"; };
 		9B297202141B7F1B006124A2 /* UIView+FKRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FKRotation.m"; sourceTree = "<group>"; };
+		9B297205141B8317006124A2 /* NSValue+FKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+FKConcise.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				391393A313C9B84C0049DA61 /* UIApplication+FKConcise.m */,
 				391393A413C9B84C0049DA61 /* UIScreen+FKConcise.h */,
 				391393A513C9B84C0049DA61 /* UIScreen+FKConcise.m */,
+				9B297205141B8317006124A2 /* NSValue+FKConcise.h */,
 			);
 			path = Shorthands;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 				391393B113C9B84C0049DA61 /* FKUniversal.h in Headers */,
 				391393B413C9C1310049DA61 /* iOSKit.h in Headers */,
 				9B297203141B7F1B006124A2 /* UIView+FKRotation.h in Headers */,
+				9B297207141B8317006124A2 /* NSValue+FKConcise.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
