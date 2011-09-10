@@ -19,7 +19,9 @@
 		39F5166313C8E3F3008A9732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F5166213C8E3F3008A9732 /* Foundation.framework */; };
 		9B297203141B7F1B006124A2 /* UIView+FKRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297201141B7F1B006124A2 /* UIView+FKRotation.h */; };
 		9B297204141B7F1B006124A2 /* UIView+FKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B297202141B7F1B006124A2 /* UIView+FKRotation.m */; };
-		9B297207141B8317006124A2 /* NSValue+FKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297205141B8317006124A2 /* NSValue+FKConcise.h */; };
+		9B297207141B8317006124A2 /* NSValue+FKiOSConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */; };
+		9B29720B141B83B2006124A2 /* NSObject+FKiOSAssociatedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297209141B83B2006124A2 /* NSObject+FKiOSAssociatedObject.h */; };
+		9B29720C141B83B2006124A2 /* NSObject+FKiOSAssociatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B29720A141B83B2006124A2 /* NSObject+FKiOSAssociatedObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +38,9 @@
 		39F5166213C8E3F3008A9732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9B297201141B7F1B006124A2 /* UIView+FKRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FKRotation.h"; sourceTree = "<group>"; };
 		9B297202141B7F1B006124A2 /* UIView+FKRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FKRotation.m"; sourceTree = "<group>"; };
-		9B297205141B8317006124A2 /* NSValue+FKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+FKConcise.h"; sourceTree = "<group>"; };
+		9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+FKiOSConcise.h"; sourceTree = "<group>"; };
+		9B297209141B83B2006124A2 /* NSObject+FKiOSAssociatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FKiOSAssociatedObject.h"; sourceTree = "<group>"; };
+		9B29720A141B83B2006124A2 /* NSObject+FKiOSAssociatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FKiOSAssociatedObject.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +74,9 @@
 				391393A313C9B84C0049DA61 /* UIApplication+FKConcise.m */,
 				391393A413C9B84C0049DA61 /* UIScreen+FKConcise.h */,
 				391393A513C9B84C0049DA61 /* UIScreen+FKConcise.m */,
-				9B297205141B8317006124A2 /* NSValue+FKConcise.h */,
+				9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */,
+				9B297209141B83B2006124A2 /* NSObject+FKiOSAssociatedObject.h */,
+				9B29720A141B83B2006124A2 /* NSObject+FKiOSAssociatedObject.m */,
 			);
 			path = Shorthands;
 			sourceTree = "<group>";
@@ -142,7 +148,8 @@
 				391393B113C9B84C0049DA61 /* FKUniversal.h in Headers */,
 				391393B413C9C1310049DA61 /* iOSKit.h in Headers */,
 				9B297203141B7F1B006124A2 /* UIView+FKRotation.h in Headers */,
-				9B297207141B8317006124A2 /* NSValue+FKConcise.h in Headers */,
+				9B297207141B8317006124A2 /* NSValue+FKiOSConcise.h in Headers */,
+				9B29720B141B83B2006124A2 /* NSObject+FKiOSAssociatedObject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +207,7 @@
 				391393B013C9B84C0049DA61 /* UIScreen+FKConcise.m in Sources */,
 				391393B213C9B84C0049DA61 /* FKUniversal.m in Sources */,
 				9B297204141B7F1B006124A2 /* UIView+FKRotation.m in Sources */,
+				9B29720C141B83B2006124A2 /* NSObject+FKiOSAssociatedObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
