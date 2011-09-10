@@ -10,5 +10,5 @@
 #define $screenHeight      $screenBounds.size.height
 
 
-NS_INLINE CGFloat NKScreenWidthForCurrentOrientation(void);
-NS_INLINE CGFloat NKScreenHeightForCurrentOrientation(void);
+NS_INLINE CGFloat FKScreenWidthForCurrentOrientation(void);
+NS_INLINE CGFloat FKScreenHeightForCurrentOrientation(void);

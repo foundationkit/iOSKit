@@ -2,9 +2,9 @@
 
 
 // Shorthands
-#import "NKiOSShorthands.h"
-#import "UIApplication+NKConcise.h"
-#import "UIScreen+NKConcise.h"
+#import "FKiOSShorthands.h"
+#import "UIApplication+FKConcise.h"
+#import "UIScreen+FKConcise.h"
 
 // Universal
-#import "NKUniversal.h"
+#import "FKUniversal.h"

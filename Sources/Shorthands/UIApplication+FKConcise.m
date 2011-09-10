@@ -1,13 +1,13 @@
 // Part of FoundationKit http://foundationk.it
 
 
-#import "UIApplication+NKConcise.h"
+#import "UIApplication+FKConcise.h"
 
 
-NS_INLINE BOOL NKAppIsPortrait(void) {
+NS_INLINE BOOL FKAppIsPortrait(void) {
     return UIInterfaceOrientationIsPortrait($appOrientation);
 }
 
-NS_INLINE BOOL NKAppIsLandscape(void) {
+NS_INLINE BOOL FKAppIsLandscape(void) {
     return UIInterfaceOrientationIsLandscape($appOrientation);
 }

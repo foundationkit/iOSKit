@@ -1,36 +1,36 @@
 // Part of FoundationKit http://foundationk.it
 
 
-#import "NKUniversal.h"
+#import "FKUniversal.h"
 
-#define kNKDefaultIPadAppendix              @"@iPad"
-#define kNKDefaultIPadLandscapeAppendix     @"-L"
+#define kFKDefaultIPadAppendix              @"@iPad"
+#define kFKDefaultIPadLandscapeAppendix     @"-L"
 
 
 
-NS_INLINE BOOL NKIsIPad(void) {
+NS_INLINE BOOL $isPad(void) {
     return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
 }
 
 
-NS_INLINE BOOL NKIsIPhone(void) {
+NS_INLINE BOOL $isPhone(void) {
     return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone;
 }
 
-NS_INLINE BOOL NKRotateOnIPad(UIInterfaceOrientation interfaceOrientation) {
-    return NKIsIPad() || interfaceOrientation == UIInterfaceOrientationPortrait;
+NS_INLINE BOOL FKRotateOnPad(UIInterfaceOrientation interfaceOrientation) {
+    return $isPad() || interfaceOrientation == UIInterfaceOrientationPortrait;
 }
 
-NS_INLINE CGRect NKRectMake(CGFloat xPhone, CGFloat yPhone, CGFloat widthPhone, CGFloat heightPhone, CGFloat xPad, CGFloat yPad, CGFloat widthPad, CGFloat heightPad) {
-    return NKIsIPad() ? CGRectMake(xPad, yPad, widthPad, heightPad) : CGRectMake(xPhone, yPhone, widthPhone, heightPhone);
+NS_INLINE CGRect FKRectMake(CGFloat xPhone, CGFloat yPhone, CGFloat widthPhone, CGFloat heightPhone, CGFloat xPad, CGFloat yPad, CGFloat widthPad, CGFloat heightPad) {
+    return $isPad() ? CGRectMake(xPad, yPad, widthPad, heightPad) : CGRectMake(xPhone, yPhone, widthPhone, heightPhone);
 }
 
-NS_INLINE CGSize NKSizeMake(CGFloat widthPhone, CGFloat heightPhone, CGFloat widthPad, CGFloat heightPad) {
-    return NKIsIPad() ? CGSizeMake(widthPad, heightPad) : CGSizeMake(widthPhone, heightPhone);
+NS_INLINE CGSize FKSizeMake(CGFloat widthPhone, CGFloat heightPhone, CGFloat widthPad, CGFloat heightPad) {
+    return $isPad() ? CGSizeMake(widthPad, heightPad) : CGSizeMake(widthPhone, heightPhone);
 }
 
-NS_INLINE CGPoint NKPointMake(CGFloat xPhone, CGFloat yPhone, CGFloat xPad, CGFloat yPad) {
-    return NKIsIPad() ? CGPointMake(xPad, yPad) : CGPointMake(xPhone, yPhone);
+NS_INLINE CGPoint FKPointMake(CGFloat xPhone, CGFloat yPhone, CGFloat xPad, CGFloat yPad) {
+    return $isPad() ? CGPointMake(xPad, yPad) : CGPointMake(xPhone, yPhone);
 }
 
 
@@ -40,15 +40,15 @@ NS_INLINE CGPoint NKPointMake(CGFloat xPhone, CGFloat yPhone, CGFloat xPad, CGFl
 #pragma mark Functions for managing device-specific Resources on iPhone/iPad
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-NSString* NKDeviceSpecificImageName(NSString *imageName) {
-	return NKDeviceSpecificImageNameWithAppendix(imageName, kNKDefaultIPadAppendix);
+NSString* FKDeviceSpecificImageName(NSString *imageName) {
+	return FKDeviceSpecificImageNameWithAppendix(imageName, kFKDefaultIPadAppendix);
 }
 
-NSString* NKDeviceSpecificImageNameWithAppendix(NSString *imageName, NSString *appendix) {
+NSString* FKDeviceSpecificImageNameWithAppendix(NSString *imageName, NSString *appendix) {
     // seperate extension from imageName
 	NSArray *parts = [imageName componentsSeparatedByString:@"."];
 	// when on iPad, append "-iPad"
-	NSString *iPadAppendix = NKIsIPad() ? appendix : @"";
+	NSString *iPadAppendix = $isPad() ? appendix : @"";
     
 	if (parts.count == 2) {
 		return [NSString stringWithFormat:@"%@%@.%@", [parts objectAtIndex:0], iPadAppendix, [parts objectAtIndex:1]];
@@ -60,17 +60,17 @@ NSString* NKDeviceSpecificImageNameWithAppendix(NSString *imageName, NSString *a
 	return nil;
 }
 
-NSString* NKDeviceSpecificImageNameForOrientation(NSString *imageName, UIInterfaceOrientation orientation) {
-	return NKDeviceSpecificImageNameForOrientationWithAppendix(imageName, orientation, kNKDefaultIPadAppendix);
+NSString* FKDeviceSpecificImageNameForOrientation(NSString *imageName, UIInterfaceOrientation orientation) {
+	return FKDeviceSpecificImageNameForOrientationWithAppendix(imageName, orientation, kFKDefaultIPadAppendix);
 }
 
-NSString* NKDeviceSpecificImageNameForOrientationWithAppendix(NSString *imageName, UIInterfaceOrientation orientation, NSString *appendix) {
+NSString* FKDeviceSpecificImageNameForOrientationWithAppendix(NSString *imageName, UIInterfaceOrientation orientation, NSString *appendix) {
     // seperate extension from imageName
 	NSArray *parts = [imageName componentsSeparatedByString:@"."];
 	// when on iPad, append appendix
-	NSString *iPadAppendix = NKIsIPad() ? appendix : @"";
+	NSString *iPadAppendix = $isPad() ? appendix : @"";
 	// when on iPad and orientation is Landscape append landscape-appendix
-	NSString *orientationAppendix = NKIsIPad() && UIInterfaceOrientationIsLandscape(orientation) ? kNKDefaultIPadLandscapeAppendix : @"";
+	NSString *orientationAppendix = $isPad() && UIInterfaceOrientationIsLandscape(orientation) ? kFKDefaultIPadLandscapeAppendix : @"";
     
 	if (parts.count == 2) {
 		return [NSString stringWithFormat:@"%@%@%@.%@", [parts objectAtIndex:0], iPadAppendix, orientationAppendix, [parts objectAtIndex:1]];
@@ -82,9 +82,9 @@ NSString* NKDeviceSpecificImageNameForOrientationWithAppendix(NSString *imageNam
 	return nil;
 }
 
-NSString* NKDeviceSpecificNibName(NSString *name) {
+NSString* FKDeviceSpecificNibName(NSString *name) {
 	// when on iPad, append "-iPad"
-	NSString *iPadAppendix = NKIsIPad() ? kNKDefaultIPadAppendix : @"";
+	NSString *iPadAppendix = $isPad() ? kFKDefaultIPadAppendix : @"";
 	NSString *nibName = [NSString stringWithFormat:@"%@%@",name, iPadAppendix];
 
 	// fallback: no iPad-specific nib file? -> use iPhone-Nib

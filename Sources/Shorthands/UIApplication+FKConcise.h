@@ -9,5 +9,5 @@
 #define $appOrientation     $app.statusBarOrientation
 
 
-NS_INLINE BOOL NKAppIsPortrait(void);
-NS_INLINE BOOL NKAppIsLandscape(void);
+NS_INLINE BOOL FKAppIsPortrait(void);
+NS_INLINE BOOL FKAppIsLandscape(void);
