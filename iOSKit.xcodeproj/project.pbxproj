@@ -17,6 +17,8 @@
 		391393B213C9B84C0049DA61 /* FKUniversal.m in Sources */ = {isa = PBXBuildFile; fileRef = 391393A813C9B84C0049DA61 /* FKUniversal.m */; };
 		391393B413C9C1310049DA61 /* iOSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393B313C9C1310049DA61 /* iOSKit.h */; };
 		39F5166313C8E3F3008A9732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F5166213C8E3F3008A9732 /* Foundation.framework */; };
+		9B297203141B7F1B006124A2 /* UIView+FKRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297201141B7F1B006124A2 /* UIView+FKRotation.h */; };
+		9B297204141B7F1B006124A2 /* UIView+FKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B297202141B7F1B006124A2 /* UIView+FKRotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		391393B313C9C1310049DA61 /* iOSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSKit.h; sourceTree = "<group>"; };
 		39F5165F13C8E3F3008A9732 /* libiOSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiOSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F5166213C8E3F3008A9732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9B297201141B7F1B006124A2 /* UIView+FKRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FKRotation.h"; sourceTree = "<group>"; };
+		9B297202141B7F1B006124A2 /* UIView+FKRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FKRotation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 			children = (
 				391393B313C9C1310049DA61 /* iOSKit.h */,
 				391393A013C9B84C0049DA61 /* Shorthands */,
+				9B297200141B7EF9006124A2 /* UIKit */,
 				391393A613C9B84C0049DA61 /* Universal */,
 			);
 			path = Sources;
@@ -111,6 +116,15 @@
 			path = iOSKit;
 			sourceTree = "<group>";
 		};
+		9B297200141B7EF9006124A2 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				9B297201141B7F1B006124A2 /* UIView+FKRotation.h */,
+				9B297202141B7F1B006124A2 /* UIView+FKRotation.m */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -124,6 +138,7 @@
 				391393AF13C9B84C0049DA61 /* UIScreen+FKConcise.h in Headers */,
 				391393B113C9B84C0049DA61 /* FKUniversal.h in Headers */,
 				391393B413C9C1310049DA61 /* iOSKit.h in Headers */,
+				9B297203141B7F1B006124A2 /* UIView+FKRotation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +195,7 @@
 				391393AE13C9B84C0049DA61 /* UIApplication+FKConcise.m in Sources */,
 				391393B013C9B84C0049DA61 /* UIScreen+FKConcise.m in Sources */,
 				391393B213C9B84C0049DA61 /* FKUniversal.m in Sources */,
+				9B297204141B7F1B006124A2 /* UIView+FKRotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
