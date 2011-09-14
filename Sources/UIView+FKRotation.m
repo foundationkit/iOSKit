@@ -1,6 +1,7 @@
 // Part of FoundationKit http://foundationk.it
 
 #import "UIView+FKRotation.h"
+#import "UIApplication+FKConcise.h"
 #import <objc/runtime.h>
 
 ////////////////////////////////////////////////////////////////////////
@@ -28,7 +29,7 @@ static char landscapeFrameKey;
 
 - (CGRect)portraitFrame {
     // read associated object for portrait frame
-    NSValue *portraitFrameValue = (NSValue *)objc_getAssociatedObject(self, &portraitFrameKey);
+    NSValue *portraitFrameValue = (NSValue *)[self associatedValueForKey:&portraitFrameKey];
     
     if (portraitFrameValue != nil) {
         return [portraitFrameValue CGRectValue];
@@ -39,7 +40,7 @@ static char landscapeFrameKey;
 
 - (CGRect)landscapeFrame {
     // read associated object for landscape frame
-    NSValue *landscapeFrameValue = (NSValue *)objc_getAssociatedObject(self, &landscapeFrameKey);
+    NSValue *landscapeFrameValue = (NSValue *)[self associatedValueForKey:&landscapeFrameKey];
     
     if (landscapeFrameValue != nil) {
         return [landscapeFrameValue CGRectValue];
@@ -49,13 +50,11 @@ static char landscapeFrameKey;
 }
 
 - (void)setPortraitFrame:(CGRect)portraitFrame {
-    NSValue *portraitFrameValue = [NSValue valueWithCGRect:portraitFrame];
-    objc_setAssociatedObject(self, &portraitFrameKey, portraitFrameValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self associateRect:portraitFrame withKey:&portraitFrameKey];
 }
 
 - (void)setLandscapeFrame:(CGRect)landscapeFrame {
-    NSValue *landscapeFrameValue = [NSValue valueWithCGRect:landscapeFrame];
-    objc_setAssociatedObject(self, &landscapeFrameKey, landscapeFrameValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self associateRect:landscapeFrame withKey:&landscapeFrameKey];
 }
 
 
@@ -71,6 +70,10 @@ static char landscapeFrameKey;
     [UIView animateWithDuration:duration animations:^{
         [self setFrameForInterfaceOrientation:toInterfaceOrientation];
     }];
+}
+
+- (void)layoutView {
+    [self setFrameForInterfaceOrientation:$appOrientation];
 }
 
 - (void)setFrameForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
