@@ -5,7 +5,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (FKiOSAssociatedObject)
+@interface NSObject (FKiOSAssociatedObjects)
 
 - (void)associateRect:(CGRect)rect withKey:(void *)key;
 - (void)associatePoint:(CGPoint)point withKey:(void *)key;

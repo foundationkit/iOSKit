@@ -2,6 +2,8 @@
 
 #import "UIView+FKRotation.h"
 #import "UIApplication+FKConcise.h"
+#import "NSObject+FKAssociatedObjects.h"
+#import "NSObject+FKiOSAssociatedObjects.h"
 #import <objc/runtime.h>
 
 ////////////////////////////////////////////////////////////////////////
