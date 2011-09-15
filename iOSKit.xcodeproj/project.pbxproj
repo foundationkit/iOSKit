@@ -176,14 +176,14 @@
 				39CFA5FE14223CBE00DC3E57 /* UIScrollView+FKContentSize.m */,
 				39CFA603142240DA00DC3E57 /* UITextView+FKAdditions.h */,
 				39CFA604142240DA00DC3E57 /* UITextView+FKAdditions.m */,
-				39CFA5F1142234A600DC3E57 /* UIView+FKRotation.h */,
-				39CFA5F2142234A600DC3E57 /* UIView+FKRotation.m */,
-				39CFA6071422423300DC3E57 /* UIView+FKHierarchy.h */,
-				39CFA6081422423400DC3E57 /* UIView+FKHierarchy.m */,
 				39CFA60B1422437300DC3E57 /* UIView+FKAdditions.h */,
 				39CFA60C1422437400DC3E57 /* UIView+FKAdditions.m */,
 				39CFA60F14224AF400DC3E57 /* UIView+FKAnimations.h */,
 				39CFA61014224AF600DC3E57 /* UIView+FKAnimations.m */,
+				39CFA6071422423300DC3E57 /* UIView+FKHierarchy.h */,
+				39CFA6081422423400DC3E57 /* UIView+FKHierarchy.m */,
+				39CFA5F1142234A600DC3E57 /* UIView+FKRotation.h */,
+				39CFA5F2142234A600DC3E57 /* UIView+FKRotation.m */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";

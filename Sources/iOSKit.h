@@ -3,14 +3,21 @@
 
 // Shorthands
 #import "FKiOSShorthands.h"
+#import "NSObject+FKiOSAssociatedObject.h"
+#import "NSValue+FKiOSConcise.h"
 #import "UIApplication+FKConcise.h"
 #import "UIScreen+FKConcise.h"
-#import "NSValue+FKiOSConcise.h"
-#import "NSObject+FKiOSAssociatedObject.h"
 
 // UIKit
-#import "UIView+FKRotation.h"
 #import "UIColor+FKAdditions.h"
+#import "UIDevice+FKAdditions.h"
+#import "UIImageView+FKAdditions.h"
+#import "UIScrollView+FKContentSize.h"
+#import "UITextView+FKAdditions.h"
+#import "UIView+FKAdditions.h"
+#import "UIView+FKAnimations.h"
+#import "UIView+FKHierarchy.h"
+#import "UIView+FKRotation.h"
 
 // Universal
 #import "FKUniversal.h"
