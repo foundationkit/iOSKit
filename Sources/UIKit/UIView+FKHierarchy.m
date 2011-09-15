@@ -1,5 +1,3 @@
-// Part of iOSKit http://foundationk.it
-
 #import "UIView+FKHierarchy.h"
 
 @implementation UIView (FKHierarchy)

@@ -1,9 +1,6 @@
-// Part of iOSKit http://foundationk.it
-
 #import <QuartzCore/QuartzCore.h>
 #import "UIScrollView+FKContentSize.h"
-#import "NSObject+FKAssociatedObjects.h"
-#import "NSNumber+FKConcise.h"
+#import "UIView+FKContentSize.h"
 
 #define kFKDefaultPadding 5.f
 
@@ -15,8 +12,6 @@ typedef enum {
 BOOL FKViewIsScrollIndicator(UIView *view);
 BOOL FKViewUseForAutocalculation(UIView *view);
 CGFloat FKGetMaxPosition(UIScrollView *scrollView, FKOrientation orientation);
-
-static char excludedKey;
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -46,30 +41,6 @@ static char excludedKey;
 }
 
 @end
-
-////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark UIView+FKContentSize
-////////////////////////////////////////////////////////////////////////
-
-@implementation UIView (FKContentSize) 
-
-- (BOOL)excludedFromScrollViewAutocalculation {
-    NSNumber *excluded = (NSNumber *)[self associatedValueForKey:&excludedKey];
-    
-    if (excluded != nil) {
-        return [excluded boolValue];
-    }
-    
-    return NO;
-}
-
-- (void)setExcludedFromScrollViewAutocalculation:(BOOL)excludedFromScrollViewAutocalculation {
-    [self associateValue:$bool(excludedFromScrollViewAutocalculation) withKey:&excludedKey];
-}
-
-@end
-
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -

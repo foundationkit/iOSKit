@@ -1,7 +1,6 @@
 // Part of iOSKit http://foundationk.it
 //
-// Inspired by work of Andy Matuschak:
-// https://github.com/andymatuschak/NSObject-AssociatedObjects
+// Derived From Andy Matuschak's Public Domain-licensed NSObject-Category: https://github.com/andymatuschak/NSObject-AssociatedObjects
 
 #import <Foundation/Foundation.h>
 

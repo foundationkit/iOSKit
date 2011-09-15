@@ -1,9 +1,6 @@
-// Part of iOSKit http://foundationk.it
-
 #import <QuartzCore/QuartzCore.h>
 #import "UIView+FKAdditions.h"
 #import "UIColor+FKAdditions.h"
-#import "FKLog.h"
 
 @implementation UIView (FKAdditions)
 
@@ -169,7 +166,8 @@
 }
 
 - (void)enableDebugBorderWithColor:(UIColor *)color {
-	NKLog(@"enable debug for view %@", self);
+    // TODO: Use logging
+	// NKLog(@"enable debug for view %@", self);
     
 	self.layer.borderColor = color.CGColor;
 	self.layer.borderWidth = 2.0;

@@ -1,5 +1,3 @@
-// Part of iOSKit http://foundationk.it
-
 #import "UIColor+FKAdditions.h"
 
 @implementation UIColor (FKAdditions)
@@ -92,14 +90,14 @@
 }
 
 - (CGFloat)red {
-	NSAssert(self.canProvideRGBComponents, @"Must be an RGB color to use -red");
+    assert(self.canProvideRGBComponents);
 	
     const CGFloat *c = CGColorGetComponents(self.CGColor);
 	return c[0];
 }
 
 - (CGFloat)green {
-	NSAssert(self.canProvideRGBComponents, @"Must be an RGB color to use -green");
+	assert(self.canProvideRGBComponents);
 	
     const CGFloat *c = CGColorGetComponents(self.CGColor);
     
@@ -111,7 +109,7 @@
 }
 
 - (CGFloat)blue {
-	NSAssert(self.canProvideRGBComponents, @"Must be an RGB color to use -blue");
+	assert(self.canProvideRGBComponents);
 	
     const CGFloat *c = CGColorGetComponents(self.CGColor);
 	
@@ -123,7 +121,7 @@
 }
 
 - (CGFloat)white {
-	NSAssert(self.colorSpaceModel == kCGColorSpaceModelMonochrome, @"Must be a Monochrome color to use -white");
+    assert(self.colorSpaceModel == kCGColorSpaceModelMonochrome);
 	
     const CGFloat *c = CGColorGetComponents(self.CGColor);
 	return c[0];
@@ -134,7 +132,7 @@
 }
 
 - (UInt32)RGBHex {
-	NSAssert(self.canProvideRGBComponents, @"Must be a RGB color to use rgbHex");
+    assert(self.canProvideRGBComponents);
 	
 	CGFloat r,g,b,a;
     
@@ -152,7 +150,7 @@
 }
 
 - (NSString *)stringRepresentation {
-	NSAssert(self.canProvideRGBComponents, @"Must be an RGB color to use -stringFromColor");
+    assert(self.canProvideRGBComponents);
 	
     NSString *result;
 	

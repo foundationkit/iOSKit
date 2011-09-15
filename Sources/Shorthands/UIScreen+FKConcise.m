@@ -1,6 +1,3 @@
-// Part of iOSKit http://foundationk.it
-
-
 #import "UIScreen+FKConcise.h"
 #import "UIApplication+FKConcise.h"
 

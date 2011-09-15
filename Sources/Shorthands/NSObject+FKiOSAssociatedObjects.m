@@ -1,8 +1,3 @@
-// Part of iOSKit http://foundationk.it
-//
-// Inspired by work of Andy Matuschak:
-// https://github.com/andymatuschak/NSObject-AssociatedObjects
-
 #import "NSObject+FKiOSAssociatedObjects.h"
 #import "NSObject+FKAssociatedObjects.h"
 #import "NSValue+FKiOSConcise.h"

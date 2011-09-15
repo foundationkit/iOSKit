@@ -1,5 +1,3 @@
-// Part of iOSKit http://foundationk.it
-
 #import "UITextView+FKAdditions.h"
 
 @implementation UITextView (FKAdditions)

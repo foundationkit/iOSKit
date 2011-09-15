@@ -1,5 +1,3 @@
-// Part of iOSKit http://foundationk.it
-
 #import "UIView+FKRotation.h"
 #import "UIApplication+FKConcise.h"
 #import "NSObject+FKAssociatedObjects.h"

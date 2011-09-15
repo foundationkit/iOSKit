@@ -1,5 +1,3 @@
-// Part of iOSKit http://foundationk.it
-
 #import "UIView+FKAnimations.h"
 
 @implementation UIView (FKAnimations)

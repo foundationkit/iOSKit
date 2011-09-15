@@ -16,6 +16,7 @@
 #import "UITextView+FKAdditions.h"
 #import "UIView+FKAdditions.h"
 #import "UIView+FKAnimations.h"
+#import "UIView+FKContentSize.h"
 #import "UIView+FKHierarchy.h"
 #import "UIView+FKRotation.h"
 

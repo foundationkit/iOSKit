@@ -1,5 +1,3 @@
-// Part of iOSKit http://foundationk.it
-
 #import "UIDevice+FKAdditions.h"
 #include <sys/sysctl.h>
 #include <ifaddrs.h>

@@ -1,4 +1,6 @@
 // Part of iOSKit http://foundationk.it
+//
+// Based on kwigbo's UIView-Additions: http://kwigbo.tumblr.com/post/3448069097/simplify-uiview-animation-with-categories
 
 #import <UIKit/UIKit.h>
 

@@ -1,6 +1,6 @@
 // Part of iOSKit http://foundationk.it
 //
-// Based on https://github.com/ars/uicolor-utilities/blob/master/UIColor-Expanded.h
+// Derived From Erica Sadun's UIColor-Extensions: https://github.com/ars/uicolor-utilities/blob/master/UIColor-Expanded.h
 
 #import <UIKit/UIKit.h>
 

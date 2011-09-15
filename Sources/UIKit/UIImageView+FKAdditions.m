@@ -1,5 +1,3 @@
-// Part of iOSKit http://foundationk.it
-
 #import "UIImageView+FKAdditions.h"
 
 @implementation UIImageView (FKAdditions)

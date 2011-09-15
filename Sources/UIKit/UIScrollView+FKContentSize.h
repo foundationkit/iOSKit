@@ -11,10 +11,3 @@
 - (void)autocalculateContentWidthWithPadding:(CGFloat)padding;
 
 @end
-
-
-@interface UIView (FKContentSize)
-
-@property (nonatomic, unsafe_unretained) BOOL excludedFromScrollViewAutocalculation;
-
-@end

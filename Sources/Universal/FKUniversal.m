@@ -1,6 +1,3 @@
-// Part of iOSKit http://foundationk.it
-
-
 #import "FKUniversal.h"
 
 #define kFKDefaultIPadAppendix              @"@iPad"
