@@ -179,6 +179,7 @@
 		39F5165613C8E3F2008A9732 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "NOUS Wissensmanagement GmbH";
 			};
 			buildConfigurationList = 39F5165913C8E3F2008A9732 /* Build configuration list for PBXProject "iOSKit" */;

@@ -5,9 +5,9 @@
 @interface UIView (FKRotation)
 
 /** property to specify a frame for portrait orientation */
-@property (nonatomic, assign) CGRect portraitFrame;
+@property (nonatomic, unsafe_unretained) CGRect portraitFrame;
 /** property to specify a frame for landscape orientation */
-@property (nonatomic, assign) CGRect landscapeFrame;
+@property (nonatomic, unsafe_unretained) CGRect landscapeFrame;
 /** specifies whether portrait and landscape frames are defined for this view */
 @property (nonatomic, readonly) BOOL hasPortraitAndLandscapeFrames;
 

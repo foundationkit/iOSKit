@@ -15,7 +15,7 @@ static char landscapeFrameKey;
 @implementation UIView (FKRotation)
 
 + (id)viewWithPortraitFrame:(CGRect)portraitFrame landscapeFrame:(CGRect)landscapeFrame {
-    UIView *view = [[[[self class] alloc] initWithFrame:portraitFrame] autorelease];
+    UIView *view = [[[self class] alloc] initWithFrame:portraitFrame];
     
     view.portraitFrame = portraitFrame;
     view.landscapeFrame = landscapeFrame;
