@@ -3,7 +3,7 @@
 
 // Shorthands
 #import "FKiOSShorthands.h"
-#import "NSObject+FKiOSAssociatedObject.h"
+#import "NSObject+FKiOSAssociatedObjects.h"
 #import "NSValue+FKiOSConcise.h"
 #import "UIApplication+FKConcise.h"
 #import "UIScreen+FKConcise.h"
