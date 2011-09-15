@@ -16,9 +16,11 @@
 		391393B113C9B84C0049DA61 /* FKUniversal.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393A713C9B84C0049DA61 /* FKUniversal.h */; };
 		391393B213C9B84C0049DA61 /* FKUniversal.m in Sources */ = {isa = PBXBuildFile; fileRef = 391393A813C9B84C0049DA61 /* FKUniversal.m */; };
 		391393B413C9C1310049DA61 /* iOSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393B313C9C1310049DA61 /* iOSKit.h */; };
+		39CFA5EF1422348700DC3E57 /* UIColor+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CFA5ED1422348600DC3E57 /* UIColor+FKAdditions.h */; };
+		39CFA5F01422348700DC3E57 /* UIColor+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA5EE1422348600DC3E57 /* UIColor+FKAdditions.m */; };
+		39CFA5F3142234A600DC3E57 /* UIView+FKRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CFA5F1142234A600DC3E57 /* UIView+FKRotation.h */; };
+		39CFA5F4142234A600DC3E57 /* UIView+FKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA5F2142234A600DC3E57 /* UIView+FKRotation.m */; };
 		39F5166313C8E3F3008A9732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F5166213C8E3F3008A9732 /* Foundation.framework */; };
-		9B297203141B7F1B006124A2 /* UIView+FKRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297201141B7F1B006124A2 /* UIView+FKRotation.h */; };
-		9B297204141B7F1B006124A2 /* UIView+FKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B297202141B7F1B006124A2 /* UIView+FKRotation.m */; };
 		9B297207141B8317006124A2 /* NSValue+FKiOSConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */; };
 		9B29720B141B83B2006124A2 /* NSObject+FKiOSAssociatedObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297209141B83B2006124A2 /* NSObject+FKiOSAssociatedObjects.h */; };
 		9B29720C141B83B2006124A2 /* NSObject+FKiOSAssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B29720A141B83B2006124A2 /* NSObject+FKiOSAssociatedObjects.m */; };
@@ -35,10 +37,12 @@
 		391393A813C9B84C0049DA61 /* FKUniversal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKUniversal.m; sourceTree = "<group>"; };
 		391393B313C9C1310049DA61 /* iOSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSKit.h; sourceTree = "<group>"; };
 		39CFA5E914222FDA00DC3E57 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sources; path = FoundationKit/Sources; sourceTree = "<group>"; };
+		39CFA5ED1422348600DC3E57 /* UIColor+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+FKAdditions.h"; path = "UIKit/UIColor+FKAdditions.h"; sourceTree = "<group>"; };
+		39CFA5EE1422348600DC3E57 /* UIColor+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+FKAdditions.m"; path = "UIKit/UIColor+FKAdditions.m"; sourceTree = "<group>"; };
+		39CFA5F1142234A600DC3E57 /* UIView+FKRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKRotation.h"; path = "UIKit/UIView+FKRotation.h"; sourceTree = "<group>"; };
+		39CFA5F2142234A600DC3E57 /* UIView+FKRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKRotation.m"; path = "UIKit/UIView+FKRotation.m"; sourceTree = "<group>"; };
 		39F5165F13C8E3F3008A9732 /* libiOSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiOSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F5166213C8E3F3008A9732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		9B297201141B7F1B006124A2 /* UIView+FKRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FKRotation.h"; sourceTree = "<group>"; };
-		9B297202141B7F1B006124A2 /* UIView+FKRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FKRotation.m"; sourceTree = "<group>"; };
 		9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+FKiOSConcise.h"; sourceTree = "<group>"; };
 		9B297209141B83B2006124A2 /* NSObject+FKiOSAssociatedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FKiOSAssociatedObjects.h"; sourceTree = "<group>"; };
 		9B29720A141B83B2006124A2 /* NSObject+FKiOSAssociatedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FKiOSAssociatedObjects.m"; sourceTree = "<group>"; };
@@ -130,8 +134,10 @@
 		9B297200141B7EF9006124A2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				9B297201141B7F1B006124A2 /* UIView+FKRotation.h */,
-				9B297202141B7F1B006124A2 /* UIView+FKRotation.m */,
+				39CFA5F1142234A600DC3E57 /* UIView+FKRotation.h */,
+				39CFA5F2142234A600DC3E57 /* UIView+FKRotation.m */,
+				39CFA5ED1422348600DC3E57 /* UIColor+FKAdditions.h */,
+				39CFA5EE1422348600DC3E57 /* UIColor+FKAdditions.m */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -149,9 +155,10 @@
 				391393AF13C9B84C0049DA61 /* UIScreen+FKConcise.h in Headers */,
 				391393B113C9B84C0049DA61 /* FKUniversal.h in Headers */,
 				391393B413C9C1310049DA61 /* iOSKit.h in Headers */,
-				9B297203141B7F1B006124A2 /* UIView+FKRotation.h in Headers */,
 				9B297207141B8317006124A2 /* NSValue+FKiOSConcise.h in Headers */,
 				9B29720B141B83B2006124A2 /* NSObject+FKiOSAssociatedObjects.h in Headers */,
+				39CFA5EF1422348700DC3E57 /* UIColor+FKAdditions.h in Headers */,
+				39CFA5F3142234A600DC3E57 /* UIView+FKRotation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,8 +216,9 @@
 				391393AE13C9B84C0049DA61 /* UIApplication+FKConcise.m in Sources */,
 				391393B013C9B84C0049DA61 /* UIScreen+FKConcise.m in Sources */,
 				391393B213C9B84C0049DA61 /* FKUniversal.m in Sources */,
-				9B297204141B7F1B006124A2 /* UIView+FKRotation.m in Sources */,
 				9B29720C141B83B2006124A2 /* NSObject+FKiOSAssociatedObjects.m in Sources */,
+				39CFA5F01422348700DC3E57 /* UIColor+FKAdditions.m in Sources */,
+				39CFA5F4142234A600DC3E57 /* UIView+FKRotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

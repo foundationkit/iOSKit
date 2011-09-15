@@ -1,4 +1,4 @@
-// Part of FoundationKit http://foundationk.it
+// Part of iOSKit http://foundationk.it
 
 
 // Shorthands
@@ -10,6 +10,7 @@
 
 // UIKit
 #import "UIView+FKRotation.h"
+#import "UIColor+FKAdditions.h"
 
 // Universal
 #import "FKUniversal.h"

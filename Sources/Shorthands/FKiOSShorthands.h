@@ -1,4 +1,4 @@
-// Part of FoundationKit http://foundationk.it
+// Part of iOSKit http://foundationk.it
 
 
 #if TARGET_IPHONE_SIMULATOR && (defined(DEBUG) || defined(CONFIGURATION_Debug))

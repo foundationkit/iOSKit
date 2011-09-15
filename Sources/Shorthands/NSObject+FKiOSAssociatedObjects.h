@@ -1,4 +1,4 @@
-// Part of FoundationKit http://foundationk.it
+// Part of iOSKit http://foundationk.it
 //
 // Inspired by work of Andy Matuschak:
 // https://github.com/andymatuschak/NSObject-AssociatedObjects

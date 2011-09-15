@@ -1,4 +1,4 @@
-// Part of FoundationKit http://foundationk.it
+// Part of iOSKit http://foundationk.it
 
 #import "UIView+FKRotation.h"
 #import "UIApplication+FKConcise.h"
