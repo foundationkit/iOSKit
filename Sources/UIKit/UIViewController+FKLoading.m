@@ -19,11 +19,10 @@ static char activityViewKey;
     __block UIActivityIndicatorView *activityView = (UIActivityIndicatorView *)[self associatedValueForKey:&activityViewKey];
     
     // create activityView when it is first read
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+    if (activityView == nil) {
         activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         self.activityView = activityView;
-    });
+    }
     
     return activityView;
 }
@@ -39,7 +38,7 @@ static char activityViewKey;
     
     activityView.frame = CGRectIntegral(activityFrame);
     activityView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
-
+    
     [self.view addSubview:activityView];
     [activityView startAnimating];
 }

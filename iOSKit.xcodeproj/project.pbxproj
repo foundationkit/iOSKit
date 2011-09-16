@@ -16,6 +16,7 @@
 		391393B113C9B84C0049DA61 /* FKUniversal.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393A713C9B84C0049DA61 /* FKUniversal.h */; };
 		391393B213C9B84C0049DA61 /* FKUniversal.m in Sources */ = {isa = PBXBuildFile; fileRef = 391393A813C9B84C0049DA61 /* FKUniversal.m */; };
 		391393B413C9C1310049DA61 /* iOSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393B313C9C1310049DA61 /* iOSKit.h */; };
+		393A299A142359550056CB37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393A2999142359550056CB37 /* CoreGraphics.framework */; };
 		39ACE7441422709B0022D8F8 /* UIView+FKContentSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ACE7421422709B0022D8F8 /* UIView+FKContentSize.h */; };
 		39ACE7451422709B0022D8F8 /* UIView+FKContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACE7431422709B0022D8F8 /* UIView+FKContentSize.m */; };
 		39ACE81614228DCC0022D8F8 /* UIViewController+FKLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */; };
@@ -55,6 +56,7 @@
 		391393A713C9B84C0049DA61 /* FKUniversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKUniversal.h; sourceTree = "<group>"; };
 		391393A813C9B84C0049DA61 /* FKUniversal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKUniversal.m; sourceTree = "<group>"; };
 		391393B313C9C1310049DA61 /* iOSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSKit.h; sourceTree = "<group>"; };
+		393A2999142359550056CB37 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		39ACE7421422709B0022D8F8 /* UIView+FKContentSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKContentSize.h"; path = "UIKit/UIView+FKContentSize.h"; sourceTree = "<group>"; };
 		39ACE7431422709B0022D8F8 /* UIView+FKContentSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKContentSize.m"; path = "UIKit/UIView+FKContentSize.m"; sourceTree = "<group>"; };
 		39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+FKLoading.h"; path = "UIKit/UIViewController+FKLoading.h"; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				393A299A142359550056CB37 /* CoreGraphics.framework in Frameworks */,
 				39CFA60214223E6300DC3E57 /* QuartzCore.framework in Frameworks */,
 				39F5166313C8E3F3008A9732 /* Foundation.framework in Frameworks */,
 			);
@@ -156,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				39CFA6161422517000DC3E57 /* FoundationKit */,
+				393A2999142359550056CB37 /* CoreGraphics.framework */,
 				39F5166213C8E3F3008A9732 /* Foundation.framework */,
 				39CFA60114223E6300DC3E57 /* QuartzCore.framework */,
 			);
