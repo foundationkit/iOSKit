@@ -19,6 +19,7 @@
 #import "UIView+FKContentSize.h"
 #import "UIView+FKHierarchy.h"
 #import "UIView+FKRotation.h"
+#import "UIViewController+FKAdditions.h"
 #import "UIViewController+FKLoading.h"
 
 // Universal
