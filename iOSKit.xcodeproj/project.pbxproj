@@ -84,7 +84,6 @@
 		39CFA60C1422437400DC3E57 /* UIView+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKAdditions.m"; path = "UIKit/UIView+FKAdditions.m"; sourceTree = "<group>"; };
 		39CFA60F14224AF400DC3E57 /* UIView+FKAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKAnimations.h"; path = "UIKit/UIView+FKAnimations.h"; sourceTree = "<group>"; };
 		39CFA61014224AF600DC3E57 /* UIView+FKAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKAnimations.m"; path = "UIKit/UIView+FKAnimations.m"; sourceTree = "<group>"; };
-		39CFA6161422517000DC3E57 /* FoundationKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FoundationKit; sourceTree = "<group>"; };
 		39F5165F13C8E3F3008A9732 /* libiOSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiOSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F5166213C8E3F3008A9732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+FKiOSConcise.h"; sourceTree = "<group>"; };
@@ -162,7 +161,6 @@
 		39F5166113C8E3F3008A9732 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				39CFA6161422517000DC3E57 /* FoundationKit */,
 				393A2999142359550056CB37 /* CoreGraphics.framework */,
 				39F5166213C8E3F3008A9732 /* Foundation.framework */,
 				39CFA60114223E6300DC3E57 /* QuartzCore.framework */,
