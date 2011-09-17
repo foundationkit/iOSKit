@@ -7,6 +7,8 @@
 @property (nonatomic, strong, readonly) UIActivityIndicatorView *activityView;
 
 - (void)showCenteredLoadingIndicator;
+- (void)showLoadingIndicatorInsteadOfView:(UIView *)viewToReplace;
+- (void)showLoadingIndicatorInNavigationBar;
 - (void)hideLoadingIndicator;
 
 @end

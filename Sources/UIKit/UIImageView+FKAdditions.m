@@ -2,7 +2,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 
-#define kFKFadeAnimation    0.25
+#define kFKFadeAnimationDuration    0.25
 
 @implementation UIImageView (FKAdditions)
 
@@ -11,7 +11,7 @@
 }
 
 - (void)setImage:(UIImage *)image animated:(BOOL)animated {
-    [self setImage:image duration:(animated ? kFKFadeAnimation : 0.)];
+    [self setImage:image duration:(animated ? kFKFadeAnimationDuration : 0.)];
 }
 
 - (void)setImage:(UIImage *)image duration:(NSTimeInterval)duration {
