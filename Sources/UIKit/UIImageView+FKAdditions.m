@@ -11,10 +11,14 @@
 }
 
 - (void)setImage:(UIImage *)image animated:(BOOL)animated {
-    if (animated) {
+    [self setImage:image duration:(animated ? kFKFadeAnimation : 0.)];
+}
+
+- (void)setImage:(UIImage *)image duration:(NSTimeInterval)duration {
+    if (duration > 0.) {
         CATransition *transition = [CATransition animation];
         
-        transition.duration = kFKFadeAnimation;
+        transition.duration = duration;
         transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
         transition.type = kCATransitionFade;
         
