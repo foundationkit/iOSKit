@@ -82,4 +82,10 @@
     return jailbroken;
 }
 
+- (void)simulateMemoryWarning {
+#if TARGET_IPHONE_SIMULATOR
+    CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), (CFStringRef)@"UISimulatedMemoryWarningNotification", NULL, NULL, true);
+#endif
+}
+
 @end

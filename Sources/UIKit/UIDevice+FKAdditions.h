@@ -9,4 +9,6 @@
 @property (nonatomic, readonly) NSString *hardwarePlatform;
 @property (nonatomic, readonly, getter=isJailbroken) BOOL jailbroken;
 
+- (void)simulateMemoryWarning;
+
 @end
