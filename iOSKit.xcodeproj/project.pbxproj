@@ -47,11 +47,43 @@
 		39DF5CDF1424A08C00090805 /* FKColoredAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF5CDD1424A08C00090805 /* FKColoredAccessoryView.m */; };
 		39DF5CE31424A5FB00090805 /* FKSoundEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 39DF5CE11424A5FB00090805 /* FKSoundEffect.h */; };
 		39DF5CE41424A5FB00090805 /* FKSoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF5CE21424A5FB00090805 /* FKSoundEffect.m */; };
+		39DF5CF91424A97A00090805 /* libFoundationKitiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5CF41424A96900090805 /* libFoundationKitiOS.a */; };
 		39F5166313C8E3F3008A9732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F5166213C8E3F3008A9732 /* Foundation.framework */; };
 		9B297207141B8317006124A2 /* NSValue+FKiOSConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */; };
 		9B29720B141B83B2006124A2 /* NSObject+FKiOSAssociatedObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297209141B83B2006124A2 /* NSObject+FKiOSAssociatedObjects.h */; };
 		9B29720C141B83B2006124A2 /* NSObject+FKiOSAssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B29720A141B83B2006124A2 /* NSObject+FKiOSAssociatedObjects.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		39DF5CF11424A96900090805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39DF5CE81424A96800090805 /* FoundationKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC410CFF13C39BFD00C90C19;
+			remoteInfo = FoundationKitMac;
+		};
+		39DF5CF31424A96900090805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39DF5CE81424A96800090805 /* FoundationKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 393A29BC142361950056CB37;
+			remoteInfo = FoundationKitiOS;
+		};
+		39DF5CF51424A96900090805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39DF5CE81424A96800090805 /* FoundationKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C5C18E7A13C8C64C00DD0872;
+			remoteInfo = Tests;
+		};
+		39DF5CF71424A97400090805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39DF5CE81424A96800090805 /* FoundationKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 393A29A4142361950056CB37;
+			remoteInfo = FoundationKitiOS;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3913939813C9B8450049DA61 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = Sources/Prefix.pch; sourceTree = SOURCE_ROOT; };
@@ -94,6 +126,7 @@
 		39DF5CDD1424A08C00090805 /* FKColoredAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKColoredAccessoryView.m; path = TableView/FKColoredAccessoryView.m; sourceTree = "<group>"; };
 		39DF5CE11424A5FB00090805 /* FKSoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKSoundEffect.h; path = Audio/FKSoundEffect.h; sourceTree = "<group>"; };
 		39DF5CE21424A5FB00090805 /* FKSoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKSoundEffect.m; path = Audio/FKSoundEffect.m; sourceTree = "<group>"; };
+		39DF5CE81424A96800090805 /* FoundationKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FoundationKit.xcodeproj; path = FoundationKit/FoundationKit.xcodeproj; sourceTree = "<group>"; };
 		39F5165F13C8E3F3008A9732 /* libiOSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiOSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F5166213C8E3F3008A9732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+FKiOSConcise.h"; sourceTree = "<group>"; };
@@ -106,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39DF5CF91424A97A00090805 /* libFoundationKitiOS.a in Frameworks */,
 				393A299A142359550056CB37 /* CoreGraphics.framework in Frameworks */,
 				39CFA60214223E6300DC3E57 /* QuartzCore.framework in Frameworks */,
 				39F5166313C8E3F3008A9732 /* Foundation.framework in Frameworks */,
@@ -171,6 +205,16 @@
 			name = Audio;
 			sourceTree = "<group>";
 		};
+		39DF5CE91424A96800090805 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39DF5CF21424A96900090805 /* libFoundationKitMac.a */,
+				39DF5CF41424A96900090805 /* libFoundationKitiOS.a */,
+				39DF5CF61424A96900090805 /* Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		39F5165413C8E3F2008A9732 = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +236,7 @@
 		39F5166113C8E3F3008A9732 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39DF5CE81424A96800090805 /* FoundationKit.xcodeproj */,
 				393A2999142359550056CB37 /* CoreGraphics.framework */,
 				39F5166213C8E3F3008A9732 /* Foundation.framework */,
 				39CFA60114223E6300DC3E57 /* QuartzCore.framework */,
@@ -286,6 +331,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				39DF5CF81424A97400090805 /* PBXTargetDependency */,
 			);
 			name = iOSKit;
 			productName = iOSKit;
@@ -311,12 +357,42 @@
 			mainGroup = 39F5165413C8E3F2008A9732;
 			productRefGroup = 39F5166013C8E3F3008A9732 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 39DF5CE91424A96800090805 /* Products */;
+					ProjectRef = 39DF5CE81424A96800090805 /* FoundationKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				39F5165E13C8E3F3008A9732 /* iOSKit */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		39DF5CF21424A96900090805 /* libFoundationKitMac.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFoundationKitMac.a;
+			remoteRef = 39DF5CF11424A96900090805 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		39DF5CF41424A96900090805 /* libFoundationKitiOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libFoundationKitiOS.a;
+			remoteRef = 39DF5CF31424A96900090805 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		39DF5CF61424A96900090805 /* Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.octest;
+			remoteRef = 39DF5CF51424A96900090805 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		39F5165B13C8E3F3008A9732 /* Sources */ = {
@@ -346,6 +422,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		39DF5CF81424A97400090805 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FoundationKitiOS;
+			targetProxy = 39DF5CF71424A97400090805 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		39F5166713C8E3F3008A9732 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -366,7 +450,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "FoundationKit/**";
+				HEADER_SEARCH_PATHS = "../FoundationKit/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 			};
@@ -384,7 +468,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "FoundationKit/**";
+				HEADER_SEARCH_PATHS = "../FoundationKit/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

@@ -12,8 +12,6 @@ $synthesize(soundID);
 
 -(void)dealloc {
     AudioServicesDisposeSystemSoundID(soundID_);
-    
-    [super dealloc];
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -29,7 +27,7 @@ $synthesize(soundID);
         
         if (fileURL != nil) {
             SystemSoundID soundID;
-            OSStatus error = AudioServicesCreateSystemSoundID((CFURLRef)fileURL, &soundID);
+            OSStatus error = AudioServicesCreateSystemSoundID((__bridge CFURLRef)fileURL, &soundID);
             
             if (error == kAudioServicesNoError) {
                 soundEffect = [[FKSoundEffect alloc] init];
