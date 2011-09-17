@@ -48,6 +48,10 @@
 		39DF5CE31424A5FB00090805 /* FKSoundEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 39DF5CE11424A5FB00090805 /* FKSoundEffect.h */; };
 		39DF5CE41424A5FB00090805 /* FKSoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF5CE21424A5FB00090805 /* FKSoundEffect.m */; };
 		39DF5CF91424A97A00090805 /* libFoundationKitiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5CF41424A96900090805 /* libFoundationKitiOS.a */; };
+		39DF5D771424B62000090805 /* FKNetworkActivityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 39DF5D751424B62000090805 /* FKNetworkActivityManager.h */; };
+		39DF5D781424B62000090805 /* FKNetworkActivityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF5D761424B62000090805 /* FKNetworkActivityManager.m */; };
+		39DF5DAA1424BF0D00090805 /* UIApplication+FKNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 39DF5DA81424BF0C00090805 /* UIApplication+FKNetwork.h */; };
+		39DF5DAB1424BF0D00090805 /* UIApplication+FKNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF5DA91424BF0C00090805 /* UIApplication+FKNetwork.m */; };
 		39F5166313C8E3F3008A9732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F5166213C8E3F3008A9732 /* Foundation.framework */; };
 		9B297207141B8317006124A2 /* NSValue+FKiOSConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */; };
 		9B29720B141B83B2006124A2 /* NSObject+FKiOSAssociatedObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297209141B83B2006124A2 /* NSObject+FKiOSAssociatedObjects.h */; };
@@ -127,6 +131,10 @@
 		39DF5CE11424A5FB00090805 /* FKSoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKSoundEffect.h; path = Audio/FKSoundEffect.h; sourceTree = "<group>"; };
 		39DF5CE21424A5FB00090805 /* FKSoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKSoundEffect.m; path = Audio/FKSoundEffect.m; sourceTree = "<group>"; };
 		39DF5CE81424A96800090805 /* FoundationKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FoundationKit.xcodeproj; path = FoundationKit/FoundationKit.xcodeproj; sourceTree = "<group>"; };
+		39DF5D751424B62000090805 /* FKNetworkActivityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKNetworkActivityManager.h; path = Network/FKNetworkActivityManager.h; sourceTree = "<group>"; };
+		39DF5D761424B62000090805 /* FKNetworkActivityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKNetworkActivityManager.m; path = Network/FKNetworkActivityManager.m; sourceTree = "<group>"; };
+		39DF5DA81424BF0C00090805 /* UIApplication+FKNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+FKNetwork.h"; path = "UIKit/UIApplication+FKNetwork.h"; sourceTree = "<group>"; };
+		39DF5DA91424BF0C00090805 /* UIApplication+FKNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+FKNetwork.m"; path = "UIKit/UIApplication+FKNetwork.m"; sourceTree = "<group>"; };
 		39F5165F13C8E3F3008A9732 /* libiOSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiOSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F5166213C8E3F3008A9732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+FKiOSConcise.h"; sourceTree = "<group>"; };
@@ -154,6 +162,7 @@
 			children = (
 				391393B313C9C1310049DA61 /* iOSKit.h */,
 				39DF5CE01424A5E300090805 /* Audio */,
+				39DF5D741424B5EC00090805 /* Network */,
 				391393A013C9B84C0049DA61 /* Shorthands */,
 				39DF5CDB1424A05B00090805 /* TableView */,
 				9B297200141B7EF9006124A2 /* UIKit */,
@@ -215,6 +224,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		39DF5D741424B5EC00090805 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				39DF5D751424B62000090805 /* FKNetworkActivityManager.h */,
+				39DF5D761424B62000090805 /* FKNetworkActivityManager.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		39F5165413C8E3F2008A9732 = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +274,8 @@
 		9B297200141B7EF9006124A2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				39DF5DA81424BF0C00090805 /* UIApplication+FKNetwork.h */,
+				39DF5DA91424BF0C00090805 /* UIApplication+FKNetwork.m */,
 				39CFA5ED1422348600DC3E57 /* UIColor+FKAdditions.h */,
 				39CFA5EE1422348600DC3E57 /* UIColor+FKAdditions.m */,
 				39CFA5F51422398E00DC3E57 /* UIDevice+FKAdditions.h */,
@@ -314,6 +334,8 @@
 				39DF5CD914249D8A00090805 /* FKiOSConstants.h in Headers */,
 				39DF5CDE1424A08C00090805 /* FKColoredAccessoryView.h in Headers */,
 				39DF5CE31424A5FB00090805 /* FKSoundEffect.h in Headers */,
+				39DF5D771424B62000090805 /* FKNetworkActivityManager.h in Headers */,
+				39DF5DAA1424BF0D00090805 /* UIApplication+FKNetwork.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +439,8 @@
 				393A299F142359C50056CB37 /* UIViewController+FKAdditions.m in Sources */,
 				39DF5CDF1424A08C00090805 /* FKColoredAccessoryView.m in Sources */,
 				39DF5CE41424A5FB00090805 /* FKSoundEffect.m in Sources */,
+				39DF5D781424B62000090805 /* FKNetworkActivityManager.m in Sources */,
+				39DF5DAB1424BF0D00090805 /* UIApplication+FKNetwork.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

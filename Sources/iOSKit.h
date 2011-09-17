@@ -1,5 +1,10 @@
 // Part of iOSKit http://foundationk.it
 
+// Audio
+#import "FKSoundEffect.h"
+
+// Network
+#import "FKNetworkActivityManager.h"
 
 // Shorthands
 #import "FKiOSShorthands.h"
@@ -9,6 +14,7 @@
 #import "UIScreen+FKConcise.h"
 
 // UIKit
+#import "UIApplication+FKNetwork.h"
 #import "UIColor+FKAdditions.h"
 #import "UIDevice+FKAdditions.h"
 #import "UIImageView+FKAdditions.h"
