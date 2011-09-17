@@ -11,9 +11,11 @@ typedef enum {
 
 @interface UIView (FKAdditions)
 
+@property (nonatomic, assign) CGPoint integralCenter;
 @property (nonatomic, assign) CGFloat centerX;
 @property (nonatomic, assign) CGFloat centerY;
 
+@property (nonatomic, assign) CGRect integralFrame;
 @property (nonatomic, assign) CGFloat frameWidth;
 @property (nonatomic, assign) CGFloat frameHeight;
 @property (nonatomic, assign) CGFloat frameLeft;

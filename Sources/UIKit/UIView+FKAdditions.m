@@ -9,6 +9,15 @@
 #pragma mark Frame/Bounds
 ////////////////////////////////////////////////////////////////////////
 
+- (void)setIntegralCenter:(CGPoint)integralCenter {
+    self.center = integralCenter;
+    self.frame = CGRectIntegral(self.frame);
+}
+
+- (CGPoint)integralCenter {
+    return self.center;
+}
+
 - (CGFloat)centerX {
     return self.center.x;
 }
@@ -25,6 +34,13 @@
     self.center = CGPointMake(self.center.x, centerY);
 }
 
+- (void)setIntegralFrame:(CGRect)integralFrame {
+    self.frame = CGRectIntegral(integralFrame);
+}
+
+- (CGRect)integralFrame {
+    return CGRectIntegral(self.frame);
+}
 
 - (void)setFrameWidth:(CGFloat)width {
 	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, width, self.frame.size.height);
