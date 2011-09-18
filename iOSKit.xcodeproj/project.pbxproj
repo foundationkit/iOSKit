@@ -16,6 +16,8 @@
 		391393B113C9B84C0049DA61 /* FKUniversal.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393A713C9B84C0049DA61 /* FKUniversal.h */; };
 		391393B213C9B84C0049DA61 /* FKUniversal.m in Sources */ = {isa = PBXBuildFile; fileRef = 391393A813C9B84C0049DA61 /* FKUniversal.m */; };
 		391393B413C9C1310049DA61 /* iOSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393B313C9C1310049DA61 /* iOSKit.h */; };
+		3921678E142666E90018BD5A /* UIApplication+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3921678C142666E90018BD5A /* UIApplication+FKAdditions.h */; };
+		3921678F142666E90018BD5A /* UIApplication+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3921678D142666E90018BD5A /* UIApplication+FKAdditions.m */; };
 		393A299A142359550056CB37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393A2999142359550056CB37 /* CoreGraphics.framework */; };
 		393A299E142359C50056CB37 /* UIViewController+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 393A299C142359C50056CB37 /* UIViewController+FKAdditions.h */; };
 		393A299F142359C50056CB37 /* UIViewController+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 393A299D142359C50056CB37 /* UIViewController+FKAdditions.m */; };
@@ -101,6 +103,8 @@
 		391393A713C9B84C0049DA61 /* FKUniversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKUniversal.h; sourceTree = "<group>"; };
 		391393A813C9B84C0049DA61 /* FKUniversal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKUniversal.m; sourceTree = "<group>"; };
 		391393B313C9C1310049DA61 /* iOSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSKit.h; sourceTree = "<group>"; };
+		3921678C142666E90018BD5A /* UIApplication+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+FKAdditions.h"; path = "UIKit/UIApplication+FKAdditions.h"; sourceTree = "<group>"; };
+		3921678D142666E90018BD5A /* UIApplication+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+FKAdditions.m"; path = "UIKit/UIApplication+FKAdditions.m"; sourceTree = "<group>"; };
 		393A2999142359550056CB37 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		393A299C142359C50056CB37 /* UIViewController+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+FKAdditions.h"; path = "UIKit/UIViewController+FKAdditions.h"; sourceTree = "<group>"; };
 		393A299D142359C50056CB37 /* UIViewController+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+FKAdditions.m"; path = "UIKit/UIViewController+FKAdditions.m"; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 		9B297200141B7EF9006124A2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				3921678C142666E90018BD5A /* UIApplication+FKAdditions.h */,
+				3921678D142666E90018BD5A /* UIApplication+FKAdditions.m */,
 				39DF5DA81424BF0C00090805 /* UIApplication+FKNetwork.h */,
 				39DF5DA91424BF0C00090805 /* UIApplication+FKNetwork.m */,
 				39CFA5ED1422348600DC3E57 /* UIColor+FKAdditions.h */,
@@ -343,6 +349,7 @@
 				39DF5D771424B62000090805 /* FKNetworkActivityManager.h in Headers */,
 				39DF5DAA1424BF0D00090805 /* UIApplication+FKNetwork.h in Headers */,
 				397F81BE14261227006B98BD /* UITableViewCell+FKConcise.h in Headers */,
+				3921678E142666E90018BD5A /* UIApplication+FKAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +456,7 @@
 				39DF5D781424B62000090805 /* FKNetworkActivityManager.m in Sources */,
 				39DF5DAB1424BF0D00090805 /* UIApplication+FKNetwork.m in Sources */,
 				397F81BF14261227006B98BD /* UITableViewCell+FKConcise.m in Sources */,
+				3921678F142666E90018BD5A /* UIApplication+FKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
