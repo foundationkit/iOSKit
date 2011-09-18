@@ -83,7 +83,7 @@
 }
 
 - (void)simulateMemoryWarning {
-#if TARGET_IPHONE_SIMULATOR
+#if (defined (DEBUG) || defined (CONFIGURATION_Debug))
     CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), (CFStringRef)@"UISimulatedMemoryWarningNotification", NULL, NULL, true);
 #endif
 }
