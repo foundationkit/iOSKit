@@ -197,5 +197,18 @@
 	[self enableDebugBorderWithColor:[UIColor orangeColor]];
 }
 
+////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Image Representation
+////////////////////////////////////////////////////////////////////////
+
+- (UIImage *)imageRepresentation {
+	UIGraphicsBeginImageContext(self.bounds.size);
+	[self.layer renderInContext:UIGraphicsGetCurrentContext()];
+	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+	
+    return image;
+}
 
 @end

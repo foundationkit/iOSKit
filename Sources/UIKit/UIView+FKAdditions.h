@@ -1,4 +1,6 @@
 // Part of iOSKit http://foundationk.it
+//
+// imageRepresentation derived from Sam Soffes' SSToolkit: http://github.com/samsoffes/sstoolkit
 
 #import <UIKit/UIKit.h>
 
@@ -49,5 +51,7 @@ typedef enum {
 - (void)enableDebugBorderWithColor:(UIColor *)color;
 - (void)enableDebugBorderWithRandomColor;
 - (void)enableDebugBorder;
+
+- (UIImage *)imageRepresentation;
 
 @end
