@@ -82,6 +82,11 @@
     return jailbroken;
 }
 
+- (BOOL)isSimulator {
+	static NSString *simulatorModel = @"iPhone Simulator";
+	return [[self model] isEqualToString:simulatorModel];	
+}
+
 - (void)simulateMemoryWarning {
 #if (defined (DEBUG) || defined (CONFIGURATION_Debug))
     CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), (CFStringRef)@"UISimulatedMemoryWarningNotification", NULL, NULL, true);
