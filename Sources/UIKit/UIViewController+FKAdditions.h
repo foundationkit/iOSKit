@@ -6,4 +6,7 @@
 
 + (id)viewController;
 
+- (void)displayError:(NSError *)error;
+- (void)displayErrorString:(NSString *)string;
+
 @end

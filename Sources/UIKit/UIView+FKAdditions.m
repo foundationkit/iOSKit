@@ -183,10 +183,11 @@
 
 - (void)enableDebugBorderWithColor:(UIColor *)color {
     // TODO: Use logging
-	// NKLog(@"enable debug for view %@", self);
-    
+	// NSLog(@"enable debug for view %@", self);
+#ifdef FK_DEBUG
 	self.layer.borderColor = color.CGColor;
 	self.layer.borderWidth = 2.0;
+#endif
 }
 
 - (void)enableDebugBorderWithRandomColor {

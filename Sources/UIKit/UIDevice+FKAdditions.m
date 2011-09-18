@@ -1,4 +1,5 @@
 #import "UIDevice+FKAdditions.h"
+#import "UIApplication+FKAdditions.h"
 #include <sys/sysctl.h>
 #include <ifaddrs.h>
 #include <arpa/inet.h>
@@ -45,13 +46,14 @@
     NSString *deviceType = [UIDevice currentDevice].hardwarePlatform;
     NSString *deviceUUID = [[UIDevice currentDevice] uniqueIdentifier];
     NSString *deviceLang = [[NSLocale preferredLanguages] objectAtIndex:0];
+    NSString *appPirated = [UIApplication sharedApplication].pirated ? @"\n-- POSSIBLY PIRATED --" : @"";
     
     if ([UIDevice currentDevice].jailbroken) {
         deviceType = [NSString stringWithFormat:@"%@ (Possibly Jailbroken)", deviceType];
     }
     
-    return [NSString stringWithFormat:@"%@ %@ %@\niOS: %@\nDevice: %@\nUUID: %@\nLang: %@", 
-            appName, appVersion, (appShortVersion ? appShortVersion : @""), iphoneOSVersion, deviceType, deviceUUID, deviceLang];
+    return [NSString stringWithFormat:@"%@ %@ %@\niOS: %@\nDevice: %@\nUUID: %@\nLang: %@%@", 
+            appName, appVersion, (appShortVersion ? appShortVersion : @""), iphoneOSVersion, deviceType, deviceUUID, deviceLang, appPirated];
 }
 
 - (NSString *)hardwarePlatform {
@@ -88,7 +90,7 @@
 }
 
 - (void)simulateMemoryWarning {
-#if (defined (DEBUG) || defined (CONFIGURATION_Debug))
+#ifdef FK_DEBUG
     CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), (CFStringRef)@"UISimulatedMemoryWarningNotification", NULL, NULL, true);
 #endif
 }
