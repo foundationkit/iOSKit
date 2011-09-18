@@ -19,6 +19,8 @@
 		393A299A142359550056CB37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393A2999142359550056CB37 /* CoreGraphics.framework */; };
 		393A299E142359C50056CB37 /* UIViewController+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 393A299C142359C50056CB37 /* UIViewController+FKAdditions.h */; };
 		393A299F142359C50056CB37 /* UIViewController+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 393A299D142359C50056CB37 /* UIViewController+FKAdditions.m */; };
+		397F81BE14261227006B98BD /* UITableViewCell+FKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 397F81BC14261227006B98BD /* UITableViewCell+FKConcise.h */; };
+		397F81BF14261227006B98BD /* UITableViewCell+FKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F81BD14261227006B98BD /* UITableViewCell+FKConcise.m */; };
 		39ACE7441422709B0022D8F8 /* UIView+FKContentSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ACE7421422709B0022D8F8 /* UIView+FKContentSize.h */; };
 		39ACE7451422709B0022D8F8 /* UIView+FKContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACE7431422709B0022D8F8 /* UIView+FKContentSize.m */; };
 		39ACE81614228DCC0022D8F8 /* UIViewController+FKLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */; };
@@ -102,6 +104,8 @@
 		393A2999142359550056CB37 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		393A299C142359C50056CB37 /* UIViewController+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+FKAdditions.h"; path = "UIKit/UIViewController+FKAdditions.h"; sourceTree = "<group>"; };
 		393A299D142359C50056CB37 /* UIViewController+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+FKAdditions.m"; path = "UIKit/UIViewController+FKAdditions.m"; sourceTree = "<group>"; };
+		397F81BC14261227006B98BD /* UITableViewCell+FKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+FKConcise.h"; sourceTree = "<group>"; };
+		397F81BD14261227006B98BD /* UITableViewCell+FKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+FKConcise.m"; sourceTree = "<group>"; };
 		39ACE7421422709B0022D8F8 /* UIView+FKContentSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKContentSize.h"; path = "UIKit/UIView+FKContentSize.h"; sourceTree = "<group>"; };
 		39ACE7431422709B0022D8F8 /* UIView+FKContentSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKContentSize.m"; path = "UIKit/UIView+FKContentSize.m"; sourceTree = "<group>"; };
 		39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+FKLoading.h"; path = "UIKit/UIViewController+FKLoading.h"; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 				391393A313C9B84C0049DA61 /* UIApplication+FKConcise.m */,
 				391393A413C9B84C0049DA61 /* UIScreen+FKConcise.h */,
 				391393A513C9B84C0049DA61 /* UIScreen+FKConcise.m */,
+				397F81BC14261227006B98BD /* UITableViewCell+FKConcise.h */,
+				397F81BD14261227006B98BD /* UITableViewCell+FKConcise.m */,
 			);
 			path = Shorthands;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 				39DF5CE31424A5FB00090805 /* FKSoundEffect.h in Headers */,
 				39DF5D771424B62000090805 /* FKNetworkActivityManager.h in Headers */,
 				39DF5DAA1424BF0D00090805 /* UIApplication+FKNetwork.h in Headers */,
+				397F81BE14261227006B98BD /* UITableViewCell+FKConcise.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +448,7 @@
 				39DF5CE41424A5FB00090805 /* FKSoundEffect.m in Sources */,
 				39DF5D781424B62000090805 /* FKNetworkActivityManager.m in Sources */,
 				39DF5DAB1424BF0D00090805 /* UIApplication+FKNetwork.m in Sources */,
+				397F81BF14261227006B98BD /* UITableViewCell+FKConcise.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
