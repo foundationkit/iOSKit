@@ -6,6 +6,6 @@ NS_INLINE CGRect FKRectWithClearedOrigin(CGRect rect) {
 }
 
 NS_INLINE CGRect FKRectInset(CGRect rect, UIEdgeInsets insets) {
-    return CGRectMake(CGRectGetX(rect)+insets.left, CGRectGetY(rect)+insets.top,
+    return CGRectMake(CGRectGetMinX(rect)+insets.left, CGRectGetMinY(rect)+insets.top,
                       CGRectGetWidth(rect)-insets.left-insets.right, CGRectGetHeight(rect)-insets.top-insets.bottom);
 }

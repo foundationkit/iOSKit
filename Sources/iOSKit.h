@@ -4,7 +4,7 @@
 #import "FKSoundEffect.h"
 
 // Core
-#import "CGRect+FKAdditions.h"
+#import "CGGeometry+FKAdditions.h"
 #import "FKiOSConstants.h"
 #import "FKiOSMetrics.h"
 #import "NSObject+FKiOSAssociatedObjects.h"
