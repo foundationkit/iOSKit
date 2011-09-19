@@ -1,9 +1,19 @@
 #import "FKSoundEffect.h"
 #import "FKShorthands.h"
 
+void FKSystemSoundCompleted(SystemSoundID soundID, void *clientData);
+
+@interface FKSoundEffect ()
+
+- (void)callDelegateWillStartPlaying;
+- (void)callDelegateDidStopPlaying;
+
+@end
+
 @implementation FKSoundEffect
 
 $synthesize(soundID);
+$synthesize(delegate);
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -40,8 +50,40 @@ $synthesize(soundID);
 }
 
 - (void)play {
+    [self callDelegateWillStartPlaying];
+    
+    AudioServicesAddSystemSoundCompletion(self.soundID, CFRunLoopGetCurrent(), NULL, FKSystemSoundCompleted, (__bridge_retained void*)self);
     AudioServicesPlaySystemSound(self.soundID);
 }
 
+////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Delegate Calls
+////////////////////////////////////////////////////////////////////////
+
+- (void)callDelegateWillStartPlaying {
+    if ([self.delegate respondsToSelector:@selector(soundEffectWillStartPlaying:)]) {
+        [self.delegate soundEffectWillStartPlaying:self];
+    }
+}
+
+- (void)callDelegateDidStopPlaying {
+    if ([self.delegate respondsToSelector:@selector(soundEffectDidFinishPlaying:)]) {
+        [self.delegate soundEffectDidFinishPlaying:self];
+    }
+}
 
 @end
+
+////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Helper Functions
+////////////////////////////////////////////////////////////////////////
+
+void FKSystemSoundCompleted(SystemSoundID soundID, void *clientData) {
+    if (clientData) {
+        FKSoundEffect *soundEffect = (__bridge_transfer FKSoundEffect*)clientData;
+        
+        [soundEffect callDelegateDidStopPlaying];
+    }
+}
