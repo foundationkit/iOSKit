@@ -4,7 +4,7 @@
 
 
 #define $app                [UIApplication sharedApplication]
-#define $delegate           $app.delegate
+#define $appDelegate        ((AppDelegate *)$app.delegate)
 #define $appOrientation     $app.statusBarOrientation
 
 
