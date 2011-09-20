@@ -6,6 +6,10 @@
     return [[[self class] alloc] initWithNibName:nil bundle:nil];
 }
 
+- (BOOL)isViewVisible {
+    return [self isViewLoaded] && self.view.window != nil;
+}
+
 - (void)displayError:(NSError *)error {
 	if (!error) {
 		return;
