@@ -21,6 +21,8 @@
 		3921679714266BCB0018BD5A /* UIScrollView+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3921679514266BCB0018BD5A /* UIScrollView+FKAdditions.m */; };
 		3931206C1428AD6B0095D5ED /* UITableViewCell+FKLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 3931206A1428AD6B0095D5ED /* UITableViewCell+FKLoading.h */; };
 		3931206D1428AD6B0095D5ED /* UITableViewCell+FKLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 3931206B1428AD6B0095D5ED /* UITableViewCell+FKLoading.m */; };
+		393120701428AF010095D5ED /* UITableView+FKLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 3931206E1428AF010095D5ED /* UITableView+FKLoading.h */; };
+		393120711428AF010095D5ED /* UITableView+FKLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 3931206F1428AF010095D5ED /* UITableView+FKLoading.m */; };
 		393A299A142359550056CB37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393A2999142359550056CB37 /* CoreGraphics.framework */; };
 		393A299E142359C50056CB37 /* UIViewController+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 393A299C142359C50056CB37 /* UIViewController+FKAdditions.h */; };
 		393A299F142359C50056CB37 /* UIViewController+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 393A299D142359C50056CB37 /* UIViewController+FKAdditions.m */; };
@@ -116,6 +118,8 @@
 		3921679514266BCB0018BD5A /* UIScrollView+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+FKAdditions.m"; path = "UIKit/UIScrollView+FKAdditions.m"; sourceTree = "<group>"; };
 		3931206A1428AD6B0095D5ED /* UITableViewCell+FKLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+FKLoading.h"; path = "UIKit/UITableViewCell+FKLoading.h"; sourceTree = "<group>"; };
 		3931206B1428AD6B0095D5ED /* UITableViewCell+FKLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+FKLoading.m"; path = "UIKit/UITableViewCell+FKLoading.m"; sourceTree = "<group>"; };
+		3931206E1428AF010095D5ED /* UITableView+FKLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+FKLoading.h"; path = "UIKit/UITableView+FKLoading.h"; sourceTree = "<group>"; };
+		3931206F1428AF010095D5ED /* UITableView+FKLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+FKLoading.m"; path = "UIKit/UITableView+FKLoading.m"; sourceTree = "<group>"; };
 		393A2999142359550056CB37 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		393A299C142359C50056CB37 /* UIViewController+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+FKAdditions.h"; path = "UIKit/UIViewController+FKAdditions.h"; sourceTree = "<group>"; };
 		393A299D142359C50056CB37 /* UIViewController+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+FKAdditions.m"; path = "UIKit/UIViewController+FKAdditions.m"; sourceTree = "<group>"; };
@@ -312,6 +316,8 @@
 				3921679514266BCB0018BD5A /* UIScrollView+FKAdditions.m */,
 				39CFA5FD14223CBE00DC3E57 /* UIScrollView+FKContentSize.h */,
 				39CFA5FE14223CBE00DC3E57 /* UIScrollView+FKContentSize.m */,
+				3931206E1428AF010095D5ED /* UITableView+FKLoading.h */,
+				3931206F1428AF010095D5ED /* UITableView+FKLoading.m */,
 				3931206A1428AD6B0095D5ED /* UITableViewCell+FKLoading.h */,
 				3931206B1428AD6B0095D5ED /* UITableViewCell+FKLoading.m */,
 				39CFA603142240DA00DC3E57 /* UITextView+FKAdditions.h */,
@@ -389,6 +395,7 @@
 				9B54E81E14269CAB00336F08 /* UIEdgeInsets+FKAdditions.h in Headers */,
 				39B07E67142888C700CBF1B8 /* FKInternal.h in Headers */,
 				3931206C1428AD6B0095D5ED /* UITableViewCell+FKLoading.h in Headers */,
+				393120701428AF010095D5ED /* UITableView+FKLoading.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +504,7 @@
 				3921679714266BCB0018BD5A /* UIScrollView+FKAdditions.m in Sources */,
 				9B54E81C14269C8C00336F08 /* NSObject+FKiOSAssociatedObjects.m in Sources */,
 				3931206D1428AD6B0095D5ED /* UITableViewCell+FKLoading.m in Sources */,
+				393120711428AF010095D5ED /* UITableView+FKLoading.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
