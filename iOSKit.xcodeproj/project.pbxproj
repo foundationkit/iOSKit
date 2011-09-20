@@ -30,6 +30,8 @@
 		397F81BF14261227006B98BD /* UITableViewCell+FKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F81BD14261227006B98BD /* UITableViewCell+FKConcise.m */; };
 		39AA0F751429091A00C6956C /* NSIndexPath+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 39AA0F731429091A00C6956C /* NSIndexPath+FKAdditions.h */; };
 		39AA0F761429091A00C6956C /* NSIndexPath+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA0F741429091A00C6956C /* NSIndexPath+FKAdditions.m */; };
+		39AA0FB7142927D200C6956C /* UITableView+FKPlaceholder.h in Headers */ = {isa = PBXBuildFile; fileRef = 39AA0FB5142927D100C6956C /* UITableView+FKPlaceholder.h */; };
+		39AA0FB8142927D200C6956C /* UITableView+FKPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA0FB6142927D100C6956C /* UITableView+FKPlaceholder.m */; };
 		39ACE7441422709B0022D8F8 /* UIView+FKContentSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ACE7421422709B0022D8F8 /* UIView+FKContentSize.h */; };
 		39ACE7451422709B0022D8F8 /* UIView+FKContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACE7431422709B0022D8F8 /* UIView+FKContentSize.m */; };
 		39ACE81614228DCC0022D8F8 /* UIViewController+FKLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */; };
@@ -129,6 +131,8 @@
 		397F81BD14261227006B98BD /* UITableViewCell+FKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+FKConcise.m"; sourceTree = "<group>"; };
 		39AA0F731429091A00C6956C /* NSIndexPath+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSIndexPath+FKAdditions.h"; path = "TableView/NSIndexPath+FKAdditions.h"; sourceTree = "<group>"; };
 		39AA0F741429091A00C6956C /* NSIndexPath+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSIndexPath+FKAdditions.m"; path = "TableView/NSIndexPath+FKAdditions.m"; sourceTree = "<group>"; };
+		39AA0FB5142927D100C6956C /* UITableView+FKPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+FKPlaceholder.h"; path = "TableView/UITableView+FKPlaceholder.h"; sourceTree = "<group>"; };
+		39AA0FB6142927D100C6956C /* UITableView+FKPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+FKPlaceholder.m"; path = "TableView/UITableView+FKPlaceholder.m"; sourceTree = "<group>"; };
 		39ACE7421422709B0022D8F8 /* UIView+FKContentSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKContentSize.h"; path = "UIKit/UIView+FKContentSize.h"; sourceTree = "<group>"; };
 		39ACE7431422709B0022D8F8 /* UIView+FKContentSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKContentSize.m"; path = "UIKit/UIView+FKContentSize.m"; sourceTree = "<group>"; };
 		39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+FKLoading.h"; path = "UIKit/UIViewController+FKLoading.h"; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 				39DF5CDD1424A08C00090805 /* FKColoredAccessoryView.m */,
 				39AA0F731429091A00C6956C /* NSIndexPath+FKAdditions.h */,
 				39AA0F741429091A00C6956C /* NSIndexPath+FKAdditions.m */,
+				39AA0FB5142927D100C6956C /* UITableView+FKPlaceholder.h */,
+				39AA0FB6142927D100C6956C /* UITableView+FKPlaceholder.m */,
 			);
 			name = TableView;
 			sourceTree = "<group>";
@@ -403,6 +409,7 @@
 				3931206C1428AD6B0095D5ED /* UITableViewCell+FKLoading.h in Headers */,
 				393120701428AF010095D5ED /* UITableView+FKLoading.h in Headers */,
 				39AA0F751429091A00C6956C /* NSIndexPath+FKAdditions.h in Headers */,
+				39AA0FB7142927D200C6956C /* UITableView+FKPlaceholder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +520,7 @@
 				3931206D1428AD6B0095D5ED /* UITableViewCell+FKLoading.m in Sources */,
 				393120711428AF010095D5ED /* UITableView+FKLoading.m in Sources */,
 				39AA0F761429091A00C6956C /* NSIndexPath+FKAdditions.m in Sources */,
+				39AA0FB8142927D200C6956C /* UITableView+FKPlaceholder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
