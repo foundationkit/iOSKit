@@ -22,6 +22,7 @@
 
 // TableView
 #import "FKColoredAccessoryView.h"
+#import "NSIndexPath+FKAdditions.h"
 
 // UIKit
 #import "UIApplication+FKAdditions.h"

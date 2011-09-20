@@ -28,11 +28,13 @@
 		393A299F142359C50056CB37 /* UIViewController+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 393A299D142359C50056CB37 /* UIViewController+FKAdditions.m */; };
 		397F81BE14261227006B98BD /* UITableViewCell+FKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 397F81BC14261227006B98BD /* UITableViewCell+FKConcise.h */; };
 		397F81BF14261227006B98BD /* UITableViewCell+FKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F81BD14261227006B98BD /* UITableViewCell+FKConcise.m */; };
+		39AA0F751429091A00C6956C /* NSIndexPath+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 39AA0F731429091A00C6956C /* NSIndexPath+FKAdditions.h */; };
+		39AA0F761429091A00C6956C /* NSIndexPath+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA0F741429091A00C6956C /* NSIndexPath+FKAdditions.m */; };
 		39ACE7441422709B0022D8F8 /* UIView+FKContentSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ACE7421422709B0022D8F8 /* UIView+FKContentSize.h */; };
 		39ACE7451422709B0022D8F8 /* UIView+FKContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACE7431422709B0022D8F8 /* UIView+FKContentSize.m */; };
 		39ACE81614228DCC0022D8F8 /* UIViewController+FKLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */; };
 		39ACE81714228DCC0022D8F8 /* UIViewController+FKLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACE81514228DCB0022D8F8 /* UIViewController+FKLoading.m */; };
-		39B07E67142888C700CBF1B8 /* FKInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 39B07E66142888C700CBF1B8 /* FKInternal.h */; };
+		39B07E67142888C700CBF1B8 /* FKiOSInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 39B07E66142888C700CBF1B8 /* FKiOSInternal.h */; };
 		39CFA5EF1422348700DC3E57 /* UIColor+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CFA5ED1422348600DC3E57 /* UIColor+FKAdditions.h */; };
 		39CFA5F01422348700DC3E57 /* UIColor+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA5EE1422348600DC3E57 /* UIColor+FKAdditions.m */; };
 		39CFA5F3142234A600DC3E57 /* UIView+FKRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CFA5F1142234A600DC3E57 /* UIView+FKRotation.h */; };
@@ -125,11 +127,13 @@
 		393A299D142359C50056CB37 /* UIViewController+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+FKAdditions.m"; path = "UIKit/UIViewController+FKAdditions.m"; sourceTree = "<group>"; };
 		397F81BC14261227006B98BD /* UITableViewCell+FKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+FKConcise.h"; sourceTree = "<group>"; };
 		397F81BD14261227006B98BD /* UITableViewCell+FKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+FKConcise.m"; sourceTree = "<group>"; };
+		39AA0F731429091A00C6956C /* NSIndexPath+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSIndexPath+FKAdditions.h"; path = "TableView/NSIndexPath+FKAdditions.h"; sourceTree = "<group>"; };
+		39AA0F741429091A00C6956C /* NSIndexPath+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSIndexPath+FKAdditions.m"; path = "TableView/NSIndexPath+FKAdditions.m"; sourceTree = "<group>"; };
 		39ACE7421422709B0022D8F8 /* UIView+FKContentSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKContentSize.h"; path = "UIKit/UIView+FKContentSize.h"; sourceTree = "<group>"; };
 		39ACE7431422709B0022D8F8 /* UIView+FKContentSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKContentSize.m"; path = "UIKit/UIView+FKContentSize.m"; sourceTree = "<group>"; };
 		39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+FKLoading.h"; path = "UIKit/UIViewController+FKLoading.h"; sourceTree = "<group>"; };
 		39ACE81514228DCB0022D8F8 /* UIViewController+FKLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+FKLoading.m"; path = "UIKit/UIViewController+FKLoading.m"; sourceTree = "<group>"; };
-		39B07E66142888C700CBF1B8 /* FKInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKInternal.h; path = Sources/FKInternal.h; sourceTree = SOURCE_ROOT; };
+		39B07E66142888C700CBF1B8 /* FKiOSInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKiOSInternal.h; path = Sources/FKiOSInternal.h; sourceTree = SOURCE_ROOT; };
 		39CFA5ED1422348600DC3E57 /* UIColor+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+FKAdditions.h"; path = "UIKit/UIColor+FKAdditions.h"; sourceTree = "<group>"; };
 		39CFA5EE1422348600DC3E57 /* UIColor+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+FKAdditions.m"; path = "UIKit/UIColor+FKAdditions.m"; sourceTree = "<group>"; };
 		39CFA5F1142234A600DC3E57 /* UIView+FKRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKRotation.h"; path = "UIKit/UIView+FKRotation.h"; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 			children = (
 				39DF5CDC1424A08C00090805 /* FKColoredAccessoryView.h */,
 				39DF5CDD1424A08C00090805 /* FKColoredAccessoryView.m */,
+				39AA0F731429091A00C6956C /* NSIndexPath+FKAdditions.h */,
+				39AA0F741429091A00C6956C /* NSIndexPath+FKAdditions.m */,
 			);
 			name = TableView;
 			sourceTree = "<group>";
@@ -291,7 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				3913939813C9B8450049DA61 /* Prefix.pch */,
-				39B07E66142888C700CBF1B8 /* FKInternal.h */,
+				39B07E66142888C700CBF1B8 /* FKiOSInternal.h */,
 			);
 			name = "Supporting Files";
 			path = iOSKit;
@@ -393,9 +399,10 @@
 				9B54E81A14269C8C00336F08 /* FKiOSConstants.h in Headers */,
 				9B54E81B14269C8C00336F08 /* NSObject+FKiOSAssociatedObjects.h in Headers */,
 				9B54E81E14269CAB00336F08 /* UIEdgeInsets+FKAdditions.h in Headers */,
-				39B07E67142888C700CBF1B8 /* FKInternal.h in Headers */,
+				39B07E67142888C700CBF1B8 /* FKiOSInternal.h in Headers */,
 				3931206C1428AD6B0095D5ED /* UITableViewCell+FKLoading.h in Headers */,
 				393120701428AF010095D5ED /* UITableView+FKLoading.h in Headers */,
+				39AA0F751429091A00C6956C /* NSIndexPath+FKAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +512,7 @@
 				9B54E81C14269C8C00336F08 /* NSObject+FKiOSAssociatedObjects.m in Sources */,
 				3931206D1428AD6B0095D5ED /* UITableViewCell+FKLoading.m in Sources */,
 				393120711428AF010095D5ED /* UITableView+FKLoading.m in Sources */,
+				39AA0F761429091A00C6956C /* NSIndexPath+FKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

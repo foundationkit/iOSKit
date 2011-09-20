@@ -2,7 +2,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AudioToolbox/AudioServices.h>
-#import "FKInternal.h"
+#import "FKiOSInternal.h"
 
 @protocol FKSoundEffectDelegate;
 
