@@ -28,6 +28,7 @@
 		39ACE7451422709B0022D8F8 /* UIView+FKContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACE7431422709B0022D8F8 /* UIView+FKContentSize.m */; };
 		39ACE81614228DCC0022D8F8 /* UIViewController+FKLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */; };
 		39ACE81714228DCC0022D8F8 /* UIViewController+FKLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACE81514228DCB0022D8F8 /* UIViewController+FKLoading.m */; };
+		39B07E67142888C700CBF1B8 /* FKInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 39B07E66142888C700CBF1B8 /* FKInternal.h */; };
 		39CFA5EF1422348700DC3E57 /* UIColor+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CFA5ED1422348600DC3E57 /* UIColor+FKAdditions.h */; };
 		39CFA5F01422348700DC3E57 /* UIColor+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA5EE1422348600DC3E57 /* UIColor+FKAdditions.m */; };
 		39CFA5F3142234A600DC3E57 /* UIView+FKRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CFA5F1142234A600DC3E57 /* UIView+FKRotation.h */; };
@@ -120,6 +121,7 @@
 		39ACE7431422709B0022D8F8 /* UIView+FKContentSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKContentSize.m"; path = "UIKit/UIView+FKContentSize.m"; sourceTree = "<group>"; };
 		39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+FKLoading.h"; path = "UIKit/UIViewController+FKLoading.h"; sourceTree = "<group>"; };
 		39ACE81514228DCB0022D8F8 /* UIViewController+FKLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+FKLoading.m"; path = "UIKit/UIViewController+FKLoading.m"; sourceTree = "<group>"; };
+		39B07E66142888C700CBF1B8 /* FKInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKInternal.h; path = Sources/FKInternal.h; sourceTree = SOURCE_ROOT; };
 		39CFA5ED1422348600DC3E57 /* UIColor+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+FKAdditions.h"; path = "UIKit/UIColor+FKAdditions.h"; sourceTree = "<group>"; };
 		39CFA5EE1422348600DC3E57 /* UIColor+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+FKAdditions.m"; path = "UIKit/UIColor+FKAdditions.m"; sourceTree = "<group>"; };
 		39CFA5F1142234A600DC3E57 /* UIView+FKRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKRotation.h"; path = "UIKit/UIView+FKRotation.h"; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				3913939813C9B8450049DA61 /* Prefix.pch */,
+				39B07E66142888C700CBF1B8 /* FKInternal.h */,
 			);
 			name = "Supporting Files";
 			path = iOSKit;
@@ -378,6 +381,7 @@
 				9B54E81A14269C8C00336F08 /* FKiOSConstants.h in Headers */,
 				9B54E81B14269C8C00336F08 /* NSObject+FKiOSAssociatedObjects.h in Headers */,
 				9B54E81E14269CAB00336F08 /* UIEdgeInsets+FKAdditions.h in Headers */,
+				39B07E67142888C700CBF1B8 /* FKInternal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
