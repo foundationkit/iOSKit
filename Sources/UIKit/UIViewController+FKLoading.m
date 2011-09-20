@@ -23,7 +23,7 @@ static CGRect FKCenteredSquareInRectConstrainedToSize(CGRect rect, CGFloat size)
 }
 
 - (UIActivityIndicatorView *)activityView {
-    __block UIActivityIndicatorView *activityView = (UIActivityIndicatorView *)[self associatedValueForKey:&activityViewKey];
+    UIActivityIndicatorView *activityView = (UIActivityIndicatorView *)[self associatedValueForKey:&activityViewKey];
     
     // create activityView when it is first read
     if (activityView == nil) {
