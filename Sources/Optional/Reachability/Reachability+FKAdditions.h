@@ -30,6 +30,7 @@ NetworkStatus FKReachabilityGetNetworkStatus(NSNotification *note);
 - (void)startCheckingHostAddress:(NSString *)hostAddress;
 
 - (void)setupReachabilityFor:(id)object;
+- (void)setupReachabilityFor:(id)object sendInitialNotification:(BOOL)sendInitialNotification;
 - (void)shutdownReachabilityFor:(id)object;
 
 @end

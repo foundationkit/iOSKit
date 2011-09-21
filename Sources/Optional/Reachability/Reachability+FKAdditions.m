@@ -68,6 +68,10 @@ $synthesize(lastReachabilityChange);
 }
 
 - (void)setupReachabilityFor:(id)object {
+    [self setupReachabilityFor:object sendInitialNotification:YES];
+}
+
+- (void)setupReachabilityFor:(id)object sendInitialNotification:(BOOL)sendInitialNotification {
     if ([object respondsToSelector:@selector(configureForNetworkStatus:)]) {
         // listen for FKReachability Notifications
         [[NSNotificationCenter defaultCenter] addObserver:object
@@ -76,11 +80,13 @@ $synthesize(lastReachabilityChange);
                                                    object:self];
         
         // perform initial setup
-        NSNotification *notification = [NSNotification notificationWithName:kFKReachabilityChangedNotification 
-                                                                     object:self 
-                                                                   userInfo:$dict($int(self.currentNetworkStatus),kFKNetworkStatusKey)];
-       
-        [object performSelector:@selector(configureForNetworkStatus:) withObject:notification];
+        if (sendInitialNotification) {
+            NSNotification *notification = [NSNotification notificationWithName:kFKReachabilityChangedNotification 
+                                                                         object:self 
+                                                                       userInfo:$dict($int(self.currentNetworkStatus),kFKNetworkStatusKey)];
+            
+            [object performSelector:@selector(configureForNetworkStatus:) withObject:notification];
+        }
     }
 }
 
