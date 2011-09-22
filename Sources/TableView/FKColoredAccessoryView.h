@@ -6,6 +6,7 @@
 
 typedef enum {
     FKColoredAccessoryViewTypeRight = 0,
+    FKColoredAccessoryViewTypeLeft,
     FKColoredAccessoryViewTypeUp,
     FKColoredAccessoryViewTypeDown
 } FKColoredAccessoryViewType;

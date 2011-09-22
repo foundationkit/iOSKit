@@ -8,7 +8,7 @@ static char cellsShowingIndicatorKey;
 
 @interface UITableView ()
 
-@property (nonatomic, readonly) NSMutableSet *cellsShowingLoadingIndicator;
+@property (nonatomic, readonly) NSMutableSet *fk_cellsShowingLoadingIndicator;
 
 @end
 
@@ -22,19 +22,19 @@ static char cellsShowingIndicatorKey;
     }
     
     [cell showLoadingIndicator];
-    [self.cellsShowingLoadingIndicator addObject:indexPath];
+    [self.fk_cellsShowingLoadingIndicator addObject:indexPath];
 }
 
 - (void)hideLoadingIndicatorAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self cellForRowAtIndexPath:indexPath];
     
     [cell hideLoadingIndicator];
-    [self.cellsShowingLoadingIndicator removeObject:indexPath];
+    [self.fk_cellsShowingLoadingIndicator removeObject:indexPath];
 }
 
 // hides all loading indicators
 - (void)hideLoadingIndicators {
-    for (NSIndexPath *indexPath in self.cellsShowingLoadingIndicator) {
+    for (NSIndexPath *indexPath in self.fk_cellsShowingLoadingIndicator) {
         [self hideLoadingIndicatorAtIndexPath:indexPath];
     }
 }
@@ -47,7 +47,7 @@ static char cellsShowingIndicatorKey;
     return [[self associatedValueForKey:&allowsMultipleIndicatorsKey] boolValue];
 }
 
-- (NSMutableSet *)cellsShowingLoadingIndicator {
+- (NSMutableSet *)fk_cellsShowingLoadingIndicator {
     NSMutableSet *cells = (NSMutableSet *)[self associatedValueForKey:&cellsShowingIndicatorKey];
     
     // lazy loading

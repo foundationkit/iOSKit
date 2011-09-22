@@ -8,7 +8,7 @@ static char previousAccessoryKey;
 
 // re-define as read/write
 @property (nonatomic, strong, readwrite) UIActivityIndicatorView *activityView;
-@property (nonatomic, strong) UIView *previousAccessory;
+@property (nonatomic, strong) UIView *fk_previousAccessory;
 
 @end
 
@@ -20,7 +20,7 @@ static char previousAccessoryKey;
     }
     
     // store previous accessoryView
-    self.previousAccessory = self.accessoryView;
+    self.fk_previousAccessory = self.accessoryView;
     
     // set activityIndicator as new accessoryView
     self.activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
@@ -33,9 +33,9 @@ static char previousAccessoryKey;
     [self.activityView stopAnimating];
     
     // restore previous state
-    self.accessoryView = self.previousAccessory;
+    self.accessoryView = self.fk_previousAccessory;
     self.activityView = nil;
-    self.previousAccessory = nil;
+    self.fk_previousAccessory = nil;
 }
 
 - (void)setActivityView:(UIActivityIndicatorView *)activityView {
@@ -46,11 +46,11 @@ static char previousAccessoryKey;
     return (UIActivityIndicatorView *)[self associatedValueForKey:&activityViewKey];
 }
 
-- (void)setPreviousAccessory:(UIView *)previousAccessory {
+- (void)setFk_previousAccessory:(UIView *)previousAccessory {
     [self associateValue:previousAccessory withKey:&previousAccessoryKey];
 }
 
-- (UIView *)previousAccessory {
+- (UIView *)fk_previousAccessory {
     return (UIView *)[self associatedValueForKey:&previousAccessoryKey];
 }
 

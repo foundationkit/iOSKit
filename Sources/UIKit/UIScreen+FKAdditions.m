@@ -1,9 +1,10 @@
 #import "UIScreen+FKAdditions.h"
+#import "UIApplication+FKConcise.h"
 
 @implementation UIScreen (FKAdditions)
 
 - (CGRect)currentBounds {
-	return [self boundsForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
+	return [self boundsForOrientation:$appOrientation];
 }
 
 - (CGRect)boundsForOrientation:(UIInterfaceOrientation)orientation {

@@ -38,13 +38,13 @@ $synthesize(type);
 }
 
 - (void)drawRect:(CGRect)rect {
-    const CGFloat R = 4.5;
+    const CGFloat R = 4.5f;
     CGContextRef ctxt = UIGraphicsGetCurrentContext();
     
     switch (self.type) {
         case FKColoredAccessoryViewTypeRight: {
             // (x,y) is the tip of the arrow
-            CGFloat x = CGRectGetMaxX(self.bounds)-3.0;;
+            CGFloat x = CGRectGetMaxX(self.bounds)-3.f;
             CGFloat y = CGRectGetMidY(self.bounds);
             
             CGContextMoveToPoint(ctxt, x-R, y-R);
@@ -54,10 +54,22 @@ $synthesize(type);
             break;
         }
             
+        case FKColoredAccessoryViewTypeLeft: {
+            // (x,y) is the tip of the arrow
+            CGFloat x = CGRectGetMaxX(self.bounds)-3.f;
+            CGFloat y = CGRectGetMidY(self.bounds);
+            
+            CGContextMoveToPoint(ctxt, x, y-R);
+            CGContextAddLineToPoint(ctxt, x-R, y);
+            CGContextAddLineToPoint(ctxt, x, y+R);
+            
+            break;
+        }
+            
         case FKColoredAccessoryViewTypeUp: {
             // (x,y) is the tip of the arrow
-            CGFloat x = CGRectGetMaxX(self.bounds)-7.0;;
-            CGFloat y = CGRectGetMinY(self.bounds)+5.0;
+            CGFloat x = CGRectGetMaxX(self.bounds)-7.f;
+            CGFloat y = CGRectGetMinY(self.bounds)+5.f;
             
             CGContextMoveToPoint(ctxt, x-R, y+R);
             CGContextAddLineToPoint(ctxt, x, y);
@@ -68,8 +80,8 @@ $synthesize(type);
             
         case FKColoredAccessoryViewTypeDown: {
             // (x,y) is the tip of the arrow
-            CGFloat x = CGRectGetMaxX(self.bounds)-7.0;;
-            CGFloat y = CGRectGetMaxY(self.bounds)-5.0;
+            CGFloat x = CGRectGetMaxX(self.bounds)-7.f;
+            CGFloat y = CGRectGetMaxY(self.bounds)-5.f;
             
             CGContextMoveToPoint(ctxt, x-R, y-R);
             CGContextAddLineToPoint(ctxt, x, y);
@@ -84,7 +96,7 @@ $synthesize(type);
     
     CGContextSetLineCap(ctxt, kCGLineCapSquare);
     CGContextSetLineJoin(ctxt, kCGLineJoinMiter);
-    CGContextSetLineWidth(ctxt, 3);
+    CGContextSetLineWidth(ctxt, 3.f);
     
 	if (self.highlighted) {
 		[self.highlightedColor setStroke];

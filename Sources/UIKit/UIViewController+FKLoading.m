@@ -12,7 +12,7 @@ static CGRect FKCenteredSquareInRectConstrainedToSize(CGRect rect, CGFloat size)
 @interface UIViewController ()
 
 @property (nonatomic, strong, readwrite) UIActivityIndicatorView *activityView;
-@property (nonatomic, strong) id replacedObject;
+@property (nonatomic, strong) id fk_replacedObject;
 
 @end
 
@@ -34,11 +34,11 @@ static CGRect FKCenteredSquareInRectConstrainedToSize(CGRect rect, CGFloat size)
     return activityView;
 }
 
-- (void)setReplacedObject:(id)replacedObject {
+- (void)setFk_replacedObject:(id)replacedObject {
     [self associateValue:replacedObject withKey:&replacedObjectKey];
 }
 
-- (id)replacedObject {
+- (id)fk_replacedObject {
     return [self associatedValueForKey:&replacedObjectKey];
 }
 
@@ -72,7 +72,7 @@ static CGRect FKCenteredSquareInRectConstrainedToSize(CGRect rect, CGFloat size)
     activityView.autoresizingMask = viewToReplace.autoresizingMask;
     
     viewToReplace.alpha = 0.f;
-    self.replacedObject = viewToReplace;
+    self.fk_replacedObject = viewToReplace;
     
     [viewToReplace.superview addSubview:activityView];
     [activityView startAnimating];
@@ -91,14 +91,14 @@ static CGRect FKCenteredSquareInRectConstrainedToSize(CGRect rect, CGFloat size)
     activityView.frame = CGRectMake(0.f, 2.f, 20.f, 20.f);
     [backgroundView addSubview:activityView];
     
-    self.replacedObject = barButtonItemToReplace;
+    self.fk_replacedObject = barButtonItemToReplace;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backgroundView];
     
     [activityView startAnimating];
 }
 
 - (void)hideLoadingIndicator {
-    id replacedObject = self.replacedObject;
+    id replacedObject = self.fk_replacedObject;
     UIActivityIndicatorView *activityView = self.activityView;
     
     // ActivityView was in NavigationBar

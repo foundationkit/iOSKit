@@ -5,8 +5,8 @@ void FKSystemSoundCompleted(SystemSoundID soundID, void *clientData);
 
 @interface FKSoundEffect ()
 
-- (void)callDelegateWillStartPlaying;
-- (void)callDelegateDidStopPlaying;
+- (void)fk_callDelegateWillStartPlaying;
+- (void)fk_callDelegateDidStopPlaying;
 
 @end
 
@@ -50,7 +50,7 @@ $synthesize(delegate);
 }
 
 - (void)play {
-    [self callDelegateWillStartPlaying];
+    [self fk_callDelegateWillStartPlaying];
     
     AudioServicesAddSystemSoundCompletion(self.soundID, CFRunLoopGetCurrent(), NULL, FKSystemSoundCompleted, (__bridge_retained void*)self);
     AudioServicesPlaySystemSound(self.soundID);
@@ -61,13 +61,13 @@ $synthesize(delegate);
 #pragma mark Delegate Calls
 ////////////////////////////////////////////////////////////////////////
 
-- (void)callDelegateWillStartPlaying {
+- (void)fk_callDelegateWillStartPlaying {
     if ([self.delegate respondsToSelector:@selector(soundEffectWillStartPlaying:)]) {
         [self.delegate soundEffectWillStartPlaying:self];
     }
 }
 
-- (void)callDelegateDidStopPlaying {
+- (void)fk_callDelegateDidStopPlaying {
     if ([self.delegate respondsToSelector:@selector(soundEffectDidFinishPlaying:)]) {
         [self.delegate soundEffectDidFinishPlaying:self];
     }
@@ -84,6 +84,6 @@ void FKSystemSoundCompleted(SystemSoundID soundID, void *clientData) {
     if (clientData) {
         FKSoundEffect *soundEffect = (__bridge_transfer FKSoundEffect*)clientData;
         
-        [soundEffect callDelegateDidStopPlaying];
+        [soundEffect fk_callDelegateDidStopPlaying];
     }
 }

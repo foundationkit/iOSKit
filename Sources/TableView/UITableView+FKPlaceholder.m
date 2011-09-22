@@ -10,9 +10,9 @@ static char contentUnavailableViewKey;
 
 @interface UITableView ()
 
-@property (nonatomic, strong) UIView *contentUnavailableView;
+@property (nonatomic, strong) UIView *fk_contentUnavailableView;
 
-- (UIView *)contentUnavailableViewFromDelegate;
+- (UIView *)fk_contentUnavailableViewFromDelegate;
 
 @end
 
@@ -24,12 +24,12 @@ static char contentUnavailableViewKey;
 ////////////////////////////////////////////////////////////////////////
 
 - (void)setContentUnavailableViewHidden:(BOOL)hidden {
-    UIView *contentUnavailableView = [self contentUnavailableViewFromDelegate];
+    UIView *contentUnavailableView = [self fk_contentUnavailableViewFromDelegate];
     
     if (hidden || contentUnavailableView == nil) {
         self.scrollEnabled = YES;
-        [self.contentUnavailableView removeFromSuperview];
-        self.contentUnavailableView = nil;
+        [self.fk_contentUnavailableView removeFromSuperview];
+        self.fk_contentUnavailableView = nil;
     } 
     
     // hidden == NO
@@ -41,7 +41,7 @@ static char contentUnavailableViewKey;
 		}
         
         contentUnavailableView.frame = frame;
-        self.contentUnavailableView = contentUnavailableView;
+        self.fk_contentUnavailableView = contentUnavailableView;
         
         [self scrollToTop];
         [self addSubview:contentUnavailableView];
@@ -62,11 +62,11 @@ static char contentUnavailableViewKey;
     return (id<FKTableViewPlaceholder>)[self associatedValueForKey:&placeholderDelegateKey];
 }
 
-- (void)setContentUnavailableView:(UIView *)contentUnavailableView {
+- (void)setFk_contentUnavailableView:(UIView *)contentUnavailableView {
     [self associateValue:contentUnavailableView withKey:&contentUnavailableViewKey];
 }
 
-- (UIView *)contentUnavailableView {
+- (UIView *)fk_contentUnavailableView {
     return (UIView *)[self associatedValueForKey:&contentUnavailableViewKey];
 }
 
@@ -75,7 +75,7 @@ static char contentUnavailableViewKey;
 #pragma mark Delegate Calls
 ////////////////////////////////////////////////////////////////////////
 
-- (UIView *)contentUnavailableViewFromDelegate {
+- (UIView *)fk_contentUnavailableViewFromDelegate {
     id<FKTableViewPlaceholder> delegate = self.placeholderDelegate;
     
     if ([delegate respondsToSelector:@selector(contentUnavailableViewForTableView:)]) {
