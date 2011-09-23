@@ -78,6 +78,10 @@
 		9B6C025D142BD584006F9812 /* FKiOSDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C025C142BD583006F9812 /* FKiOSDrawing.m */; };
 		9B6C0260142C69E8006F9812 /* UIAlertView+FKError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B6C025E142C69D7006F9812 /* UIAlertView+FKError.h */; };
 		9B6C0261142C69E8006F9812 /* UIAlertView+FKError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C025F142C69DE006F9812 /* UIAlertView+FKError.m */; };
+		9B6C02F1142C9FD2006F9812 /* FKTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B6C02EF142C9FD2006F9812 /* FKTableViewCell.h */; };
+		9B6C02F2142C9FD2006F9812 /* FKTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C02F0142C9FD2006F9812 /* FKTableViewCell.m */; };
+		9B6C02F5142CA0E2006F9812 /* FKTableViewCellView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B6C02F3142CA0E2006F9812 /* FKTableViewCellView.h */; };
+		9B6C02F6142CA0E2006F9812 /* FKTableViewCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C02F4142CA0E2006F9812 /* FKTableViewCellView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +188,10 @@
 		9B6C025C142BD583006F9812 /* FKiOSDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKiOSDrawing.m; path = Core/FKiOSDrawing.m; sourceTree = "<group>"; };
 		9B6C025E142C69D7006F9812 /* UIAlertView+FKError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+FKError.h"; path = "UIKit/UIAlertView+FKError.h"; sourceTree = "<group>"; };
 		9B6C025F142C69DE006F9812 /* UIAlertView+FKError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+FKError.m"; path = "UIKit/UIAlertView+FKError.m"; sourceTree = "<group>"; };
+		9B6C02EF142C9FD2006F9812 /* FKTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKTableViewCell.h; path = TableView/FKTableViewCell.h; sourceTree = "<group>"; };
+		9B6C02F0142C9FD2006F9812 /* FKTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKTableViewCell.m; path = TableView/FKTableViewCell.m; sourceTree = "<group>"; };
+		9B6C02F3142CA0E2006F9812 /* FKTableViewCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKTableViewCellView.h; path = TableView/FKTableViewCellView.h; sourceTree = "<group>"; };
+		9B6C02F4142CA0E2006F9812 /* FKTableViewCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKTableViewCellView.m; path = TableView/FKTableViewCellView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +250,10 @@
 			children = (
 				39DF5CDC1424A08C00090805 /* FKColoredAccessoryView.h */,
 				39DF5CDD1424A08C00090805 /* FKColoredAccessoryView.m */,
+				9B6C02EF142C9FD2006F9812 /* FKTableViewCell.h */,
+				9B6C02F0142C9FD2006F9812 /* FKTableViewCell.m */,
+				9B6C02F3142CA0E2006F9812 /* FKTableViewCellView.h */,
+				9B6C02F4142CA0E2006F9812 /* FKTableViewCellView.m */,
 				39AA0F731429091A00C6956C /* NSIndexPath+FKAdditions.h */,
 				39AA0F741429091A00C6956C /* NSIndexPath+FKAdditions.m */,
 				39AA0FB5142927D100C6956C /* UITableView+FKPlaceholder.h */,
@@ -424,6 +436,8 @@
 				39AA0FB7142927D200C6956C /* UITableView+FKPlaceholder.h in Headers */,
 				9B6C025B142BD444006F9812 /* FKiOSDrawing.h in Headers */,
 				9B6C0260142C69E8006F9812 /* UIAlertView+FKError.h in Headers */,
+				9B6C02F1142C9FD2006F9812 /* FKTableViewCell.h in Headers */,
+				9B6C02F5142CA0E2006F9812 /* FKTableViewCellView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +551,8 @@
 				39AA0FB8142927D200C6956C /* UITableView+FKPlaceholder.m in Sources */,
 				9B6C025D142BD584006F9812 /* FKiOSDrawing.m in Sources */,
 				9B6C0261142C69E8006F9812 /* UIAlertView+FKError.m in Sources */,
+				9B6C02F2142C9FD2006F9812 /* FKTableViewCell.m in Sources */,
+				9B6C02F6142CA0E2006F9812 /* FKTableViewCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
