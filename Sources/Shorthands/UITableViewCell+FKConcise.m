@@ -1,4 +1,5 @@
 #import "UITableViewCell+FKConcise.h"
+#import "UIView+FKHierarchy.h"
 
 @implementation UITableViewCell (FKConcise)
 
@@ -15,6 +16,10 @@
     }
     
     return cell; 
+}
+
+- (UITableView *)tableView {
+    return (UITableView *)[self superviewWithClass:[UITableView class]];
 }
 
 @end

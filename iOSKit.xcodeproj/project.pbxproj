@@ -74,6 +74,10 @@
 		9B54E81B14269C8C00336F08 /* NSObject+FKiOSAssociatedObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81814269C8B00336F08 /* NSObject+FKiOSAssociatedObjects.h */; };
 		9B54E81C14269C8C00336F08 /* NSObject+FKiOSAssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B54E81914269C8B00336F08 /* NSObject+FKiOSAssociatedObjects.m */; };
 		9B54E81E14269CAB00336F08 /* UIEdgeInsets+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81D14269CAB00336F08 /* UIEdgeInsets+FKAdditions.h */; };
+		9B6C025B142BD444006F9812 /* FKiOSDrawing.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B6C025A142BD444006F9812 /* FKiOSDrawing.h */; };
+		9B6C025D142BD584006F9812 /* FKiOSDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C025C142BD583006F9812 /* FKiOSDrawing.m */; };
+		9B6C0260142C69E8006F9812 /* UIAlertView+FKError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B6C025E142C69D7006F9812 /* UIAlertView+FKError.h */; };
+		9B6C0261142C69E8006F9812 /* UIAlertView+FKError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C025F142C69DE006F9812 /* UIAlertView+FKError.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +180,10 @@
 		9B54E81814269C8B00336F08 /* NSObject+FKiOSAssociatedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+FKiOSAssociatedObjects.h"; path = "Core/NSObject+FKiOSAssociatedObjects.h"; sourceTree = "<group>"; };
 		9B54E81914269C8B00336F08 /* NSObject+FKiOSAssociatedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+FKiOSAssociatedObjects.m"; path = "Core/NSObject+FKiOSAssociatedObjects.m"; sourceTree = "<group>"; };
 		9B54E81D14269CAB00336F08 /* UIEdgeInsets+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIEdgeInsets+FKAdditions.h"; path = "Core/UIEdgeInsets+FKAdditions.h"; sourceTree = "<group>"; };
+		9B6C025A142BD444006F9812 /* FKiOSDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKiOSDrawing.h; path = Core/FKiOSDrawing.h; sourceTree = "<group>"; };
+		9B6C025C142BD583006F9812 /* FKiOSDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKiOSDrawing.m; path = Core/FKiOSDrawing.m; sourceTree = "<group>"; };
+		9B6C025E142C69D7006F9812 /* UIAlertView+FKError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+FKError.h"; path = "UIKit/UIAlertView+FKError.h"; sourceTree = "<group>"; };
+		9B6C025F142C69DE006F9812 /* UIAlertView+FKError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+FKError.m"; path = "UIKit/UIAlertView+FKError.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +356,8 @@
 				393A299D142359C50056CB37 /* UIViewController+FKAdditions.m */,
 				39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */,
 				39ACE81514228DCB0022D8F8 /* UIViewController+FKLoading.m */,
+				9B6C025E142C69D7006F9812 /* UIAlertView+FKError.h */,
+				9B6C025F142C69DE006F9812 /* UIAlertView+FKError.m */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -357,6 +367,8 @@
 			children = (
 				9B54E80F14269B7D00336F08 /* CGGeometry+FKAdditions.h */,
 				9B54E81714269C8B00336F08 /* FKiOSConstants.h */,
+				9B6C025A142BD444006F9812 /* FKiOSDrawing.h */,
+				9B6C025C142BD583006F9812 /* FKiOSDrawing.m */,
 				9B54E81314269C2F00336F08 /* FKiOSMetrics.h */,
 				9B54E81814269C8B00336F08 /* NSObject+FKiOSAssociatedObjects.h */,
 				9B54E81914269C8B00336F08 /* NSObject+FKiOSAssociatedObjects.m */,
@@ -410,6 +422,8 @@
 				393120701428AF010095D5ED /* UITableView+FKLoading.h in Headers */,
 				39AA0F751429091A00C6956C /* NSIndexPath+FKAdditions.h in Headers */,
 				39AA0FB7142927D200C6956C /* UITableView+FKPlaceholder.h in Headers */,
+				9B6C025B142BD444006F9812 /* FKiOSDrawing.h in Headers */,
+				9B6C0260142C69E8006F9812 /* UIAlertView+FKError.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +535,8 @@
 				393120711428AF010095D5ED /* UITableView+FKLoading.m in Sources */,
 				39AA0F761429091A00C6956C /* NSIndexPath+FKAdditions.m in Sources */,
 				39AA0FB8142927D200C6956C /* UITableView+FKPlaceholder.m in Sources */,
+				9B6C025D142BD584006F9812 /* FKiOSDrawing.m in Sources */,
+				9B6C0261142C69E8006F9812 /* UIAlertView+FKError.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
