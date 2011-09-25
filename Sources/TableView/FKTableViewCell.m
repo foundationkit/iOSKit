@@ -85,6 +85,12 @@ $synthesize(selectedContentView);
 	[selectedContentView_ setFrame:bounds];
 }
 
+- (void)setOpaque:(BOOL)opaque {
+    [super setOpaque:opaque];
+    
+    self.contentView.opaque = opaque;
+}
+
 - (void)setNeedsDisplay {
 	[super setNeedsDisplay];
 	[contentView_ setNeedsDisplay];
