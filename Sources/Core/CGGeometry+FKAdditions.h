@@ -1,7 +1,7 @@
 // Part of iOSKit http://foundationk.it
 //
 // Partly derived from Sam Soffes' Custom-Licensed SSToolkit: http://github.com/samsoffes/sstoolkit
-
+// Partly derived from jverkoys' Nimbus-Project: http://github.com/jverkoy/nimbus
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -62,4 +62,30 @@ NS_INLINE CGSize FKSizeAspectScaleToSize(CGSize size, CGSize toSize) {
 	}
     
 	return CGSizeMake(size.width * aspect, size.height * aspect);
+}
+
+////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark CGAffineTransform Helper
+////////////////////////////////////////////////////////////////////////
+
+/** 
+ Creates an affine transform for the given device orientation.
+ This is useful for creating a transformation matrix for a view that has been added
+ directly to a UIWindow and doesn't automatically have its transformation modified.
+ */
+
+CGAffineTransform FKRotationTransformForOrientation(UIInterfaceOrientation orientation) {
+    if (orientation == UIInterfaceOrientationLandscapeLeft) {
+        return CGAffineTransformMakeRotation((CGFloat)(M_PI * 1.5));
+        
+    } else if (orientation == UIInterfaceOrientationLandscapeRight) {
+        return CGAffineTransformMakeRotation((CGFloat)(M_PI / 2.0));
+        
+    } else if (orientation == UIInterfaceOrientationPortraitUpsideDown) {
+        return CGAffineTransformMakeRotation((CGFloat)(-M_PI));
+        
+    } else {
+        return CGAffineTransformIdentity;
+    }
 }
