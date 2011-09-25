@@ -85,8 +85,11 @@
 }
 
 - (BOOL)isSimulator {
-	static NSString *simulatorModel = @"iPhone Simulator";
-	return [[self model] isEqualToString:simulatorModel];	
+#if TARGET_IPHONE_SIMULATOR
+    return YES;
+#else
+    return NO;
+#endif
 }
 
 - (void)simulateMemoryWarning {
