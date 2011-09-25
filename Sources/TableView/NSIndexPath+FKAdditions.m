@@ -1,5 +1,7 @@
 #import "NSIndexPath+FKAdditions.h"
 
+FKLoadCategory(NSIndexPathFKAdditions);
+
 @implementation NSIndexPath (FKAdditions)
 
 + (NSArray *)indexPathsFromRow:(NSInteger)startRow toRow:(NSInteger)endRow inSection:(NSInteger)section {

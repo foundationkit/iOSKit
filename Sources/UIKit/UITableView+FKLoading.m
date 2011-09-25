@@ -1,7 +1,7 @@
 #import "UITableView+FKLoading.h"
 #import "UITableViewCell+FKLoading.h"
-#import "NSObject+FKAssociatedObjects.h"
-#import "NSNumber+FKConcise.h"
+
+FKLoadCategory(UIApplicationFKAdditions);
 
 static char allowsMultipleIndicatorsKey;
 static char cellsShowingIndicatorKey;

@@ -1,5 +1,6 @@
 #import "UIAlertView+FKError.h"
-#import "NSString+FKConcise.h"
+
+FKLoadCategory(UIAlertViewFKError);
 
 @implementation UIAlertView (FKError)
 

@@ -1,7 +1,8 @@
 #import "UIView+FKAnimations.h"
 
-#define kFKFadeDuration     0.3
+FKLoadCategory(UIViewFKAnimations);
 
+#define kFKFadeDuration     0.3
 
 @implementation UIView (FKAnimations)
 

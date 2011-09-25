@@ -1,5 +1,7 @@
 #import "UIColor+FKAdditions.h"
 
+FKLoadCategory(UIColorFKAdditions);
+
 @implementation UIColor (FKAdditions)
 
 ////////////////////////////////////////////////////////////////////////

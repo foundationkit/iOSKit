@@ -1,5 +1,7 @@
 #import "UIImage+FKAdditions.h"
 
+FKLoadCategory(UIImageFKAdditions);
+
 @implementation UIImage (FKAdditions)
 
 - (UIImage *)preloadedImage {

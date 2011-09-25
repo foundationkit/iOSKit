@@ -1,5 +1,7 @@
 #import "UIScrollView+FKAdditions.h"
 
+FKLoadCategory(UIScrollViewFKAdditions);
+
 @implementation UIScrollView (FKAdditions)
 
 - (void)scrollToTop {

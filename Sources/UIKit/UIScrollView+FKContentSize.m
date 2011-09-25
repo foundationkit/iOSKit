@@ -2,6 +2,8 @@
 #import "UIScrollView+FKContentSize.h"
 #import "UIView+FKContentSize.h"
 
+FKLoadCategory(UIScrollViewFKContentSize);
+
 #define kFKDefaultPadding 5.f
 
 typedef enum {

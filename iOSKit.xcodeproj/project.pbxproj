@@ -12,7 +12,7 @@
 		391393AF13C9B84C0049DA61 /* UIScreen+FKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393A413C9B84C0049DA61 /* UIScreen+FKConcise.h */; };
 		391393B113C9B84C0049DA61 /* FKUniversal.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393A713C9B84C0049DA61 /* FKUniversal.h */; };
 		391393B213C9B84C0049DA61 /* FKUniversal.m in Sources */ = {isa = PBXBuildFile; fileRef = 391393A813C9B84C0049DA61 /* FKUniversal.m */; };
-		391393B413C9C1310049DA61 /* iOSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393B313C9C1310049DA61 /* iOSKit.h */; };
+		391393B413C9C1310049DA61 /* iOSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393B313C9C1310049DA61 /* iOSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3921678E142666E90018BD5A /* UIApplication+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3921678C142666E90018BD5A /* UIApplication+FKAdditions.h */; };
 		3921678F142666E90018BD5A /* UIApplication+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3921678D142666E90018BD5A /* UIApplication+FKAdditions.m */; };
 		3921679214266A060018BD5A /* UIScreen+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3921679014266A060018BD5A /* UIScreen+FKAdditions.h */; };
@@ -36,7 +36,7 @@
 		39ACE7451422709B0022D8F8 /* UIView+FKContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACE7431422709B0022D8F8 /* UIView+FKContentSize.m */; };
 		39ACE81614228DCC0022D8F8 /* UIViewController+FKLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */; };
 		39ACE81714228DCC0022D8F8 /* UIViewController+FKLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACE81514228DCB0022D8F8 /* UIViewController+FKLoading.m */; };
-		39B07E67142888C700CBF1B8 /* FKiOSInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 39B07E66142888C700CBF1B8 /* FKiOSInternal.h */; };
+		39B07E67142888C700CBF1B8 /* FKiOSInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 39B07E66142888C700CBF1B8 /* FKiOSInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		39CC1E0F142F229F0017578F /* UIImage+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CC1E0D142F229F0017578F /* UIImage+FKAdditions.h */; };
 		39CC1E10142F229F0017578F /* UIImage+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CC1E0E142F229F0017578F /* UIImage+FKAdditions.m */; };
 		39CFA5EF1422348700DC3E57 /* UIColor+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CFA5ED1422348600DC3E57 /* UIColor+FKAdditions.h */; };

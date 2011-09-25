@@ -1,6 +1,6 @@
 #import "FKTableViewCell.h"
 #import "FKTableViewCellView.h"
-#import "FKShorthands.h"
+#import "UITableViewCell+FKLoading.h"
 
 
 @implementation FKTableViewCell
@@ -70,6 +70,12 @@ $synthesize(selectedContentView);
 	}
     
 	[super setHighlighted:highlighted animated:animated];
+}
+
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    
+    [self hideLoadingIndicator];
 }
 
 ////////////////////////////////////////////////////////////////////////

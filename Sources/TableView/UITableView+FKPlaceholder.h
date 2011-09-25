@@ -3,7 +3,6 @@
 // Inspired by enormego's BSD-Licensed cocoa-helpers: http://github.com/enormego/cocoa-helpers
 
 #import <UIKit/UIKit.h>
-#import "FKiOSInternal.h"
 
 @protocol FKTableViewPlaceholder;
 

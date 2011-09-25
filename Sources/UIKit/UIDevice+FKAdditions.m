@@ -4,6 +4,8 @@
 #include <ifaddrs.h>
 #include <arpa/inet.h>
 
+FKLoadCategory(UIDeviceFKAdditions);
+
 @implementation UIDevice (FKAdditions)
 
 - (NSString *)ipAddress {

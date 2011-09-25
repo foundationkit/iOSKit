@@ -1,5 +1,6 @@
 #import "UIViewController+FKLoading.h"
-#import "NSObject+FKAssociatedObjects.h"
+
+FKLoadCategory(UIViewControllerFKLoading);
 
 
 #define kFKActivityViewMaxSize      37.f

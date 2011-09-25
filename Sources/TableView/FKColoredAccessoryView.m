@@ -1,5 +1,4 @@
 #import "FKColoredAccessoryView.h"
-#import "FKShorthands.h"
 
 @implementation FKColoredAccessoryView
 

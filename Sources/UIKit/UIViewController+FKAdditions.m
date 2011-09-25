@@ -1,6 +1,7 @@
 #import "UIViewController+FKAdditions.h"
 #import "UIAlertView+FKError.h"
-#import "NSString+FKAdditions.h"
+
+FKLoadCategory(UIViewControllerFKAdditions);
 
 @implementation UIViewController (FKAdditions)
 

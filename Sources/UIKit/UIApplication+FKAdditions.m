@@ -1,5 +1,7 @@
 #import "UIApplication+FKAdditions.h"
 
+FKLoadCategory(UIApplicationFKAdditions);
+
 @implementation UIApplication (FKAdditions)
 
 - (BOOL)isPirated {

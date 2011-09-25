@@ -3,7 +3,8 @@
 #import "UIView+FKAdditions.h"
 #import "CGGeometry+FKAdditions.h"
 #import "UIEdgeInsets+FKAdditions.h"
-#import "NSObject+FKAssociatedObjects.h"
+
+FKLoadCategory(UITableViewFKPlaceholder);
 
 static char placeholderDelegateKey;
 static char contentUnavailableViewKey;

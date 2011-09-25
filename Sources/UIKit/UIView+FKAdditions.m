@@ -2,6 +2,8 @@
 #import "UIView+FKAdditions.h"
 #import "UIColor+FKAdditions.h"
 
+FKLoadCategory(UIViewFKAdditions);
+
 @implementation UIView (FKAdditions)
 
 ////////////////////////////////////////////////////////////////////////

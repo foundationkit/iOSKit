@@ -1,5 +1,6 @@
 #import "UITableViewCell+FKLoading.h"
-#import "NSObject+FKAssociatedObjects.h"
+
+FKLoadCategory(UITableViewCellFKLoading);
 
 static char activityViewKey;
 static char previousAccessoryKey;

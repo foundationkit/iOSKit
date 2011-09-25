@@ -1,6 +1,7 @@
 #import "UIImageView+FKAdditions.h"
 #import <QuartzCore/QuartzCore.h>
 
+FKLoadCategory(UIImageViewFKAdditions);
 
 #define kFKFadeAnimationDuration    0.25
 

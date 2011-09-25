@@ -1,6 +1,8 @@
 #import "UIApplication+FKNetwork.h"
 #import "FKNetworkActivityManager.h"
 
+FKLoadCategory(UIApplicationFKNetwork);
+
 @implementation UIApplication (FKNetwork)
 
 - (void)addNetworkUser:(id)networkUser {

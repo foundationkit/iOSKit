@@ -1,5 +1,7 @@
 #import "UIView+FKHierarchy.h"
 
+FKLoadCategory(UIViewFKHierarchy);
+
 @implementation UIView (FKHierarchy)
 
 - (UIViewController *)viewController {

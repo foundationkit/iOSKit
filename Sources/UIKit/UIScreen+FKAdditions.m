@@ -1,6 +1,8 @@
 #import "UIScreen+FKAdditions.h"
 #import "UIApplication+FKConcise.h"
 
+FKLoadCategory(UIScreenFKAdditions);
+
 @implementation UIScreen (FKAdditions)
 
 - (CGRect)currentBounds {

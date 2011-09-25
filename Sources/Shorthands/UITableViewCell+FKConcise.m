@@ -1,6 +1,8 @@
 #import "UITableViewCell+FKConcise.h"
 #import "UIView+FKHierarchy.h"
 
+FKLoadCategory(UITableViewCellFKConcise);
+
 @implementation UITableViewCell (FKConcise)
 
 + (NSString *)cellIdentifier {

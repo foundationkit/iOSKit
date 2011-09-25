@@ -1,5 +1,7 @@
 #import "UITextView+FKAdditions.h"
 
+FKLoadCategory(UITextViewFKAdditions);
+
 @implementation UITextView (FKAdditions)
 
 - (void) sizeToFitNeededHeight {

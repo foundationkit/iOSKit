@@ -1,6 +1,6 @@
 #import "UIView+FKContentSize.h"
-#import "NSObject+FKAssociatedObjects.h"
-#import "NSNumber+FKConcise.h"
+
+FKLoadCategory(UIViewFKContentSize);
 
 static char excludedKey;
 

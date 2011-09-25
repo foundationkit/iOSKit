@@ -1,6 +1,7 @@
 #import "NSObject+FKiOSAssociatedObjects.h"
-#import "NSObject+FKAssociatedObjects.h"
 #import "NSValue+FKiOSConcise.h"
+
+FKLoadCategory(NSObjectFKiOSAssociatedObjects);
 
 @implementation NSObject (FKiOSAssociatedObjects)
 
