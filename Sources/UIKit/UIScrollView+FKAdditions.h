@@ -4,6 +4,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ This category adds various additions to UIScrollView for making life easier.
+ */
+
 @interface UIScrollView (FKAdditions)
 
 - (void)scrollToTop;    // animated = NO

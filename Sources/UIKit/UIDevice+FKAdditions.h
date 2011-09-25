@@ -4,6 +4,12 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ This category adds various additions to UIDevice for making life easier.
+ Included are access to the IP Address, verbose debug information as well
+ as checks for jailbroken devices or the simulator.
+ */
+
 @interface UIDevice (FKAdditions)
 
 @property (nonatomic, readonly) NSString *ipAddress;

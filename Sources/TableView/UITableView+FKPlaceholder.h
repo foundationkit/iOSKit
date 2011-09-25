@@ -7,6 +7,11 @@
 
 @protocol FKTableViewPlaceholder;
 
+/**
+ This category adds Placeholder-Support to UITableView. 
+ You can display a view as a placeholder, if the tableView has no data to show.
+ */
+
 @interface UITableView (FKPlaceholder)
 
 @property (nonatomic, fk_weak) id<FKTableViewPlaceholder> placeholderDelegate;

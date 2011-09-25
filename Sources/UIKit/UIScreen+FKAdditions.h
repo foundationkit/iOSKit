@@ -4,6 +4,11 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ This category adds support for getting orientation-aware screen bounds as well as a safe
+ check for retinaDisplays.
+ */
+
 @interface UIScreen (FKAdditions)
 
 @property (nonatomic, readonly) CGRect currentBounds;

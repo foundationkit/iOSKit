@@ -11,6 +11,12 @@ typedef enum {
 	FKUIViewAlignmentCentered
 } FKUIViewAlignment;
 
+/**
+ This category adds various additions to UIView for making life easier.
+ You get a lot of shortcuts for positioning the UIView, setting borders or shadows
+ and getting the content as a UIImage
+ */
+
 @interface UIView (FKAdditions)
 
 @property (nonatomic, assign) CGPoint integralCenter;

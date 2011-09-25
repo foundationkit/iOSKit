@@ -6,6 +6,11 @@
 
 @protocol FKSoundEffectDelegate;
 
+/**
+ This class is a simple Objective-C wrapper for playing a system sound.
+ It supports optional delegate calls for playbackstart and -end.
+ */
+
 @interface FKSoundEffect : NSObject
 
 @property (nonatomic, readonly) SystemSoundID soundID;

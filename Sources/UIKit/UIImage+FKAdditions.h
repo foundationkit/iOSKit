@@ -4,6 +4,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ This category adds the possiblity to preload an image to UIImage for faster drawing.
+ */
+
 @interface UIImage (FKAdditions)
 
 - (UIImage *)preloadedImage;

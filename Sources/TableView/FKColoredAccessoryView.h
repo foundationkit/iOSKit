@@ -12,6 +12,12 @@ typedef enum {
 } FKColoredAccessoryViewType;
 
 
+/**
+ This class serves as a simple way to color and/or rotate the standard UITableViewCellAccessoryStyleDefault - arrow.
+ You can set it as an accessoryView on a UITableViewCell and specify the color and highlightedColor, as well as the
+ orientation of the arrow (left, right, up, down).
+ */
+ 
 @interface FKColoredAccessoryView : UIControl
 
 @property (nonatomic, strong) UIColor *color;

@@ -2,6 +2,13 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ This category adds support for super-easy rotation of a UIView, when autoresizingMasks just
+ don't work. You can specify a portraitFrame as well as a landscapeFrame and have methods to
+ set the corresponding frame animated or directly (when already used in an animation-block like
+ willAnimateToInterfaceOrientation.
+ */
+
 @interface UIView (FKRotation)
 
 /** property to specify a frame for portrait orientation */

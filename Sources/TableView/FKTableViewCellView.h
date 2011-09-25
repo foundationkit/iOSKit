@@ -4,10 +4,21 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ This class serves as the contentView of the fast, custom-drawn UITableViewCell.
+ @see FKTableViewCell
+ @see FKTableViewSelectedCellView
+ */
+
 @interface FKTableViewCellView : UIView
 
 @end
 
+/**
+ This class serves as the contentView of the fast, custom-drawn UITableViewCell in the selected-state.
+ @see FKTableViewCell
+ @see FKTableViewCellView
+ */
 
 @interface FKTableViewSelectedCellView : UIView
 @end

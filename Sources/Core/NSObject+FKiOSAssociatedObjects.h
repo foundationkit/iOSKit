@@ -4,6 +4,10 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ This category adds shortcuts for associating CGGeometry-structs with an object.
+ */
+
 @interface NSObject (FKiOSAssociatedObjects)
 
 - (void)associateRect:(CGRect)rect withKey:(void *)key;

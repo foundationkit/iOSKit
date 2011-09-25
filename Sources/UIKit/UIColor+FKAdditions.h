@@ -4,6 +4,12 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ This category add various additions to UIColor for making life easier.
+ You get access to the RGB-components, as well as easy creation of UIColor-Objects
+ based on Hex-Values or -Strings.
+ */
+
 @interface UIColor (FKAdditions)
 
 @property (nonatomic, readonly) CGColorSpaceModel colorSpaceModel;

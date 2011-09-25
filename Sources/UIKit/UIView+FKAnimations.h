@@ -5,6 +5,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ This category adds methods to UIView for easy animated changes.
+ */
+
 @interface UIView (FKAnimations)
 
 // Animate removing a view from its parent

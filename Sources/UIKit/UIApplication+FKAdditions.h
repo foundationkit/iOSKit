@@ -5,12 +5,13 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ This category adds various additions to UIApplication for making life easier.
+ */
+
 @interface UIApplication (FKAdditions)
 
-/** Checks for pirated application indicators.
- 
- This isn't bulletproof, but should catch a lot of cases.
- */
+/** Checks for pirated application indicators. This isn't bulletproof, but should catch a lot of cases. */
 @property (nonatomic, readonly, getter = isPirated) BOOL pirated;
 
 @end

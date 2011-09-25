@@ -5,6 +5,14 @@
 #import <UIKit/UIKit.h>
 #import "UITableViewCell+FKConcise.h"
 
+/**
+ This class is a base-class for a very fast, custom-drawn UITableViewCell.
+ The cell automatically hides it's loading indicator when it gets reused.
+ 
+ @see UITableViewCell+FKLoading
+ @see UITableViewCell+FKConcise
+ */
+
 @interface FKTableViewCell : UITableViewCell
 
 @property (nonatomic, strong, readonly) UIView *contentView;
