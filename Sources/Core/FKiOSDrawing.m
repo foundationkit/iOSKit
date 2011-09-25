@@ -29,7 +29,7 @@ CGGradientRef FKCreateGradientWithColorsAndLocations(NSArray *colors, NSArray *l
 		[gradientColors addObject:(id)[(UIColor *)object CGColor]];
 	}];
     
-	CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (CFArrayRef)gradientColors, gradientLocations);
+	CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)gradientColors, gradientLocations);
     
 	if (gradientLocations) {
 		free(gradientLocations);
