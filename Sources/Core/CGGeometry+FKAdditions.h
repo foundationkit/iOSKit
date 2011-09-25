@@ -75,7 +75,7 @@ NS_INLINE CGSize FKSizeAspectScaleToSize(CGSize size, CGSize toSize) {
  directly to a UIWindow and doesn't automatically have its transformation modified.
  */
 
-CGAffineTransform FKRotationTransformForOrientation(UIInterfaceOrientation orientation) {
+NS_INLINE CGAffineTransform FKRotationTransformForOrientation(UIInterfaceOrientation orientation) {
     if (orientation == UIInterfaceOrientationLandscapeLeft) {
         return CGAffineTransformMakeRotation((CGFloat)(M_PI * 1.5));
         

@@ -11,6 +11,7 @@
  
  @see UITableView+FKLoading
  @see UITableViewCell+FKLoading
+ */
 
 @interface UIViewController (FKLoading)
 
