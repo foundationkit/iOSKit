@@ -104,11 +104,13 @@ $synthesize(lastReachabilityChange);
         self.currentNetworkStatus = newNetworkStatus;
         
         // we only send new notifications if a minimum amount of time is already bygone
-        if (ABS([self.lastReachabilityChange timeIntervalSinceNow]) > kFKReachabilityMinTimeBetweenNotifications) {
-            self.lastReachabilityChange = [NSDate date];
-            [[NSNotificationCenter defaultCenter] postNotificationName:kFKReachabilityChangedNotification
-                                                                object:self
-                                                              userInfo:$dict($int(newNetworkStatus),kFKNetworkStatusKey)];
+		@synchronized(self.lastReachabilityChange) {
+            if (ABS([self.lastReachabilityChange timeIntervalSinceNow]) > kFKReachabilityMinTimeBetweenNotifications) {
+                self.lastReachabilityChange = [NSDate date];
+                [[NSNotificationCenter defaultCenter] postNotificationName:kFKReachabilityChangedNotification
+                                                                    object:self
+                                                                  userInfo:$dict($int(newNetworkStatus),kFKNetworkStatusKey)];
+            }
         }
     }
 }
