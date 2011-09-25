@@ -37,6 +37,8 @@
 		39ACE81614228DCC0022D8F8 /* UIViewController+FKLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */; };
 		39ACE81714228DCC0022D8F8 /* UIViewController+FKLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACE81514228DCB0022D8F8 /* UIViewController+FKLoading.m */; };
 		39B07E67142888C700CBF1B8 /* FKiOSInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 39B07E66142888C700CBF1B8 /* FKiOSInternal.h */; };
+		39CC1E0F142F229F0017578F /* UIImage+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CC1E0D142F229F0017578F /* UIImage+FKAdditions.h */; };
+		39CC1E10142F229F0017578F /* UIImage+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CC1E0E142F229F0017578F /* UIImage+FKAdditions.m */; };
 		39CFA5EF1422348700DC3E57 /* UIColor+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CFA5ED1422348600DC3E57 /* UIColor+FKAdditions.h */; };
 		39CFA5F01422348700DC3E57 /* UIColor+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA5EE1422348600DC3E57 /* UIColor+FKAdditions.m */; };
 		39CFA5F3142234A600DC3E57 /* UIView+FKRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CFA5F1142234A600DC3E57 /* UIView+FKRotation.h */; };
@@ -146,6 +148,8 @@
 		39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+FKLoading.h"; path = "UIKit/UIViewController+FKLoading.h"; sourceTree = "<group>"; };
 		39ACE81514228DCB0022D8F8 /* UIViewController+FKLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+FKLoading.m"; path = "UIKit/UIViewController+FKLoading.m"; sourceTree = "<group>"; };
 		39B07E66142888C700CBF1B8 /* FKiOSInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKiOSInternal.h; path = Sources/FKiOSInternal.h; sourceTree = SOURCE_ROOT; };
+		39CC1E0D142F229F0017578F /* UIImage+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+FKAdditions.h"; path = "UIKit/UIImage+FKAdditions.h"; sourceTree = "<group>"; };
+		39CC1E0E142F229F0017578F /* UIImage+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FKAdditions.m"; path = "UIKit/UIImage+FKAdditions.m"; sourceTree = "<group>"; };
 		39CFA5ED1422348600DC3E57 /* UIColor+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+FKAdditions.h"; path = "UIKit/UIColor+FKAdditions.h"; sourceTree = "<group>"; };
 		39CFA5EE1422348600DC3E57 /* UIColor+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+FKAdditions.m"; path = "UIKit/UIColor+FKAdditions.m"; sourceTree = "<group>"; };
 		39CFA5F1142234A600DC3E57 /* UIView+FKRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKRotation.h"; path = "UIKit/UIView+FKRotation.h"; sourceTree = "<group>"; };
@@ -332,6 +336,8 @@
 		9B297200141B7EF9006124A2 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				9B6C025E142C69D7006F9812 /* UIAlertView+FKError.h */,
+				9B6C025F142C69DE006F9812 /* UIAlertView+FKError.m */,
 				3921678C142666E90018BD5A /* UIApplication+FKAdditions.h */,
 				3921678D142666E90018BD5A /* UIApplication+FKAdditions.m */,
 				39DF5DA81424BF0C00090805 /* UIApplication+FKNetwork.h */,
@@ -340,6 +346,8 @@
 				39CFA5EE1422348600DC3E57 /* UIColor+FKAdditions.m */,
 				39CFA5F51422398E00DC3E57 /* UIDevice+FKAdditions.h */,
 				39CFA5F61422398E00DC3E57 /* UIDevice+FKAdditions.m */,
+				39CC1E0D142F229F0017578F /* UIImage+FKAdditions.h */,
+				39CC1E0E142F229F0017578F /* UIImage+FKAdditions.m */,
 				39CFA5F914223C1200DC3E57 /* UIImageView+FKAdditions.h */,
 				39CFA5FA14223C1200DC3E57 /* UIImageView+FKAdditions.m */,
 				3921679014266A060018BD5A /* UIScreen+FKAdditions.h */,
@@ -368,8 +376,6 @@
 				393A299D142359C50056CB37 /* UIViewController+FKAdditions.m */,
 				39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */,
 				39ACE81514228DCB0022D8F8 /* UIViewController+FKLoading.m */,
-				9B6C025E142C69D7006F9812 /* UIAlertView+FKError.h */,
-				9B6C025F142C69DE006F9812 /* UIAlertView+FKError.m */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -438,6 +444,7 @@
 				9B6C0260142C69E8006F9812 /* UIAlertView+FKError.h in Headers */,
 				9B6C02F1142C9FD2006F9812 /* FKTableViewCell.h in Headers */,
 				9B6C02F5142CA0E2006F9812 /* FKTableViewCellView.h in Headers */,
+				39CC1E0F142F229F0017578F /* UIImage+FKAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +560,7 @@
 				9B6C0261142C69E8006F9812 /* UIAlertView+FKError.m in Sources */,
 				9B6C02F2142C9FD2006F9812 /* FKTableViewCell.m in Sources */,
 				9B6C02F6142CA0E2006F9812 /* FKTableViewCellView.m in Sources */,
+				39CC1E10142F229F0017578F /* UIImage+FKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
