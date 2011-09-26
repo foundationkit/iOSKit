@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) NSString *debugInformation;
 @property (nonatomic, readonly) NSString *hardwarePlatform;
 @property (nonatomic, readonly, getter = isJailbroken) BOOL jailbroken;
+@property (nonatomic, readonly) BOOL isCrappy;
 @property (nonatomic, readonly) BOOL isSimulator;
 
 - (void)simulateMemoryWarning;

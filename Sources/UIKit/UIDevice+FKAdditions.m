@@ -86,6 +86,26 @@ FKLoadCategory(UIDeviceFKAdditions);
     return jailbroken;
 }
 
+- (BOOL)isCrappy {
+    static BOOL isCrappyDevice = YES;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSString *iPodTouchModel = @"iPod touch";
+        NSString *iPhoneModel = @"iPhone";
+        NSString *iPhone3GModel = @"iPhone 3G";
+        NSString *iPhone3GSModel = @"iPhone 3GS";
+        NSString *iPadModel = @"iPad";
+        NSString *model = [self model];
+        
+        isCrappyDevice = ([model isEqualToString:iPodTouchModel] || [model isEqualToString:iPhoneModel] ||
+                          [model isEqualToString:iPhone3GModel] || [model isEqualToString:iPhone3GSModel] ||
+                          [model isEqualToString:iPadModel]);
+    });
+    
+    return isCrappyDevice;
+}
+
 - (BOOL)isSimulator {
 #if TARGET_IPHONE_SIMULATOR
     return YES;
