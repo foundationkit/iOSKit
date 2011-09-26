@@ -44,7 +44,7 @@ FKLoadCategory(UIDeviceFKAdditions);
     NSString *appName = FKApplicationName();
     NSString *appVersion = FKApplicationVersion();
     NSString *appShortVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]; 
-    NSString *iphoneOSVersion = [[UIDevice currentDevice] systemVersion];
+    NSString *iphoneOSVersion = self.systemVersion;
     NSString *deviceType = self.hardwarePlatform;
     NSString *deviceUUID = [self respondsToSelector:@selector(uniqueIdentifier)] ? self.uniqueIdentifier : @"UDID Not Supported anymore";
     NSString *deviceLang = [[NSLocale preferredLanguages] objectAtIndex:0];
