@@ -41,12 +41,12 @@ FKLoadCategory(UIDeviceFKAdditions);
 }
 
 - (NSString *)debugInformation {
-    NSString *appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"];
-    NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    NSString *appName = FKApplicationName();
+    NSString *appVersion = FKApplicationVersion();
     NSString *appShortVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]; 
     NSString *iphoneOSVersion = [[UIDevice currentDevice] systemVersion];
-    NSString *deviceType = [UIDevice currentDevice].hardwarePlatform;
-    NSString *deviceUUID = [[UIDevice currentDevice] uniqueIdentifier];
+    NSString *deviceType = self.hardwarePlatform;
+    NSString *deviceUUID = [self respondsToSelector:@selector(uniqueIdentifier)] ? self.uniqueIdentifier : @"UDID Not Supported anymore";
     NSString *deviceLang = [[NSLocale preferredLanguages] objectAtIndex:0];
     NSString *appPirated = [UIApplication sharedApplication].pirated ? @"\n-- POSSIBLY PIRATED --" : @"";
     
