@@ -4,6 +4,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ Enum used in the postionUnderView: and positionNextToView: methods and specifies
+ how the view gets positioned relative to a specified view
+ */
 typedef enum {
 	FKUIViewAlignmentUnchanged,
 	FKUIViewAlignmentLeftAligned,
@@ -18,7 +22,6 @@ typedef enum {
  You get a lot of shortcuts for positioning the UIView, setting borders or shadows
  and getting the content as a UIImage
  */
-
 @interface UIView (FKAdditions)
 
 /**
@@ -26,18 +29,28 @@ typedef enum {
  frame afterwards to fix blurry views by non-integral coordinates
  */
 @property (nonatomic, assign) CGPoint integralCenter;
+/** assignable shortcut for self.center.x */
 @property (nonatomic, assign) CGFloat centerX;
+/** assignable shortcut for self.center.y */
 @property (nonatomic, assign) CGFloat centerY;
 
+/** setting this property sets the frame of the view to an integral frame */
 @property (nonatomic, assign) CGRect integralFrame;
+/** assignable shortcut for self.frame.size.width */
 @property (nonatomic, assign) CGFloat frameWidth;
+/** assignable shortcut for self.frame.size.height */
 @property (nonatomic, assign) CGFloat frameHeight;
+/** assignable shortcut for self.frame.origin.x */
 @property (nonatomic, assign) CGFloat frameLeft;
+/** assignable shortcut for self.frame.origin.y */
 @property (nonatomic, assign) CGFloat frameTop;
+/** assignable shortcut for self.frame.origin.y + self.frame.size.height */
 @property (nonatomic, assign) CGFloat frameBottom;
+/** assignable shortcut for self.frame.origin.x + self.frame.size.width */
 @property (nonatomic, assign) CGFloat frameRight;
-
+/** shortcut for self.bounds.size.width */
 @property (nonatomic, readonly) CGFloat boundsWidth;
+/** shortcut for self.bounds.size.height */
 @property (nonatomic, readonly) CGFloat boundsHeight;
 
 /**
@@ -108,20 +121,64 @@ typedef enum {
  */
 - (void)positionNextToView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment;
 
-// adds the subview as a subview of the current view and centers it
+/**
+ Adds the subview to current view and centers it
+ @param subview the view to add as centered subview
+ */
 - (void)addCenteredSubview:(UIView *)subview;
-// moves the current view to the center of it's superview
+/**
+ Centers the view within it's superview
+ */
 - (void)moveToCenterOfSuperview;
 
+/**
+ Sets a border on the view's layer with the specified width and color. The cornerRadius is set to 0.
+ @param borderWidth the width of the border
+ @param borderColor the color of the border
+ */
 - (void)setBorderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
+/**
+ Sets a border on the view's layer with the specified width, color and cornerRadius.
+ @param borderWidth the width of the border
+ @param borderColor the color of the border
+ @param cornerRadius the radius of the border
+ */
 - (void)setBorderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor cornerRadius:(CGFloat)cornerRadius;
-- (void)setShadowOffset:(CGSize)offset radius:(CGFloat)radius opacity:(CGFloat)opacity;
+/**
+ Sets a shadow on the view's layer with the specified offset, radius and opacity
+ @param offset the offset of the shadow
+ @param radius the radius of the shadow
+ @param opacity the opacity of the shadow
+ */
+- (void)setShadowWithOffset:(CGSize)offset radius:(CGFloat)radius opacity:(CGFloat)opacity;
+/**
+ Adds a linear gradientLayer as a sublayer on the current view's layer with the specified start- and endColor
+ @param startColor the color used at the top of the view
+ @param endColor the color used at the bottom of the view
+ */
 - (void)setGradientBackgroundWithStartColor:(UIColor *)startColor endColor:(UIColor *)endColor;
 
+/**
+ Sets a border on the view's layer with the specified color and a width of 2pt, if we are in Debug-Mode.
+ Does nothing otherwise.
+ @param color the color of the border
+ */
 - (void)enableDebugBorderWithColor:(UIColor *)color;
+/**
+ Sets a border on the view's layer with a random color and a width of 2pt, if we are in Debug-Mode.
+ Does nothing otherwise.
+ */
 - (void)enableDebugBorderWithRandomColor;
+/**
+ Sets a border on the view's layer with an orange color and a width of 2pt, if we are in Debug-Mode.
+ Does nothing otherwise.
+ */
 - (void)enableDebugBorder;
 
+/**
+ Returns an image representation of the current view
+ @return a UIImage with the contents of the view
+ */
 - (UIImage *)imageRepresentation;
 
 @end

@@ -62,7 +62,7 @@ static void PrintReachabilityFlags(SCNetworkReachabilityFlags    flags, const ch
 {
 #if kShouldPrintReachabilityFlags
     
-    NSLog(@"Reachability Flag Status: %c%c %c%c%c%c%c%c%c %s\n",
+    FKLogDebug(@"Reachability Flag Status: %c%c %c%c%c%c%c%c%c %s\n",
             (flags & kSCNetworkReachabilityFlagsIsWWAN)               ? 'W' : '-',
             (flags & kSCNetworkReachabilityFlagsReachable)            ? 'R' : '-',
             
@@ -73,8 +73,7 @@ static void PrintReachabilityFlags(SCNetworkReachabilityFlags    flags, const ch
             (flags & kSCNetworkReachabilityFlagsConnectionOnDemand)   ? 'D' : '-',
             (flags & kSCNetworkReachabilityFlagsIsLocalAddress)       ? 'l' : '-',
             (flags & kSCNetworkReachabilityFlagsIsDirect)             ? 'd' : '-',
-            comment
-            );
+            comment);
 #endif
 }
  

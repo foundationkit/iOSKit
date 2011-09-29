@@ -207,7 +207,7 @@ FKLoadCategory(UIViewFKAdditions);
 	layer.borderColor = [borderColor CGColor];
 }
 
-- (void)setShadowOffset:(CGSize)offset radius:(CGFloat)radius opacity:(CGFloat)opacity {
+- (void)setShadowWithOffset:(CGSize)offset radius:(CGFloat)radius opacity:(CGFloat)opacity {
     CALayer *layer = self.layer;
     
 	layer.masksToBounds = NO;
@@ -226,11 +226,10 @@ FKLoadCategory(UIViewFKAdditions);
 }
 
 - (void)enableDebugBorderWithColor:(UIColor *)color {
-    // TODO: Use logging
-	// NSLog(@"enable debug for view %@", self);
+    FKLogDebug(@"[Enabling debug border for view %@]", self);
+    
 #ifdef FK_DEBUG
-	self.layer.borderColor = color.CGColor;
-	self.layer.borderWidth = 2.0;
+    [self setBorderWidth:2.f borderColor:color];
 #endif
 }
 

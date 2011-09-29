@@ -43,9 +43,9 @@ CGPoint FKGetMaxPositions(UIScrollView *scrollView);
 }
 
 - (void)autocalculateContentSizeWithPadding:(CGSize)padding {
-    CGSize maxPositions = FKGetMaxPositions(self);
+    CGPoint maxPositions = FKGetMaxPositions(self);
     
-    self.contentSize = CGSizeMake(maxPositions+padding.width, maxPositions+padding.height); 
+    self.contentSize = CGSizeMake(maxPositions.x+padding.width, maxPositions.y+padding.height); 
 }
 
 @end
