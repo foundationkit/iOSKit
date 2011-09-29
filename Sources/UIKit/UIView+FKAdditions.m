@@ -107,7 +107,7 @@ FKLoadCategory(UIViewFKAdditions);
 ////////////////////////////////////////////////////////////////////////
 
 - (void)positionUnderView:(UIView *)view {
-	[self positionUnderView:view padding:0];
+	[self positionUnderView:view padding:0.f];
 }
 
 - (void)positionUnderView:(UIView *)view padding:(CGFloat)padding {
@@ -115,16 +115,13 @@ FKLoadCategory(UIViewFKAdditions);
 }
 
 - (void)positionUnderView:(UIView *)view alignment:(FKUIViewAlignment)alignment {
-	[self positionUnderView:view padding:0 alignment:alignment];
+	[self positionUnderView:view padding:0.f alignment:alignment];
 }
 
 - (void)positionUnderView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment {
 	self.frameTop = view.frameBottom + padding;
     
 	switch (alignment) {
-		case FKUIViewAlignmentUnchanged:
-			// do nothing
-			break;
 		case FKUIViewAlignmentLeftAligned:
 			self.frameLeft = view.frameLeft;
 			break;
@@ -135,6 +132,50 @@ FKLoadCategory(UIViewFKAdditions);
             
 		case FKUIViewAlignmentCentered:
 			self.centerX = view.centerX;
+			break;
+            
+        case FKUIViewAlignmentUnchanged:
+        case FKUIViewAlignmentTopAligned:
+        case FKUIViewAlignmentBottomAligned:
+        default:
+			// do nothing
+			break;
+	}
+}
+
+- (void)positionNextToView:(UIView *)view {
+	[self positionNextToView:view padding:0.f];
+}
+
+- (void)positionNextToView:(UIView *)view padding:(CGFloat)padding {
+	[self positionNextToView:view padding:padding alignment:FKUIViewAlignmentUnchanged];
+}
+
+- (void)positionNextToView:(UIView *)view alignment:(FKUIViewAlignment)alignment {
+	[self positionNextToView:view padding:0.f alignment:alignment];
+}
+
+- (void)positionNextToView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment {
+	self.frameLeft = view.frameRight + padding;
+    
+	switch (alignment) {
+		case FKUIViewAlignmentTopAligned:
+			self.frameTop = view.frameTop;
+			break;
+            
+		case FKUIViewAlignmentBottomAligned:
+			self.frameBottom = view.frameBottom;
+			break;
+            
+		case FKUIViewAlignmentCentered:
+			self.centerY = view.centerY;
+			break;
+            
+        case FKUIViewAlignmentUnchanged:
+        case FKUIViewAlignmentLeftAligned:
+        case FKUIViewAlignmentRightAligned:
+        default:
+			// do nothing
 			break;
 	}
 }
