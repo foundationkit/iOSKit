@@ -1,6 +1,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIView+FKAdditions.h"
 #import "UIColor+FKAdditions.h"
+#import "CGGeometry+FKAdditions.h"
 
 FKLoadCategory(UIViewFKAdditions);
 
@@ -45,19 +46,19 @@ FKLoadCategory(UIViewFKAdditions);
 }
 
 - (void)setFrameWidth:(CGFloat)width {
-	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, width, self.frame.size.height);
+    self.frame = FKRectSetWidth(self.frame, width);
 }
 
 - (void)setFrameHeight:(CGFloat)height {
-	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, height);
+    self.frame = FKRectSetHeight(self.frame, height);
 }
 
 - (void)setFrameTop:(CGFloat)top {
-	self.frame = CGRectMake(self.frame.origin.x, top, self.frame.size.width, self.frame.size.height);
+    self.frame = FKRectSetY(self.frame, top);
 }
 
 - (void)setFrameLeft:(CGFloat)left {
-	self.frame = CGRectMake(left, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+    self.frame = FKRectSetX(self.frame, left);
 }
 
 - (void)setFrameBottom:(CGFloat)bottom {
@@ -69,35 +70,35 @@ FKLoadCategory(UIViewFKAdditions);
 }
 
 - (CGFloat)frameHeight {
-	return self.frame.size.height;
+	return CGRectGetHeight(self.frame);
 }
 
 - (CGFloat)frameWidth {
-	return self.frame.size.width;
+	return CGRectGetWidth(self.frame);
 }
 
 - (CGFloat)frameTop {
-	return self.frame.origin.y;
+	return CGRectGetMinY(self.frame);
 }
 
 - (CGFloat)frameLeft {
-	return self.frame.origin.x;
+	return CGRectGetMinX(self.frame);
 }
 
 - (CGFloat)frameBottom {
-	return self.frame.origin.y + self.frame.size.height;
+	return CGRectGetMaxY(self.frame);
 }
 
 - (CGFloat)frameRight {
-	return self.frame.origin.x + self.frame.size.width;
+	return CGRectGetMaxX(self.frame);
 }
 
 - (CGFloat)boundsWidth {
-    return self.bounds.size.width;
+    return CGRectGetWidth(self.bounds);
 }
 
 - (CGFloat)boundsHeight {
-    return self.bounds.size.height;
+    return CGRectGetHeight(self.bounds);
 }
 
 ////////////////////////////////////////////////////////////////////////
