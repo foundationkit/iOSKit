@@ -204,6 +204,10 @@
 		9B6C02F0142C9FD2006F9812 /* FKTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKTableViewCell.m; path = TableView/FKTableViewCell.m; sourceTree = "<group>"; };
 		9B6C02F3142CA0E2006F9812 /* FKTableViewCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKTableViewCellView.h; path = TableView/FKTableViewCellView.h; sourceTree = "<group>"; };
 		9B6C02F4142CA0E2006F9812 /* FKTableViewCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKTableViewCellView.m; path = TableView/FKTableViewCellView.m; sourceTree = "<group>"; };
+		9BC1CD751431CF9800A5098D /* Reachability+FKAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reachability+FKAdditions.h"; sourceTree = "<group>"; };
+		9BC1CD761431CF9800A5098D /* Reachability+FKAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Reachability+FKAdditions.m"; sourceTree = "<group>"; };
+		9BC1CD771431CF9800A5098D /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		9BC1CD781431CF9800A5098D /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +232,7 @@
 				39DF5CE01424A5E300090805 /* Audio */,
 				9B54E80E14269B5500336F08 /* Core */,
 				39DF5D741424B5EC00090805 /* Network */,
+				9BC1CD731431CF9800A5098D /* Optional */,
 				391393A013C9B84C0049DA61 /* Shorthands */,
 				39DF5CDB1424A05B00090805 /* TableView */,
 				9B297200141B7EF9006124A2 /* UIKit */,
@@ -406,6 +411,25 @@
 				9B54E81514269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		9BC1CD731431CF9800A5098D /* Optional */ = {
+			isa = PBXGroup;
+			children = (
+				9BC1CD741431CF9800A5098D /* Reachability */,
+			);
+			path = Optional;
+			sourceTree = "<group>";
+		};
+		9BC1CD741431CF9800A5098D /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				9BC1CD751431CF9800A5098D /* Reachability+FKAdditions.h */,
+				9BC1CD761431CF9800A5098D /* Reachability+FKAdditions.m */,
+				9BC1CD771431CF9800A5098D /* Reachability.h */,
+				9BC1CD781431CF9800A5098D /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
