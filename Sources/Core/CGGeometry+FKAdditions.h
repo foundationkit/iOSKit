@@ -8,39 +8,66 @@
 #pragma mark CGRect Helper
 ////////////////////////////////////////////////////////////////////////
 
+/**
+ Creates a new CGRect with (0.,0.) as it's origin, and the same width/height as the original CGRect
+ */
 NS_INLINE CGRect FKRectWithClearedOrigin(CGRect rect) {
     return CGRectMake(0.f,0.f,rect.size.width, rect.size.height);
 }
 
+/**
+ Applys UIEdgeInsets to a CGRect.
+ */
 NS_INLINE CGRect FKRectInset(CGRect rect, UIEdgeInsets insets) {
     return CGRectMake(CGRectGetMinX(rect)+insets.left, CGRectGetMinY(rect)+insets.top,
                       CGRectGetWidth(rect)-insets.left-insets.right, CGRectGetHeight(rect)-insets.top-insets.bottom);
 }
 
+/**
+ Sets a new value for origin.x, leaves all other values unchanged.
+ */
 NS_INLINE CGRect FKRectSetX(CGRect rect, CGFloat x) {
 	return CGRectMake(x, rect.origin.y, rect.size.width, rect.size.height);
 }
 
+/**
+ Sets a new value for origin.y, leaves all other values unchanged.
+ */
 NS_INLINE CGRect FKRectSetY(CGRect rect, CGFloat y) {
 	return CGRectMake(rect.origin.x, y, rect.size.width, rect.size.height);
 }
 
+/**
+ Sets a new value for size.width, leaves all other values unchanged.
+ */
 NS_INLINE CGRect FKRectSetWidth(CGRect rect, CGFloat width) {
 	return CGRectMake(rect.origin.x, rect.origin.y, width, rect.size.height);
 }
 
+/**
+ Sets a new value for size.height, leaves all other values unchanged.
+ */
 NS_INLINE CGRect FKRectSetHeight(CGRect rect, CGFloat height) {
 	return CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, height);
 }
 
+/**
+ Sets a new origin, leaves the size unchanged
+ */
 NS_INLINE CGRect FKRectSetOrigin(CGRect rect, CGPoint origin) {
 	return CGRectMake(origin.x, origin.y, rect.size.width, rect.size.height);
 }
 
+/**
+ Sets a new size, leaves the origin unchanged
+ */
 NS_INLINE CGRect FKRectSetSize(CGRect rect, CGSize size) {
 	return CGRectMake(rect.origin.x, rect.origin.y, size.width, size.height);
 }
 
+/**
+ Translates the origin of a rect by creating a new origin (origin.x+point.x, origin.y+point.y)
+ */
 NS_INLINE CGRect FKRectAddPoint(CGRect rect, CGPoint point) {
 	return CGRectMake(rect.origin.x + point.x, rect.origin.y + point.y, rect.size.width, rect.size.height);
 }
@@ -50,6 +77,9 @@ NS_INLINE CGRect FKRectAddPoint(CGRect rect, CGPoint point) {
 #pragma mark CGSize Helper
 ////////////////////////////////////////////////////////////////////////
 
+/**
+ Scales a size to another size by keeping the aspect ratio
+ */
 NS_INLINE CGSize FKSizeAspectScaleToSize(CGSize size, CGSize toSize) {
 	CGFloat aspect = 1.f;
     

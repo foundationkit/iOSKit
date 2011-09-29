@@ -30,7 +30,8 @@
 @property (nonatomic, readonly) BOOL isSimulator;
 
 /**
- Simulates a memory warning on the device, if we are in debug-mode. Does nothing otherwise.
+ Simulates a memory warning on the device, if we are in debug-mode. 
+ Does nothing otherwise.
  */
 - (void)simulateMemoryWarning;
 
