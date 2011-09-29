@@ -19,4 +19,7 @@
 - (void)autocalculateContentWidth;
 - (void)autocalculateContentWidthWithPadding:(CGFloat)padding;
 
+- (void)autocalculateContentSize;
+- (void)autocalculateContentSizeWithPadding:(CGSize)padding;
+
 @end

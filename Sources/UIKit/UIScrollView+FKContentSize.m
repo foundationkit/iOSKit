@@ -4,16 +4,12 @@
 
 FKLoadCategory(UIScrollViewFKContentSize);
 
-#define kFKDefaultPadding 5.f
+#define kFKDefaultPadding 2.f
 
-typedef enum {
-    FKOrientationHorizontal,
-    FKOrientationVertical
-} FKOrientation;
 
 BOOL FKViewIsScrollIndicator(UIView *view);
 BOOL FKViewUseForAutocalculation(UIView *view);
-CGFloat FKGetMaxPosition(UIScrollView *scrollView, FKOrientation orientation);
+CGPoint FKGetMaxPositions(UIScrollView *scrollView);
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -27,7 +23,7 @@ CGFloat FKGetMaxPosition(UIScrollView *scrollView, FKOrientation orientation);
 }
 
 - (void)autocalculateContentHeightWithPadding:(CGFloat)padding {
-	CGFloat maxHeight = FKGetMaxPosition(self, FKOrientationVertical);
+	CGFloat maxHeight = FKGetMaxPositions(self).y;
     
     self.contentSize = CGSizeMake(self.bounds.size.width, maxHeight + padding);
 }
@@ -37,9 +33,19 @@ CGFloat FKGetMaxPosition(UIScrollView *scrollView, FKOrientation orientation);
 }
 
 - (void)autocalculateContentWidthWithPadding:(CGFloat)padding {
-    CGFloat maxWidth = FKGetMaxPosition(self, FKOrientationHorizontal);
+    CGFloat maxWidth = FKGetMaxPositions(self).x;
     
     self.contentSize = CGSizeMake(maxWidth + padding, self.bounds.size.height);
+}
+
+- (void)autocalculateContentSize {
+    [self autocalculateContentSizeWithPadding:CGSizeMake(kFKDefaultPadding, kFKDefaultPadding)];
+}
+
+- (void)autocalculateContentSizeWithPadding:(CGSize)padding {
+    CGSize maxPositions = FKGetMaxPositions(self);
+    
+    self.contentSize = CGSizeMake(maxPositions+padding.width, maxPositions+padding.height); 
 }
 
 @end
@@ -66,18 +72,18 @@ BOOL FKViewUseForAutocalculation(UIView *view) {
     return view.alpha > 0.f && view.hidden == NO && !FKViewIsScrollIndicator(view) && !view.excludedFromScrollViewAutocalculation;
 }
 
-CGFloat FKGetMaxPosition(UIScrollView *scrollView, FKOrientation orientation) {
+CGPoint FKGetMaxPositions(UIScrollView *scrollView) {
     NSArray *subviews = scrollView.subviews;
-	CGFloat max = -1.f;
+	CGPoint max = CGPointZero;
     
     // calculate max position of any subview of the scrollView
 	for (UIView *view in subviews) {
         if (FKViewUseForAutocalculation(view)) {
-            CGFloat maxOfView = (orientation == FKOrientationVertical ? CGRectGetMaxY(view.frame) : CGRectGetMaxX(view.frame));
+            CGFloat maxXOfView = CGRectGetMaxX(view.frame);
+            CGFloat maxYOfView = CGRectGetMaxY(view.frame);
             
-            if (maxOfView > max) {
-                max = maxOfView;
-            }
+            max.x = MAX(max.x, maxXOfView);
+            max.y = MAX(max.y, maxYOfView);
         }
 	}
     
