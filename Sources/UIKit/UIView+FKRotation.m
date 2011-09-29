@@ -18,6 +18,10 @@ static char landscapeFrameKey;
     return view;
 }
 
++ (id)viewWithPortraitFrame:(CGRect)portraitFrame landscapeOrigin:(CGPoint)landscapeOrigin {
+    return [self viewWithPortraitFrame:portraitFrame landscapeFrame:(CGRect){landscapeOrigin, portraitFrame.size}];
+}
+
 - (BOOL)hasPortraitAndLandscapeFrames {
     return !CGRectIsEmpty(self.portraitFrame) && !CGRectIsEmpty(self.landscapeFrame);
 }

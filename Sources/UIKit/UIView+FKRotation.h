@@ -18,8 +18,23 @@
 /** specifies whether portrait and landscape frames are defined for this view */
 @property (nonatomic, readonly) BOOL hasPortraitAndLandscapeFrames;
 
-
+/**
+ This creates a view with the portrait frame and sets it's portraitFrame/landscapeFrame properties
+ 
+ @param portraitFrame the portrait frame of the view
+ @param landscapeFrame the landscape frame of the view
+ @return a UIView that was created with initWithFrame:portraitFrame and has a portraitFrame and landscapeFrame set
+ */
 + (id)viewWithPortraitFrame:(CGRect)portraitFrame landscapeFrame:(CGRect)landscapeFrame;
+
+/**
+ This creates a view with the portrait frame and sets it's portraitFrame/landscapeFrame properties
+ 
+ @param portraitFrame the portrait frame of the view
+ @param landscapeOrigin the origin of the frame of the view in landscape orientation
+ @return a UIView that was created with initWithFrame:portraitFrame and it's landscapeFrame is set to [landscapeOrigin, portraitFrame.size]
+ */
++ (id)viewWithPortraitFrame:(CGRect)portraitFrame landscapeOrigin:(CGPoint)landscapeOrigin;
 
 /**
  * Returns the frame set for the given interface orientation
