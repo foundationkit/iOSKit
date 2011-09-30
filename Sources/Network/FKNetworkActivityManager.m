@@ -1,9 +1,17 @@
 #import "FKNetworkActivityManager.h"
+#import "FKDispatch.h"
 
 static NSMutableSet *networkUsers = nil;
-static dispatch_queue_t network_queue_;
 
-dispatch_queue_t network_queue(void);
+FKDefineGCDQueueWithName(network_queue);
+
+NS_INLINE void FKUpdateNetworkActivityIndicatorVisibility() {
+    if (networkUsers.count > 0) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    } else {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    }
+}
 
 @implementation FKNetworkActivityManager
 
@@ -17,41 +25,28 @@ dispatch_queue_t network_queue(void);
 }
 
 + (void)addNetworkUser:(id)networkUser {
-    dispatch_sync_reentrant(network_queue(), ^{
-        [networkUsers addObject:networkUser];
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    });
+    if (networkUser != nil) {
+        dispatch_sync_reentrant(network_queue(), ^{
+            [networkUsers addObject:networkUser];
+            FKUpdateNetworkActivityIndicatorVisibility();
+        });
+    }
 }
 
 + (void)removeNetworkUser:(id)networkUser {
-    dispatch_sync_reentrant(network_queue(), ^{
-        [networkUsers removeObject:networkUser];
-        
-        if (networkUsers.count == 0) {
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        }
-    });
+    if (networkUser != nil) {
+        dispatch_sync_reentrant(network_queue(), ^{
+            [networkUsers removeObject:networkUser];
+            FKUpdateNetworkActivityIndicatorVisibility();
+        });
+    }
 }
 
 + (void)removeAllNetworkUsers {
     dispatch_sync_reentrant(network_queue(), ^{
         [networkUsers removeAllObjects];
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        FKUpdateNetworkActivityIndicatorVisibility();
     });
 }
 
 @end
-
-////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Helper Functions
-////////////////////////////////////////////////////////////////////////
-
-dispatch_queue_t network_queue(void) {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        network_queue_ = dispatch_queue_create("it.foundationk.FKNetworkActivityManager.network_queue", 0);
-    });
-    
-    return network_queue_;
-}
