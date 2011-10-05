@@ -1,8 +1,5 @@
 // Part of iOSKit http://foundationk.it
 
-// Audio
-#import "FKSoundEffect.h"
-
 // Core
 #import "CGGeometry+FKAdditions.h"
 #import "FKiOSConstants.h"
