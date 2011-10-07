@@ -271,4 +271,23 @@ FKLoadCategory(UIViewFKAdditions);
     return image;
 }
 
+////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Scrolling
+////////////////////////////////////////////////////////////////////////
+
++ (void)disableScrollsToTopOnAllSubviewsOfView:(UIView *)view {
+    for (UIView *subview in view.subviews) {
+        if ([subview isKindOfClass:[UIScrollView class]]) {
+            ((UIScrollView *)subview).scrollsToTop = NO;
+        }
+        
+        [self disableScrollsToTopOnAllSubviewsOfView:subview];
+    }
+}
+
+- (void)disableScrollsToTopOnAllSubviews {
+    [UIView disableScrollsToTopOnAllSubviewsOfView:self];
+}
+
 @end

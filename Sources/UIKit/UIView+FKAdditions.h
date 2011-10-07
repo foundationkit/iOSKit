@@ -185,4 +185,16 @@ typedef enum {
  */
 - (UIImage *)imageRepresentation;
 
+/**
+ Recursively sets the property 'scrollsToTop' to NO for all subviews of the given view.
+ 
+ @param view the view, which subviews should not scrollToTop
+ */
++ (void)disableScrollsToTopOnAllSubviewsOfView:(UIView *)view;
+
+/**
+ Calls + disableScrollsToTopOnAllSubviewsView: with self.
+ */
+- (void)disableScrollsToTopOnAllSubviews;
+
 @end
