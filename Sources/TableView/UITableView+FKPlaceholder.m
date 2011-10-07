@@ -6,7 +6,6 @@
 
 FKLoadCategory(UITableViewFKPlaceholder);
 
-static char placeholderDelegateKey;
 static char contentUnavailableViewKey;
 
 @interface UITableView ()
@@ -55,14 +54,6 @@ static char contentUnavailableViewKey;
 #pragma mark Setter/Getter
 ////////////////////////////////////////////////////////////////////////
 
-- (void)setPlaceholderDelegate:(id<FKTableViewPlaceholder>)placeholderDelegate {
-    [self associateWeakValue:placeholderDelegate withKey:&placeholderDelegateKey];
-}
-
-- (id<FKTableViewPlaceholder>)placeholderDelegate {
-    return (id<FKTableViewPlaceholder>)[self associatedValueForKey:&placeholderDelegateKey];
-}
-
 - (void)setFk_contentUnavailableView:(UIView *)contentUnavailableView {
     [self associateValue:contentUnavailableView withKey:&contentUnavailableViewKey];
 }
@@ -77,7 +68,7 @@ static char contentUnavailableViewKey;
 ////////////////////////////////////////////////////////////////////////
 
 - (UIView *)fk_contentUnavailableViewFromDelegate {
-    id<FKTableViewPlaceholder> delegate = self.placeholderDelegate;
+    id delegate = self.delegate;
     
     if ([delegate respondsToSelector:@selector(contentUnavailableViewForTableView:)]) {
         return [delegate contentUnavailableViewForTableView:self];

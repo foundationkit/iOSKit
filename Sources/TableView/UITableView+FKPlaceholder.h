@@ -14,8 +14,11 @@
 
 @interface UITableView (FKPlaceholder)
 
-@property (nonatomic, fk_weak) id<FKTableViewPlaceholder> placeholderDelegate;
-
+/** 
+ This method shows/hides the placeholder that is used to display any "No Content" - information.
+ 
+ @param hidden flag to control the visiblity of the placeholderView
+ */
 - (void)setContentUnavailableViewHidden:(BOOL)hidden;
 
 @end
