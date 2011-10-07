@@ -36,6 +36,10 @@ typedef enum {
 
 /** setting this property sets the frame of the view to an integral frame */
 @property (nonatomic, assign) CGRect integralFrame;
+/** assignable shortcut form self.frame.origin */
+@property (nonatomic, assign) CGPoint frameOrigin;
+/** assignable shortcut form self.frame.size */
+@property (nonatomic, assign) CGSize frameSize;
 /** assignable shortcut for self.frame.size.width */
 @property (nonatomic, assign) CGFloat frameWidth;
 /** assignable shortcut for self.frame.size.height */

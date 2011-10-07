@@ -1,5 +1,4 @@
 #import "UIButton+FKConcise.h"
-#import "CGGeometry+FKAdditions.h"
 
 @implementation UIButton (FKConcise)
 

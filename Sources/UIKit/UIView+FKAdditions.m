@@ -45,6 +45,22 @@ FKLoadCategory(UIViewFKAdditions);
     return CGRectIntegral(self.frame);
 }
 
+- (void)setFrameOrigin:(CGPoint)frameOrigin {
+    self.frame = FKRectSetOrigin(self.frame, frameOrigin);
+}
+
+- (CGPoint)frameOrigin {
+    return self.frame.origin;
+}
+
+- (void)setFrameSize:(CGSize)frameSize {
+    self.frame = FKRectSetSize(self.frame, frameSize);
+}
+
+- (CGSize)frameSize {
+    return self.frame.size;
+}
+
 - (void)setFrameWidth:(CGFloat)width {
     self.frame = FKRectSetWidth(self.frame, width);
 }
