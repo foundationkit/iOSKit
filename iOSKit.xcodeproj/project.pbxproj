@@ -64,8 +64,6 @@
 		39CFA61214224AF800DC3E57 /* UIView+FKAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA61014224AF600DC3E57 /* UIView+FKAnimations.m */; };
 		39DF5CDE1424A08C00090805 /* FKColoredAccessoryView.h in Headers */ = {isa = PBXBuildFile; fileRef = 39DF5CDC1424A08C00090805 /* FKColoredAccessoryView.h */; };
 		39DF5CDF1424A08C00090805 /* FKColoredAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF5CDD1424A08C00090805 /* FKColoredAccessoryView.m */; };
-		39DF5CE31424A5FB00090805 /* FKSoundEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 39DF5CE11424A5FB00090805 /* FKSoundEffect.h */; };
-		39DF5CE41424A5FB00090805 /* FKSoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF5CE21424A5FB00090805 /* FKSoundEffect.m */; };
 		39DF5CF91424A97A00090805 /* libFoundationKitiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5CF41424A96900090805 /* libFoundationKitiOS.a */; };
 		39DF5D771424B62000090805 /* FKNetworkActivityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 39DF5D751424B62000090805 /* FKNetworkActivityManager.h */; };
 		39DF5D781424B62000090805 /* FKNetworkActivityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF5D761424B62000090805 /* FKNetworkActivityManager.m */; };
@@ -179,10 +177,10 @@
 		39CFA60C1422437400DC3E57 /* UIView+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKAdditions.m"; path = "UIKit/UIView+FKAdditions.m"; sourceTree = "<group>"; };
 		39CFA60F14224AF400DC3E57 /* UIView+FKAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKAnimations.h"; path = "UIKit/UIView+FKAnimations.h"; sourceTree = "<group>"; };
 		39CFA61014224AF600DC3E57 /* UIView+FKAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKAnimations.m"; path = "UIKit/UIView+FKAnimations.m"; sourceTree = "<group>"; };
+		39DEEAE2143CE29500B81BB5 /* FKSoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKSoundEffect.h; sourceTree = "<group>"; };
+		39DEEAE3143CE29500B81BB5 /* FKSoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKSoundEffect.m; sourceTree = "<group>"; };
 		39DF5CDC1424A08C00090805 /* FKColoredAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKColoredAccessoryView.h; path = TableView/FKColoredAccessoryView.h; sourceTree = "<group>"; };
 		39DF5CDD1424A08C00090805 /* FKColoredAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKColoredAccessoryView.m; path = TableView/FKColoredAccessoryView.m; sourceTree = "<group>"; };
-		39DF5CE11424A5FB00090805 /* FKSoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKSoundEffect.h; path = Audio/FKSoundEffect.h; sourceTree = "<group>"; };
-		39DF5CE21424A5FB00090805 /* FKSoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKSoundEffect.m; path = Audio/FKSoundEffect.m; sourceTree = "<group>"; };
 		39DF5CE81424A96800090805 /* FoundationKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FoundationKit.xcodeproj; path = FoundationKit/FoundationKit.xcodeproj; sourceTree = "<group>"; };
 		39DF5D751424B62000090805 /* FKNetworkActivityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKNetworkActivityManager.h; path = Network/FKNetworkActivityManager.h; sourceTree = "<group>"; };
 		39DF5D761424B62000090805 /* FKNetworkActivityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKNetworkActivityManager.m; path = Network/FKNetworkActivityManager.m; sourceTree = "<group>"; };
@@ -233,7 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				391393B313C9C1310049DA61 /* iOSKit.h */,
-				39DF5CE01424A5E300090805 /* Audio */,
 				9B54E80E14269B5500336F08 /* Core */,
 				39DF5D741424B5EC00090805 /* Network */,
 				9BC1CD731431CF9800A5098D /* Optional */,
@@ -270,6 +267,15 @@
 			path = Universal;
 			sourceTree = "<group>";
 		};
+		39DEEAE1143CE29500B81BB5 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				39DEEAE2143CE29500B81BB5 /* FKSoundEffect.h */,
+				39DEEAE3143CE29500B81BB5 /* FKSoundEffect.m */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		39DF5CDB1424A05B00090805 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,15 +291,6 @@
 				39AA0FB6142927D100C6956C /* UITableView+FKPlaceholder.m */,
 			);
 			name = TableView;
-			sourceTree = "<group>";
-		};
-		39DF5CE01424A5E300090805 /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-				39DF5CE11424A5FB00090805 /* FKSoundEffect.h */,
-				39DF5CE21424A5FB00090805 /* FKSoundEffect.m */,
-			);
-			name = Audio;
 			sourceTree = "<group>";
 		};
 		39DF5CE91424A96800090805 /* Products */ = {
@@ -422,6 +419,7 @@
 		9BC1CD731431CF9800A5098D /* Optional */ = {
 			isa = PBXGroup;
 			children = (
+				39DEEAE1143CE29500B81BB5 /* Audio */,
 				9BC1CD741431CF9800A5098D /* Reachability */,
 			);
 			path = Optional;
@@ -464,7 +462,6 @@
 				39ACE81614228DCC0022D8F8 /* UIViewController+FKLoading.h in Headers */,
 				393A299E142359C50056CB37 /* UIViewController+FKAdditions.h in Headers */,
 				39DF5CDE1424A08C00090805 /* FKColoredAccessoryView.h in Headers */,
-				39DF5CE31424A5FB00090805 /* FKSoundEffect.h in Headers */,
 				39DF5D771424B62000090805 /* FKNetworkActivityManager.h in Headers */,
 				39DF5DAA1424BF0D00090805 /* UIApplication+FKNetwork.h in Headers */,
 				397F81BE14261227006B98BD /* UITableViewCell+FKConcise.h in Headers */,
@@ -589,7 +586,6 @@
 				39ACE81714228DCC0022D8F8 /* UIViewController+FKLoading.m in Sources */,
 				393A299F142359C50056CB37 /* UIViewController+FKAdditions.m in Sources */,
 				39DF5CDF1424A08C00090805 /* FKColoredAccessoryView.m in Sources */,
-				39DF5CE41424A5FB00090805 /* FKSoundEffect.m in Sources */,
 				39DF5D781424B62000090805 /* FKNetworkActivityManager.m in Sources */,
 				39DF5DAB1424BF0D00090805 /* UIApplication+FKNetwork.m in Sources */,
 				397F81BF14261227006B98BD /* UITableViewCell+FKConcise.m in Sources */,
