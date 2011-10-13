@@ -210,6 +210,7 @@
 		9BC1CD761431CF9800A5098D /* Reachability+FKAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Reachability+FKAdditions.m"; sourceTree = "<group>"; };
 		9BC1CD771431CF9800A5098D /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9BC1CD781431CF9800A5098D /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		9BE4253C14470FA40036D399 /* FKAudioFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FKAudioFunctions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +273,7 @@
 			children = (
 				39DEEAE2143CE29500B81BB5 /* FKSoundEffect.h */,
 				39DEEAE3143CE29500B81BB5 /* FKSoundEffect.m */,
+				9BE4253C14470FA40036D399 /* FKAudioFunctions.h */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
