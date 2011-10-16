@@ -1,5 +1,7 @@
 // Part of iOSKit http://foundationk.it
 
+#import "FKShorthands.h"
+#import "FKAssert.h"
 
 NS_INLINE BOOL FKInterfaceOrientationsAreCounterpart(UIInterfaceOrientation interfaceOrientation1, UIInterfaceOrientation interfaceOrientation2) {
     return (interfaceOrientation1 == UIInterfaceOrientationPortrait && interfaceOrientation2 == UIInterfaceOrientationPortraitUpsideDown)  ||
@@ -11,20 +13,22 @@ NS_INLINE BOOL FKInterfaceOrientationsAreCounterpart(UIInterfaceOrientation inte
 NS_INLINE NSString* FKInterfaceOrientationDescription(UIInterfaceOrientation interfaceOrientation) {
     switch (interfaceOrientation) {
         case UIInterfaceOrientationPortrait:
-            return @"Portrait";
+            return $stringify(UIInterfaceOrientationPortrait);
             
         case UIInterfaceOrientationPortraitUpsideDown:
-            return @"Portrait Upside Down";
+            return $stringify(UIInterfaceOrientationPortraitUpsideDown);
             
         case UIInterfaceOrientationLandscapeLeft:
-            return @"Landscape Left";
+            return $stringify(UIInterfaceOrientationLandscapeLeft);
             
         case UIInterfaceOrientationLandscapeRight:
-            return @"Landscape Right";
+            return $stringify(UIInterfaceOrientationLandscapeRight);
     }
     
     // should never happen
-    return @"Unknown orientation";
+    FKAssert(NO, @"interfaceOrientation is not valid");
+    
+    return @"Unknown Orientation";
 }
 
 
