@@ -13,7 +13,7 @@ FKLoadCategory(UIViewControllerFKAdditions);
     return [self isViewLoaded] && self.view.window != nil;
 }
 
-- (void)displayError:(NSError *)error {
+- (void)displayDebugError:(NSError *)error {
 #ifdef FK_DEBUG
 	if (error == nil) {
 		return;
@@ -24,7 +24,7 @@ FKLoadCategory(UIViewControllerFKAdditions);
 #endif
 }
 
-- (void)displayDetailedError:(NSError *)error {
+- (void)displayDetailedDebugError:(NSError *)error {
 #ifdef FK_DEBUG
 	if (error == nil) {
 		return;
@@ -35,7 +35,7 @@ FKLoadCategory(UIViewControllerFKAdditions);
 #endif
 }
 
-- (void)displayErrorString:(NSString *)string {
+- (void)displayDebugErrorString:(NSString *)string {
 #ifdef FK_DEBUG
 	if (string == nil || [string isBlank]) {
 		return;
@@ -48,6 +48,18 @@ FKLoadCategory(UIViewControllerFKAdditions);
                                           otherButtonTitles:nil];
 	[alert show];
 #endif
+}
+
+- (id)currentVisibleViewController {
+    if ([self isKindOfClass:[UITabBarController class]]) {
+        UITabBarController *tabBarController = (UITabBarController *)self;
+        return [tabBarController.selectedViewController currentVisibleViewController];
+    } else if ([self isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigationController = (UINavigationController *)self;
+        return [[navigationController visibleViewController] currentVisibleViewController];
+    }
+    
+    return self;
 }
 
 @end
