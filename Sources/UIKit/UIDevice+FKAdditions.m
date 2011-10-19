@@ -1,5 +1,6 @@
 #import "UIDevice+FKAdditions.h"
 #import "UIApplication+FKAdditions.h"
+#import "FKUniversal.h"
 #include <sys/sysctl.h>
 #include <ifaddrs.h>
 #include <arpa/inet.h>
@@ -91,16 +92,16 @@ FKLoadCategory(UIDeviceFKAdditions);
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSString *iPodTouchModel = @"iPod touch";
-        NSString *iPhoneModel = @"iPhone";
-        NSString *iPhone3GModel = @"iPhone 3G";
-        NSString *iPhone3GSModel = @"iPhone 3GS";
-        NSString *iPadModel = @"iPad";
-        NSString *model = [self model];
+        BOOL isSimulator = NO;
+        BOOL isIPad2 = ($isPad() && [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]);
+        BOOL hasRetina = [[UIScreen mainScreen] scale] > 1.f;
         
-        isCrappyDevice = ([model isEqualToString:iPodTouchModel] || [model isEqualToString:iPhoneModel] ||
-                          [model isEqualToString:iPhone3GModel] || [model isEqualToString:iPhone3GSModel] ||
-                          [model isEqualToString:iPadModel]);
+#if TARGET_IPHONE_SIMULATOR
+        isSimulator = YES;
+#endif
+        if (isIPad2 || hasRetina || isSimulator) {
+            isCrappyDevice = NO;
+        }
     });
     
     return isCrappyDevice;
