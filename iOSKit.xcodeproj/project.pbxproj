@@ -73,6 +73,8 @@
 		9B297207141B8317006124A2 /* NSValue+FKiOSConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */; };
 		9B4826D6145DAF9300C735DD /* UITableView+FKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B4826D4145DAF9300C735DD /* UITableView+FKConcise.h */; };
 		9B4826D7145DAF9300C735DD /* UITableView+FKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4826D5145DAF9300C735DD /* UITableView+FKConcise.m */; };
+		9B513470145E003900BC3DC5 /* FKColoredCellSelectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B51346E145E003900BC3DC5 /* FKColoredCellSelectionView.h */; };
+		9B513471145E003900BC3DC5 /* FKColoredCellSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51346F145E003900BC3DC5 /* FKColoredCellSelectionView.m */; };
 		9B54E81014269B7D00336F08 /* CGGeometry+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E80F14269B7D00336F08 /* CGGeometry+FKAdditions.h */; };
 		9B54E81414269C2F00336F08 /* FKiOSMetrics.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81314269C2F00336F08 /* FKiOSMetrics.h */; };
 		9B54E81614269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81514269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h */; };
@@ -193,6 +195,8 @@
 		9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+FKiOSConcise.h"; sourceTree = "<group>"; };
 		9B4826D4145DAF9300C735DD /* UITableView+FKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FKConcise.h"; sourceTree = "<group>"; };
 		9B4826D5145DAF9300C735DD /* UITableView+FKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FKConcise.m"; sourceTree = "<group>"; };
+		9B51346E145E003900BC3DC5 /* FKColoredCellSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKColoredCellSelectionView.h; path = TableView/FKColoredCellSelectionView.h; sourceTree = "<group>"; };
+		9B51346F145E003900BC3DC5 /* FKColoredCellSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKColoredCellSelectionView.m; path = TableView/FKColoredCellSelectionView.m; sourceTree = "<group>"; };
 		9B54E80F14269B7D00336F08 /* CGGeometry+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CGGeometry+FKAdditions.h"; path = "Core/CGGeometry+FKAdditions.h"; sourceTree = "<group>"; };
 		9B54E81314269C2F00336F08 /* FKiOSMetrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKiOSMetrics.h; path = Core/FKiOSMetrics.h; sourceTree = "<group>"; };
 		9B54E81514269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIInterfaceOrientation+FKAdditions.h"; path = "Core/UIInterfaceOrientation+FKAdditions.h"; sourceTree = "<group>"; };
@@ -289,6 +293,8 @@
 			children = (
 				39DF5CDC1424A08C00090805 /* FKColoredAccessoryView.h */,
 				39DF5CDD1424A08C00090805 /* FKColoredAccessoryView.m */,
+				9B51346E145E003900BC3DC5 /* FKColoredCellSelectionView.h */,
+				9B51346F145E003900BC3DC5 /* FKColoredCellSelectionView.m */,
 				9B6C02EF142C9FD2006F9812 /* FKTableViewCell.h */,
 				9B6C02F0142C9FD2006F9812 /* FKTableViewCell.m */,
 				9B6C02F3142CA0E2006F9812 /* FKTableViewCellView.h */,
@@ -496,6 +502,7 @@
 				392D3C73142FEB82003AFB81 /* NSString+FKiOSConcise.h in Headers */,
 				9BBBF401143AF00D00071ABD /* UIButton+FKConcise.h in Headers */,
 				9B4826D6145DAF9300C735DD /* UITableView+FKConcise.h in Headers */,
+				9B513470145E003900BC3DC5 /* FKColoredCellSelectionView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +622,7 @@
 				392D3C74142FEB82003AFB81 /* NSString+FKiOSConcise.m in Sources */,
 				9BBBF402143AF00D00071ABD /* UIButton+FKConcise.m in Sources */,
 				9B4826D7145DAF9300C735DD /* UITableView+FKConcise.m in Sources */,
+				9B513471145E003900BC3DC5 /* FKColoredCellSelectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
