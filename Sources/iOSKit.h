@@ -29,6 +29,7 @@
 #import "UIApplication+FKNetwork.h"
 #import "UIColor+FKAdditions.h"
 #import "UIDevice+FKAdditions.h"
+#import "UIImage+FKAdditions.h"
 #import "UIImageView+FKAdditions.h"
 #import "UIScreen+FKAdditions.h"
 #import "UIScrollView+FKAdditions.h"
