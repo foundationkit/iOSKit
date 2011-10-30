@@ -16,12 +16,21 @@ $synthesize(lineColor);
 #pragma mark Lifecycle
 ////////////////////////////////////////////////////////////////////////
 
++ (id)coloredSelectionViewForTableViewCell:(UITableViewCell *)cell {
+    FKColoredCellSelectionView *selectionView = [[FKColoredCellSelectionView alloc] initWithFrame:cell.bounds];
+    
+    cell.selectedBackgroundView = selectionView;
+    return selectionView;
+}
+
 - (id)initWithFrame:(CGRect)frame {
 	if ((self = [super initWithFrame:frame])) {
         gradientStartColor_ = [UIColor whiteColor];
         gradientEndColor_ = [UIColor colorWithRed:0.8667 green:0.8667 blue:0.8667 alpha:1.0000];
         lineWidth_ = 1.f;
         lineColor_ = [UIColor grayColor];
+        
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	}
     
 	return self;
@@ -48,7 +57,7 @@ $synthesize(lineColor);
 	CGContextSetShouldAntialias(c, YES);
     CGMutablePathRef path = CGPathCreateMutable();
     
-	if (self.position == FKCellBackgroundViewPositionTop) {
+	if (self.position == FKColoredCellSelectionViewPositionTop) {
 		CGPathMoveToPoint(path, NULL, minx, maxy);
 		CGPathAddArcToPoint(path, NULL, minx, miny, midx, miny, kFKDefaultMargin);
 		CGPathAddArcToPoint(path, NULL, maxx, miny, maxx, maxy, kFKDefaultMargin);
@@ -67,7 +76,7 @@ $synthesize(lineColor);
 		CGContextStrokePath(c);
 		CGContextRestoreGState(c);
         
-	} else if (self.position == FKCellBackgroundViewPositionBottom) {
+	} else if (self.position == FKColoredCellSelectionViewPositionBottom) {
 		miny -= 1.f;
         
 		CGPathMoveToPoint(path, NULL, minx, miny);
@@ -87,7 +96,7 @@ $synthesize(lineColor);
 		CGContextAddPath(c, path);
 		CGContextStrokePath(c);
 		CGContextRestoreGState(c);
-	} else if (self.position == FKCellBackgroundViewPositionMiddle) {
+	} else if (self.position == FKColoredCellSelectionViewPositionMiddle) {
         miny -= 1.f;
         
 		CGPathMoveToPoint(path, NULL, minx, miny);
@@ -108,7 +117,7 @@ $synthesize(lineColor);
 		CGContextStrokePath(c);
 		CGContextRestoreGState(c);
         
-	} else if (self.position == FKCellBackgroundViewPositionSingle) {
+	} else if (self.position == FKColoredCellSelectionViewPositionSingle) {
 		CGPathMoveToPoint(path, NULL, minx, midy);
 		CGPathAddArcToPoint(path, NULL, minx, miny, midx, miny, kFKDefaultMargin);
 		CGPathAddArcToPoint(path, NULL, maxx, miny, maxx, midy, kFKDefaultMargin);
@@ -137,7 +146,7 @@ $synthesize(lineColor);
 #pragma mark FKColoredCellSelectionView
 ////////////////////////////////////////////////////////////////////////
 
-- (void)setPosition:(FKCellBackgroundViewPosition)position {
+- (void)setPosition:(FKColoredCellSelectionViewPosition)position {
 	if (position_ != position) {
 		position_ = position;
 		[self setNeedsDisplay];
@@ -155,6 +164,28 @@ $synthesize(lineColor);
     if (lineColor_ != lineColor) {
         lineColor_ = lineColor;
         [self setNeedsDisplay];
+    }
+}
+
+- (void)updatePositionForTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath {
+    NSInteger sectionRows = [tableView numberOfRowsInSection:indexPath.section];
+    NSInteger row = indexPath.row;
+    
+    // first and last row?
+    if (row == 0 && row == sectionRows - 1) {
+        [self setPosition:FKColoredCellSelectionViewPositionSingle];
+    } 
+    // first row?
+    else if (row == 0) {
+        [self setPosition:FKColoredCellSelectionViewPositionTop];
+    } 
+    // last row?
+    else if (row == sectionRows - 1) {
+        [self setPosition:FKColoredCellSelectionViewPositionBottom];
+    } 
+    // middle row.
+    else {
+        [self setPosition:FKColoredCellSelectionViewPositionMiddle];
     }
 }
 
