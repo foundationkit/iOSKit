@@ -26,17 +26,6 @@ $synthesize(selectionView);
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
-#pragma mark UIView
-////////////////////////////////////////////////////////////////////////
-
-- (void)willMoveToSuperview:(UIView *)newSuperview {
-    [super willMoveToSuperview:newSuperview];
-    
-    [self updatePosition];
-}
-
-////////////////////////////////////////////////////////////////////////
-#pragma mark -
 #pragma mark UITableViewCell
 ////////////////////////////////////////////////////////////////////////
 
@@ -44,6 +33,12 @@ $synthesize(selectionView);
     [super prepareForReuse];
     
     [self hideLoadingIndicator];
+}
+
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [self updateSelectionViewPosition];
+    
+    [super setHighlighted:highlighted animated:animated];
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -61,7 +56,7 @@ $synthesize(selectionView);
     return nil;
 }
 
-- (void)updatePosition {
+- (void)updateSelectionViewPosition {
     UITableView *tableView = (UITableView *)self.superview;
     
     [self.selectionView updatePositionForTableView:tableView indexPath:[tableView indexPathForCell:self]];

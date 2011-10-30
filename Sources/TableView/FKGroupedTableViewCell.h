@@ -20,6 +20,6 @@
 /**
  This method updates the position of the selectionView to display the right rounded corners.
  */
-- (void)updatePosition;
+- (void)updateSelectionViewPosition;
 
 @end
