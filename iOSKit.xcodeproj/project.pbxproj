@@ -71,6 +71,8 @@
 		39DF5DAB1424BF0D00090805 /* UIApplication+FKNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF5DA91424BF0C00090805 /* UIApplication+FKNetwork.m */; };
 		39F5166313C8E3F3008A9732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F5166213C8E3F3008A9732 /* Foundation.framework */; };
 		9B297207141B8317006124A2 /* NSValue+FKiOSConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */; };
+		9B4826D6145DAF9300C735DD /* UITableView+FKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B4826D4145DAF9300C735DD /* UITableView+FKConcise.h */; };
+		9B4826D7145DAF9300C735DD /* UITableView+FKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4826D5145DAF9300C735DD /* UITableView+FKConcise.m */; };
 		9B54E81014269B7D00336F08 /* CGGeometry+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E80F14269B7D00336F08 /* CGGeometry+FKAdditions.h */; };
 		9B54E81414269C2F00336F08 /* FKiOSMetrics.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81314269C2F00336F08 /* FKiOSMetrics.h */; };
 		9B54E81614269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81514269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h */; };
@@ -189,6 +191,8 @@
 		39F5165F13C8E3F3008A9732 /* libiOSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiOSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F5166213C8E3F3008A9732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+FKiOSConcise.h"; sourceTree = "<group>"; };
+		9B4826D4145DAF9300C735DD /* UITableView+FKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FKConcise.h"; sourceTree = "<group>"; };
+		9B4826D5145DAF9300C735DD /* UITableView+FKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FKConcise.m"; sourceTree = "<group>"; };
 		9B54E80F14269B7D00336F08 /* CGGeometry+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CGGeometry+FKAdditions.h"; path = "Core/CGGeometry+FKAdditions.h"; sourceTree = "<group>"; };
 		9B54E81314269C2F00336F08 /* FKiOSMetrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKiOSMetrics.h; path = Core/FKiOSMetrics.h; sourceTree = "<group>"; };
 		9B54E81514269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIInterfaceOrientation+FKAdditions.h"; path = "Core/UIInterfaceOrientation+FKAdditions.h"; sourceTree = "<group>"; };
@@ -246,13 +250,15 @@
 		391393A013C9B84C0049DA61 /* Shorthands */ = {
 			isa = PBXGroup;
 			children = (
-				9BBBF3FF143AF00D00071ABD /* UIButton+FKConcise.h */,
-				9BBBF400143AF00D00071ABD /* UIButton+FKConcise.m */,
 				392D3C71142FEB81003AFB81 /* NSString+FKiOSConcise.h */,
 				392D3C72142FEB82003AFB81 /* NSString+FKiOSConcise.m */,
 				9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */,
 				391393A213C9B84C0049DA61 /* UIApplication+FKConcise.h */,
+				9BBBF3FF143AF00D00071ABD /* UIButton+FKConcise.h */,
+				9BBBF400143AF00D00071ABD /* UIButton+FKConcise.m */,
 				391393A413C9B84C0049DA61 /* UIScreen+FKConcise.h */,
+				9B4826D4145DAF9300C735DD /* UITableView+FKConcise.h */,
+				9B4826D5145DAF9300C735DD /* UITableView+FKConcise.m */,
 				397F81BC14261227006B98BD /* UITableViewCell+FKConcise.h */,
 				397F81BD14261227006B98BD /* UITableViewCell+FKConcise.m */,
 			);
@@ -489,6 +495,7 @@
 				392D3C6F142FE170003AFB81 /* UINavigationController+FKAppearance.h in Headers */,
 				392D3C73142FEB82003AFB81 /* NSString+FKiOSConcise.h in Headers */,
 				9BBBF401143AF00D00071ABD /* UIButton+FKConcise.h in Headers */,
+				9B4826D6145DAF9300C735DD /* UITableView+FKConcise.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +614,7 @@
 				392D3C70142FE170003AFB81 /* UINavigationController+FKAppearance.m in Sources */,
 				392D3C74142FEB82003AFB81 /* NSString+FKiOSConcise.m in Sources */,
 				9BBBF402143AF00D00071ABD /* UIButton+FKConcise.m in Sources */,
+				9B4826D7145DAF9300C735DD /* UITableView+FKConcise.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

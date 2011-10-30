@@ -16,6 +16,7 @@
 #import "NSValue+FKiOSConcise.h"
 #import "UIApplication+FKConcise.h"
 #import "UIScreen+FKConcise.h"
+#import "UITableView+FKConcise.h"
 #import "UITableViewCell+FKConcise.h"
 
 // TableView
