@@ -13,9 +13,10 @@
  @see UITableViewCell+FKConcise
  */
 
-@interface FKTableViewCell : UITableViewCell
+@interface FKTableViewCell : UITableViewCell {
+    UIView *contentView_;
+}
 
-@property (nonatomic, strong, readonly) UIView *contentView;
 @property (nonatomic, strong, readonly) UIView *selectedContentView;
 
 // subclasses must override

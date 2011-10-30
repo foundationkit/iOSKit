@@ -5,7 +5,6 @@
 
 @implementation FKTableViewCell
 
-$synthesize(contentView);
 $synthesize(selectedContentView);
 
 ////////////////////////////////////////////////////////////////////////
@@ -83,10 +82,10 @@ $synthesize(selectedContentView);
 #pragma mark UIView
 ////////////////////////////////////////////////////////////////////////
 
-- (void)setFrame:(CGRect)f {
-	[super setFrame:f];
+- (void)setFrame:(CGRect)frame {
+	[super setFrame:frame];
     
-	CGRect bounds = [self bounds];
+	CGRect bounds = self.bounds;
 	[contentView_ setFrame:bounds];
 	[selectedContentView_ setFrame:bounds];
 }
