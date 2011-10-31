@@ -2,6 +2,7 @@
 //
 // Contains Stuff from Peter Steinberger's Gist: https://gist.github.com/1144242
 // Contains Stuff from Matt Gemell's MGImageUtilities: http://mattgemmell.com/2010/07/05/mgimageutilities
+// Contains Stuff from Sam Soffes' SSToolkit: https://github.com/samsoffes/sstoolkit
 
 #import <UIKit/UIKit.h>
 
@@ -22,5 +23,13 @@
  */
 - (UIImage *)imageTintedWithColor:(UIColor *)color;
 - (UIImage *)imageTintedWithColor:(UIColor *)color fraction:(CGFloat)fraction;
+
+/**
+ Creates and returns a new cropped image object.
+ 
+ @param rect A rectangle whose coordinates specify the area to create an image from in points.
+ @return A new cropped image object.
+ */
+- (UIImage *)imageCroppedToRect:(CGRect)rect;
 
 @end
