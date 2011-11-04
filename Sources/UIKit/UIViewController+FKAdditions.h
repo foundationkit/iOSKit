@@ -14,7 +14,19 @@
 /** checks if the view of the viewController is currently visible */
 @property (nonatomic, readonly, getter = isViewVisible) BOOL viewVisible;
 
+/**
+ Returns a viewController with nibName = nil and bundle = nil
+ 
+ @return a new viewController without nib and bundle
+ */
 + (id)viewController;
+
+/**
+ Returns a viewController with nibName = [self className] and bundle = nil
+ 
+ @return a new viewController with a self-named nib and bundle = nil
+ */
++ (id)viewControllerFromSelfNamedNib;
 
 /**
  This method is for testing purposes only. If we are in debug-mode it displays 

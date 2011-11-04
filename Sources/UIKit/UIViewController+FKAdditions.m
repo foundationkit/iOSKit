@@ -9,6 +9,10 @@ FKLoadCategory(UIViewControllerFKAdditions);
     return [[[self class] alloc] initWithNibName:nil bundle:nil];
 }
 
++ (id)viewControllerFromSelfNamedNib {
+    return [[[self class] alloc] initWithNibName:NSStringFromClass([self class]) bundle:nil];
+}
+
 - (BOOL)isViewVisible {
     return [self isViewLoaded] && self.view.window != nil;
 }
