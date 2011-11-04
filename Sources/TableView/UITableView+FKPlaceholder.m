@@ -41,6 +41,7 @@ static char contentUnavailableViewKey;
 		}
         
         contentUnavailableView.frame = frame;
+        contentUnavailableView.autoresizingMask = self.autoresizingMask;
         self.fk_contentUnavailableView = contentUnavailableView;
         
         [self scrollToTop];
