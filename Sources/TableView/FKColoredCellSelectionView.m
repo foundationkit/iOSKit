@@ -48,16 +48,23 @@ $synthesize(lineColor);
 -(void)drawRect:(CGRect)aRect {
 	CGContextRef c = UIGraphicsGetCurrentContext();
 	CGRect rect = self.bounds;
-	CGFloat minx = CGRectGetMinX(rect), midx = CGRectGetMidX(rect), maxx = CGRectGetMaxX(rect);
-	CGFloat miny = CGRectGetMinY(rect), midy = CGRectGetMidY(rect), maxy = CGRectGetMaxY(rect);
+	CGFloat minx = CGRectGetMinX(rect) + 1.f;
+    CGFloat midx = CGRectGetMidX(rect);
+    CGFloat maxx = CGRectGetMaxX(rect);
+	CGFloat miny = CGRectGetMinY(rect);
+    CGFloat midy = CGRectGetMidY(rect);
+    CGFloat maxy = CGRectGetMaxY(rect);
 	CGGradientRef gradientRef = FKCreateGradientWithColors($array(self.gradientStartColor, self.gradientEndColor));
-	CGContextSetStrokeColorWithColor(c, self.lineColor.CGColor);
-	CGContextSetLineWidth(c, self.lineWidth);
+	CGMutablePathRef path = CGPathCreateMutable();
+    
 	CGContextSetAllowsAntialiasing(c, YES);
 	CGContextSetShouldAntialias(c, YES);
-    CGMutablePathRef path = CGPathCreateMutable();
+    CGContextSetStrokeColorWithColor(c, self.lineColor.CGColor);
+    CGContextSetLineWidth(c, self.lineWidth);
     
 	if (self.position == FKColoredCellSelectionViewPositionTop) {
+        miny += 1.f;
+        
 		CGPathMoveToPoint(path, NULL, minx, maxy);
 		CGPathAddArcToPoint(path, NULL, minx, miny, midx, miny, kFKDefaultMargin);
 		CGPathAddArcToPoint(path, NULL, maxx, miny, maxx, maxy, kFKDefaultMargin);
@@ -77,7 +84,8 @@ $synthesize(lineColor);
 		CGContextRestoreGState(c);
         
 	} else if (self.position == FKColoredCellSelectionViewPositionBottom) {
-		miny -= 1.f;
+        miny -= 1.f;
+        maxy -= 1.f;
         
 		CGPathMoveToPoint(path, NULL, minx, miny);
 		CGPathAddArcToPoint(path, NULL, minx, maxy, midx, maxy, kFKDefaultMargin);
@@ -97,8 +105,6 @@ $synthesize(lineColor);
 		CGContextStrokePath(c);
 		CGContextRestoreGState(c);
 	} else if (self.position == FKColoredCellSelectionViewPositionMiddle) {
-        miny -= 1.f;
-        
 		CGPathMoveToPoint(path, NULL, minx, miny);
 		CGPathAddLineToPoint(path, NULL, maxx, miny);
 		CGPathAddLineToPoint(path, NULL, maxx, maxy);
@@ -118,6 +124,9 @@ $synthesize(lineColor);
 		CGContextRestoreGState(c);
         
 	} else if (self.position == FKColoredCellSelectionViewPositionSingle) {
+        miny += 1.f;
+        maxy -= 1.f;
+        
 		CGPathMoveToPoint(path, NULL, minx, midy);
 		CGPathAddArcToPoint(path, NULL, minx, miny, midx, miny, kFKDefaultMargin);
 		CGPathAddArcToPoint(path, NULL, maxx, miny, maxx, midy, kFKDefaultMargin);
