@@ -12,7 +12,7 @@
 		391393AF13C9B84C0049DA61 /* UIScreen+FKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393A413C9B84C0049DA61 /* UIScreen+FKConcise.h */; };
 		391393B113C9B84C0049DA61 /* FKUniversal.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393A713C9B84C0049DA61 /* FKUniversal.h */; };
 		391393B213C9B84C0049DA61 /* FKUniversal.m in Sources */ = {isa = PBXBuildFile; fileRef = 391393A813C9B84C0049DA61 /* FKUniversal.m */; };
-		391393B413C9C1310049DA61 /* iOSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393B313C9C1310049DA61 /* iOSKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		391393B413C9C1310049DA61 /* iOSKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 391393B313C9C1310049DA61 /* iOSKit.h */; settings = {ATTRIBUTES = (); }; };
 		3921678E142666E90018BD5A /* UIApplication+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3921678C142666E90018BD5A /* UIApplication+FKAdditions.h */; };
 		3921678F142666E90018BD5A /* UIApplication+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3921678D142666E90018BD5A /* UIApplication+FKAdditions.m */; };
 		3921679214266A060018BD5A /* UIScreen+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3921679014266A060018BD5A /* UIScreen+FKAdditions.h */; };
