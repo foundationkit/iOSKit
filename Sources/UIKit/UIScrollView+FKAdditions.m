@@ -12,4 +12,9 @@ FKLoadCategory(UIScrollViewFKAdditions);
 	[self setContentOffset:CGPointMake(0.f, 0.f) animated:animated];
 }
 
+- (void)setContentAndScrollIndicatorInset:(UIEdgeInsets)contentInset {
+    self.contentInset = contentInset;
+    self.scrollIndicatorInsets = contentInset;
+}
+
 @end
