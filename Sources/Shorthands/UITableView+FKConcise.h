@@ -14,4 +14,11 @@
  */
 - (void)setContentAndScrollIndicatorInset:(UIEdgeInsets)contentInset;
 
+/**
+ This method deselects the currently selected row (with indexPath: indexPathForSelectedRow).
+ 
+ @param animated Flag whether the deselection occurs animated or not
+ */
+- (void)deselectSelectedRowAnimated:(BOOL)animated;
+
 @end

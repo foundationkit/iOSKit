@@ -7,4 +7,8 @@
     self.scrollIndicatorInsets = contentInset;
 }
 
+- (void)deselectSelectedRowAnimated:(BOOL)animated {
+    [self deselectRowAtIndexPath:self.indexPathForSelectedRow animated:animated];
+}
+
 @end
