@@ -96,6 +96,8 @@
 		9B6C02F6142CA0E2006F9812 /* FKTableViewCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C02F4142CA0E2006F9812 /* FKTableViewCellView.m */; };
 		9BBBF401143AF00D00071ABD /* UIButton+FKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBBF3FF143AF00D00071ABD /* UIButton+FKConcise.h */; };
 		9BBBF402143AF00D00071ABD /* UIButton+FKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBBF400143AF00D00071ABD /* UIButton+FKConcise.m */; };
+		9BCBDF431472747C0074BFEB /* UIWebView+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BCBDF411472747C0074BFEB /* UIWebView+FKAdditions.h */; };
+		9BCBDF441472747C0074BFEB /* UIWebView+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCBDF421472747C0074BFEB /* UIWebView+FKAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,6 +228,8 @@
 		9BC1CD761431CF9800A5098D /* Reachability+FKAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Reachability+FKAdditions.m"; sourceTree = "<group>"; };
 		9BC1CD771431CF9800A5098D /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9BC1CD781431CF9800A5098D /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		9BCBDF411472747C0074BFEB /* UIWebView+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWebView+FKAdditions.h"; path = "UIKit/UIWebView+FKAdditions.h"; sourceTree = "<group>"; };
+		9BCBDF421472747C0074BFEB /* UIWebView+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+FKAdditions.m"; path = "UIKit/UIWebView+FKAdditions.m"; sourceTree = "<group>"; };
 		9BE4253C14470FA40036D399 /* FKAudioFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FKAudioFunctions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -394,6 +398,8 @@
 				39CC1E0E142F229F0017578F /* UIImage+FKAdditions.m */,
 				39CFA5F914223C1200DC3E57 /* UIImageView+FKAdditions.h */,
 				39CFA5FA14223C1200DC3E57 /* UIImageView+FKAdditions.m */,
+				392D3C6D142FE159003AFB81 /* UINavigationController+FKAppearance.h */,
+				392D3C6E142FE168003AFB81 /* UINavigationController+FKAppearance.m */,
 				3921679014266A060018BD5A /* UIScreen+FKAdditions.h */,
 				3921679114266A060018BD5A /* UIScreen+FKAdditions.m */,
 				3921679414266BCA0018BD5A /* UIScrollView+FKAdditions.h */,
@@ -420,8 +426,8 @@
 				393A299D142359C50056CB37 /* UIViewController+FKAdditions.m */,
 				39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */,
 				39ACE81514228DCB0022D8F8 /* UIViewController+FKLoading.m */,
-				392D3C6D142FE159003AFB81 /* UINavigationController+FKAppearance.h */,
-				392D3C6E142FE168003AFB81 /* UINavigationController+FKAppearance.m */,
+				9BCBDF411472747C0074BFEB /* UIWebView+FKAdditions.h */,
+				9BCBDF421472747C0074BFEB /* UIWebView+FKAdditions.m */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -517,6 +523,7 @@
 				9B513470145E003900BC3DC5 /* FKColoredCellSelectionView.h in Headers */,
 				9B51347E145E0BC200BC3DC5 /* FKGroupedTableViewCell.h in Headers */,
 				9B63F33314726E3F00E30D13 /* UIBarButtonItem+FKConcise.h in Headers */,
+				9BCBDF431472747C0074BFEB /* UIWebView+FKAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,6 +646,7 @@
 				9B513471145E003900BC3DC5 /* FKColoredCellSelectionView.m in Sources */,
 				9B51347F145E0BC200BC3DC5 /* FKGroupedTableViewCell.m in Sources */,
 				9B63F33414726E3F00E30D13 /* UIBarButtonItem+FKConcise.m in Sources */,
+				9BCBDF441472747C0074BFEB /* UIWebView+FKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

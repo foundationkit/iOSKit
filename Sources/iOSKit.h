@@ -48,6 +48,7 @@
 #import "UIView+FKRotation.h"
 #import "UIViewController+FKAdditions.h"
 #import "UIViewController+FKLoading.h"
+#import "UIWebView+FKAdditions.h"
 
 // Universal
 #import "FKUniversal.h"
