@@ -84,6 +84,8 @@
 		9B54E81B14269C8C00336F08 /* NSObject+FKiOSAssociatedObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81814269C8B00336F08 /* NSObject+FKiOSAssociatedObjects.h */; };
 		9B54E81C14269C8C00336F08 /* NSObject+FKiOSAssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B54E81914269C8B00336F08 /* NSObject+FKiOSAssociatedObjects.m */; };
 		9B54E81E14269CAB00336F08 /* UIEdgeInsets+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81D14269CAB00336F08 /* UIEdgeInsets+FKAdditions.h */; };
+		9B63F33314726E3F00E30D13 /* UIBarButtonItem+FKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B63F33114726E3F00E30D13 /* UIBarButtonItem+FKConcise.h */; };
+		9B63F33414726E3F00E30D13 /* UIBarButtonItem+FKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B63F33214726E3F00E30D13 /* UIBarButtonItem+FKConcise.m */; };
 		9B6C025B142BD444006F9812 /* FKiOSDrawing.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B6C025A142BD444006F9812 /* FKiOSDrawing.h */; };
 		9B6C025D142BD584006F9812 /* FKiOSDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C025C142BD583006F9812 /* FKiOSDrawing.m */; };
 		9B6C0260142C69E8006F9812 /* UIAlertView+FKError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B6C025E142C69D7006F9812 /* UIAlertView+FKError.h */; };
@@ -208,6 +210,8 @@
 		9B54E81814269C8B00336F08 /* NSObject+FKiOSAssociatedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+FKiOSAssociatedObjects.h"; path = "Core/NSObject+FKiOSAssociatedObjects.h"; sourceTree = "<group>"; };
 		9B54E81914269C8B00336F08 /* NSObject+FKiOSAssociatedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+FKiOSAssociatedObjects.m"; path = "Core/NSObject+FKiOSAssociatedObjects.m"; sourceTree = "<group>"; };
 		9B54E81D14269CAB00336F08 /* UIEdgeInsets+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIEdgeInsets+FKAdditions.h"; path = "Core/UIEdgeInsets+FKAdditions.h"; sourceTree = "<group>"; };
+		9B63F33114726E3F00E30D13 /* UIBarButtonItem+FKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+FKConcise.h"; sourceTree = "<group>"; };
+		9B63F33214726E3F00E30D13 /* UIBarButtonItem+FKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+FKConcise.m"; sourceTree = "<group>"; };
 		9B6C025A142BD444006F9812 /* FKiOSDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKiOSDrawing.h; path = Core/FKiOSDrawing.h; sourceTree = "<group>"; };
 		9B6C025C142BD583006F9812 /* FKiOSDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKiOSDrawing.m; path = Core/FKiOSDrawing.m; sourceTree = "<group>"; };
 		9B6C025E142C69D7006F9812 /* UIAlertView+FKError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+FKError.h"; path = "UIKit/UIAlertView+FKError.h"; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 				392D3C72142FEB82003AFB81 /* NSString+FKiOSConcise.m */,
 				9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */,
 				391393A213C9B84C0049DA61 /* UIApplication+FKConcise.h */,
+				9B63F33114726E3F00E30D13 /* UIBarButtonItem+FKConcise.h */,
+				9B63F33214726E3F00E30D13 /* UIBarButtonItem+FKConcise.m */,
 				9BBBF3FF143AF00D00071ABD /* UIButton+FKConcise.h */,
 				9BBBF400143AF00D00071ABD /* UIButton+FKConcise.m */,
 				391393A413C9B84C0049DA61 /* UIScreen+FKConcise.h */,
@@ -510,6 +516,7 @@
 				9B4826D6145DAF9300C735DD /* UITableView+FKConcise.h in Headers */,
 				9B513470145E003900BC3DC5 /* FKColoredCellSelectionView.h in Headers */,
 				9B51347E145E0BC200BC3DC5 /* FKGroupedTableViewCell.h in Headers */,
+				9B63F33314726E3F00E30D13 /* UIBarButtonItem+FKConcise.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,6 +638,7 @@
 				9B4826D7145DAF9300C735DD /* UITableView+FKConcise.m in Sources */,
 				9B513471145E003900BC3DC5 /* FKColoredCellSelectionView.m in Sources */,
 				9B51347F145E0BC200BC3DC5 /* FKGroupedTableViewCell.m in Sources */,
+				9B63F33414726E3F00E30D13 /* UIBarButtonItem+FKConcise.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

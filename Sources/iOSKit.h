@@ -15,6 +15,7 @@
 // Shorthands
 #import "NSValue+FKiOSConcise.h"
 #import "UIApplication+FKConcise.h"
+#import "UIBarButtonItem+FKConcise.h"
 #import "UIScreen+FKConcise.h"
 #import "UITableView+FKConcise.h"
 #import "UITableViewCell+FKConcise.h"
