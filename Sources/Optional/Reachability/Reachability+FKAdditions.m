@@ -60,11 +60,16 @@ $synthesize(lastReachabilityChange);
     self.reachability = [Reachability reachabilityWithHostName:hostAddress];
     // we initially assume that we are reachable, a synchronous check of the 
     // current network status can take quite some time and can freeze the App 
-    self.currentNetworkStatus = ReachableViaWWAN;
+    self.currentNetworkStatus = FKNetworkStatusReachableViaWWAN;
     self.lastReachabilityChange = [NSDate date];
     
     // start continous updates
     [self.reachability startNotifier];
+    
+    // we update real reachability status in the background to not block UI
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        self.currentNetworkStatus = (FKNetworkStatus)self.reachability.currentReachabilityStatus;
+    });
 }
 
 - (void)setupReachabilityFor:(id)object {
@@ -77,7 +82,7 @@ $synthesize(lastReachabilityChange);
         [[NSNotificationCenter defaultCenter] addObserver:object
                                                  selector:@selector(configureForNetworkStatus:)
                                                      name:kFKReachabilityChangedNotification
-                                                   object:self];
+                                                   object:self.reachability];
         
         // perform initial setup
         if (sendInitialNotification) {
@@ -97,7 +102,7 @@ $synthesize(lastReachabilityChange);
 }
 
 - (void)reachabilityChanged:(NSNotification *)note {
-    NetworkStatus newNetworkStatus = FKReachabilityGetNetworkStatus(note);
+    FKNetworkStatus newNetworkStatus = FKReachabilityGetNetworkStatus(note);
     
     // if network status has changed, post notification
     if (newNetworkStatus != self.currentNetworkStatus) {
@@ -122,9 +127,9 @@ $synthesize(lastReachabilityChange);
 #pragma mark Helper Functions
 ////////////////////////////////////////////////////////////////////////
 
-NetworkStatus FKReachabilityGetNetworkStatus(NSNotification *note) {
+FKNetworkStatus FKReachabilityGetNetworkStatus(NSNotification *note) {
     // get Reachability instance from notification
     Reachability* reachability = [note object];
     // get current status
-    return [reachability currentReachabilityStatus];
+    return (FKNetworkStatus)[reachability currentReachabilityStatus];
 }

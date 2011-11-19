@@ -7,8 +7,14 @@
 #define kFKReachabilityChangedNotification  @"kFKReachabilityChangedNotification"
 #define kFKNetworkStatusKey                 @"kFKNetworkStatusKey"
 
+typedef enum {
+    FKNetworkStatusNotReachable       = NotReachable,
+    FKNetworkStatusReachableViaWiFi   = ReachableViaWiFi,
+    FKNetworkStatusReachableViaWWAN   = ReachableViaWWAN
+} FKNetworkStatus;
+
 // helper function to get reachability status out of Notification
-NetworkStatus FKReachabilityGetNetworkStatus(NSNotification *note);
+FKNetworkStatus FKReachabilityGetNetworkStatus(NSNotification *note);
 
 
 // Protocol for ViewController that are configured to use Reachability
@@ -22,7 +28,7 @@ NetworkStatus FKReachabilityGetNetworkStatus(NSNotification *note);
 @interface FKReachability : NSObject
 
 @property (nonatomic, strong, readonly) Reachability *reachability;
-@property (nonatomic, assign, readonly) NetworkStatus currentNetworkStatus;
+@property (nonatomic, assign, readonly) FKNetworkStatus currentNetworkStatus;
 @property (nonatomic, copy, readonly) NSString *hostAddress;
 
 + (FKReachability *)sharedReachability;
