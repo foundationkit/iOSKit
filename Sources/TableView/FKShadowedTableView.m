@@ -102,7 +102,7 @@ $synthesize(inverseShadowHeight);
     if ([lastRow section] == [self numberOfSections] - 1 &&
 		[lastRow row] == [self numberOfRowsInSection:[lastRow section]] - 1) {
 		UIView *cell = [self cellForRowAtIndexPath:lastRow];
-
+        
 		if (!bottomShadow) {
 			bottomShadow = [self fk_shadowLayerInversed:NO];
 			[cell.layer insertSublayer:bottomShadow atIndex:0];
@@ -133,11 +133,16 @@ $synthesize(inverseShadowHeight);
 - (CAGradientLayer *)fk_shadowLayerInversed:(BOOL)inverse {
 	CAGradientLayer *shadowLayer = [[CAGradientLayer alloc] init];
 	CGRect frame = CGRectMake(0, 0, self.frame.size.width, inverse ? self.inverseShadowHeight : self.shadowHeight);
-    CGColorRef darkColor =  [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:inverse ? self.fk_shadowRatio * 0.5 : 0.5].CGColor;
-	CGColorRef lightColor = [self.backgroundColor colorWithAlphaComponent:0.0].CGColor;
+    UIColor *darkColor =  [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:inverse ? self.fk_shadowRatio * 0.5 : 0.5];
+	UIColor *lightColor = [self.backgroundColor colorWithAlphaComponent:0.0];
     
 	shadowLayer.frame = frame;
-	shadowLayer.colors = $array((__bridge id)(inverse ? lightColor : darkColor), (__bridge id)(inverse ? darkColor : lightColor));
+    
+    if (inverse) {
+        shadowLayer.colors = $array((id)[lightColor CGColor], (id)[darkColor CGColor]);
+    } else {
+        shadowLayer.colors = $array((id)[darkColor CGColor], (id)[lightColor CGColor]);
+    }
     
 	return shadowLayer;
 }
