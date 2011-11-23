@@ -2,8 +2,7 @@
 
 @implementation UIButton (FKConcise)
 
-+ (UIButton *)buttonWithImageNamed:(NSString *)imageName {
-    UIImage *image = [UIImage imageNamed:imageName];
++ (UIButton *)buttonWithImage:(UIImage *)image {
     UIButton *button = nil;
     
     if (image != nil) {
@@ -13,6 +12,11 @@
     }
     
     return button;
+}
+
++ (UIButton *)buttonWithImageNamed:(NSString *)imageName {
+    return [self buttonWithImage:[UIImage imageNamed:imageName]];
+    
 }
 
 @end
