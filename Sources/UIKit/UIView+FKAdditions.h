@@ -197,4 +197,9 @@ typedef enum {
  */
 - (void)disableScrollsToTopOnAllSubviews;
 
+/**
+ Removes all gesture recognizers that are attached to the view
+ */
+- (void)removeAllGestureRecognizers;
+
 @end
