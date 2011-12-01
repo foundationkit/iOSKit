@@ -12,4 +12,17 @@
     [self stringByEvaluatingJavaScriptFromString:scaleCommand];
 }
 
+- (void)setShadowsHidden:(BOOL)shadowsHidden {    
+	// Thanks @flyosity http://twitter.com/flyosity/status/17951035384
+	for (UIView *view in self.subviews) {
+		if ([view isKindOfClass:[UIScrollView class]]) {
+			for (UIView *innerView in view.subviews) {
+				if ([innerView isKindOfClass:[UIImageView class]]) {
+					innerView.hidden = shadowsHidden;
+				}
+			}
+		}
+	}
+}
+
 @end

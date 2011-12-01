@@ -1,10 +1,6 @@
+// Part of iOSKit http://foundationk.it
 //
-//  UIWebView+FKAdditions.h
-//  iOSKit
-//
-//  Created by Tretter Matthias on 15.11.11.
-//  Copyright (c) 2011 NOUS Wissensmanagement GmbH. All rights reserved.
-//
+// Parts taken from Sam Soffes' SSToolkit: http://github.com/samsoffes/sstoolkit
 
 #import <UIKit/UIKit.h>
 
@@ -23,4 +19,11 @@
  */
 - (void)setContentTextSizeScaleFactor:(NSInteger)scaleFactor;
 
+/** 
+ Control the display of the shadows of the UIWebView.
+ Be aware that this method might break in future OS versions since the view hierarchy could change.
+ 
+ @param shadowsHidden If YES, the view-hierarchy gets traversed and all shadows get hidden. Otherwise they are shown.
+ */
+- (void)setShadowsHidden:(BOOL)shadowsHidden;
 @end
