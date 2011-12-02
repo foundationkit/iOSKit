@@ -4,7 +4,9 @@
 
 - (NSString *)sanitizedPhoneNumber {
     NSCharacterSet* validCharacters = [NSCharacterSet characterSetWithCharactersInString:@"1234567890-+"];
-    return [[self componentsSeparatedByCharactersInSet:[validCharacters invertedSet]] componentsJoinedByString:@""];
+    NSString *phoneNumber = [self stringByReplacingOccurrencesOfString:@"(0)" withString:@""];
+   
+    return [[phoneNumber componentsSeparatedByCharactersInSet:[validCharacters invertedSet]] componentsJoinedByString:@""];
 }
 
 - (CGFloat)heightWithFont: (UIFont*)font
