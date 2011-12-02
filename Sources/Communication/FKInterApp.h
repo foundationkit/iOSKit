@@ -29,6 +29,13 @@
 BOOL FKInterAppApplicationIsInstalled(NSString *appScheme);
 
 /**
+ Checks if the phone App is installed
+ 
+ @return YES if the phone App is installed, NO otherwise
+ */
+BOOL FKInterAppPhoneIsInstalled(void);
+
+/**
  Opens the App with the given appScheme
  
  @param appScheme the scheme of the App, e.g. my-scheme://

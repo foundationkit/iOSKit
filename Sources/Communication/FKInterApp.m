@@ -6,6 +6,10 @@ BOOL FKInterAppApplicationIsInstalled(NSString *appScheme) {
     return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:appScheme]];
 }
 
+BOOL FKInterAppPhoneIsInstalled(void) {
+    return FKInterAppApplicationIsInstalled(kFKInterAppSchemePhone);
+}
+
 BOOL FKInterAppOpenApplication(NSString *appScheme) {
     return FKInterAppOpenApplicationWithPath(appScheme, nil);
 }
