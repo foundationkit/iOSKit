@@ -9,6 +9,12 @@
 #import "UIEdgeInsets+FKAdditions.h"
 #import "UIInterfaceOrientation+FKAdditions.h"
 
+// Communication
+#import "FKInterApp.h"
+
+// Foundation
+#import "NSString+FKiOSAdditions.h"
+
 // Network
 #import "FKNetworkActivityManager.h"
 

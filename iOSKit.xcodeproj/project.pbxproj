@@ -21,8 +21,6 @@
 		3921679714266BCB0018BD5A /* UIScrollView+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3921679514266BCB0018BD5A /* UIScrollView+FKAdditions.m */; };
 		392D3C6F142FE170003AFB81 /* UINavigationController+FKAppearance.h in Headers */ = {isa = PBXBuildFile; fileRef = 392D3C6D142FE159003AFB81 /* UINavigationController+FKAppearance.h */; };
 		392D3C70142FE170003AFB81 /* UINavigationController+FKAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 392D3C6E142FE168003AFB81 /* UINavigationController+FKAppearance.m */; };
-		392D3C73142FEB82003AFB81 /* NSString+FKiOSConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 392D3C71142FEB81003AFB81 /* NSString+FKiOSConcise.h */; };
-		392D3C74142FEB82003AFB81 /* NSString+FKiOSConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 392D3C72142FEB82003AFB81 /* NSString+FKiOSConcise.m */; };
 		3931206C1428AD6B0095D5ED /* UITableViewCell+FKLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 3931206A1428AD6B0095D5ED /* UITableViewCell+FKLoading.h */; };
 		3931206D1428AD6B0095D5ED /* UITableViewCell+FKLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 3931206B1428AD6B0095D5ED /* UITableViewCell+FKLoading.m */; };
 		393120701428AF010095D5ED /* UITableView+FKLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 3931206E1428AF010095D5ED /* UITableView+FKLoading.h */; };
@@ -98,6 +96,10 @@
 		9B6C02F6142CA0E2006F9812 /* FKTableViewCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C02F4142CA0E2006F9812 /* FKTableViewCellView.m */; };
 		9BBBF401143AF00D00071ABD /* UIButton+FKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBBF3FF143AF00D00071ABD /* UIButton+FKConcise.h */; };
 		9BBBF402143AF00D00071ABD /* UIButton+FKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBBF400143AF00D00071ABD /* UIButton+FKConcise.m */; };
+		9BCA532414891A5700918E87 /* FKInterApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BCA532214891A5700918E87 /* FKInterApp.h */; };
+		9BCA532514891A5700918E87 /* FKInterApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA532314891A5700918E87 /* FKInterApp.m */; };
+		9BCA53291489200C00918E87 /* NSString+FKiOSAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BCA53271489200C00918E87 /* NSString+FKiOSAdditions.h */; };
+		9BCA532A1489200C00918E87 /* NSString+FKiOSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA53281489200C00918E87 /* NSString+FKiOSAdditions.m */; };
 		9BCBDF431472747C0074BFEB /* UIWebView+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BCBDF411472747C0074BFEB /* UIWebView+FKAdditions.h */; };
 		9BCBDF441472747C0074BFEB /* UIWebView+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCBDF421472747C0074BFEB /* UIWebView+FKAdditions.m */; };
 /* End PBXBuildFile section */
@@ -148,8 +150,6 @@
 		3921679514266BCB0018BD5A /* UIScrollView+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+FKAdditions.m"; path = "UIKit/UIScrollView+FKAdditions.m"; sourceTree = "<group>"; };
 		392D3C6D142FE159003AFB81 /* UINavigationController+FKAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+FKAppearance.h"; path = "UIKit/UINavigationController+FKAppearance.h"; sourceTree = "<group>"; };
 		392D3C6E142FE168003AFB81 /* UINavigationController+FKAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+FKAppearance.m"; path = "UIKit/UINavigationController+FKAppearance.m"; sourceTree = "<group>"; };
-		392D3C71142FEB81003AFB81 /* NSString+FKiOSConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FKiOSConcise.h"; sourceTree = "<group>"; };
-		392D3C72142FEB82003AFB81 /* NSString+FKiOSConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FKiOSConcise.m"; sourceTree = "<group>"; };
 		3931206A1428AD6B0095D5ED /* UITableViewCell+FKLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+FKLoading.h"; path = "UIKit/UITableViewCell+FKLoading.h"; sourceTree = "<group>"; };
 		3931206B1428AD6B0095D5ED /* UITableViewCell+FKLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+FKLoading.m"; path = "UIKit/UITableViewCell+FKLoading.m"; sourceTree = "<group>"; };
 		3931206E1428AF010095D5ED /* UITableView+FKLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+FKLoading.h"; path = "UIKit/UITableView+FKLoading.h"; sourceTree = "<group>"; };
@@ -232,6 +232,10 @@
 		9BC1CD761431CF9800A5098D /* Reachability+FKAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Reachability+FKAdditions.m"; sourceTree = "<group>"; };
 		9BC1CD771431CF9800A5098D /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		9BC1CD781431CF9800A5098D /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		9BCA532214891A5700918E87 /* FKInterApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKInterApp.h; path = Communication/FKInterApp.h; sourceTree = "<group>"; };
+		9BCA532314891A5700918E87 /* FKInterApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKInterApp.m; path = Communication/FKInterApp.m; sourceTree = "<group>"; };
+		9BCA53271489200C00918E87 /* NSString+FKiOSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+FKiOSAdditions.h"; path = "Foundation/NSString+FKiOSAdditions.h"; sourceTree = "<group>"; };
+		9BCA53281489200C00918E87 /* NSString+FKiOSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+FKiOSAdditions.m"; path = "Foundation/NSString+FKiOSAdditions.m"; sourceTree = "<group>"; };
 		9BCBDF411472747C0074BFEB /* UIWebView+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWebView+FKAdditions.h"; path = "UIKit/UIWebView+FKAdditions.h"; sourceTree = "<group>"; };
 		9BCBDF421472747C0074BFEB /* UIWebView+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+FKAdditions.m"; path = "UIKit/UIWebView+FKAdditions.m"; sourceTree = "<group>"; };
 		9BE4253C14470FA40036D399 /* FKAudioFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FKAudioFunctions.h; sourceTree = "<group>"; };
@@ -257,6 +261,8 @@
 			children = (
 				391393B313C9C1310049DA61 /* iOSKit.h */,
 				9B54E80E14269B5500336F08 /* Core */,
+				9BCA5321148919C800918E87 /* Communication */,
+				9BCA532614891FEC00918E87 /* Foundation */,
 				39DF5D741424B5EC00090805 /* Network */,
 				9BC1CD731431CF9800A5098D /* Optional */,
 				391393A013C9B84C0049DA61 /* Shorthands */,
@@ -270,8 +276,6 @@
 		391393A013C9B84C0049DA61 /* Shorthands */ = {
 			isa = PBXGroup;
 			children = (
-				392D3C71142FEB81003AFB81 /* NSString+FKiOSConcise.h */,
-				392D3C72142FEB82003AFB81 /* NSString+FKiOSConcise.m */,
 				9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */,
 				391393A213C9B84C0049DA61 /* UIApplication+FKConcise.h */,
 				9B63F33114726E3F00E30D13 /* UIBarButtonItem+FKConcise.h */,
@@ -474,6 +478,24 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
+		9BCA5321148919C800918E87 /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				9BCA532214891A5700918E87 /* FKInterApp.h */,
+				9BCA532314891A5700918E87 /* FKInterApp.m */,
+			);
+			name = Communication;
+			sourceTree = "<group>";
+		};
+		9BCA532614891FEC00918E87 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				9BCA53271489200C00918E87 /* NSString+FKiOSAdditions.h */,
+				9BCA53281489200C00918E87 /* NSString+FKiOSAdditions.m */,
+			);
+			name = Foundation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -523,7 +545,6 @@
 				9B6C02F5142CA0E2006F9812 /* FKTableViewCellView.h in Headers */,
 				39CC1E0F142F229F0017578F /* UIImage+FKAdditions.h in Headers */,
 				392D3C6F142FE170003AFB81 /* UINavigationController+FKAppearance.h in Headers */,
-				392D3C73142FEB82003AFB81 /* NSString+FKiOSConcise.h in Headers */,
 				9BBBF401143AF00D00071ABD /* UIButton+FKConcise.h in Headers */,
 				9B4826D6145DAF9300C735DD /* UITableView+FKConcise.h in Headers */,
 				9B513470145E003900BC3DC5 /* FKColoredCellSelectionView.h in Headers */,
@@ -531,6 +552,8 @@
 				9B63F33314726E3F00E30D13 /* UIBarButtonItem+FKConcise.h in Headers */,
 				9BCBDF431472747C0074BFEB /* UIWebView+FKAdditions.h in Headers */,
 				9B16CE4A1477D26B007BDACD /* FKShadowedTableView.h in Headers */,
+				9BCA532414891A5700918E87 /* FKInterApp.h in Headers */,
+				9BCA53291489200C00918E87 /* NSString+FKiOSAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,7 +670,6 @@
 				9B6C02F6142CA0E2006F9812 /* FKTableViewCellView.m in Sources */,
 				39CC1E10142F229F0017578F /* UIImage+FKAdditions.m in Sources */,
 				392D3C70142FE170003AFB81 /* UINavigationController+FKAppearance.m in Sources */,
-				392D3C74142FEB82003AFB81 /* NSString+FKiOSConcise.m in Sources */,
 				9BBBF402143AF00D00071ABD /* UIButton+FKConcise.m in Sources */,
 				9B4826D7145DAF9300C735DD /* UITableView+FKConcise.m in Sources */,
 				9B513471145E003900BC3DC5 /* FKColoredCellSelectionView.m in Sources */,
@@ -655,6 +677,8 @@
 				9B63F33414726E3F00E30D13 /* UIBarButtonItem+FKConcise.m in Sources */,
 				9BCBDF441472747C0074BFEB /* UIWebView+FKAdditions.m in Sources */,
 				9B16CE4B1477D26B007BDACD /* FKShadowedTableView.m in Sources */,
+				9BCA532514891A5700918E87 /* FKInterApp.m in Sources */,
+				9BCA532A1489200C00918E87 /* NSString+FKiOSAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
