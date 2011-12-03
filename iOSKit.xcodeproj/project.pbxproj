@@ -102,6 +102,8 @@
 		9BCA532A1489200C00918E87 /* NSString+FKiOSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCA53281489200C00918E87 /* NSString+FKiOSAdditions.m */; };
 		9BCBDF431472747C0074BFEB /* UIWebView+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BCBDF411472747C0074BFEB /* UIWebView+FKAdditions.h */; };
 		9BCBDF441472747C0074BFEB /* UIWebView+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCBDF421472747C0074BFEB /* UIWebView+FKAdditions.m */; };
+		9BDD922F148A8FE6008E21A1 /* FKBrowserViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BDD922D148A8FE6008E21A1 /* FKBrowserViewController.h */; };
+		9BDD9230148A8FE6008E21A1 /* FKBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDD922E148A8FE6008E21A1 /* FKBrowserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -238,6 +240,9 @@
 		9BCA53281489200C00918E87 /* NSString+FKiOSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+FKiOSAdditions.m"; path = "Foundation/NSString+FKiOSAdditions.m"; sourceTree = "<group>"; };
 		9BCBDF411472747C0074BFEB /* UIWebView+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWebView+FKAdditions.h"; path = "UIKit/UIWebView+FKAdditions.h"; sourceTree = "<group>"; };
 		9BCBDF421472747C0074BFEB /* UIWebView+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+FKAdditions.m"; path = "UIKit/UIWebView+FKAdditions.m"; sourceTree = "<group>"; };
+		9BDD922D148A8FE6008E21A1 /* FKBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKBrowserViewController.h; path = Network/FKBrowserViewController.h; sourceTree = "<group>"; };
+		9BDD922E148A8FE6008E21A1 /* FKBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKBrowserViewController.m; path = Network/FKBrowserViewController.m; sourceTree = "<group>"; };
+		9BDD9232148A9AE8008E21A1 /* iOSKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = iOSKit.bundle; path = Resources/iOSKit.bundle; sourceTree = "<group>"; };
 		9BE4253C14470FA40036D399 /* FKAudioFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FKAudioFunctions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -346,6 +351,8 @@
 		39DF5D741424B5EC00090805 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				9BDD922D148A8FE6008E21A1 /* FKBrowserViewController.h */,
+				9BDD922E148A8FE6008E21A1 /* FKBrowserViewController.m */,
 				39DF5D751424B62000090805 /* FKNetworkActivityManager.h */,
 				39DF5D761424B62000090805 /* FKNetworkActivityManager.m */,
 			);
@@ -357,6 +364,7 @@
 			children = (
 				3913939A13C9B84C0049DA61 /* Sources */,
 				39F5166513C8E3F3008A9732 /* Supporting Files */,
+				9BDD9231148A9A1F008E21A1 /* Resources */,
 				39F5166113C8E3F3008A9732 /* Frameworks */,
 				39F5166013C8E3F3008A9732 /* Products */,
 			);
@@ -496,6 +504,14 @@
 			name = Foundation;
 			sourceTree = "<group>";
 		};
+		9BDD9231148A9A1F008E21A1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9BDD9232148A9AE8008E21A1 /* iOSKit.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -554,6 +570,7 @@
 				9B16CE4A1477D26B007BDACD /* FKShadowedTableView.h in Headers */,
 				9BCA532414891A5700918E87 /* FKInterApp.h in Headers */,
 				9BCA53291489200C00918E87 /* NSString+FKiOSAdditions.h in Headers */,
+				9BDD922F148A8FE6008E21A1 /* FKBrowserViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,6 +696,7 @@
 				9B16CE4B1477D26B007BDACD /* FKShadowedTableView.m in Sources */,
 				9BCA532514891A5700918E87 /* FKInterApp.m in Sources */,
 				9BCA532A1489200C00918E87 /* NSString+FKiOSAdditions.m in Sources */,
+				9BDD9230148A8FE6008E21A1 /* FKBrowserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

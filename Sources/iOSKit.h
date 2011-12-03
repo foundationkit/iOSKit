@@ -16,6 +16,7 @@
 #import "NSString+FKiOSAdditions.h"
 
 // Network
+#import "FKBrowserViewController.h"
 #import "FKNetworkActivityManager.h"
 
 // Shorthands

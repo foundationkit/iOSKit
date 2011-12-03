@@ -1,6 +1,7 @@
 // Part of iOSKit http://foundationk.it
 
 #import "FKShorthands.h"
+#import "FKUniversal.h"
 #import "FKAssert.h"
 
 /**
