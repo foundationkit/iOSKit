@@ -17,8 +17,8 @@
 
 @interface FKBrowserViewController () <UIWebViewDelegate, UIActionSheetDelegate>
 
+@property (nonatomic, strong, readwrite) UIToolbar *toolbar;
 @property (nonatomic, strong) UIWebView *webView;
-@property (nonatomic, strong) UIToolbar *toolbar;
 
 @property (nonatomic, strong) UIBarButtonItem *backItem;
 @property (nonatomic, strong) UIBarButtonItem *forwardItem;

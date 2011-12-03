@@ -11,17 +11,38 @@
 @property (nonatomic, copy) NSString *address;
 /** The current URL of the browser */
 @property (nonatomic, strong) NSURL *url;
+
 /** Color used to style NavigationBar and ToolBar */
 @property (nonatomic, strong) UIColor *tintColor;
 /** Background Color */
 @property (nonatomic, strong) UIColor *backgroundColor;
 /** Used to control if fade-animation is used. Defaults to YES */
 @property (nonatomic, assign) BOOL fadeAnimationEnabled;
+/** The toolbar of the browserViewController. Customizable */
+@property (nonatomic, strong, readonly) UIToolbar *toolbar;
 
+/**
+ Initializes the Browser with the given URL and start loading when the viewController gets pushed.
+ 
+ @param url The URL the browser should display
+ */
 - (id)initWithURL:(NSURL *)url;
+
+/**
+ Initializes the Browser with the given Address and start loading when the viewController gets pushed.
+ 
+ @param address The address the browser should display
+ */
 - (id)initWithAddress:(NSString *)address;
 
+/**
+ Stops loading of the UIWebView
+ */
 - (void)stopLoading;
+
+/**
+ Loads the currently set address/url.
+ */
 - (void)reload;
 
 @end
