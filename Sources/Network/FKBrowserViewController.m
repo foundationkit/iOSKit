@@ -3,6 +3,7 @@
 #import "UIViewController+FKLoading.h"
 #import "UIWebView+FKAdditions.h"
 #import "UIView+FKAdditions.h"
+#import "UIView+FKAnimations.h"
 #import "FKiOSMetrics.h"
 #import "UIBarButtonItem+FKConcise.h"
 #import "UIInterfaceOrientation+FKAdditions.h"
@@ -39,6 +40,7 @@ $synthesize(address);
 $synthesize(url);
 $synthesize(tintColor);
 $synthesize(backgroundColor);
+$synthesize(fadeAnimationEnabled);
 $synthesize(webView);
 $synthesize(toolbar);
 $synthesize(backItem);
@@ -51,18 +53,19 @@ $synthesize(actionItem);
 #pragma mark Lifecycle
 ////////////////////////////////////////////////////////////////////////
 
-- (id)initWithURL:(NSURL *)url {
+- (id)initWithAddress:(NSString *)address {
     if ((self = [super initWithNibName:nil bundle:nil])) {
+        fadeAnimationEnabled_ = YES;
         tintColor_ = kFKBrowserDefaultTintColor;
         backgroundColor_ = kFKBrowserDefaultBackgroundColor;
-        self.url = url;
+        [self updateAddress:address];
     }
     
     return self;
 }
 
-- (id)initWithAddress:(NSString *)address {
-    return [self initWithURL:[NSURL URLWithString:address]];
+- (id)initWithURL:(NSURL *)url {
+    return [self initWithAddress:[url absoluteString]];
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -79,10 +82,14 @@ $synthesize(actionItem);
 	self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.webView.delegate = self;
     [self.view addSubview:self.webView];
-
+    
     self.toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.f, self.view.boundsHeight - toolbarHeight, self.view.boundsWidth, toolbarHeight)];
     self.toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     [self.view addSubview:self.toolbar];
+    
+    if (self.fadeAnimationEnabled) {
+        self.webView.alpha = 0.f;
+    }
     
     [self customize];
 	[self reload];
@@ -111,14 +118,17 @@ $synthesize(actionItem);
 	[super viewWillDisappear:animated];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	return FKRotateToAllSupportedOrientations(interfaceOrientation);
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+	return FKRotateToAllSupportedOrientations(toInterfaceOrientation);
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
     
     CGFloat toolbarHeight = FKToolbarHeightForOrientation(UIInterfaceOrientationPortrait);
+    
+    self.webView.frameHeight = self.view.boundsHeight - toolbarHeight;
+    self.toolbar.frameTop = self.webView.frameBottom;
     self.toolbar.frameHeight = toolbarHeight;
 }
 
@@ -231,6 +241,10 @@ $synthesize(actionItem);
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
+    if (self.fadeAnimationEnabled) {
+        [self.webView fadeIn];
+    }
+    
     [self hideLoadingIndicator];
     [FKNetworkActivityManager removeNetworkUser:self];
     
@@ -255,11 +269,11 @@ $synthesize(actionItem);
 	} else if (buttonIndex == 1) {
 		/* TODO:
          MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init]; 
-        
-		[composer setMailComposeDelegate: self]; 
-		[composer setMessageBody: self.URLString isHTML: NO];
-		[self presentModalViewController: composer animated: YES];
-		[composer release];*/
+         
+         [composer setMailComposeDelegate: self]; 
+         [composer setMessageBody: self.URLString isHTML: NO];
+         [self presentModalViewController: composer animated: YES];
+         [composer release];*/
 	}
 }
 
@@ -268,9 +282,9 @@ $synthesize(actionItem);
 #pragma mark MFMailComposeViewControllerDelegate
 ////////////////////////////////////////////////////////////////////////
 /*
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult) result error:(NSError *) error {
-	[controller dismissModalViewControllerAnimated:YES];
-}*/
+ - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult) result error:(NSError *) error {
+ [controller dismissModalViewControllerAnimated:YES];
+ }*/
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -308,9 +322,8 @@ $synthesize(actionItem);
 }
 
 - (void)customize {
+    self.view.backgroundColor = self.backgroundColor;
     self.webView.scalesPageToFit = YES;
-    self.webView.backgroundColor = self.backgroundColor;
-    
     self.navigationController.navigationBar.tintColor = self.tintColor;
     self.toolbar.tintColor = self.tintColor;
 }
@@ -337,7 +350,7 @@ $synthesize(actionItem);
     
 	[actionSheet addButtonWithTitle:_(@"Cancel")];
 	[actionSheet setCancelButtonIndex:actionSheet.numberOfButtons - 1];
-
+    
 	[actionSheet showFromToolbar:self.toolbar];
 }
 

@@ -15,6 +15,8 @@
 @property (nonatomic, strong) UIColor *tintColor;
 /** Background Color */
 @property (nonatomic, strong) UIColor *backgroundColor;
+/** Used to control if fade-animation is used. Defaults to YES */
+@property (nonatomic, assign) BOOL fadeAnimationEnabled;
 
 - (id)initWithURL:(NSURL *)url;
 - (id)initWithAddress:(NSString *)address;
