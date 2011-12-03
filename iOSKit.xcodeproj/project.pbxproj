@@ -104,6 +104,7 @@
 		9BCBDF441472747C0074BFEB /* UIWebView+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCBDF421472747C0074BFEB /* UIWebView+FKAdditions.m */; };
 		9BDD922F148A8FE6008E21A1 /* FKBrowserViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BDD922D148A8FE6008E21A1 /* FKBrowserViewController.h */; };
 		9BDD9230148A8FE6008E21A1 /* FKBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDD922E148A8FE6008E21A1 /* FKBrowserViewController.m */; };
+		9BDD9264148AA9BD008E21A1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BDD9263148AA9BD008E21A1 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,6 +244,7 @@
 		9BDD922D148A8FE6008E21A1 /* FKBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKBrowserViewController.h; path = Network/FKBrowserViewController.h; sourceTree = "<group>"; };
 		9BDD922E148A8FE6008E21A1 /* FKBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKBrowserViewController.m; path = Network/FKBrowserViewController.m; sourceTree = "<group>"; };
 		9BDD9232148A9AE8008E21A1 /* iOSKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = iOSKit.bundle; path = Resources/iOSKit.bundle; sourceTree = "<group>"; };
+		9BDD9263148AA9BD008E21A1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		9BE4253C14470FA40036D399 /* FKAudioFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FKAudioFunctions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,6 +253,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BDD9264148AA9BD008E21A1 /* MessageUI.framework in Frameworks */,
 				39DF5CF91424A97A00090805 /* libFoundationKitiOS.a in Frameworks */,
 				393A299A142359550056CB37 /* CoreGraphics.framework in Frameworks */,
 				39CFA60214223E6300DC3E57 /* QuartzCore.framework in Frameworks */,
@@ -381,10 +384,11 @@
 		39F5166113C8E3F3008A9732 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				39DF5CE81424A96800090805 /* FoundationKit.xcodeproj */,
 				393A2999142359550056CB37 /* CoreGraphics.framework */,
 				39F5166213C8E3F3008A9732 /* Foundation.framework */,
+				9BDD9263148AA9BD008E21A1 /* MessageUI.framework */,
 				39CFA60114223E6300DC3E57 /* QuartzCore.framework */,
+				39DF5CE81424A96800090805 /* FoundationKit.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

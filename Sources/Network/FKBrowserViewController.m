@@ -9,13 +9,14 @@
 #import "UIInterfaceOrientation+FKAdditions.h"
 #import "FKNetworkActivityManager.h"
 #import "FKInterApp.h"
+#import <MessageUI/MessageUI.h>
 
 #define kFKBrowserFixedSpaceItemWidth      12.f
 #define kFKBrowserDefaultTintColor         nil
 #define kFKBrowserDefaultBackgroundColor   [UIColor scrollViewTexturedBackgroundColor]
 
 
-@interface FKBrowserViewController () <UIWebViewDelegate, UIActionSheetDelegate>
+@interface FKBrowserViewController () <UIWebViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong, readwrite) UIToolbar *toolbar;
 @property (nonatomic, strong) UIWebView *webView;
@@ -267,13 +268,12 @@ $synthesize(actionItem);
 	if (buttonIndex == 0) {
         FKInterAppOpenSafari(self.url);
 	} else if (buttonIndex == 1) {
-		/* TODO:
          MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init]; 
          
-         [composer setMailComposeDelegate: self]; 
-         [composer setMessageBody: self.URLString isHTML: NO];
-         [self presentModalViewController: composer animated: YES];
-         [composer release];*/
+         [composer setMailComposeDelegate:self]; 
+         [composer setMessageBody: self.address isHTML:NO];
+        
+         [self presentModalViewController:composer animated:YES];
 	}
 }
 
@@ -281,10 +281,10 @@ $synthesize(actionItem);
 #pragma mark -
 #pragma mark MFMailComposeViewControllerDelegate
 ////////////////////////////////////////////////////////////////////////
-/*
- - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult) result error:(NSError *) error {
- [controller dismissModalViewControllerAnimated:YES];
- }*/
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult) result error:(NSError *) error {
+    [controller dismissModalViewControllerAnimated:YES];
+}
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -344,9 +344,9 @@ $synthesize(actionItem);
     
 	[actionSheet addButtonWithTitle:_(@"Open in Safari")];
     
-	/*if ([MFMailComposeViewController canSendMail]) {
-     [actionSheet addButtonWithTitle:_(@"Mail Link")];
-     }*/
+	if ([MFMailComposeViewController canSendMail]) {
+        [actionSheet addButtonWithTitle:_(@"Mail Link")];
+    }
     
 	[actionSheet addButtonWithTitle:_(@"Cancel")];
 	[actionSheet setCancelButtonIndex:actionSheet.numberOfButtons - 1];

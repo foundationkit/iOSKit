@@ -1,4 +1,6 @@
 // Part of iOSKit http://foundationk.it
+//
+// Derived from Abraham Vegh's BSD-Licensed AVWebViewController: https://github.com/abrahamvegh/AVWebViewController/
 
 #import <Foundation/Foundation.h>
 
