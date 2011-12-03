@@ -24,18 +24,19 @@
 @property (nonatomic, strong, readonly) UIToolbar *toolbar;
 
 /**
+ Initializes the Browser with the given Address and start loading when the viewController gets pushed.
+ This is the designated Initializer.
+ 
+ @param address The address the browser should display
+ */
+- (id)initWithAddress:(NSString *)address;
+
+/**
  Initializes the Browser with the given URL and start loading when the viewController gets pushed.
  
  @param url The URL the browser should display
  */
 - (id)initWithURL:(NSURL *)url;
-
-/**
- Initializes the Browser with the given Address and start loading when the viewController gets pushed.
- 
- @param address The address the browser should display
- */
-- (id)initWithAddress:(NSString *)address;
 
 /**
  Stops loading of the UIWebView

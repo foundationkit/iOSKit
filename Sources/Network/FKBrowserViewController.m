@@ -59,6 +59,7 @@ $synthesize(actionItem);
         fadeAnimationEnabled_ = YES;
         tintColor_ = kFKBrowserDefaultTintColor;
         backgroundColor_ = kFKBrowserDefaultBackgroundColor;
+        
         [self updateAddress:address];
     }
     
@@ -67,6 +68,10 @@ $synthesize(actionItem);
 
 - (id)initWithURL:(NSURL *)url {
     return [self initWithAddress:[url absoluteString]];
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    return [self initWithAddress:nil];
 }
 
 ////////////////////////////////////////////////////////////////////////
