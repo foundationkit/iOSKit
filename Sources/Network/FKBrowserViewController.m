@@ -60,6 +60,9 @@ $synthesize(actionItem);
         tintColor_ = kFKBrowserDefaultTintColor;
         backgroundColor_ = kFKBrowserDefaultBackgroundColor;
         
+        // Initialize toolbar here to make it customizable before view is created
+        toolbar_ = [[UIToolbar alloc] initWithFrame:CGRectZero];
+        
         [self updateAddress:address];
     }
     
@@ -89,7 +92,7 @@ $synthesize(actionItem);
     self.webView.delegate = self;
     [self.view addSubview:self.webView];
     
-    self.toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.f, self.view.boundsHeight - toolbarHeight, self.view.boundsWidth, toolbarHeight)];
+    self.toolbar.frame = CGRectMake(0.f, self.view.boundsHeight - toolbarHeight, self.view.boundsWidth, toolbarHeight);
     self.toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     [self.view addSubview:self.toolbar];
     
@@ -273,12 +276,13 @@ $synthesize(actionItem);
 	if (buttonIndex == 0) {
         FKInterAppOpenSafari(self.url);
 	} else if (buttonIndex == 1) {
-         MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init]; 
-         
-         [composer setMailComposeDelegate:self]; 
-         [composer setMessageBody: self.address isHTML:NO];
+        MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init]; 
         
-         [self presentModalViewController:composer animated:YES];
+        composer.navigationBar.tintColor = self.tintColor;
+        [composer setMailComposeDelegate:self]; 
+        [composer setMessageBody: self.address isHTML:NO];
+        
+        [self presentModalViewController:composer animated:YES];
 	}
 }
 
