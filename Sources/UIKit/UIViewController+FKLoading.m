@@ -1,4 +1,5 @@
 #import "UIViewController+FKLoading.h"
+#import "NSObject+FKReflection.h"
 
 FKLoadCategory(UIViewControllerFKLoading);
 
@@ -9,6 +10,7 @@ static char activityViewKey;
 static char replacedObjectKey;
 
 static CGRect FKCenteredSquareInRectConstrainedToSize(CGRect rect, CGFloat size);
+static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView *activityView);
 
 @interface UIViewController ()
 
@@ -82,18 +84,30 @@ static CGRect FKCenteredSquareInRectConstrainedToSize(CGRect rect, CGFloat size)
 - (void)showLoadingIndicatorInNavigationBar {
     [self hideLoadingIndicator];
     
-    // initing the loading view
     UIActivityIndicatorView *activityView = self.activityView;
-    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, 24.f, 26.f)];
     UIBarButtonItem *barButtonItemToReplace = self.navigationItem.rightBarButtonItem;
-    
-    activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
-    activityView.autoresizingMask = UIViewAutoresizingNone;
-    activityView.frame = CGRectMake(0.f, 2.f, 20.f, 20.f);
-    [backgroundView addSubview:activityView];
+    UIBarButtonItem *activityItem = FKBarButtonItemWithActivityView(activityView);
     
     self.fk_replacedObject = barButtonItemToReplace;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backgroundView];
+    self.navigationItem.rightBarButtonItem = activityItem;
+    
+    [activityView startAnimating];
+}
+
+- (void)showLoadingIndicatorInToolbar:(UIToolbar *)toolbar insteadOfItem:(UIBarButtonItem *)itemToReplace {
+    [self hideLoadingIndicator];
+    
+    // attach original toolbar items to toolbar for later retreival
+    toolbar.metaData = toolbar.items;
+    
+    NSUInteger indexOfItemToReplace = [toolbar.items indexOfObject:itemToReplace];
+    NSMutableArray *items = [[NSMutableArray alloc] initWithArray:toolbar.items];
+    UIActivityIndicatorView *activityView = self.activityView;
+    UIBarButtonItem *activityItem = FKBarButtonItemWithActivityView(activityView);
+    
+    self.fk_replacedObject = toolbar;
+    [items replaceObjectAtIndex:indexOfItemToReplace withObject:activityItem];
+    [toolbar setItems:items animated:YES];
     
     [activityView startAnimating];
 }
@@ -108,6 +122,13 @@ static CGRect FKCenteredSquareInRectConstrainedToSize(CGRect rect, CGFloat size)
         self.navigationItem.rightBarButtonItem = replacedObject;
         return;
     } 
+    
+    // ActivityView was in Toolbar
+    else if ([replacedObject isKindOfClass:[UIToolbar class]]) {
+        [activityView stopAnimating];
+        [replacedObject setItems:[replacedObject metaData] animated:YES];
+        return;
+    }
     
     // ActivityView was displayed instead of another view
     else if ([replacedObject isKindOfClass:[UIView class]]) {
@@ -147,5 +168,16 @@ static CGRect FKCenteredSquareInRectConstrainedToSize(CGRect rect, CGFloat size)
     
     // use integral coordinates to prohibit blurring
     return CGRectIntegral(centeredSquare);
+}
+
+static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView *activityView) {
+    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, 24.f, 26.f)];
+    
+    activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+    activityView.autoresizingMask = UIViewAutoresizingNone;
+    activityView.frame = CGRectMake(0.f, 2.f, 20.f, 20.f);
+    [backgroundView addSubview:activityView];
+    
+    return [[UIBarButtonItem alloc] initWithCustomView:backgroundView];
 }
 
