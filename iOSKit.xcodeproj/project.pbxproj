@@ -77,6 +77,8 @@
 		9B513471145E003900BC3DC5 /* FKColoredCellSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51346F145E003900BC3DC5 /* FKColoredCellSelectionView.m */; };
 		9B51347E145E0BC200BC3DC5 /* FKGroupedTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B51347C145E0BC100BC3DC5 /* FKGroupedTableViewCell.h */; };
 		9B51347F145E0BC200BC3DC5 /* FKGroupedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51347D145E0BC200BC3DC5 /* FKGroupedTableViewCell.m */; };
+		9B5364A5148E225700A01426 /* UIView+FKNIBLocalization.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B5364A3148E225700A01426 /* UIView+FKNIBLocalization.h */; };
+		9B5364A6148E225700A01426 /* UIView+FKNIBLocalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5364A4148E225700A01426 /* UIView+FKNIBLocalization.m */; };
 		9B54E81014269B7D00336F08 /* CGGeometry+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E80F14269B7D00336F08 /* CGGeometry+FKAdditions.h */; };
 		9B54E81414269C2F00336F08 /* FKiOSMetrics.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81314269C2F00336F08 /* FKiOSMetrics.h */; };
 		9B54E81614269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81514269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h */; };
@@ -212,6 +214,8 @@
 		9B51346F145E003900BC3DC5 /* FKColoredCellSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKColoredCellSelectionView.m; path = TableView/FKColoredCellSelectionView.m; sourceTree = "<group>"; };
 		9B51347C145E0BC100BC3DC5 /* FKGroupedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKGroupedTableViewCell.h; path = TableView/FKGroupedTableViewCell.h; sourceTree = "<group>"; };
 		9B51347D145E0BC200BC3DC5 /* FKGroupedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKGroupedTableViewCell.m; path = TableView/FKGroupedTableViewCell.m; sourceTree = "<group>"; };
+		9B5364A3148E225700A01426 /* UIView+FKNIBLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKNIBLocalization.h"; path = "UIKit/UIView+FKNIBLocalization.h"; sourceTree = "<group>"; };
+		9B5364A4148E225700A01426 /* UIView+FKNIBLocalization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKNIBLocalization.m"; path = "UIKit/UIView+FKNIBLocalization.m"; sourceTree = "<group>"; };
 		9B54E80F14269B7D00336F08 /* CGGeometry+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CGGeometry+FKAdditions.h"; path = "Core/CGGeometry+FKAdditions.h"; sourceTree = "<group>"; };
 		9B54E81314269C2F00336F08 /* FKiOSMetrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKiOSMetrics.h; path = Core/FKiOSMetrics.h; sourceTree = "<group>"; };
 		9B54E81514269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIInterfaceOrientation+FKAdditions.h"; path = "Core/UIInterfaceOrientation+FKAdditions.h"; sourceTree = "<group>"; };
@@ -442,6 +446,8 @@
 				39ACE7431422709B0022D8F8 /* UIView+FKContentSize.m */,
 				39CFA6071422423300DC3E57 /* UIView+FKHierarchy.h */,
 				39CFA6081422423400DC3E57 /* UIView+FKHierarchy.m */,
+				9B5364A3148E225700A01426 /* UIView+FKNIBLocalization.h */,
+				9B5364A4148E225700A01426 /* UIView+FKNIBLocalization.m */,
 				39CFA5F1142234A600DC3E57 /* UIView+FKRotation.h */,
 				39CFA5F2142234A600DC3E57 /* UIView+FKRotation.m */,
 				393A299C142359C50056CB37 /* UIViewController+FKAdditions.h */,
@@ -575,6 +581,7 @@
 				9BCA532414891A5700918E87 /* FKInterApp.h in Headers */,
 				9BCA53291489200C00918E87 /* NSString+FKiOSAdditions.h in Headers */,
 				9BDD922F148A8FE6008E21A1 /* FKBrowserViewController.h in Headers */,
+				9B5364A5148E225700A01426 /* UIView+FKNIBLocalization.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +708,7 @@
 				9BCA532514891A5700918E87 /* FKInterApp.m in Sources */,
 				9BCA532A1489200C00918E87 /* NSString+FKiOSAdditions.m in Sources */,
 				9BDD9230148A8FE6008E21A1 /* FKBrowserViewController.m in Sources */,
+				9B5364A6148E225700A01426 /* UIView+FKNIBLocalization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
