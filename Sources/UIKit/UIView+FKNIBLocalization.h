@@ -23,6 +23,6 @@
 /**
  automatically translate UIViews loaded from NIB which text starts with Prefix "@"
  */
-- (void)awakeFromNib;
+- (void)localizeViewLoadedFromNIB;
 
 @end

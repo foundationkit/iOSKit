@@ -18,21 +18,23 @@ static char localizationEnabledKey;
 
 @implementation UIView (FKNIBLocalization)
 
-- (void)awakeFromNib {
-	if ([self respondsToSelector:@selector(text)]) {
-        [self fk_localizeValueForKey:@"text"];
-    } else if ([self respondsToSelector:@selector(title)]) {
-        [self fk_localizeValueForKey:@"title"];
-    } else if ([self isKindOfClass:[UIButton class]]) {
-    	[self fk_localizeButton];
-    } else if ([self isKindOfClass:[UISegmentedControl class]]) {
-        [self fk_localizeSegmentedControl];
-    } else if ([self isKindOfClass:[UITabBar class]]) {
-        [self fk_localizeTabBar];
-    }
-    
-    if ([self respondsToSelector:@selector(placeholder)]) {
-        [self fk_localizeValueForKey:@"placeholder"];
+- (void)localizeViewLoadedFromNIB {
+    if (self.nibLocalizationEnabled) {
+        if ([self isKindOfClass:[UIButton class]]) {
+            [self fk_localizeButton];
+        } else if ([self isKindOfClass:[UISegmentedControl class]]) {
+            [self fk_localizeSegmentedControl];
+        } else if ([self isKindOfClass:[UITabBar class]]) {
+            [self fk_localizeTabBar];
+        } else if ([self respondsToSelector:@selector(text)]) {
+            [self fk_localizeValueForKey:@"text"];
+        } else if ([self respondsToSelector:@selector(title)]) {
+            [self fk_localizeValueForKey:@"title"];
+        }
+        
+        if ([self respondsToSelector:@selector(placeholder)]) {
+            [self fk_localizeValueForKey:@"placeholder"];
+        }
     }
 }
 
@@ -56,7 +58,7 @@ static char localizationEnabledKey;
 #pragma mark Private
 ////////////////////////////////////////////////////////////////////////
 
-- (NSString *)fk_localizeValueForString:(NSString *)string {
+- (NSString *)fk_localizedValueForString:(NSString *)string {
     if ([string hasPrefix:@"@"]) {
     	string = NSLocalizedString([string substringFromIndex:1], nil);
     } else if ([string hasPrefix:@"\\@"]) {
