@@ -91,3 +91,11 @@ BOOL FKInterAppOpenYouTube(NSString *videoID);
  @return YES if the communication was successful, NO otherwise
  */
 BOOL FKInterAppOpenAppStore(NSString *appID);
+
+/**
+ Opens AppStore Review page with the given App ID
+ 
+ @param appID the ID of the App to display in AppStore
+ @return YES if the communication was successful, NO otherwise
+ */
+BOOL FKInterAppOpenAppStoreReview(NSString *appID);

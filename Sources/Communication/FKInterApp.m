@@ -63,3 +63,9 @@ BOOL FKInterAppOpenAppStore(NSString *appID) {
     
     return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlPath]];
 }
+
+BOOL FKInterAppOpenAppStoreReview(NSString *appID) {
+    NSString* urlPath = [@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=" stringByAppendingString:appID];
+    
+    return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlPath]];
+}
