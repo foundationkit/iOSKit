@@ -77,6 +77,10 @@ $synthesize(actionItem);
     return [self initWithAddress:nil];
 }
 
+- (void)dealloc {
+    self.webView.delegate = nil;
+}
+
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark UIViewController
@@ -107,6 +111,7 @@ $synthesize(actionItem);
 - (void)viewDidUnload {
     [super viewDidUnload];
     
+    self.webView.delegate = nil;
 	self.webView = nil;
     self.toolbar = nil;
 	self.backItem = nil;
@@ -191,9 +196,6 @@ $synthesize(actionItem);
 #pragma mark -
 #pragma mark Getter
 ////////////////////////////////////////////////////////////////////////
-
-#pragma mark -
-#pragma mark Getter overrides
 
 - (UIBarButtonItem *)backItem {
 	if (backItem_ == nil) {
