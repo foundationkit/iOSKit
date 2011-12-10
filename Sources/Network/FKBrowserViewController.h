@@ -22,6 +22,8 @@
 @property (nonatomic, assign) BOOL fadeAnimationEnabled;
 /** The toolbar of the browserViewController. Customizable */
 @property (nonatomic, strong, readonly) UIToolbar *toolbar;
+/** If this flag is YES, a done button is shown */
+@property (nonatomic, assign, getter = isPresentedModally) BOOL presentedModally;
 
 /**
  Initializes the Browser with the given Address and start loading when the viewController gets pushed.

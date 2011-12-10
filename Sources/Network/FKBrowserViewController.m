@@ -31,6 +31,7 @@
 - (void)customize;
 - (void)updateUI;
 - (void)showActionSheet;
+- (void)handleDoneButtonPress:(id)sender;
 
 @end
 
@@ -48,6 +49,7 @@ $synthesize(backItem);
 $synthesize(forwardItem);
 $synthesize(loadItem);
 $synthesize(actionItem);
+$synthesize(presentedModally);
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -186,9 +188,26 @@ $synthesize(actionItem);
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
-    if (backgroundColor == backgroundColor_) {
+    if (backgroundColor != backgroundColor_) {
         backgroundColor_ = backgroundColor;
         [self customize];
+    }
+}
+
+- (void)setPresentedModally:(BOOL)presentedModally {
+    if (presentedModally != presentedModally_) {
+        [self willChangeValueForKey:@"presentedModally"];
+        presentedModally_ = presentedModally;
+        [self didChangeValueForKey:@"presentedModally"];
+        
+        if (presentedModally) {
+            UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                      target:self
+                                                                                      action:@selector(handleDoneButtonPress:)];
+            self.navigationItem.rightBarButtonItem = doneItem;
+        } else {
+            self.navigationItem.rightBarButtonItem = nil;
+        }
     }
 }
 
@@ -198,39 +217,39 @@ $synthesize(actionItem);
 ////////////////////////////////////////////////////////////////////////
 
 - (UIBarButtonItem *)backItem {
-	if (backItem_ == nil) {
-		backItem_ = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"iOSKit.bundle/browserBack"] 
-													 style:UIBarButtonItemStylePlain 
-													target:self.webView 
-													action:@selector(goBack)];
+    if (backItem_ == nil) {
+        backItem_ = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"iOSKit.bundle/browserBack"] 
+                                                     style:UIBarButtonItemStylePlain 
+                                                    target:self.webView 
+                                                    action:@selector(goBack)];
     }
     
-	backItem_.enabled = self.webView.canGoBack;
+    backItem_.enabled = self.webView.canGoBack;
     
-	return backItem_;
+    return backItem_;
 }
 
 - (UIBarButtonItem *)forwardItem {
-	if (forwardItem_ == nil) {
-		forwardItem_ = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"iOSKit.bundle/browserForward"] 
-														style:UIBarButtonItemStylePlain 
-													   target:self.webView 
-													   action:@selector(goForward)];
+    if (forwardItem_ == nil) {
+        forwardItem_ = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"iOSKit.bundle/browserForward"] 
+                                                        style:UIBarButtonItemStylePlain 
+                                                       target:self.webView 
+                                                       action:@selector(goForward)];
     }
     
-	forwardItem_.enabled = self.webView.canGoForward;
+    forwardItem_.enabled = self.webView.canGoForward;
     
-	return forwardItem_;
+    return forwardItem_;
 }
 
 - (UIBarButtonItem *)actionItem {
-	if (actionItem_ == nil) {
-		actionItem_ = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction 
-																	target:self 
-																	action:@selector(showActionSheet)];
+    if (actionItem_ == nil) {
+        actionItem_ = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction 
+                                                                    target:self 
+                                                                    action:@selector(showActionSheet)];
     }
     
-	return actionItem_;
+    return actionItem_;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -239,16 +258,16 @@ $synthesize(actionItem);
 ////////////////////////////////////////////////////////////////////////
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-	[self updateAddress:request.URL.absoluteString];
+    [self updateAddress:request.URL.absoluteString];
     
-	return YES;
+    return YES;
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     [self showLoadingIndicatorInNavigationBar];
     [FKNetworkActivityManager addNetworkUser:self];
     
-	[self updateUI];
+    [self updateUI];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -259,14 +278,14 @@ $synthesize(actionItem);
     [self hideLoadingIndicator];
     [FKNetworkActivityManager removeNetworkUser:self];
     
-	[self updateUI];
+    [self updateUI];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     [self hideLoadingIndicator];
     [FKNetworkActivityManager removeNetworkUser:self];
     
-	[self updateUI];
+    [self updateUI];
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -275,9 +294,9 @@ $synthesize(actionItem);
 ////////////////////////////////////////////////////////////////////////
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if (buttonIndex == 0) {
+    if (buttonIndex == 0) {
         FKInterAppOpenSafari(self.url);
-	} else if (buttonIndex == 1) {
+    } else if (buttonIndex == 1) {
         MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init]; 
         
         composer.navigationBar.tintColor = self.tintColor;
@@ -285,7 +304,7 @@ $synthesize(actionItem);
         [composer setMessageBody: self.address isHTML:NO];
         
         [self presentModalViewController:composer animated:YES];
-	}
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -328,7 +347,7 @@ $synthesize(actionItem);
     UIBarButtonItem *fixedSpaceItem = [UIBarButtonItem spaceItemWithWidth:kFKBrowserFixedSpaceItemWidth];
     UIBarButtonItem *flexibleSpaceItem = [UIBarButtonItem flexibleSpaceItem];
     
-	self.toolbar.items = $array(fixedSpaceItem, self.backItem, flexibleSpaceItem, self.forwardItem, flexibleSpaceItem, 
+    self.toolbar.items = $array(fixedSpaceItem, self.backItem, flexibleSpaceItem, self.forwardItem, flexibleSpaceItem, 
                                 self.loadItem, flexibleSpaceItem, self.actionItem, fixedSpaceItem);
 }
 
@@ -340,29 +359,33 @@ $synthesize(actionItem);
 }
 
 - (void)showActionSheet {
-	NSString *actionSheetTitle = self.address;
+    NSString *actionSheetTitle = self.address;
     
-	actionSheetTitle = [actionSheetTitle stringByReplacingOccurrencesOfString:@"(^http://)|(/$)" 
-																   withString:@"" 
-																	  options:NSRegularExpressionSearch 
-																		range:NSMakeRange(0, actionSheetTitle.length)];
+    actionSheetTitle = [actionSheetTitle stringByReplacingOccurrencesOfString:@"(^http://)|(/$)" 
+                                                                   withString:@"" 
+                                                                      options:NSRegularExpressionSearch 
+                                                                        range:NSMakeRange(0, actionSheetTitle.length)];
     
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:actionSheetTitle 
-															 delegate:self 
-													cancelButtonTitle:nil 
-											   destructiveButtonTitle:nil 
-													otherButtonTitles:nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:actionSheetTitle 
+                                                             delegate:self 
+                                                    cancelButtonTitle:nil 
+                                               destructiveButtonTitle:nil 
+                                                    otherButtonTitles:nil];
     
-	[actionSheet addButtonWithTitle:_(@"Open in Safari")];
+    [actionSheet addButtonWithTitle:_(@"Open in Safari")];
     
-	if ([MFMailComposeViewController canSendMail]) {
+    if ([MFMailComposeViewController canSendMail]) {
         [actionSheet addButtonWithTitle:_(@"Mail Link")];
     }
     
-	[actionSheet addButtonWithTitle:_(@"Cancel")];
-	[actionSheet setCancelButtonIndex:actionSheet.numberOfButtons - 1];
+    [actionSheet addButtonWithTitle:_(@"Cancel")];
+    [actionSheet setCancelButtonIndex:actionSheet.numberOfButtons - 1];
     
-	[actionSheet showFromToolbar:self.toolbar];
+    [actionSheet showFromToolbar:self.toolbar];
+}
+
+- (void)handleDoneButtonPress:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 @end
