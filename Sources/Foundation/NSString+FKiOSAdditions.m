@@ -9,12 +9,12 @@
     return [[phoneNumber componentsSeparatedByCharactersInSet:[validCharacters invertedSet]] componentsJoinedByString:@""];
 }
 
-- (CGFloat)heightWithFont: (UIFont*)font
-       constrainedToWidth: (CGFloat)width
-            lineBreakMode: (UILineBreakMode)lineBreakMode {
-    return [self sizeWithFont: font
-            constrainedToSize: CGSizeMake(width, CGFLOAT_MAX)
-                lineBreakMode: lineBreakMode].height;
+- (CGFloat)heightWithFont:(UIFont *)font
+       constrainedToWidth:(CGFloat)width
+            lineBreakMode:(UILineBreakMode)lineBreakMode {
+    return [self sizeWithFont:font
+            constrainedToSize:CGSizeMake(width, CGFLOAT_MAX)
+                lineBreakMode:lineBreakMode].height;
 }
 
 @end

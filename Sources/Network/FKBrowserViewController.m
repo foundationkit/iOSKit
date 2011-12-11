@@ -56,6 +56,17 @@ $synthesize(presentedModally);
 #pragma mark Lifecycle
 ////////////////////////////////////////////////////////////////////////
 
++ (id)browserWithAddress:(NSString *)address {
+    return [[[self class] alloc] initWithAddress:address];
+}
+
++ (id)modalBrowserWithAddress:(NSString *)address {
+    FKBrowserViewController *viewController = [self browserWithAddress:address];
+    viewController.presentedModally = YES;
+    
+    return viewController;
+}
+
 - (id)initWithAddress:(NSString *)address {
     if ((self = [super initWithNibName:nil bundle:nil])) {
         fadeAnimationEnabled_ = YES;
@@ -204,9 +215,9 @@ $synthesize(presentedModally);
             UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                       target:self
                                                                                       action:@selector(handleDoneButtonPress:)];
-            self.navigationItem.rightBarButtonItem = doneItem;
+            self.navigationItem.leftBarButtonItem = doneItem;
         } else {
-            self.navigationItem.rightBarButtonItem = nil;
+            self.navigationItem.leftBarButtonItem = nil;
         }
     }
 }

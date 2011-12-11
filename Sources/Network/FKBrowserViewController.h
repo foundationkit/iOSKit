@@ -26,6 +26,21 @@
 @property (nonatomic, assign, getter = isPresentedModally) BOOL presentedModally;
 
 /**
+ Creates a FKBrowserViewController with the given Address
+ 
+ @param address The address the browser should display
+ */
++ (id)browserWithAddress:(NSString *)address;
+
+/**
+ Creates a FKBrowserViewController with the given Address and presentedModally set to YES.
+ This shows a done-button which can be used to dismiss the viewController.
+ 
+ @param address The address the browser should display
+ */
++ (id)modalBrowserWithAddress:(NSString *)address;
+
+/**
  Initializes the Browser with the given Address and start loading when the viewController gets pushed.
  This is the designated Initializer.
  

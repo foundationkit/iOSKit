@@ -18,8 +18,8 @@
  * Calculates the height of this text given the font, max width, and line break mode.
  * A convenience wrapper for sizeWithFont:constrainedToSize:lineBreakMode:
  */
-- (CGFloat)heightWithFont: (UIFont*)font
-       constrainedToWidth: (CGFloat)width
-            lineBreakMode: (UILineBreakMode)lineBreakMode;
+- (CGFloat)heightWithFont:(UIFont *)font
+       constrainedToWidth:(CGFloat)width
+            lineBreakMode:(UILineBreakMode)lineBreakMode;
 
 @end
