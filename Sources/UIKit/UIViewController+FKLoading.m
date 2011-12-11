@@ -98,6 +98,7 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     [self hideLoadingIndicator];
     
     // attach original toolbar items to toolbar for later retreival
+    FKAssert(toolbar.metaData == nil, @"UIToolbar MetaData is already set, will loose it");
     toolbar.metaData = toolbar.items;
     
     NSUInteger indexOfItemToReplace = [toolbar.items indexOfObject:itemToReplace];
@@ -127,6 +128,7 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     else if ([replacedObject isKindOfClass:[UIToolbar class]]) {
         [activityView stopAnimating];
         [replacedObject setItems:[replacedObject metaData] animated:YES];
+        [replacedObject setMetaData:nil];
         return;
     }
     

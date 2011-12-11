@@ -71,6 +71,8 @@
 		9B16CE4A1477D26B007BDACD /* FKShadowedTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B16CE481477D26B007BDACD /* FKShadowedTableView.h */; };
 		9B16CE4B1477D26B007BDACD /* FKShadowedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16CE491477D26B007BDACD /* FKShadowedTableView.m */; };
 		9B297207141B8317006124A2 /* NSValue+FKiOSConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */; };
+		9B45437914953EF90076A950 /* FKView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B45437714953EF90076A950 /* FKView.h */; };
+		9B45437A14953EF90076A950 /* FKView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45437814953EF90076A950 /* FKView.m */; };
 		9B4826D6145DAF9300C735DD /* UITableView+FKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B4826D4145DAF9300C735DD /* UITableView+FKConcise.h */; };
 		9B4826D7145DAF9300C735DD /* UITableView+FKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4826D5145DAF9300C735DD /* UITableView+FKConcise.m */; };
 		9B513470145E003900BC3DC5 /* FKColoredCellSelectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B51346E145E003900BC3DC5 /* FKColoredCellSelectionView.h */; };
@@ -208,6 +210,8 @@
 		9B16CE481477D26B007BDACD /* FKShadowedTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKShadowedTableView.h; path = TableView/FKShadowedTableView.h; sourceTree = "<group>"; };
 		9B16CE491477D26B007BDACD /* FKShadowedTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKShadowedTableView.m; path = TableView/FKShadowedTableView.m; sourceTree = "<group>"; };
 		9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+FKiOSConcise.h"; sourceTree = "<group>"; };
+		9B45437714953EF90076A950 /* FKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKView.h; path = Views/FKView.h; sourceTree = "<group>"; };
+		9B45437814953EF90076A950 /* FKView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKView.m; path = Views/FKView.m; sourceTree = "<group>"; };
 		9B4826D4145DAF9300C735DD /* UITableView+FKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FKConcise.h"; sourceTree = "<group>"; };
 		9B4826D5145DAF9300C735DD /* UITableView+FKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FKConcise.m"; sourceTree = "<group>"; };
 		9B51346E145E003900BC3DC5 /* FKColoredCellSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKColoredCellSelectionView.h; path = TableView/FKColoredCellSelectionView.h; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 				39DF5CDB1424A05B00090805 /* TableView */,
 				9B297200141B7EF9006124A2 /* UIKit */,
 				391393A613C9B84C0049DA61 /* Universal */,
+				9B45437614953EB30076A950 /* Views */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -460,6 +465,15 @@
 			name = UIKit;
 			sourceTree = "<group>";
 		};
+		9B45437614953EB30076A950 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B45437714953EF90076A950 /* FKView.h */,
+				9B45437814953EF90076A950 /* FKView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		9B54E80E14269B5500336F08 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,6 +596,7 @@
 				9BCA53291489200C00918E87 /* NSString+FKiOSAdditions.h in Headers */,
 				9BDD922F148A8FE6008E21A1 /* FKBrowserViewController.h in Headers */,
 				9B5364A5148E225700A01426 /* UIView+FKNIBLocalization.h in Headers */,
+				9B45437914953EF90076A950 /* FKView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,6 +724,7 @@
 				9BCA532A1489200C00918E87 /* NSString+FKiOSAdditions.m in Sources */,
 				9BDD9230148A8FE6008E21A1 /* FKBrowserViewController.m in Sources */,
 				9B5364A6148E225700A01426 /* UIView+FKNIBLocalization.m in Sources */,
+				9B45437A14953EF90076A950 /* FKView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
