@@ -12,8 +12,7 @@ $synthesize(lineWidth);
 $synthesize(lineColor);
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Lifecycle
+#pragma mark - Lifecycle
 ////////////////////////////////////////////////////////////////////////
 
 + (id)coloredSelectionViewForTableViewCell:(UITableViewCell *)cell {
@@ -37,15 +36,14 @@ $synthesize(lineColor);
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark UIView
+#pragma mark - UIView
 ////////////////////////////////////////////////////////////////////////
 
-- (BOOL) isOpaque {
+- (BOOL)isOpaque {
 	return NO;
 }
 
--(void)drawRect:(CGRect)aRect {
+- (void)drawRect:(CGRect)aRect {
 	CGContextRef c = UIGraphicsGetCurrentContext();
 	CGRect rect = self.bounds;
 	CGFloat minx = CGRectGetMinX(rect) + 1.f;
@@ -151,8 +149,7 @@ $synthesize(lineColor);
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark FKColoredCellSelectionView
+#pragma mark - FKColoredCellSelectionView
 ////////////////////////////////////////////////////////////////////////
 
 - (void)setPosition:(FKColoredCellSelectionViewPosition)position {

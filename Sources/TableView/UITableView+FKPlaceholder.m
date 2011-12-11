@@ -19,8 +19,7 @@ static char contentUnavailableViewKey;
 @implementation UITableView (FKPlaceholder)
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Show/Hide Placeholder
+#pragma mark - Show/Hide Placeholder
 ////////////////////////////////////////////////////////////////////////
 
 - (void)setContentUnavailableViewHidden:(BOOL)hidden {
@@ -51,8 +50,7 @@ static char contentUnavailableViewKey;
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Setter/Getter
+#pragma mark - Setter/Getter
 ////////////////////////////////////////////////////////////////////////
 
 - (void)setFk_contentUnavailableView:(UIView *)contentUnavailableView {
@@ -64,8 +62,7 @@ static char contentUnavailableViewKey;
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Delegate Calls
+#pragma mark - Delegate Calls
 ////////////////////////////////////////////////////////////////////////
 
 - (UIView *)fk_contentUnavailableViewFromDelegate {

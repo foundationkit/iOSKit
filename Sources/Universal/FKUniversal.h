@@ -2,8 +2,7 @@
 
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Detecting Interface Idiom
+#pragma mark - Detecting Interface Idiom
 ////////////////////////////////////////////////////////////////////////
 
 NS_INLINE BOOL $isPad(void) {
@@ -15,8 +14,7 @@ NS_INLINE BOOL $isPhone(void) {
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Managing device-specific rects/sizes/points for iPhone and iPad
+#pragma mark - Managing device-specific rects/sizes/points for iPhone and iPad
 ////////////////////////////////////////////////////////////////////////
 
 NS_INLINE CGRect FKRectMake(CGFloat xPhone, CGFloat yPhone, CGFloat widthPhone, CGFloat heightPhone, CGFloat xPad, CGFloat yPad, CGFloat widthPad, CGFloat heightPad) {
@@ -32,8 +30,7 @@ NS_INLINE CGPoint FKPointMake(CGFloat xPhone, CGFloat yPhone, CGFloat xPad, CGFl
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Managing device-specific resources for iPhone and iPad
+#pragma mark - Managing device-specific resources for iPhone and iPad
 ////////////////////////////////////////////////////////////////////////
 
 // returns the image name depending on the current device by appending "@iPad" when on iPad

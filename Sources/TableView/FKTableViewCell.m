@@ -8,8 +8,7 @@
 $synthesize(selectedContentView);
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Lifecycle
+#pragma mark - Lifecycle
 ////////////////////////////////////////////////////////////////////////
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -27,8 +26,51 @@ $synthesize(selectedContentView);
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark UITableViewCell
+#pragma mark - UIView
+////////////////////////////////////////////////////////////////////////
+
+- (void)setFrame:(CGRect)frame {
+	[super setFrame:frame];
+    
+	CGRect bounds = self.bounds;
+	[contentView_ setFrame:bounds];
+	[selectedContentView_ setFrame:bounds];
+}
+
+- (void)setOpaque:(BOOL)opaque {
+    [super setOpaque:opaque];
+    
+    self.contentView.opaque = opaque;
+}
+
+- (void)setNeedsDisplay {
+	[super setNeedsDisplay];
+	[contentView_ setNeedsDisplay];
+    
+	if ([self isHighlighted] || [self isSelected]) {
+		[selectedContentView_ setNeedsDisplay];
+	}
+}
+
+- (void)setNeedsDisplayInRect:(CGRect)rect {
+	[super setNeedsDisplayInRect:rect];
+	[contentView_ setNeedsDisplayInRect:rect];
+    
+	if([self isHighlighted] || [self isSelected]) {
+		[selectedContentView_ setNeedsDisplayInRect:rect];
+	}
+}
+
+- (void)layoutSubviews {
+	[super layoutSubviews];
+    
+    // remove provided contentView
+	self.contentView.hidden = YES;
+	[self.contentView removeFromSuperview];
+}
+
+////////////////////////////////////////////////////////////////////////
+#pragma mark - UITableViewCell
 ////////////////////////////////////////////////////////////////////////
 
 - (void)setSelected:(BOOL)selected {
@@ -78,53 +120,7 @@ $synthesize(selectedContentView);
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark UIView
-////////////////////////////////////////////////////////////////////////
-
-- (void)setFrame:(CGRect)frame {
-	[super setFrame:frame];
-    
-	CGRect bounds = self.bounds;
-	[contentView_ setFrame:bounds];
-	[selectedContentView_ setFrame:bounds];
-}
-
-- (void)setOpaque:(BOOL)opaque {
-    [super setOpaque:opaque];
-    
-    self.contentView.opaque = opaque;
-}
-
-- (void)setNeedsDisplay {
-	[super setNeedsDisplay];
-	[contentView_ setNeedsDisplay];
-    
-	if ([self isHighlighted] || [self isSelected]) {
-		[selectedContentView_ setNeedsDisplay];
-	}
-}
-
-- (void)setNeedsDisplayInRect:(CGRect)rect {
-	[super setNeedsDisplayInRect:rect];
-	[contentView_ setNeedsDisplayInRect:rect];
-    
-	if([self isHighlighted] || [self isSelected]) {
-		[selectedContentView_ setNeedsDisplayInRect:rect];
-	}
-}
-
-- (void)layoutSubviews {
-	[super layoutSubviews];
-    
-    // remove provided contentView
-	self.contentView.hidden = YES;
-	[self.contentView removeFromSuperview];
-}
-
-////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark FKTableViewCell
+#pragma mark - FKTableViewCell
 ////////////////////////////////////////////////////////////////////////
 
 - (void)drawContentViewInRect:(CGRect)rect highlighted:(BOOL)highlighted {

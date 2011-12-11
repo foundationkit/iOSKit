@@ -145,8 +145,7 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
 
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Helper Functions
+#pragma mark - Helper Functions
 ////////////////////////////////////////////////////////////////////////
 
 static CGRect FKCenteredSquareInRectConstrainedToSize(CGRect rect, CGFloat size) {

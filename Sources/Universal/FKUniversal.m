@@ -4,11 +4,6 @@
 #define kFKDefaultIPadLandscapeAppendix     @"-L"
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Functions for managing device-specific Resources on iPhone/iPad
-///////////////////////////////////////////////////////////////////////////////////////////////////////
-
 NSString* FKDeviceSpecificImageName(NSString *imageName) {
 	return FKDeviceSpecificImageNameWithAppendix(imageName, kFKDefaultIPadAppendix);
 }

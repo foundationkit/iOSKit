@@ -12,8 +12,7 @@ BOOL FKViewUseForAutocalculation(UIView *view);
 CGPoint FKGetMaxPositions(UIScrollView *scrollView);
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark UIScrollView+FKContentSize
+#pragma mark - UIScrollView+FKContentSize
 ////////////////////////////////////////////////////////////////////////
 
 @implementation UIScrollView (FKContentSize)
@@ -51,8 +50,7 @@ CGPoint FKGetMaxPositions(UIScrollView *scrollView);
 @end
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Helper Functions
+#pragma mark - Helper Functions
 ////////////////////////////////////////////////////////////////////////
 
 BOOL FKViewIsScrollIndicator(UIView *view) {
