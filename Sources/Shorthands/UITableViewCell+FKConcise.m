@@ -10,7 +10,7 @@ FKLoadCategory(UITableViewCellFKConcise);
 }
 
 + (id)cellForTableView:(UITableView *)tableView style:(UITableViewCellStyle)cellStyle {
-    NSString *cellID = [self cellIdentifier];
+    NSString *cellID = [NSString stringWithFormat:@"%@_%d", [self cellIdentifier], cellStyle];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
     if (cell == nil) {
