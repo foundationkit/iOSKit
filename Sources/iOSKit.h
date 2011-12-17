@@ -2,6 +2,7 @@
 
 // Core
 #import "CGGeometry+FKAdditions.h"
+#import "FKCompatibility.h"
 #import "FKiOSConstants.h"
 #import "FKiOSDrawing.h"
 #import "FKiOSMetrics.h"

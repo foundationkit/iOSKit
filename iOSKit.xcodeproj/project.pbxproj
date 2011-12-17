@@ -98,6 +98,7 @@
 		9B6C02F2142C9FD2006F9812 /* FKTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C02F0142C9FD2006F9812 /* FKTableViewCell.m */; };
 		9B6C02F5142CA0E2006F9812 /* FKTableViewCellView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B6C02F3142CA0E2006F9812 /* FKTableViewCellView.h */; };
 		9B6C02F6142CA0E2006F9812 /* FKTableViewCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C02F4142CA0E2006F9812 /* FKTableViewCellView.m */; };
+		9B77A173149D2A82005CE013 /* FKCompatibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B77A172149D2A82005CE013 /* FKCompatibility.h */; };
 		9BBBF401143AF00D00071ABD /* UIButton+FKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBBF3FF143AF00D00071ABD /* UIButton+FKConcise.h */; };
 		9BBBF402143AF00D00071ABD /* UIButton+FKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBBF400143AF00D00071ABD /* UIButton+FKConcise.m */; };
 		9BCA532414891A5700918E87 /* FKInterApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BCA532214891A5700918E87 /* FKInterApp.h */; };
@@ -237,6 +238,7 @@
 		9B6C02F0142C9FD2006F9812 /* FKTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKTableViewCell.m; path = TableView/FKTableViewCell.m; sourceTree = "<group>"; };
 		9B6C02F3142CA0E2006F9812 /* FKTableViewCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKTableViewCellView.h; path = TableView/FKTableViewCellView.h; sourceTree = "<group>"; };
 		9B6C02F4142CA0E2006F9812 /* FKTableViewCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKTableViewCellView.m; path = TableView/FKTableViewCellView.m; sourceTree = "<group>"; };
+		9B77A172149D2A82005CE013 /* FKCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKCompatibility.h; path = Core/FKCompatibility.h; sourceTree = "<group>"; };
 		9BBBF3FF143AF00D00071ABD /* UIButton+FKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+FKConcise.h"; sourceTree = "<group>"; };
 		9BBBF400143AF00D00071ABD /* UIButton+FKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FKConcise.m"; sourceTree = "<group>"; };
 		9BC1CD751431CF9800A5098D /* Reachability+FKAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reachability+FKAdditions.h"; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				9B54E80F14269B7D00336F08 /* CGGeometry+FKAdditions.h */,
+				9B77A172149D2A82005CE013 /* FKCompatibility.h */,
 				9B54E81714269C8B00336F08 /* FKiOSConstants.h */,
 				9B6C025A142BD444006F9812 /* FKiOSDrawing.h */,
 				9B6C025C142BD583006F9812 /* FKiOSDrawing.m */,
@@ -597,6 +600,7 @@
 				9BDD922F148A8FE6008E21A1 /* FKBrowserViewController.h in Headers */,
 				9B5364A5148E225700A01426 /* UIView+FKNIBLocalization.h in Headers */,
 				9B45437914953EF90076A950 /* FKView.h in Headers */,
+				9B77A173149D2A82005CE013 /* FKCompatibility.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
