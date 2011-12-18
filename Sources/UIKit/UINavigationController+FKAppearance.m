@@ -1,4 +1,5 @@
 #import "UINavigationController+FKAppearance.h"
+#import "FKCompatibility.h"
 
 static NSMutableArray *appearanceStack = nil;
 
@@ -10,6 +11,9 @@ static NSMutableArray *appearanceStack = nil;
     BOOL navigationBarHidden;
     UIBarStyle navigationBarStyle;
     UIStatusBarStyle statusBarStyle;
+    UIImage *backgroundImageDefault;
+    UIImage *backgroundImageLandscape;
+    NSDictionary *titleTextAttributes;
 }
 
 + (FKAppearanceSnapshot *)snapshotFromNavigationController:(UINavigationController *)navigationController;
@@ -70,6 +74,13 @@ static NSMutableArray *appearanceStack = nil;
     snapshot->navigationBarStyle = navigationController.navigationBar.barStyle;
     snapshot->statusBarStyle = [UIApplication sharedApplication].statusBarStyle;
     
+    IF_IOS5_OR_GREATER
+    (
+     snapshot->backgroundImageDefault = [navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault];
+     snapshot->backgroundImageLandscape = [navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsLandscapePhone];
+     snapshot->titleTextAttributes = navigationController.navigationBar.titleTextAttributes;
+     )
+    
     return snapshot;
 }
 
@@ -78,6 +89,13 @@ static NSMutableArray *appearanceStack = nil;
     navigationController.navigationBarHidden = navigationBarHidden;
     navigationController.navigationBar.barStyle = navigationBarStyle;
     navigationController.navigationBar.translucent = navigationBarTranslucent;
+    
+    IF_IOS5_OR_GREATER
+    (
+     [navigationController.navigationBar setBackgroundImage:backgroundImageDefault forBarMetrics:UIBarMetricsDefault];
+     [navigationController.navigationBar setBackgroundImage:backgroundImageLandscape forBarMetrics:UIBarMetricsLandscapePhone];
+     [navigationController.navigationBar setTitleTextAttributes:titleTextAttributes];
+     )
 }
 
 @end

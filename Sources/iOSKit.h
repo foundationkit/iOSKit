@@ -45,6 +45,7 @@
 #import "UIDevice+FKAdditions.h"
 #import "UIImage+FKAdditions.h"
 #import "UIImageView+FKAdditions.h"
+#import "UINavigationController+FKAppearance.h"
 #import "UIScreen+FKAdditions.h"
 #import "UIScrollView+FKAdditions.h"
 #import "UIScrollView+FKContentSize.h"
