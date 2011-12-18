@@ -11,6 +11,7 @@ static NSMutableArray *appearanceStack = nil;
     BOOL navigationBarHidden;
     UIBarStyle navigationBarStyle;
     UIStatusBarStyle statusBarStyle;
+    UIColor *navigationBarTintColor;
     UIImage *backgroundImageDefault;
     UIImage *backgroundImageLandscape;
     NSDictionary *titleTextAttributes;
@@ -73,6 +74,7 @@ static NSMutableArray *appearanceStack = nil;
     snapshot->navigationBarHidden = navigationController.navigationBarHidden;
     snapshot->navigationBarStyle = navigationController.navigationBar.barStyle;
     snapshot->statusBarStyle = [UIApplication sharedApplication].statusBarStyle;
+    snapshot->navigationBarTintColor = navigationController.navigationBar.tintColor;
     
     IF_IOS5_OR_GREATER
     (
@@ -85,16 +87,17 @@ static NSMutableArray *appearanceStack = nil;
 }
 
 - (void)applyToNavigationController:(UINavigationController *)navigationController animated:(BOOL)animated {
-    [[UIApplication sharedApplication] setStatusBarStyle:statusBarStyle animated:animated];
-    navigationController.navigationBarHidden = navigationBarHidden;
-    navigationController.navigationBar.barStyle = navigationBarStyle;
-    navigationController.navigationBar.translucent = navigationBarTranslucent;
+    [[UIApplication sharedApplication] setStatusBarStyle:self->statusBarStyle animated:animated];
+    navigationController.navigationBarHidden = self->navigationBarHidden;
+    navigationController.navigationBar.barStyle = self->navigationBarStyle;
+    navigationController.navigationBar.translucent = self->navigationBarTranslucent;
+    navigationController.navigationBar.tintColor = self->navigationBarTintColor;
     
     IF_IOS5_OR_GREATER
     (
-     [navigationController.navigationBar setBackgroundImage:backgroundImageDefault forBarMetrics:UIBarMetricsDefault];
-     [navigationController.navigationBar setBackgroundImage:backgroundImageLandscape forBarMetrics:UIBarMetricsLandscapePhone];
-     [navigationController.navigationBar setTitleTextAttributes:titleTextAttributes];
+     [navigationController.navigationBar setBackgroundImage:self->backgroundImageDefault forBarMetrics:UIBarMetricsDefault];
+     [navigationController.navigationBar setBackgroundImage:self->backgroundImageLandscape forBarMetrics:UIBarMetricsLandscapePhone];
+     [navigationController.navigationBar setTitleTextAttributes:self->titleTextAttributes];
      )
 }
 
