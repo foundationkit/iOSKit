@@ -68,6 +68,7 @@
 		39DF5DAA1424BF0D00090805 /* UIApplication+FKNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 39DF5DA81424BF0C00090805 /* UIApplication+FKNetwork.h */; };
 		39DF5DAB1424BF0D00090805 /* UIApplication+FKNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF5DA91424BF0C00090805 /* UIApplication+FKNetwork.m */; };
 		39F5166313C8E3F3008A9732 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F5166213C8E3F3008A9732 /* Foundation.framework */; };
+		9B0B571614A6AD550071B6D2 /* UIView+FKAutoresizing.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B0B571514A6AD550071B6D2 /* UIView+FKAutoresizing.h */; };
 		9B16CE4A1477D26B007BDACD /* FKShadowedTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B16CE481477D26B007BDACD /* FKShadowedTableView.h */; };
 		9B16CE4B1477D26B007BDACD /* FKShadowedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16CE491477D26B007BDACD /* FKShadowedTableView.m */; };
 		9B297207141B8317006124A2 /* NSValue+FKiOSConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */; };
@@ -208,6 +209,7 @@
 		39DF5DA91424BF0C00090805 /* UIApplication+FKNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+FKNetwork.m"; path = "UIKit/UIApplication+FKNetwork.m"; sourceTree = "<group>"; };
 		39F5165F13C8E3F3008A9732 /* libiOSKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiOSKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F5166213C8E3F3008A9732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9B0B571514A6AD550071B6D2 /* UIView+FKAutoresizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKAutoresizing.h"; path = "UIKit/UIView+FKAutoresizing.h"; sourceTree = "<group>"; };
 		9B16CE481477D26B007BDACD /* FKShadowedTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKShadowedTableView.h; path = TableView/FKShadowedTableView.h; sourceTree = "<group>"; };
 		9B16CE491477D26B007BDACD /* FKShadowedTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKShadowedTableView.m; path = TableView/FKShadowedTableView.m; sourceTree = "<group>"; };
 		9B297205141B8317006124A2 /* NSValue+FKiOSConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+FKiOSConcise.h"; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 				39CFA60C1422437400DC3E57 /* UIView+FKAdditions.m */,
 				39CFA60F14224AF400DC3E57 /* UIView+FKAnimations.h */,
 				39CFA61014224AF600DC3E57 /* UIView+FKAnimations.m */,
+				9B0B571514A6AD550071B6D2 /* UIView+FKAutoresizing.h */,
 				39ACE7421422709B0022D8F8 /* UIView+FKContentSize.h */,
 				39ACE7431422709B0022D8F8 /* UIView+FKContentSize.m */,
 				39CFA6071422423300DC3E57 /* UIView+FKHierarchy.h */,
@@ -601,6 +604,7 @@
 				9B5364A5148E225700A01426 /* UIView+FKNIBLocalization.h in Headers */,
 				9B45437914953EF90076A950 /* FKView.h in Headers */,
 				9B77A173149D2A82005CE013 /* FKCompatibility.h in Headers */,
+				9B0B571614A6AD550071B6D2 /* UIView+FKAutoresizing.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
