@@ -7,7 +7,7 @@
  You can either display the activityIndicator centered, in the navigation bar (as a replacement for the
  rightBarButtonItem) or instead of a given view. The activityView is constrained in it's size and doesn't
  get bigger than UIActivityIndicatorStyleWhiteLarge (37 pt). Hidden Views/BarButtonItems get restored, as
- soon as the activityIndicator gets hidden again.
+ soon as the activityIndicator gets hidden.
  
  @see UITableView+FKLoading
  @see UITableViewCell+FKLoading
@@ -24,6 +24,14 @@
 - (void)showCenteredLoadingIndicator;
 
 /**
+ Shows the loading indicator at the given point with the specified autoresizingMask.
+ 
+ @param center the center of the loading indicator
+ @param autoresizingMask the autoresizingMask of the loading indicator
+ */
+- (void)showLoadingIndicatorAtPoint:(CGPoint)center autoresizingMask:(UIViewAutoresizing)autoresizingMask;
+
+/**
  Shows the loading indicator instead of the given view. The view gets hidden and the 
  activityIndicator gets the same autoresizingMask as the view that was replaced. When
  the activityIndicator gets hidden, the view gets shown again.
@@ -31,6 +39,15 @@
  @param viewToReplace the view that gets hidden while showing the activity indicator
  */
 - (void)showLoadingIndicatorInsteadOfView:(UIView *)viewToReplace;
+
+/**
+ Shows the loading indicator on top of the given view. The activityIndicator gets the same 
+ autoresizingMask as the view it is shown on top of. Since the size of the loading indicator
+ is constrained to 37 pt it is centered in the view, if the view is bigger than 37*37 pt.
+ 
+ @param view the view that is used to determine the position of the loading indicator
+ */
+- (void)showLoadingIndicatorOnTopOfView:(UIView *)view;
 
 /**
  Shows the loading indicator as the right bar button item in the navigationBar.

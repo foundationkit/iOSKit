@@ -46,22 +46,28 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
 }
 
 - (void)showCenteredLoadingIndicator {
+    UIViewAutoresizing autoresizingMask = (UIViewAutoresizingFlexibleTopMargin |
+                                           UIViewAutoresizingFlexibleRightMargin |
+                                           UIViewAutoresizingFlexibleBottomMargin | 
+                                           UIViewAutoresizingFlexibleLeftMargin);
+    
+    [self showLoadingIndicatorAtPoint:CGPointMake(self.view.bounds.size.width/2.f, self.view.bounds.size.height/2.f) 
+                     autoresizingMask:autoresizingMask];
+   
+}
+
+- (void)showLoadingIndicatorAtPoint:(CGPoint)center autoresizingMask:(UIViewAutoresizing)autoresizingMask {
     [self hideLoadingIndicator];
     
     UIActivityIndicatorView *activityView = self.activityView;
     
-    // center activityView
-    CGRect activityFrame = activityView.frame; 
-    
-    activityFrame.origin.x = (self.view.bounds.size.width - activityFrame.size.width) / 2.;
-    activityFrame.origin.y = (self.view.bounds.size.height - activityFrame.size.height) / 2.;
-    
     activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
-    activityView.frame = CGRectIntegral(activityFrame);
-    activityView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
+    activityView.center = center;
+    activityView.frame = CGRectIntegral(activityView.frame);
+    activityView.autoresizingMask = autoresizingMask;
     
     [self.view addSubview:activityView];
-    [activityView startAnimating];
+    [activityView startAnimating]; 
 }
 
 - (void)showLoadingIndicatorInsteadOfView:(UIView *)viewToReplace {
@@ -78,6 +84,19 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     self.fk_replacedObject = viewToReplace;
     
     [viewToReplace.superview addSubview:activityView];
+    [activityView startAnimating];
+}
+
+- (void)showLoadingIndicatorOnTopOfView:(UIView *)view {
+    [self hideLoadingIndicator];
+    
+    UIActivityIndicatorView *activityView = self.activityView;
+    
+    activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    activityView.frame = FKCenteredSquareInRectConstrainedToSize(view.frame, kFKActivityViewMaxSize);
+    activityView.autoresizingMask = view.autoresizingMask;
+    
+    [view.superview addSubview:activityView];
     [activityView startAnimating];
 }
 
