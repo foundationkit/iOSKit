@@ -32,9 +32,9 @@
 // TableView
 #import "FKColoredAccessoryView.h"
 #import "FKColoredCellSelectionView.h"
+#import "FKGroupedTableViewCell.h"
 #import "FKShadowedTableView.h"
 #import "FKTableViewCell.h"
-#import "FKGroupedTableViewCell.h"
 #import "NSIndexPath+FKAdditions.h"
 #import "UITableView+FKPlaceholder.h"
 

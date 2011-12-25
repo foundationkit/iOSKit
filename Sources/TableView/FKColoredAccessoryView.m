@@ -2,9 +2,9 @@
 
 @implementation FKColoredAccessoryView
 
-$synthesize(color);
-$synthesize(highlightedColor);
-$synthesize(type);
+@synthesize color = color_;
+@synthesize highlightedColor = highlightedColor_;
+@synthesize type = type_;
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle

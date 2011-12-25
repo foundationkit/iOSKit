@@ -5,7 +5,7 @@
 
 @implementation FKTableViewCell
 
-$synthesize(selectedContentView);
+@synthesize selectedContentView = selectedContentView_;
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle

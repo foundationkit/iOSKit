@@ -2,7 +2,7 @@
 
 @implementation FKGroupedTableViewCell
 
-$synthesize(selectionView);
+@synthesize selectionView = selectionView_;
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle

@@ -5,11 +5,11 @@
 
 @implementation FKColoredCellSelectionView
 
-$synthesize(position);
-$synthesize(gradientStartColor);
-$synthesize(gradientEndColor);
-$synthesize(lineWidth);
-$synthesize(lineColor);
+@synthesize position = position_;
+@synthesize gradientStartColor = gradientStartColor_;
+@synthesize gradientEndColor = gradientEndColor_;
+@synthesize lineWidth = lineWidth_;
+@synthesize lineColor = lineColor_;
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle

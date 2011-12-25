@@ -20,8 +20,8 @@
 
 @implementation FKShadowedTableView
 
-$synthesize(shadowHeight);
-$synthesize(inverseShadowHeight);
+@synthesize shadowHeight = shadowHeight_;
+@synthesize inverseShadowHeight = inverseShadowHeight_;
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle

@@ -38,18 +38,18 @@
 
 @implementation FKBrowserViewController
 
-$synthesize(address);
-$synthesize(url);
-$synthesize(tintColor);
-$synthesize(backgroundColor);
-$synthesize(fadeAnimationEnabled);
-$synthesize(webView);
-$synthesize(toolbar);
-$synthesize(backItem);
-$synthesize(forwardItem);
-$synthesize(loadItem);
-$synthesize(actionItem);
-$synthesize(presentedModally);
+@synthesize address = address_;
+@synthesize url = url_;
+@synthesize tintColor = tintColor_;
+@synthesize backgroundColor = backgroundColor_;
+@synthesize fadeAnimationEnabled = fadeAnimationEnabled_;
+@synthesize webView = webView_;
+@synthesize toolbar = toolbar_;
+@synthesize backItem = backItem_;
+@synthesize forwardItem = forwardItem_;
+@synthesize loadItem = loadItem_;
+@synthesize actionItem = actionItem_;
+@synthesize presentedModally = presentedModally_;
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle

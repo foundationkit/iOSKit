@@ -23,10 +23,10 @@
 
 @implementation FKReachability
 
-$synthesize(reachability);
-$synthesize(currentNetworkStatus);
-$synthesize(hostAddress);
-$synthesize(lastReachabilityChange);
+@synthesize reachability = reachability_;
+@synthesize currentNetworkStatus = currentNetworkStatus_;
+@synthesize hostAddress =  hostAddress_;
+@synthesize lastReachabilityChange = lastReachabilityChange_;
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle

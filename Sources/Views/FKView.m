@@ -3,7 +3,7 @@
 
 @implementation FKView
 
-$synthesize(drawingBlock);
+@synthesize drawingBlock = drawingBlock_;
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle
