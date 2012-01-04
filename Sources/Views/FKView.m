@@ -25,7 +25,10 @@
     
     if (self.drawingBlock != nil) {
         CGContextRef context = UIGraphicsGetCurrentContext();
+        
+        CGContextSaveGState(context);
         self.drawingBlock(self, context);
+        CGContextRestoreGState(context);
     }
 }
 
