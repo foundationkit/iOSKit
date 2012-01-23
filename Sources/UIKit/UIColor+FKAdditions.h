@@ -20,6 +20,9 @@
 @property (nonatomic, readonly) CGFloat white;  // Only valid if colorSpaceModel == kCGColorSpaceModelMonochrome
 @property (nonatomic, readonly) CGFloat alpha;
 @property (nonatomic, readonly) UInt32 RGBHex;
+/** Between 0.0 and 1.0 */
+@property (nonatomic, readonly) CGFloat brightness;
+
 
 + (UIColor *)colorWithRGBHex:(UInt32)hex;
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert;

@@ -60,6 +60,8 @@ FKLoadCategory(UIColorFKAdditions);
 }
 
 - (BOOL)getRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha {
+    assert(self.canProvideRGBComponents);
+    
 	const CGFloat *components = CGColorGetComponents(self.CGColor);
 	CGFloat r,g,b,a;
 	
@@ -128,6 +130,15 @@ FKLoadCategory(UIColorFKAdditions);
 
 - (CGFloat)alpha {
 	return CGColorGetAlpha(self.CGColor);
+}
+
+- (CGFloat)brightness {
+    assert(self.canProvideRGBComponents);
+    
+    const CGFloat *componentColors = CGColorGetComponents(self.CGColor);
+    CGFloat colorBrightness = ((componentColors[0] * 299.f) + (componentColors[1] * 587.f) + (componentColors[2] * 114.f)) / 1000.f;
+
+    return colorBrightness;
 }
 
 - (UInt32)RGBHex {
