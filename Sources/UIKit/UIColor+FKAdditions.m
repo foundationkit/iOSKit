@@ -135,6 +135,7 @@ FKLoadCategory(UIColorFKAdditions);
 - (CGFloat)brightness {
     assert(self.canProvideRGBComponents);
     
+    // http://stackoverflow.com/questions/2509443/check-if-uicolor-is-dark-or-bright
     const CGFloat *componentColors = CGColorGetComponents(self.CGColor);
     CGFloat colorBrightness = ((componentColors[0] * 299.f) + (componentColors[1] * 587.f) + (componentColors[2] * 114.f)) / 1000.f;
 
