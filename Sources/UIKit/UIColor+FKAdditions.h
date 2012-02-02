@@ -22,11 +22,13 @@
 @property (nonatomic, readonly) UInt32 RGBHex;
 /** Between 0.0 and 1.0 */
 @property (nonatomic, readonly) CGFloat brightness;
+@property (nonatomic, readonly) UIColor *inverseColor;
 
 
 + (UIColor *)colorWithRGBHex:(UInt32)hex;
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert;
 + (UIColor *)randomColor;
++ (UIColor *)inverseColorToColor:(UIColor *)color;
 
 - (BOOL)getRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha;
 

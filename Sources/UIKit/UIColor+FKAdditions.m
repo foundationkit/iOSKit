@@ -40,6 +40,32 @@ FKLoadCategory(UIColorFKAdditions);
     return [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
 }
 
++ (UIColor *)inverseColorToColor:(UIColor *)color {
+    CGColorRef oldCGColor = color.CGColor;
+    size_t numberOfComponents = CGColorGetNumberOfComponents(oldCGColor);
+    
+    // can not invert - the only component is the alpha
+    // e.g. self == [UIColor groupTableViewBackgroundColor]
+    if (numberOfComponents == 1) {
+        return [UIColor colorWithCGColor:oldCGColor];
+    }
+    
+    const CGFloat *oldComponentColors = CGColorGetComponents(oldCGColor);
+    CGFloat newComponentColors[numberOfComponents];
+    
+    int i = numberOfComponents - 1;
+    newComponentColors[i] = oldComponentColors[i]; // alpha
+    while (--i >= 0) {
+        newComponentColors[i] = 1 - oldComponentColors[i];
+    }
+    
+    CGColorRef newCGColor = CGColorCreate(CGColorGetColorSpace(oldCGColor), newComponentColors);
+    UIColor *newColor = [UIColor colorWithCGColor:newCGColor];
+    CGColorRelease(newCGColor);
+    
+    return newColor;
+}
+
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - UIColor+FKAdditions
 ////////////////////////////////////////////////////////////////////////
@@ -138,8 +164,12 @@ FKLoadCategory(UIColorFKAdditions);
     // http://stackoverflow.com/questions/2509443/check-if-uicolor-is-dark-or-bright
     const CGFloat *componentColors = CGColorGetComponents(self.CGColor);
     CGFloat colorBrightness = ((componentColors[0] * 299.f) + (componentColors[1] * 587.f) + (componentColors[2] * 114.f)) / 1000.f;
-
+    
     return colorBrightness;
+}
+
+- (UIColor *)inverseColor {
+    return [[self class] inverseColorToColor:self];
 }
 
 - (UInt32)RGBHex {
