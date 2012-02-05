@@ -33,7 +33,7 @@ static char contentUnavailableViewKey;
     
     // hidden == NO
     else {
-        contentUnavailableView.frame = self.bounds;
+        contentUnavailableView.frame = FKRectWithClearedOrigin(self.bounds);
         contentUnavailableView.autoresizingMask = self.autoresizingMask;
         self.fk_contentUnavailableView = contentUnavailableView;
         
