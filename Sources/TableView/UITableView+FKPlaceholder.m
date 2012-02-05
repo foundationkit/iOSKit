@@ -33,13 +33,7 @@ static char contentUnavailableViewKey;
     
     // hidden == NO
     else {
-        CGRect frame = self.bounds;
-        
-		if(self.tableHeaderView) {
-            frame = FKRectInset(frame, FKEdgeInsetsMake(0.f, self.tableHeaderView.frameHeight, 0.f, 0.f));
-		}
-        
-        contentUnavailableView.frame = frame;
+        contentUnavailableView.frame = self.bounds;
         contentUnavailableView.autoresizingMask = self.autoresizingMask;
         self.fk_contentUnavailableView = contentUnavailableView;
         
