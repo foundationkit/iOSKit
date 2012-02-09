@@ -300,14 +300,16 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {
         FKInterAppOpenSafari(self.url);
-    } else if (buttonIndex == 1) {
+    } else if (buttonIndex == 1 && [MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init]; 
         
         composer.navigationBar.tintColor = self.tintColor;
         [composer setMailComposeDelegate:self]; 
-        [composer setMessageBody: self.address isHTML:NO];
+        [composer setMessageBody:self.address isHTML:NO];
         
-        [self presentModalViewController:composer animated:YES];
+        if (composer != nil) {
+            [self presentModalViewController:composer animated:YES];
+        }
     }
 }
 
@@ -315,7 +317,7 @@
 #pragma mark - MFMailComposeViewControllerDelegate
 ////////////////////////////////////////////////////////////////////////
 
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult) result error:(NSError *) error {
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     [controller dismissModalViewControllerAnimated:YES];
 }
 
