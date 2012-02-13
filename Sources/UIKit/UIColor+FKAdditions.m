@@ -41,6 +41,13 @@ FKLoadCategory(UIColorFKAdditions);
 }
 
 + (UIColor *)inverseColorToColor:(UIColor *)color {
+    FKAssert(color != nil, @"Cannot compute inverse color to nil");
+    
+    // do not crash when assertions are off
+    if (color == nil) {
+        return nil;
+    }
+    
     CGColorRef oldCGColor = color.CGColor;
     size_t numberOfComponents = CGColorGetNumberOfComponents(oldCGColor);
     
@@ -52,9 +59,9 @@ FKLoadCategory(UIColorFKAdditions);
     
     const CGFloat *oldComponentColors = CGColorGetComponents(oldCGColor);
     CGFloat newComponentColors[numberOfComponents];
-    
     int i = numberOfComponents - 1;
     newComponentColors[i] = oldComponentColors[i]; // alpha
+    
     while (--i >= 0) {
         newComponentColors[i] = 1 - oldComponentColors[i];
     }
@@ -64,6 +71,27 @@ FKLoadCategory(UIColorFKAdditions);
     CGColorRelease(newCGColor);
     
     return newColor;
+}
+
++ (CGFloat)colorDifferenceBetweenColor:(UIColor *)color1 color:(UIColor *)color2 {
+    FKAssert(color1 != nil && color2 != nil, @"Colors must be non-nil to calculate difference");
+    
+    // do not crash when assertions are off
+    if (color1 == nil || color2 == nil) {
+        return CGFLOAT_MAX;
+    }
+    
+    CGFloat red1, red2;
+    CGFloat green1, green2;
+    CGFloat blue1, blue2;
+    
+    [color1 getRed:&red1 green:&green1 blue:&blue1 alpha:NULL];
+    [color2 getRed:&red2 green:&green2 blue:&blue2 alpha:NULL];
+    
+    // http://particletree.com/notebook/calculating-color-contrast-for-legible-text/
+    return ((MAX(red1, red2) - MIN(red1, red2)) +
+            (MAX(green1, green2) - MIN(green1, green2)) +
+            (MAX(blue1, blue2) - MIN(blue1, blue2)));
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -108,10 +136,21 @@ FKLoadCategory(UIColorFKAdditions);
 			return NO;
 	}
 	
-	if (red) *red = r;
-	if (green) *green = g;
-	if (blue) *blue = b;
-	if (alpha) *alpha = a;
+	if (red != NULL) {
+        *red = r;
+    }
+    
+	if (green != NULL) {
+        *green = g; 
+    }
+    
+	if (blue != NULL) {
+        *blue = b; 
+    }
+    
+	if (alpha != NULL) {
+        *alpha = a; 
+    }
 	
 	return YES;
 }
@@ -159,17 +198,23 @@ FKLoadCategory(UIColorFKAdditions);
 }
 
 - (CGFloat)brightness {
-    assert(self.canProvideRGBComponents);
+    CGFloat red;
+    CGFloat green;
+    CGFloat blue;
+    
+    [self getRed:&red green:&green blue:&blue alpha:NULL];
     
     // http://stackoverflow.com/questions/2509443/check-if-uicolor-is-dark-or-bright
-    const CGFloat *componentColors = CGColorGetComponents(self.CGColor);
-    CGFloat colorBrightness = ((componentColors[0] * 299.f) + (componentColors[1] * 587.f) + (componentColors[2] * 114.f)) / 1000.f;
-    
-    return colorBrightness;
+    // http://particletree.com/notebook/calculating-color-contrast-for-legible-text/
+    return ((red * 299.f) + (green * 587.f) + (blue * 114.f)) / 1000.f;
 }
 
 - (UIColor *)inverseColor {
     return [[self class] inverseColorToColor:self];
+}
+
+- (CGFloat)colorDifferenceToColor:(UIColor *)color {
+    return [[self class] colorDifferenceBetweenColor:self color:color];
 }
 
 - (UInt32)RGBHex {

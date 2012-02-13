@@ -20,7 +20,7 @@
 @property (nonatomic, readonly) CGFloat white;  // Only valid if colorSpaceModel == kCGColorSpaceModelMonochrome
 @property (nonatomic, readonly) CGFloat alpha;
 @property (nonatomic, readonly) UInt32 RGBHex;
-/** Between 0.0 and 1.0 */
+/** the computed brightness of the color, lies between 0.0 (dark) and 1.0 (bright) */
 @property (nonatomic, readonly) CGFloat brightness;
 @property (nonatomic, readonly) UIColor *inverseColor;
 
@@ -29,8 +29,18 @@
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert;
 + (UIColor *)randomColor;
 + (UIColor *)inverseColorToColor:(UIColor *)color;
++ (CGFloat)colorDifferenceBetweenColor:(UIColor *)color1 color:(UIColor *)color2;
 
 - (BOOL)getRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha;
+
+/**
+ The color difference between self and another color.
+ The difference lies in the range between 0.0 and 3.0
+ 
+ @param color the color to compute the difference to
+ @return the difference between self and color in the range between 0.0 and 3.0
+ */
+- (CGFloat)colorDifferenceToColor:(UIColor *)color;
 
 - (NSString *)stringRepresentation;
 - (NSString *)hexStringRepresentation;
