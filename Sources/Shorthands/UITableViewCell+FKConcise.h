@@ -13,7 +13,7 @@
 /** The tableView (superview) the cell is displayed in */
 @property (nonatomic, readonly) UITableView *tableView;
 
-/** The cell identifier of this UITableView (sub-)class, equals the class name */
+/** The cell identifier of this UITableViewCell (sub-)class, equals the class name */
 + (NSString *)cellIdentifier;
 
 /**

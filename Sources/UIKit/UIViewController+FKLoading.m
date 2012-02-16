@@ -80,7 +80,7 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     activityView.frame = FKCenteredSquareInRectConstrainedToSize(viewToReplace.frame, kFKActivityViewMaxSize);
     activityView.autoresizingMask = viewToReplace.autoresizingMask;
     
-    viewToReplace.alpha = 0.f;
+    viewToReplace.hidden = YES;
     self.fk_replacedObject = viewToReplace;
     
     [viewToReplace.superview addSubview:activityView];
@@ -153,7 +153,7 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     
     // ActivityView was displayed instead of another view
     else if ([replacedObject isKindOfClass:[UIView class]]) {
-        [replacedObject setAlpha:1.f];
+        [replacedObject setHidden:NO];
     }
     
     [activityView stopAnimating];
