@@ -5,7 +5,7 @@ FKLoadCategory(NSIndexPathFKAdditions);
 @implementation NSIndexPath (FKAdditions)
 
 + (NSArray *)indexPathsFromRow:(NSInteger)startRow toRow:(NSInteger)endRow inSection:(NSInteger)section {
-    FKAssert(endRow > startRow, @"endRow must be greater than startRow");
+    FKAssert(endRow >= startRow, @"endRow must be greater or equal than startRow");
     
     NSMutableArray *indexPaths = [NSMutableArray arrayWithCapacity:endRow-startRow+1];
     
