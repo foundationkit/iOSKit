@@ -98,6 +98,44 @@ NS_INLINE CGSize FKSizeAspectScaleToSize(CGSize size, CGSize toSize) {
 	return CGSizeMake(size.width * aspect, size.height * aspect);
 }
 
+/**
+ Creates a size that has integral width and height
+ */
+NS_INLINE CGSize FKSizeIntegral(CGSize size) {
+    return CGSizeMake((CGFloat)round((double)size.width), 
+                      (CGFloat)round((double)size.height));
+}
+
+
+////////////////////////////////////////////////////////////////////////
+#pragma mark - CGPoint Helper
+////////////////////////////////////////////////////////////////////////
+
+/**
+ Calculates the squared distance between two CGPoints
+ */
+NS_INLINE CGFloat FKSquaredDistanceBetweenCGPoints(CGPoint p1, CGPoint p2) {
+    CGFloat dx = p1.x - p2.x;
+    CGFloat dy = p1.y - p2.y;
+    
+    return dx*dx+dy*dy;
+}
+
+/**
+ Calculates the distance between two CGPoints
+ */
+NS_INLINE CGFloat FKDistanceBetweenCGPoints(CGPoint p1, CGPoint p2) {
+    return (CGFloat)sqrt((double)FKSquaredDistanceBetweenCGPoints(p1, p2));
+}
+
+/**
+ Creates a point that has only integral coordinates
+ */
+NS_INLINE CGPoint FKPointIntegral(CGPoint point) {
+    return CGPointMake((CGFloat)round((double)point.x), 
+                       (CGFloat)round((double)point.y));
+}
+
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - CGAffineTransform Helper
 ////////////////////////////////////////////////////////////////////////
