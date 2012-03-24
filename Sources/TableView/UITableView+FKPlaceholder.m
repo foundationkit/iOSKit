@@ -59,6 +59,9 @@ static char contentUnavailableViewKey;
 #pragma mark - Delegate Calls
 ////////////////////////////////////////////////////////////////////////
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
+
 - (UIView *)fk_contentUnavailableViewFromDelegate {
     id delegate = self.delegate;
     
@@ -68,5 +71,7 @@ static char contentUnavailableViewKey;
     
     return nil;
 }
+
+#pragma clang diagnostic pop
 
 @end

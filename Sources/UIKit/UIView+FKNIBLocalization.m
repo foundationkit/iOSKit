@@ -57,6 +57,9 @@ static char localizationEnabledKey;
 #pragma mark - Private
 ////////////////////////////////////////////////////////////////////////
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
+
 - (NSString *)fk_localizedValueForString:(NSString *)string {
     if ([string hasPrefix:@"@"]) {
     	string = NSLocalizedString([string substringFromIndex:1], nil);
@@ -111,5 +114,7 @@ static char localizationEnabledKey;
         [item setTitle:[self fk_localizedValueForString:title]];
     }
 }
+
+#pragma clang diagnostic pop
 
 @end
