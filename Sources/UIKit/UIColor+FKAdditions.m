@@ -81,12 +81,9 @@ FKLoadCategory(UIColorFKAdditions);
         return CGFLOAT_MAX;
     }
     
-    CGFloat red1, red2;
-    CGFloat green1, green2;
-    CGFloat blue1, blue2;
-    
-    [color1 getRed:&red1 green:&green1 blue:&blue1 alpha:NULL];
-    [color2 getRed:&red2 green:&green2 blue:&blue2 alpha:NULL];
+    CGFloat red1 = color1.red, red2 = color2.red;
+    CGFloat green1 = color1.green, green2 = color2.green;
+    CGFloat blue1 = color1.blue, blue2 = color2.blue;
     
     // http://particletree.com/notebook/calculating-color-contrast-for-legible-text/
     return ((MAX(red1, red2) - MIN(red1, red2)) +
@@ -111,48 +108,6 @@ FKLoadCategory(UIColorFKAdditions);
 		default:
 			return NO;
 	}
-}
-
-- (BOOL)getRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha {
-    assert(self.canProvideRGBComponents);
-    
-	const CGFloat *components = CGColorGetComponents(self.CGColor);
-	CGFloat r,g,b,a;
-	
-	switch (self.colorSpaceModel) {
-		case kCGColorSpaceModelMonochrome:
-			r = g = b = components[0];
-			a = components[1];
-			break;
-            
-		case kCGColorSpaceModelRGB:
-			r = components[0];
-			g = components[1];
-			b = components[2];
-			a = components[3];
-			break;
-            
-		default:	// We don't know how to handle this model
-			return NO;
-	}
-	
-	if (red != NULL) {
-        *red = r;
-    }
-    
-	if (green != NULL) {
-        *green = g; 
-    }
-    
-	if (blue != NULL) {
-        *blue = b; 
-    }
-    
-	if (alpha != NULL) {
-        *alpha = a; 
-    }
-	
-	return YES;
 }
 
 - (CGFloat)red {
@@ -198,11 +153,9 @@ FKLoadCategory(UIColorFKAdditions);
 }
 
 - (CGFloat)brightness {
-    CGFloat red;
-    CGFloat green;
-    CGFloat blue;
-    
-    [self getRed:&red green:&green blue:&blue alpha:NULL];
+    CGFloat red = self.red;
+    CGFloat green = self.green;
+    CGFloat blue = self.blue;
     
     // http://stackoverflow.com/questions/2509443/check-if-uicolor-is-dark-or-bright
     // http://particletree.com/notebook/calculating-color-contrast-for-legible-text/
@@ -220,11 +173,9 @@ FKLoadCategory(UIColorFKAdditions);
 - (UInt32)RGBHex {
     assert(self.canProvideRGBComponents);
 	
-	CGFloat r,g,b,a;
-    
-	if (![self getRed:&r green:&g blue:&b alpha:&a]) {
-        return 0; 
-    }
+	CGFloat r = self.red;
+    CGFloat g = self.green;
+    CGFloat b = self.blue;
 	
 	r = MIN(MAX(self.red, 0.0f), 1.0f);
 	g = MIN(MAX(self.green, 0.0f), 1.0f);

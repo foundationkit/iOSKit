@@ -31,8 +31,6 @@
 + (UIColor *)inverseColorToColor:(UIColor *)color;
 + (CGFloat)colorDifferenceBetweenColor:(UIColor *)color1 color:(UIColor *)color2;
 
-- (BOOL)getRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha;
-
 /**
  The color difference between self and another color.
  The difference lies in the range between 0.0 and 3.0
