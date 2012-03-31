@@ -14,17 +14,21 @@
 #define kFKBrowserFixedSpaceItemWidth      12.f
 #define kFKBrowserDefaultTintColor         nil
 #define kFKBrowserDefaultBackgroundColor   [UIColor scrollViewTexturedBackgroundColor]
+#define kFKCustomActionTitle               @"kFKCustomActionTitle"
+#define kFKCustomActionBlock               @"kFKCustomActionBlock"
 
 
 @interface FKBrowserViewController () <UIWebViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong, readwrite) UIToolbar *toolbar;
-@property (nonatomic, strong) UIWebView *webView;
+@property (nonatomic, strong, readwrite) UIWebView *webView;
 
 @property (nonatomic, strong) UIBarButtonItem *backItem;
 @property (nonatomic, strong) UIBarButtonItem *forwardItem;
 @property (nonatomic, strong) UIBarButtonItem *loadItem;
 @property (nonatomic, strong) UIBarButtonItem *actionItem;
+
+@property (nonatomic, strong) NSMutableArray *customActions;
 
 - (void)updateAddress:(NSString *)address;
 
@@ -49,6 +53,7 @@
 @synthesize forwardItem = forwardItem_;
 @synthesize loadItem = loadItem_;
 @synthesize actionItem = actionItem_;
+@synthesize customActions = customActions_;
 @synthesize presentedModally = presentedModally_;
 
 ////////////////////////////////////////////////////////////////////////
@@ -167,6 +172,19 @@
 
 - (void)stopLoading {
     [self.webView stopLoading];
+}
+
+- (void)addActionWithTitle:(NSString *)title block:(dispatch_block_t)block {
+    if (self.customActions == nil) {
+        self.customActions = [NSMutableArray array];
+    }
+    
+    NSDictionary *action = $dict(title, kFKCustomActionTitle, [block copy], kFKCustomActionBlock);
+    [self.customActions addObject:action];
+}
+
+- (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)command {
+    return [self.webView stringByEvaluatingJavaScriptFromString:command];
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -298,6 +316,8 @@
 ////////////////////////////////////////////////////////////////////////
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSInteger customActionsBeginIndex = [MFMailComposeViewController canSendMail] ? 2 : 1;
+    
     if (buttonIndex == 0) {
         FKInterAppOpenSafari(self.url);
     } else if (buttonIndex == 1 && [MFMailComposeViewController canSendMail]) {
@@ -309,6 +329,15 @@
         
         if (composer != nil) {
             [self presentModalViewController:composer animated:YES];
+        }
+    } else if (buttonIndex == actionSheet.cancelButtonIndex) {
+        // do nothing special
+    } else if (buttonIndex >= customActionsBeginIndex) {
+        NSDictionary *action = [self.customActions objectAtIndex:buttonIndex - customActionsBeginIndex];
+        dispatch_block_t block = [action valueForKey:kFKCustomActionBlock];
+        
+        if (block != nil) {
+            block();
         }
     }
 }
@@ -380,6 +409,10 @@
     
     if ([MFMailComposeViewController canSendMail]) {
         [actionSheet addButtonWithTitle:_(@"Mail Link")];
+    }
+    
+    for (NSDictionary *action in self.customActions) {
+        [actionSheet addButtonWithTitle:[action valueForKey:kFKCustomActionTitle]];
     }
     
     [actionSheet addButtonWithTitle:_(@"Cancel")];

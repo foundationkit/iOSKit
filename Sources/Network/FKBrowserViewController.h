@@ -22,6 +22,7 @@
 @property (nonatomic, assign) BOOL fadeAnimationEnabled;
 /** The toolbar of the browserViewController. Customizable */
 @property (nonatomic, strong, readonly) UIToolbar *toolbar;
+@property (nonatomic, strong, readonly) UIWebView *webView;
 /** If this flag is YES, a done button is shown */
 @property (nonatomic, assign, getter = isPresentedModally) BOOL presentedModally;
 
@@ -64,5 +65,17 @@
  Loads the currently set address/url.
  */
 - (void)reload;
+
+/**
+ Adds an action to the action menu
+ */
+- (void)addActionWithTitle:(NSString *)title block:(dispatch_block_t)block;
+
+/** 
+ Performs a javascript command and returns the result.
+ @param command the javascript command to execute
+ @return the result of the javascript command
+ */
+- (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)command;
 
 @end
