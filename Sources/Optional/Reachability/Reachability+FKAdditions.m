@@ -12,7 +12,7 @@
 
 // re-define properties as read/write
 @property (nonatomic, strong, readwrite) Reachability *reachability;
-@property (nonatomic, assign, readwrite) NetworkStatus currentNetworkStatus;
+@property (nonatomic, assign, readwrite) FKNetworkStatus currentNetworkStatus;
 @property (nonatomic, copy, readwrite) NSString *hostAddress;
 // timestamp of last reachability change
 @property (nonatomic, strong) NSDate *lastReachabilityChange;
