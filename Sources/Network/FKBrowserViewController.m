@@ -306,7 +306,7 @@
     
     [self updateUI];
     
-    if (self.didFinishLoadBlock) {
+    if (self.didFinishLoadBlock != nil) {
         self.didFinishLoadBlock(self);
     }
 }
@@ -317,7 +317,7 @@
     
     [self updateUI];
     
-    if (self.didFinishLoadBlock) {
+    if (self.didFailToLoadBlock != nil) {
         self.didFailToLoadBlock(self,error);
     }
 }
