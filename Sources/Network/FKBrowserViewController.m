@@ -56,6 +56,8 @@
 @synthesize customActions = customActions_;
 @synthesize presentedModally = presentedModally_;
 @synthesize titleToDisplay = titleToDisplay_;
+@synthesize didFinishLoadBlock = didFinishLoadBlock_;
+@synthesize didFailToLoadBlock = didFailToLoadBlock_;
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle
@@ -303,6 +305,10 @@
     [FKNetworkActivityManager removeNetworkUser:self];
     
     [self updateUI];
+    
+    if (self.didFinishLoadBlock) {
+        self.didFinishLoadBlock(self);
+    }
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
@@ -310,6 +316,10 @@
     [FKNetworkActivityManager removeNetworkUser:self];
     
     [self updateUI];
+    
+    if (self.didFinishLoadBlock) {
+        self.didFailToLoadBlock(self,error);
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////

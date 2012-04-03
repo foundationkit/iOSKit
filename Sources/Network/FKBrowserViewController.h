@@ -4,6 +4,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class FKBrowserViewController;
+
+typedef void(^fk_browser_load_block)(FKBrowserViewController *browserViewController);
+typedef void(^fk_browser_fail_block)(FKBrowserViewController *browserViewController, NSError *error);
+
 /**
  This ViewController can be used to display an InApp-Browser.
  */
@@ -27,6 +32,11 @@
 @property (nonatomic, assign, getter = isPresentedModally) BOOL presentedModally;
 /** By setting this property you can force to show this title instead of the title of the webpage */
 @property (nonatomic, copy) NSString *titleToDisplay;
+
+/** Block that gets executed when loading of url finished */
+@property (nonatomic, copy) fk_browser_load_block didFinishLoadBlock;
+/** Block that gets executed when loading of url failed */
+@property (nonatomic, copy) fk_browser_fail_block didFailToLoadBlock;
 
 /**
  Creates a FKBrowserViewController with the given Address
