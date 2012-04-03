@@ -25,6 +25,8 @@
 @property (nonatomic, strong, readonly) UIWebView *webView;
 /** If this flag is YES, a done button is shown */
 @property (nonatomic, assign, getter = isPresentedModally) BOOL presentedModally;
+/** By setting this property you can force to show this title instead of the title of the webpage */
+@property (nonatomic, copy) NSString *titleToDisplay;
 
 /**
  Creates a FKBrowserViewController with the given Address

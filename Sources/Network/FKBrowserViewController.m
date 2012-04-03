@@ -55,6 +55,7 @@
 @synthesize actionItem = actionItem_;
 @synthesize customActions = customActions_;
 @synthesize presentedModally = presentedModally_;
+@synthesize titleToDisplay = titleToDisplay_;
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle
@@ -371,7 +372,12 @@
                                                                       target:self
                                                                       action:@selector(stopLoading)];
     } else {
-        self.title = self.webView.documentTitle;
+        if (self.titleToDisplay != nil) {
+            self.title = self.titleToDisplay;
+        } else {
+            self.title = self.webView.documentTitle;
+        }
+        
         self.loadItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
                                                                       target:self 
                                                                       action:@selector(reload)];
