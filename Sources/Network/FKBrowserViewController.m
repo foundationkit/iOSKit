@@ -224,9 +224,7 @@
 
 - (void)setPresentedModally:(BOOL)presentedModally {
     if (presentedModally != presentedModally_) {
-        [self willChangeValueForKey:@"presentedModally"];
         presentedModally_ = presentedModally;
-        [self didChangeValueForKey:@"presentedModally"];
         
         if (presentedModally) {
             UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
