@@ -11,13 +11,22 @@
 ////////////////////////////////////////////////////////////////////////
 
 + (FKColoredAccessoryView *)accessoryViewWithColor:(UIColor *)color {
-	return [self accessoryViewWithColor:color type:FKColoredAccessoryViewTypeRight];
+	return [self accessoryViewWithColor:color highlightedColor:color type:FKColoredAccessoryViewTypeRight];
 }
 
 + (FKColoredAccessoryView *)accessoryViewWithColor:(UIColor *)color type:(FKColoredAccessoryViewType)type {
-	FKColoredAccessoryView *view = [[FKColoredAccessoryView alloc] initWithFrame:CGRectMake(0, 0, 15.0, 15.0)];
+	return [self accessoryViewWithColor:color highlightedColor:color type:type];
+}
+
++ (FKColoredAccessoryView *)accessoryViewWithColor:(UIColor *)color highlightedColor:(UIColor *)highlightedColor {
+    return [self accessoryViewWithColor:color highlightedColor:highlightedColor type:FKColoredAccessoryViewTypeRight];
+}
+
++ (FKColoredAccessoryView *)accessoryViewWithColor:(UIColor *)color highlightedColor:(UIColor *)highlightedColor type:(FKColoredAccessoryViewType)type {
+    FKColoredAccessoryView *view = [[FKColoredAccessoryView alloc] initWithFrame:CGRectMake(0.f,0.f,15.f,15.f)];
 	
     view.color = color;
+    view.highlightedColor = highlightedColor;
     view.type = type;
     
 	return view;

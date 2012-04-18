@@ -27,4 +27,6 @@ typedef enum {
 + (FKColoredAccessoryView *)accessoryViewWithColor:(UIColor *)color;
 + (FKColoredAccessoryView *)accessoryViewWithColor:(UIColor *)color type:(FKColoredAccessoryViewType)type;
 
++ (FKColoredAccessoryView *)accessoryViewWithColor:(UIColor *)color highlightedColor:(UIColor *)highlightedColor;
++ (FKColoredAccessoryView *)accessoryViewWithColor:(UIColor *)color highlightedColor:(UIColor *)highlightedColor type:(FKColoredAccessoryViewType)type;
 @end
