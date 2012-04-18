@@ -31,12 +31,14 @@ static char previousAccessoryKey;
 }
 
 - (void)hideLoadingIndicator {
-    [self.activityView stopAnimating];
-    
-    // restore previous state
-    self.accessoryView = self.fk_previousAccessory;
-    self.activityView = nil;
-    self.fk_previousAccessory = nil;
+    if (self.activityView != nil) {
+        [self.activityView stopAnimating];
+        
+        // restore previous state
+        self.accessoryView = self.fk_previousAccessory;
+        self.activityView = nil;
+        self.fk_previousAccessory = nil;
+    }
 }
 
 - (void)setActivityView:(UIActivityIndicatorView *)activityView {
