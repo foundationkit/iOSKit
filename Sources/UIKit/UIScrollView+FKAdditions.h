@@ -10,6 +10,9 @@
 
 @interface UIScrollView (FKAdditions)
 
+/** The currently visible Rect of the scrollView */
+@property (nonatomic, readonly) CGRect visibleRect;
+
 /**
  Scrolls the scrollView to the top, without animation.
  */

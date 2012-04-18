@@ -4,6 +4,18 @@ FKLoadCategory(UIScrollViewFKAdditions);
 
 @implementation UIScrollView (FKAdditions)
 
+- (CGRect)visibleRect {
+    CGRect visibleRect = (CGRect){.origin = self.contentOffset, .size = self.bounds.size};
+    float theScale = 1.f / self.zoomScale;
+    
+    visibleRect.origin.x *= theScale;
+    visibleRect.origin.y *= theScale;
+    visibleRect.size.width *= theScale;
+    visibleRect.size.height *= theScale;
+    
+    return visibleRect;
+}
+
 - (void)scrollToTop {
 	[self scrollToTopAnimated:NO];
 }
