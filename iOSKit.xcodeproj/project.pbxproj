@@ -52,8 +52,6 @@
 		39CFA5FF14223CBE00DC3E57 /* UIScrollView+FKContentSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CFA5FD14223CBE00DC3E57 /* UIScrollView+FKContentSize.h */; };
 		39CFA60014223CBE00DC3E57 /* UIScrollView+FKContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA5FE14223CBE00DC3E57 /* UIScrollView+FKContentSize.m */; };
 		39CFA60214223E6300DC3E57 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39CFA60114223E6300DC3E57 /* QuartzCore.framework */; };
-		39CFA605142240DB00DC3E57 /* UITextView+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CFA603142240DA00DC3E57 /* UITextView+FKAdditions.h */; };
-		39CFA606142240DB00DC3E57 /* UITextView+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA604142240DA00DC3E57 /* UITextView+FKAdditions.m */; };
 		39CFA6091422423500DC3E57 /* UIView+FKHierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CFA6071422423300DC3E57 /* UIView+FKHierarchy.h */; };
 		39CFA60A1422423500DC3E57 /* UIView+FKHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA6081422423400DC3E57 /* UIView+FKHierarchy.m */; };
 		39CFA60D1422437500DC3E57 /* UIView+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 39CFA60B1422437300DC3E57 /* UIView+FKAdditions.h */; };
@@ -190,8 +188,6 @@
 		39CFA5FD14223CBE00DC3E57 /* UIScrollView+FKContentSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+FKContentSize.h"; path = "UIKit/UIScrollView+FKContentSize.h"; sourceTree = "<group>"; };
 		39CFA5FE14223CBE00DC3E57 /* UIScrollView+FKContentSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+FKContentSize.m"; path = "UIKit/UIScrollView+FKContentSize.m"; sourceTree = "<group>"; };
 		39CFA60114223E6300DC3E57 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		39CFA603142240DA00DC3E57 /* UITextView+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITextView+FKAdditions.h"; path = "UIKit/UITextView+FKAdditions.h"; sourceTree = "<group>"; };
-		39CFA604142240DA00DC3E57 /* UITextView+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextView+FKAdditions.m"; path = "UIKit/UITextView+FKAdditions.m"; sourceTree = "<group>"; };
 		39CFA6071422423300DC3E57 /* UIView+FKHierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKHierarchy.h"; path = "UIKit/UIView+FKHierarchy.h"; sourceTree = "<group>"; };
 		39CFA6081422423400DC3E57 /* UIView+FKHierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKHierarchy.m"; path = "UIKit/UIView+FKHierarchy.m"; sourceTree = "<group>"; };
 		39CFA60B1422437300DC3E57 /* UIView+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKAdditions.h"; path = "UIKit/UIView+FKAdditions.h"; sourceTree = "<group>"; };
@@ -445,8 +441,6 @@
 				3931206F1428AF010095D5ED /* UITableView+FKLoading.m */,
 				3931206A1428AD6B0095D5ED /* UITableViewCell+FKLoading.h */,
 				3931206B1428AD6B0095D5ED /* UITableViewCell+FKLoading.m */,
-				39CFA603142240DA00DC3E57 /* UITextView+FKAdditions.h */,
-				39CFA604142240DA00DC3E57 /* UITextView+FKAdditions.m */,
 				39CFA60B1422437300DC3E57 /* UIView+FKAdditions.h */,
 				39CFA60C1422437400DC3E57 /* UIView+FKAdditions.m */,
 				39CFA60F14224AF400DC3E57 /* UIView+FKAnimations.h */,
@@ -560,7 +554,6 @@
 				39CFA5F71422398E00DC3E57 /* UIDevice+FKAdditions.h in Headers */,
 				39CFA5FB14223C1300DC3E57 /* UIImageView+FKAdditions.h in Headers */,
 				39CFA5FF14223CBE00DC3E57 /* UIScrollView+FKContentSize.h in Headers */,
-				39CFA605142240DB00DC3E57 /* UITextView+FKAdditions.h in Headers */,
 				39CFA6091422423500DC3E57 /* UIView+FKHierarchy.h in Headers */,
 				39CFA60D1422437500DC3E57 /* UIView+FKAdditions.h in Headers */,
 				39CFA61114224AF800DC3E57 /* UIView+FKAnimations.h in Headers */,
@@ -696,7 +689,6 @@
 				39CFA5F81422398E00DC3E57 /* UIDevice+FKAdditions.m in Sources */,
 				39CFA5FC14223C1300DC3E57 /* UIImageView+FKAdditions.m in Sources */,
 				39CFA60014223CBE00DC3E57 /* UIScrollView+FKContentSize.m in Sources */,
-				39CFA606142240DB00DC3E57 /* UITextView+FKAdditions.m in Sources */,
 				39CFA60A1422423500DC3E57 /* UIView+FKHierarchy.m in Sources */,
 				39CFA60E1422437500DC3E57 /* UIView+FKAdditions.m in Sources */,
 				39CFA61214224AF800DC3E57 /* UIView+FKAnimations.m in Sources */,
