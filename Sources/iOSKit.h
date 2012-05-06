@@ -56,6 +56,7 @@
 #import "UIView+FKAutoresizing.h"
 #import "UIView+FKContentSize.h"
 #import "UIView+FKHierarchy.h"
+#import "UIView+FKInnerShadow.h"
 #import "UIView+FKNIBLocalization.h"
 #import "UIView+FKNoise.h"
 #import "UIView+FKRotation.h"

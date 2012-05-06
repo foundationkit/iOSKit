@@ -100,6 +100,8 @@
 		9B77A173149D2A82005CE013 /* FKCompatibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B77A172149D2A82005CE013 /* FKCompatibility.h */; };
 		9B82D4191557217D00D01584 /* UIView+FKNoise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B82D4171557217D00D01584 /* UIView+FKNoise.h */; };
 		9B82D41A1557217D00D01584 /* UIView+FKNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B82D4181557217D00D01584 /* UIView+FKNoise.m */; };
+		9B82D42A155724C800D01584 /* UIView+FKInnerShadow.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B82D428155724C800D01584 /* UIView+FKInnerShadow.h */; };
+		9B82D42B155724C800D01584 /* UIView+FKInnerShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B82D429155724C800D01584 /* UIView+FKInnerShadow.m */; };
 		9BBBF401143AF00D00071ABD /* UIButton+FKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBBF3FF143AF00D00071ABD /* UIButton+FKConcise.h */; };
 		9BBBF402143AF00D00071ABD /* UIButton+FKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBBF400143AF00D00071ABD /* UIButton+FKConcise.m */; };
 		9BCA532414891A5700918E87 /* FKInterApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BCA532214891A5700918E87 /* FKInterApp.h */; };
@@ -243,6 +245,8 @@
 		9B82D40315570F5900D01584 /* FKAudioRouteChange.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FKAudioRouteChange.m; sourceTree = "<group>"; };
 		9B82D4171557217D00D01584 /* UIView+FKNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKNoise.h"; path = "UIKit/UIView+FKNoise.h"; sourceTree = "<group>"; };
 		9B82D4181557217D00D01584 /* UIView+FKNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKNoise.m"; path = "UIKit/UIView+FKNoise.m"; sourceTree = "<group>"; };
+		9B82D428155724C800D01584 /* UIView+FKInnerShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKInnerShadow.h"; path = "UIKit/UIView+FKInnerShadow.h"; sourceTree = "<group>"; };
+		9B82D429155724C800D01584 /* UIView+FKInnerShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKInnerShadow.m"; path = "UIKit/UIView+FKInnerShadow.m"; sourceTree = "<group>"; };
 		9BBBF3FF143AF00D00071ABD /* UIButton+FKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+FKConcise.h"; sourceTree = "<group>"; };
 		9BBBF400143AF00D00071ABD /* UIButton+FKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FKConcise.m"; sourceTree = "<group>"; };
 		9BC1CD751431CF9800A5098D /* Reachability+FKAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reachability+FKAdditions.h"; sourceTree = "<group>"; };
@@ -458,8 +462,12 @@
 				39ACE7431422709B0022D8F8 /* UIView+FKContentSize.m */,
 				39CFA6071422423300DC3E57 /* UIView+FKHierarchy.h */,
 				39CFA6081422423400DC3E57 /* UIView+FKHierarchy.m */,
+				9B82D428155724C800D01584 /* UIView+FKInnerShadow.h */,
+				9B82D429155724C800D01584 /* UIView+FKInnerShadow.m */,
 				9B5364A3148E225700A01426 /* UIView+FKNIBLocalization.h */,
 				9B5364A4148E225700A01426 /* UIView+FKNIBLocalization.m */,
+				9B82D4171557217D00D01584 /* UIView+FKNoise.h */,
+				9B82D4181557217D00D01584 /* UIView+FKNoise.m */,
 				39CFA5F1142234A600DC3E57 /* UIView+FKRotation.h */,
 				39CFA5F2142234A600DC3E57 /* UIView+FKRotation.m */,
 				393A299C142359C50056CB37 /* UIViewController+FKAdditions.h */,
@@ -468,8 +476,6 @@
 				39ACE81514228DCB0022D8F8 /* UIViewController+FKLoading.m */,
 				9BCBDF411472747C0074BFEB /* UIWebView+FKAdditions.h */,
 				9BCBDF421472747C0074BFEB /* UIWebView+FKAdditions.m */,
-				9B82D4171557217D00D01584 /* UIView+FKNoise.h */,
-				9B82D4181557217D00D01584 /* UIView+FKNoise.m */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -609,6 +615,7 @@
 				9B77A173149D2A82005CE013 /* FKCompatibility.h in Headers */,
 				9B0B571614A6AD550071B6D2 /* UIView+FKAutoresizing.h in Headers */,
 				9B82D4191557217D00D01584 /* UIView+FKNoise.h in Headers */,
+				9B82D42A155724C800D01584 /* UIView+FKInnerShadow.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,6 +744,7 @@
 				9B5364A6148E225700A01426 /* UIView+FKNIBLocalization.m in Sources */,
 				9B45437A14953EF90076A950 /* FKView.m in Sources */,
 				9B82D41A1557217D00D01584 /* UIView+FKNoise.m in Sources */,
+				9B82D42B155724C800D01584 /* UIView+FKInnerShadow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
