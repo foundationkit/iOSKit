@@ -237,6 +237,8 @@
 		9B6C02F3142CA0E2006F9812 /* FKTableViewCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKTableViewCellView.h; path = TableView/FKTableViewCellView.h; sourceTree = "<group>"; };
 		9B6C02F4142CA0E2006F9812 /* FKTableViewCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKTableViewCellView.m; path = TableView/FKTableViewCellView.m; sourceTree = "<group>"; };
 		9B77A172149D2A82005CE013 /* FKCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKCompatibility.h; path = Core/FKCompatibility.h; sourceTree = "<group>"; };
+		9B82D40215570F5900D01584 /* FKAudioRouteChange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FKAudioRouteChange.h; sourceTree = "<group>"; };
+		9B82D40315570F5900D01584 /* FKAudioRouteChange.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FKAudioRouteChange.m; sourceTree = "<group>"; };
 		9BBBF3FF143AF00D00071ABD /* UIButton+FKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+FKConcise.h"; sourceTree = "<group>"; };
 		9BBBF400143AF00D00071ABD /* UIButton+FKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FKConcise.m"; sourceTree = "<group>"; };
 		9BC1CD751431CF9800A5098D /* Reachability+FKAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reachability+FKAdditions.h"; sourceTree = "<group>"; };
@@ -320,9 +322,11 @@
 		39DEEAE1143CE29500B81BB5 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				9BE4253C14470FA40036D399 /* FKAudioFunctions.h */,
+				9B82D40215570F5900D01584 /* FKAudioRouteChange.h */,
+				9B82D40315570F5900D01584 /* FKAudioRouteChange.m */,
 				39DEEAE2143CE29500B81BB5 /* FKSoundEffect.h */,
 				39DEEAE3143CE29500B81BB5 /* FKSoundEffect.m */,
-				9BE4253C14470FA40036D399 /* FKAudioFunctions.h */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
