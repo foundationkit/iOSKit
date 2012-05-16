@@ -30,7 +30,7 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     
     // create activityView when it is first read
     if (activityView == nil) {
-        activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         self.activityView = activityView;
     }
     
@@ -75,7 +75,7 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     
     UIActivityIndicatorView *activityView = self.activityView;
     
-    activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     // TODO: Resizing currently seems broken in iOS 5, we maybe have to roll our own activityIndicatorView
     activityView.frame = FKCenteredSquareInRectConstrainedToSize(viewToReplace.frame, kFKActivityViewMaxSize);
     activityView.autoresizingMask = viewToReplace.autoresizingMask;
@@ -92,7 +92,6 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     
     UIActivityIndicatorView *activityView = self.activityView;
     
-    activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
     activityView.frame = FKCenteredSquareInRectConstrainedToSize(view.frame, kFKActivityViewMaxSize);
     activityView.autoresizingMask = view.autoresizingMask;
     
