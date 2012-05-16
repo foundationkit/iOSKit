@@ -173,13 +173,9 @@ FKLoadCategory(UIColorFKAdditions);
 - (UInt32)RGBHex {
     assert(self.canProvideRGBComponents);
 	
-	CGFloat r = self.red;
-    CGFloat g = self.green;
-    CGFloat b = self.blue;
-	
-	r = MIN(MAX(self.red, 0.0f), 1.0f);
-	g = MIN(MAX(self.green, 0.0f), 1.0f);
-	b = MIN(MAX(self.blue, 0.0f), 1.0f);
+	CGFloat r = MIN(MAX(self.red, 0.0f), 1.0f);
+    CGFloat g = MIN(MAX(self.green, 0.0f), 1.0f);
+    CGFloat b = MIN(MAX(self.blue, 0.0f), 1.0f);
 	
 	return (((int)roundf(r * 255)) << 16)
     | (((int)roundf(g * 255)) << 8)
