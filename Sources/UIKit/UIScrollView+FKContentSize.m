@@ -57,7 +57,9 @@ BOOL FKViewIsScrollIndicator(UIView *view) {
     // TODO: Is there a better way to detect the scrollIndicators?
     if ([view isKindOfClass:[UIImageView class]]) {
         if (CGRectGetHeight(view.frame) == 7.f || CGRectGetWidth(view.frame) == 7.f) {
-            if ([view.layer animationForKey:@"position"] != nil) {
+            id image = [view performSelector:@selector(image)];
+            
+            if ([image isKindOfClass:NSClassFromString([NSString stringWithFormat:@"_%@Res%@le%@",@"UI", @"izab", @"Image"])]) {
                 return YES;
             }
         }
