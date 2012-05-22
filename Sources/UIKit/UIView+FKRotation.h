@@ -15,8 +15,8 @@
 @property (nonatomic, assign) CGRect portraitFrame;
 /** property to specify a frame for landscape orientation */
 @property (nonatomic, assign) CGRect landscapeFrame;
-/** specifies whether portrait and landscape frames are defined for this view */
-@property (nonatomic, readonly) BOOL hasPortraitAndLandscapeFrames;
+/** specifies whether at least a portrait or landscape frame was set for this view */
+@property (nonatomic, readonly) BOOL hasPortraitOrLandscapeFrame;
 
 /**
  This creates a view with the portrait frame and sets it's portraitFrame/landscapeFrame properties

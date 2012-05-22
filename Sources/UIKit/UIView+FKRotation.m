@@ -22,8 +22,8 @@ static char landscapeFrameKey;
     return [self viewWithPortraitFrame:portraitFrame landscapeFrame:(CGRect){landscapeOrigin, portraitFrame.size}];
 }
 
-- (BOOL)hasPortraitAndLandscapeFrames {
-    return !CGRectIsEmpty(self.portraitFrame) && !CGRectIsEmpty(self.landscapeFrame);
+- (BOOL)hasPortraitOrLandscapeFrame {
+    return !CGRectIsEmpty(self.portraitFrame) || !CGRectIsEmpty(self.landscapeFrame);
 }
 
 - (CGRect)portraitFrame {
@@ -79,15 +79,11 @@ static char landscapeFrameKey;
     if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
         CGRect portraitFrame = self.portraitFrame;
         
-        if (!CGRectIsEmpty(portraitFrame)) {
-            self.frame = portraitFrame;
-        }
+        self.frame = portraitFrame;
     } else {
         CGRect landscapeFrame = self.landscapeFrame;
         
-        if (!CGRectIsEmpty(landscapeFrame)) {
-            self.frame = landscapeFrame;
-        }
+        self.frame = landscapeFrame;
     }
 }
 
@@ -97,7 +93,7 @@ static char landscapeFrameKey;
 
 - (void)setSubviewFramesForInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation recursive:(BOOL)recursive {
     for (UIView *view in self.subviews) {
-        if (view.hasPortraitAndLandscapeFrames) {
+        if (view.hasPortraitOrLandscapeFrame) {
             [view setFrameForInterfaceOrientation:toInterfaceOrientation];
         }
         
@@ -106,6 +102,5 @@ static char landscapeFrameKey;
         }
     } 
 }
-
 
 @end
