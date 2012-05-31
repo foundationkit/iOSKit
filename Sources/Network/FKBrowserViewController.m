@@ -33,6 +33,7 @@
 - (void)updateAddress:(NSString *)address;
 
 - (void)customize;
+- (void)layoutForOrientation:(UIInterfaceOrientation)orientation;
 - (void)updateUI;
 - (void)showActionSheet;
 - (void)handleDoneButtonPress:(id)sender;
@@ -108,14 +109,12 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
     
-    CGFloat toolbarHeight = FKToolbarHeightForOrientation(UIInterfaceOrientationPortrait);
-    
-    self.webView = [[UIWebView alloc] initWithFrame:UIEdgeInsetsInsetRect(self.view.bounds, UIEdgeInsetsMake(0.f, 0.f, toolbarHeight, 0.f))];
+    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0.f, 0.f, self.view.boundsWidth, 0.f)];
 	self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.webView.delegate = self;
     [self.view addSubview:self.webView];
     
-    self.toolbar.frame = CGRectMake(0.f, self.view.boundsHeight - toolbarHeight, self.view.boundsWidth, toolbarHeight);
+    self.toolbar.frameWidth = self.view.boundsWidth;
     self.toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     [self.view addSubview:self.toolbar];
     
@@ -123,6 +122,7 @@
         self.webView.alpha = 0.f;
     }
     
+    [self layoutForOrientation:$appOrientation];
     [self customize];
 	[self reload];
 }
@@ -158,11 +158,7 @@
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
     
-    CGFloat toolbarHeight = FKToolbarHeightForOrientation(UIInterfaceOrientationPortrait);
-    
-    self.webView.frameHeight = self.view.boundsHeight - toolbarHeight;
-    self.toolbar.frameTop = self.webView.frameBottom;
-    self.toolbar.frameHeight = toolbarHeight;
+    [self layoutForOrientation:toInterfaceOrientation];
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -235,6 +231,15 @@
             self.navigationItem.leftBarButtonItem = nil;
         }
     }
+}
+
+- (void)setToolbarHidden:(BOOL)toolbarHidden {
+    self.toolbar.hidden = toolbarHidden;
+    [self layoutForOrientation:$appOrientation];
+}
+
+- (BOOL)toolbarHidden {
+    return self.toolbar.hidden;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -396,6 +401,14 @@
     
     self.toolbar.items = $array(fixedSpaceItem, self.backItem, flexibleSpaceItem, self.forwardItem, flexibleSpaceItem, 
                                 self.loadItem, flexibleSpaceItem, self.actionItem, fixedSpaceItem);
+}
+
+- (void)layoutForOrientation:(UIInterfaceOrientation)orientation {
+    CGFloat toolbarHeight = self.toolbarHidden ? 0.f : FKToolbarHeightForOrientation(orientation);
+    
+    self.webView.frameHeight = self.view.boundsHeight - toolbarHeight;
+    self.toolbar.frameTop = self.webView.frameBottom;
+    self.toolbar.frameHeight = toolbarHeight;
 }
 
 - (void)customize {

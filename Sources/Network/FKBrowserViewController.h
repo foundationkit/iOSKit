@@ -28,6 +28,8 @@ typedef void(^fk_browser_fail_block)(FKBrowserViewController *browserViewControl
 /** The toolbar of the browserViewController. Customizable */
 @property (nonatomic, strong, readonly) UIToolbar *toolbar;
 @property (nonatomic, strong, readonly) UIWebView *webView;
+/** Is the toolbar visible or hidden */
+@property (nonatomic, assign) BOOL toolbarHidden;
 /** If this flag is YES, a done button is shown */
 @property (nonatomic, assign, getter = isPresentedModally) BOOL presentedModally;
 /** By setting this property you can force to show this title instead of the title of the webpage */
