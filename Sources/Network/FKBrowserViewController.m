@@ -30,6 +30,8 @@
 
 @property (nonatomic, strong) NSMutableArray *customActions;
 
+@property (nonatomic, readonly) BOOL hasToolbar;
+
 - (void)updateAddress:(NSString *)address;
 
 - (void)customize;
@@ -82,7 +84,9 @@
         backgroundColor_ = kFKBrowserDefaultBackgroundColor;
         
         // Initialize toolbar here to make it customizable before view is created
-        toolbar_ = [[UIToolbar alloc] initWithFrame:CGRectZero];
+        if (self.hasToolbar) {
+            toolbar_ = [[UIToolbar alloc] initWithFrame:CGRectZero];
+        }
         
         [self updateAddress:address];
     }
@@ -114,9 +118,11 @@
     self.webView.delegate = self;
     [self.view addSubview:self.webView];
     
-    self.toolbar.frameWidth = self.view.boundsWidth;
-    self.toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
-    [self.view addSubview:self.toolbar];
+    if (self.hasToolbar) {
+        self.toolbar.frameWidth = self.view.boundsWidth;
+        self.toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+        [self.view addSubview:self.toolbar];
+    }
     
     if (self.fadeAnimationEnabled) {
         self.webView.alpha = 0.f;
@@ -399,12 +405,16 @@
     UIBarButtonItem *fixedSpaceItem = [UIBarButtonItem spaceItemWithWidth:kFKBrowserFixedSpaceItemWidth];
     UIBarButtonItem *flexibleSpaceItem = [UIBarButtonItem flexibleSpaceItem];
     
-    self.toolbar.items = $array(fixedSpaceItem, self.backItem, flexibleSpaceItem, self.forwardItem, flexibleSpaceItem, 
-                                self.loadItem, flexibleSpaceItem, self.actionItem, fixedSpaceItem);
+    if (self.hasToolbar) {
+        self.toolbar.items = $array(fixedSpaceItem, self.backItem, flexibleSpaceItem, self.forwardItem, flexibleSpaceItem, 
+                                    self.loadItem, flexibleSpaceItem, self.actionItem, fixedSpaceItem);;
+    } else {
+        [self.navigationItem setRightBarButtonItems:$array(self.actionItem, self.loadItem, self.forwardItem, self.backItem)];
+    }
 }
 
 - (void)layoutForOrientation:(UIInterfaceOrientation)orientation {
-    CGFloat toolbarHeight = self.toolbarHidden ? 0.f : FKToolbarHeightForOrientation(orientation);
+    CGFloat toolbarHeight = (self.toolbarHidden || !self.hasToolbar) ? 0.f : FKToolbarHeightForOrientation(orientation);
     
     self.webView.frameHeight = self.view.boundsHeight - toolbarHeight;
     self.toolbar.frameTop = self.webView.frameBottom;
@@ -445,11 +455,16 @@
     [actionSheet addButtonWithTitle:_(@"Cancel")];
     [actionSheet setCancelButtonIndex:actionSheet.numberOfButtons - 1];
     
-    [actionSheet showFromToolbar:self.toolbar];
+    [actionSheet showFromBarButtonItem:self.forwardItem animated:YES];
 }
 
 - (void)handleDoneButtonPress:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (BOOL)hasToolbar {
+    // we don't need a toolbar on iOS 5/iPad because we put the items in the navigationBar
+    return $isPhone() || ![UINavigationItem instancesRespondToSelector:@selector(setRightBarButtonItems:)];
 }
 
 @end
