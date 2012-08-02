@@ -204,7 +204,7 @@ FKLoadCategory(UIColorFKAdditions);
 }
 
 - (NSString *)hexStringRepresentation {
-	return [NSString stringWithFormat:@"%0.6X", self.RGBHex];
+	return [NSString stringWithFormat:@"%0.6lX", self.RGBHex];
 }
 
 @end
