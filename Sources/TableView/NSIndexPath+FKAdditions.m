@@ -20,4 +20,8 @@ FKLoadCategory(NSIndexPathFKAdditions);
     return [self indexPathForRow:0 inSection:section];
 }
 
++ (NSIndexPath *)indexPathForRowInFirstSection:(NSInteger)row {
+    return [self indexPathForRow:row inSection:0];
+}
+
 @end

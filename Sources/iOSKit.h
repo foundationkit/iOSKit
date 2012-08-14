@@ -36,6 +36,7 @@
 #import "FKShadowedTableView.h"
 #import "FKTableViewCell.h"
 #import "NSIndexPath+FKAdditions.h"
+#import "NSIndexSet+FKAdditions.h"
 #import "UITableView+FKPlaceholder.h"
 
 // UIKit
