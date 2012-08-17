@@ -393,9 +393,10 @@
     if (self.webView.loading) {
         self.title = _(@"Loading...");
 
-        self.loadItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
-                                                                      target:self
-                                                                      action:@selector(stopLoading)];
+        UIButton *button = [UIButton buttonWithImageNamed:@"iOSKit.bundle/browserStop"];
+        [button addTarget:self action:@selector(stopLoading) forControlEvents:UIControlEventTouchUpInside];
+
+        self.loadItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     } else {
         if (self.titleToDisplay != nil) {
             self.title = self.titleToDisplay;
