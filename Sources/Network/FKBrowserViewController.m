@@ -9,6 +9,7 @@
 #import "UIInterfaceOrientation+FKAdditions.h"
 #import "FKNetworkActivityManager.h"
 #import "FKInterApp.h"
+#import "UIButton+FKConcise.h"
 #import <MessageUI/MessageUI.h>
 
 #define kFKBrowserFixedSpaceItemWidth      12.f
@@ -27,6 +28,8 @@
 @property (nonatomic, strong) UIBarButtonItem *forwardItem;
 @property (nonatomic, strong) UIBarButtonItem *loadItem;
 @property (nonatomic, strong) UIBarButtonItem *actionItem;
+
+@property (nonatomic, strong) UIActionSheet *actionSheet;
 
 @property (nonatomic, strong) NSMutableArray *customActions;
 
@@ -61,6 +64,7 @@
 @synthesize titleToDisplay = titleToDisplay_;
 @synthesize didFinishLoadBlock = didFinishLoadBlock_;
 @synthesize didFailToLoadBlock = didFailToLoadBlock_;
+@synthesize actionSheet = actionSheet_;
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle
@@ -254,10 +258,10 @@
 
 - (UIBarButtonItem *)backItem {
     if (backItem_ == nil) {
-        backItem_ = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"iOSKit.bundle/browserBack"] 
-                                                     style:UIBarButtonItemStylePlain 
-                                                    target:self.webView 
-                                                    action:@selector(goBack)];
+        UIButton *button = [UIButton buttonWithImageNamed:@"iOSKit.bundle/browserBack"];
+        [button addTarget:self.webView action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+
+        backItem_ = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
     
     backItem_.enabled = self.webView.canGoBack;
@@ -267,10 +271,10 @@
 
 - (UIBarButtonItem *)forwardItem {
     if (forwardItem_ == nil) {
-        forwardItem_ = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"iOSKit.bundle/browserForward"] 
-                                                        style:UIBarButtonItemStylePlain 
-                                                       target:self.webView 
-                                                       action:@selector(goForward)];
+        UIButton *button = [UIButton buttonWithImageNamed:@"iOSKit.bundle/browserForward"];
+        [button addTarget:self.webView action:@selector(goForward) forControlEvents:UIControlEventTouchUpInside];
+
+        forwardItem_ = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
     
     forwardItem_.enabled = self.webView.canGoForward;
@@ -280,9 +284,10 @@
 
 - (UIBarButtonItem *)actionItem {
     if (actionItem_ == nil) {
-        actionItem_ = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction 
-                                                                    target:self 
-                                                                    action:@selector(showActionSheet)];
+        UIButton *button = [UIButton buttonWithImageNamed:@"iOSKit.bundle/browserAction"];
+        [button addTarget:self action:@selector(showActionSheet) forControlEvents:UIControlEventTouchUpInside];
+
+        actionItem_ = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
     
     return actionItem_;
@@ -387,6 +392,7 @@
 - (void)updateUI {
     if (self.webView.loading) {
         self.title = _(@"Loading...");
+
         self.loadItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop
                                                                       target:self
                                                                       action:@selector(stopLoading)];
@@ -396,10 +402,11 @@
         } else {
             self.title = self.webView.documentTitle;
         }
-        
-        self.loadItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
-                                                                      target:self 
-                                                                      action:@selector(reload)];
+
+        UIButton *button = [UIButton buttonWithImageNamed:@"iOSKit.bundle/browserRefresh"];
+        [button addTarget:self action:@selector(reload) forControlEvents:UIControlEventTouchUpInside];
+
+        self.loadItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
     
     UIBarButtonItem *fixedSpaceItem = [UIBarButtonItem spaceItemWithWidth:kFKBrowserFixedSpaceItemWidth];
@@ -435,27 +442,28 @@
                                                                    withString:@"" 
                                                                       options:NSRegularExpressionSearch 
                                                                         range:NSMakeRange(0, actionSheetTitle.length)];
-    
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:actionSheetTitle 
+
+    [self.actionSheet dismissWithClickedButtonIndex:-1 animated:NO];
+    self.actionSheet = [[UIActionSheet alloc] initWithTitle:actionSheetTitle
                                                              delegate:self 
                                                     cancelButtonTitle:nil 
                                                destructiveButtonTitle:nil 
                                                     otherButtonTitles:nil];
     
-    [actionSheet addButtonWithTitle:_(@"Open in Safari")];
+    [self.actionSheet addButtonWithTitle:_(@"Open in Safari")];
     
     if ([MFMailComposeViewController canSendMail]) {
-        [actionSheet addButtonWithTitle:_(@"Mail Link")];
+        [self.actionSheet addButtonWithTitle:_(@"Mail Link")];
     }
     
     for (NSDictionary *action in self.customActions) {
-        [actionSheet addButtonWithTitle:[action valueForKey:kFKCustomActionTitle]];
+        [self.actionSheet addButtonWithTitle:[action valueForKey:kFKCustomActionTitle]];
     }
     
-    [actionSheet addButtonWithTitle:_(@"Cancel")];
-    [actionSheet setCancelButtonIndex:actionSheet.numberOfButtons - 1];
+    [self.actionSheet addButtonWithTitle:_(@"Cancel")];
+    [self.actionSheet setCancelButtonIndex:self.actionSheet.numberOfButtons - 1];
     
-    [actionSheet showFromBarButtonItem:self.forwardItem animated:YES];
+    [self.actionSheet showFromBarButtonItem:self.forwardItem animated:YES];
 }
 
 - (void)handleDoneButtonPress:(id)sender {
