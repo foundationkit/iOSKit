@@ -77,7 +77,7 @@
 + (id)modalBrowserWithAddress:(NSString *)address {
     FKBrowserViewController *viewController = [self browserWithAddress:address];
     viewController.presentedModally = YES;
-    
+
     return viewController;
 }
 
@@ -86,15 +86,15 @@
         fadeAnimationEnabled_ = YES;
         tintColor_ = kFKBrowserDefaultTintColor;
         backgroundColor_ = kFKBrowserDefaultBackgroundColor;
-        
+
         // Initialize toolbar here to make it customizable before view is created
         if (self.hasToolbar) {
             toolbar_ = [[UIToolbar alloc] initWithFrame:CGRectZero];
         }
-        
+
         [self updateAddress:address];
     }
-    
+
     return self;
 }
 
@@ -116,22 +116,22 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-    
+
     self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0.f, 0.f, self.view.boundsWidth, 0.f)];
 	self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.webView.delegate = self;
     [self.view addSubview:self.webView];
-    
+
     if (self.hasToolbar) {
         self.toolbar.frameWidth = self.view.boundsWidth;
         self.toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
         [self.view addSubview:self.toolbar];
     }
-    
+
     if (self.fadeAnimationEnabled) {
         self.webView.alpha = 0.f;
     }
-    
+
     [self layoutForOrientation:$appOrientation];
     [self customize];
 	[self reload];
@@ -139,7 +139,7 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    
+
     self.webView.delegate = nil;
 	self.webView = nil;
     self.toolbar = nil;
@@ -151,13 +151,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+
 	[self updateUI];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[self stopLoading];
-    
+
 	[super viewWillDisappear:animated];
 }
 
@@ -167,7 +167,7 @@
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    
+
     [self layoutForOrientation:toInterfaceOrientation];
 }
 
@@ -187,7 +187,7 @@
     if (self.customActions == nil) {
         self.customActions = [NSMutableArray array];
     }
-    
+
     NSDictionary *action = $dict(title, kFKCustomActionTitle, [block copy], kFKCustomActionBlock);
     [self.customActions addObject:action];
 }
@@ -231,7 +231,7 @@
 - (void)setPresentedModally:(BOOL)presentedModally {
     if (presentedModally != presentedModally_) {
         presentedModally_ = presentedModally;
-        
+
         if (presentedModally) {
             UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                       target:self
@@ -263,9 +263,9 @@
 
         backItem_ = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
-    
+
     backItem_.enabled = self.webView.canGoBack;
-    
+
     return backItem_;
 }
 
@@ -276,9 +276,9 @@
 
         forwardItem_ = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
-    
+
     forwardItem_.enabled = self.webView.canGoForward;
-    
+
     return forwardItem_;
 }
 
@@ -289,7 +289,7 @@
 
         actionItem_ = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
-    
+
     return actionItem_;
 }
 
@@ -299,14 +299,14 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     [self updateAddress:request.URL.absoluteString];
-    
+
     return YES;
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     [self showLoadingIndicatorInNavigationBar];
     [FKNetworkActivityManager addNetworkUser:self];
-    
+
     [self updateUI];
 }
 
@@ -314,12 +314,12 @@
     if (self.fadeAnimationEnabled) {
         [self.webView fadeIn];
     }
-    
+
     [self hideLoadingIndicator];
     [FKNetworkActivityManager removeNetworkUser:self];
-    
+
     [self updateUI];
-    
+
     if (self.didFinishLoadBlock != nil) {
         self.didFinishLoadBlock(self);
     }
@@ -328,9 +328,9 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     [self hideLoadingIndicator];
     [FKNetworkActivityManager removeNetworkUser:self];
-    
+
     [self updateUI];
-    
+
     if (self.didFailToLoadBlock != nil) {
         self.didFailToLoadBlock(self,error);
     }
@@ -342,16 +342,16 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSInteger customActionsBeginIndex = [MFMailComposeViewController canSendMail] ? 2 : 1;
-    
+
     if (buttonIndex == 0) {
         FKInterAppOpenSafari(self.url);
     } else if (buttonIndex == 1 && [MFMailComposeViewController canSendMail]) {
-        MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init]; 
-        
+        MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
+
         composer.navigationBar.tintColor = self.tintColor;
-        [composer setMailComposeDelegate:self]; 
+        [composer setMailComposeDelegate:self];
         [composer setMessageBody:self.address isHTML:NO];
-        
+
         if (composer != nil) {
             [self presentModalViewController:composer animated:YES];
         }
@@ -360,7 +360,7 @@
     } else if (buttonIndex >= customActionsBeginIndex) {
         NSDictionary *action = [self.customActions objectAtIndex:buttonIndex - customActionsBeginIndex];
         dispatch_block_t block = [action valueForKey:kFKCustomActionBlock];
-        
+
         if (block != nil) {
             block();
         }
@@ -383,7 +383,7 @@
     [self willChangeValueForKey:@"address"];
     address_ = address;
     [self didChangeValueForKey:@"address"];
-    
+
     [self willChangeValueForKey:@"url"];
     url_ = [NSURL URLWithString:address];
     [self didChangeValueForKey:@"url"];
@@ -409,21 +409,22 @@
 
         self.loadItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
-    
+
     UIBarButtonItem *fixedSpaceItem = [UIBarButtonItem spaceItemWithWidth:kFKBrowserFixedSpaceItemWidth];
     UIBarButtonItem *flexibleSpaceItem = [UIBarButtonItem flexibleSpaceItem];
-    
+
     if (self.hasToolbar) {
-        self.toolbar.items = $array(fixedSpaceItem, self.backItem, flexibleSpaceItem, self.forwardItem, flexibleSpaceItem, 
+        self.toolbar.items = $array(fixedSpaceItem, self.backItem, flexibleSpaceItem, self.forwardItem, flexibleSpaceItem,
                                     self.loadItem, flexibleSpaceItem, self.actionItem, fixedSpaceItem);;
     } else {
-        [self.navigationItem setRightBarButtonItems:$array(self.actionItem, self.loadItem, self.forwardItem, self.backItem)];
+        UIBarButtonItem *widerFixedSpaceItem = [UIBarButtonItem spaceItemWithWidth:35.f];
+        [self.navigationItem setRightBarButtonItems:$array(self.actionItem, widerFixedSpaceItem, self.loadItem, widerFixedSpaceItem, self.forwardItem, widerFixedSpaceItem, self.backItem, fixedSpaceItem)];
     }
 }
 
 - (void)layoutForOrientation:(UIInterfaceOrientation)orientation {
     CGFloat toolbarHeight = (self.toolbarHidden || !self.hasToolbar) ? 0.f : FKToolbarHeightForOrientation(orientation);
-    
+
     self.webView.frameHeight = self.view.boundsHeight - toolbarHeight;
     self.toolbar.frameTop = self.webView.frameBottom;
     self.toolbar.frameHeight = toolbarHeight;
@@ -438,33 +439,33 @@
 
 - (void)showActionSheet {
     NSString *actionSheetTitle = self.address;
-    
-    actionSheetTitle = [actionSheetTitle stringByReplacingOccurrencesOfString:@"(^http://)|(/$)" 
-                                                                   withString:@"" 
-                                                                      options:NSRegularExpressionSearch 
+
+    actionSheetTitle = [actionSheetTitle stringByReplacingOccurrencesOfString:@"(^http://)|(/$)"
+                                                                   withString:@""
+                                                                      options:NSRegularExpressionSearch
                                                                         range:NSMakeRange(0, actionSheetTitle.length)];
 
     [self.actionSheet dismissWithClickedButtonIndex:-1 animated:NO];
     self.actionSheet = [[UIActionSheet alloc] initWithTitle:actionSheetTitle
-                                                             delegate:self 
-                                                    cancelButtonTitle:nil 
-                                               destructiveButtonTitle:nil 
-                                                    otherButtonTitles:nil];
-    
+                                                   delegate:self
+                                          cancelButtonTitle:nil
+                                     destructiveButtonTitle:nil
+                                          otherButtonTitles:nil];
+
     [self.actionSheet addButtonWithTitle:_(@"Open in Safari")];
-    
+
     if ([MFMailComposeViewController canSendMail]) {
         [self.actionSheet addButtonWithTitle:_(@"Mail Link")];
     }
-    
+
     for (NSDictionary *action in self.customActions) {
         [self.actionSheet addButtonWithTitle:[action valueForKey:kFKCustomActionTitle]];
     }
-    
+
     [self.actionSheet addButtonWithTitle:_(@"Cancel")];
     [self.actionSheet setCancelButtonIndex:self.actionSheet.numberOfButtons - 1];
-    
-    [self.actionSheet showFromBarButtonItem:self.forwardItem animated:YES];
+
+    [self.actionSheet showFromBarButtonItem:self.actionItem animated:YES];
 }
 
 - (void)handleDoneButtonPress:(id)sender {
