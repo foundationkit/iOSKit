@@ -121,4 +121,8 @@ FKLoadCategory(UIDeviceFKAdditions);
 #endif
 }
 
+- (BOOL)hasFourInchDisplay {
+    return ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && [UIScreen mainScreen].bounds.size.height == 568.0);
+}
+
 @end

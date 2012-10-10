@@ -28,6 +28,8 @@
 @property (nonatomic, readonly) BOOL isCrappy;
 /** Check for the simulator */
 @property (nonatomic, readonly) BOOL isSimulator;
+/** Check if Device has 4 inch Display */
+@property (nonatomic, readonly) BOOL hasFourInchDisplay;
 
 /**
  Simulates a memory warning on the device, if we are in debug-mode. 
