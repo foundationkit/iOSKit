@@ -35,7 +35,7 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kReachabilityChangedNotification object:nil];
-    [reachability_ stopNotifier];
+    [_reachability stopNotifier];
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -81,7 +81,7 @@
         if (sendInitialNotification) {
             NSNotification *notification = [NSNotification notificationWithName:kFKReachabilityChangedNotification 
                                                                          object:self.reachability
-                                                                       userInfo:$dict($int(self.currentNetworkStatus),kFKNetworkStatusKey)];
+                                                                       userInfo:@{kFKNetworkStatusKey : @(self.currentNetworkStatus)}];
             
             [object performSelector:@selector(configureForNetworkStatus:) withObject:notification];
         }
@@ -107,7 +107,7 @@
                 self.lastReachabilityChange = [NSDate date];
                 [[NSNotificationCenter defaultCenter] postNotificationName:kFKReachabilityChangedNotification
                                                                     object:self.reachability
-                                                                  userInfo:$dict($int(newNetworkStatus),kFKNetworkStatusKey)];
+                                                                  userInfo:@{kFKNetworkStatusKey : @(self.currentNetworkStatus)}];
             }
         }
     }
