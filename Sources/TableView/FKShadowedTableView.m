@@ -20,17 +20,14 @@
 
 @implementation FKShadowedTableView
 
-@synthesize shadowHeight = shadowHeight_;
-@synthesize inverseShadowHeight = inverseShadowHeight_;
-
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle
 ////////////////////////////////////////////////////////////////////////
 
 - (id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
     if ((self = [super initWithFrame:frame style:style])) {
-        shadowHeight_ = kFKDefaultShadowHeight;
-        inverseShadowHeight_ = kFKDefaultInverseShadowHeight;
+        _shadowHeight = kFKDefaultShadowHeight;
+        _inverseShadowHeight = kFKDefaultInverseShadowHeight;
     }
     
     return self;
@@ -130,15 +127,15 @@
 - (CAGradientLayer *)fk_shadowLayerInversed:(BOOL)inverse {
 	CAGradientLayer *shadowLayer = [[CAGradientLayer alloc] init];
 	CGRect frame = CGRectMake(0, 0, self.frame.size.width, inverse ? self.inverseShadowHeight : self.shadowHeight);
-    UIColor *darkColor =  [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:inverse ? self.fk_shadowRatio * 0.5 : 0.5];
+    UIColor *darkColor =  [UIColor colorWithRed:0.f green:0.f blue:0.f alpha:inverse ? self.fk_shadowRatio * 0.5f : 0.5f];
 	UIColor *lightColor = [self.backgroundColor colorWithAlphaComponent:0.0];
     
 	shadowLayer.frame = frame;
     
     if (inverse) {
-        shadowLayer.colors = $array((id)[lightColor CGColor], (id)[darkColor CGColor]);
+        shadowLayer.colors = @[(id)[lightColor CGColor], (id)[darkColor CGColor]];
     } else {
-        shadowLayer.colors = $array((id)[darkColor CGColor], (id)[lightColor CGColor]);
+        shadowLayer.colors = @[(id)[darkColor CGColor], (id)[lightColor CGColor]];
     }
     
 	return shadowLayer;

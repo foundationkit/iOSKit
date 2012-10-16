@@ -6,8 +6,6 @@
 #import "FKiOSConstants.h"
 #import "FKiOSDrawing.h"
 #import "FKiOSMetrics.h"
-#import "NSObject+FKiOSAssociatedObjects.h"
-#import "UIEdgeInsets+FKAdditions.h"
 #import "UIInterfaceOrientation+FKAdditions.h"
 
 // Communication

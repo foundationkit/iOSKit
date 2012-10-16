@@ -14,7 +14,7 @@ FKLoadCategory(UIAlertViewFKError);
 
 + (UIAlertView *)alertViewWithDetailedError:(NSError *)error {
     NSArray *options = [error localizedRecoveryOptions];
-	NSInteger count = [options count];
+	NSUInteger count = [options count];
 	NSString *cancelTitle = @"OK";
     NSArray *otherButtons = nil;
     

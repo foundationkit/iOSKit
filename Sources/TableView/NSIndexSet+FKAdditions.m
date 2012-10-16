@@ -6,7 +6,7 @@
     NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSet];
 
     for (NSIndexPath *indexPath in indexPaths) {
-        [indexSet addIndex:indexPath.row];
+        [indexSet addIndex:(NSUInteger)indexPath.row];
     }
 
     return indexSet;

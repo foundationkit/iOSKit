@@ -23,11 +23,6 @@
 
 @implementation FKReachability
 
-@synthesize reachability = reachability_;
-@synthesize currentNetworkStatus = currentNetworkStatus_;
-@synthesize hostAddress =  hostAddress_;
-@synthesize lastReachabilityChange = lastReachabilityChange_;
-
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle
 ////////////////////////////////////////////////////////////////////////

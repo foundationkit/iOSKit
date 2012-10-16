@@ -35,36 +35,11 @@
 
 @property (nonatomic, readonly) BOOL hasToolbar;
 
-- (void)updateAddress:(NSString *)address;
-
-- (void)customize;
-- (void)layoutForOrientation:(UIInterfaceOrientation)orientation;
-- (void)updateUI;
-- (void)showActionSheet;
-- (void)handleDoneButtonPress:(id)sender;
 
 @end
 
 
 @implementation FKBrowserViewController
-
-@synthesize address = address_;
-@synthesize url = url_;
-@synthesize tintColor = tintColor_;
-@synthesize backgroundColor = backgroundColor_;
-@synthesize fadeAnimationEnabled = fadeAnimationEnabled_;
-@synthesize webView = webView_;
-@synthesize toolbar = toolbar_;
-@synthesize backItem = backItem_;
-@synthesize forwardItem = forwardItem_;
-@synthesize loadItem = loadItem_;
-@synthesize actionItem = actionItem_;
-@synthesize customActions = customActions_;
-@synthesize presentedModally = presentedModally_;
-@synthesize titleToDisplay = titleToDisplay_;
-@synthesize didFinishLoadBlock = didFinishLoadBlock_;
-@synthesize didFailToLoadBlock = didFailToLoadBlock_;
-@synthesize actionSheet = actionSheet_;
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle
@@ -83,13 +58,13 @@
 
 - (id)initWithAddress:(NSString *)address {
     if ((self = [super initWithNibName:nil bundle:nil])) {
-        fadeAnimationEnabled_ = YES;
-        tintColor_ = kFKBrowserDefaultTintColor;
-        backgroundColor_ = kFKBrowserDefaultBackgroundColor;
+        _fadeAnimationEnabled = YES;
+        _tintColor = kFKBrowserDefaultTintColor;
+        _backgroundColor = kFKBrowserDefaultBackgroundColor;
 
         // Initialize toolbar here to make it customizable before view is created
         if (self.hasToolbar) {
-            toolbar_ = [[UIToolbar alloc] initWithFrame:CGRectZero];
+            _toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
         }
 
         [self updateAddress:address];
@@ -188,7 +163,7 @@
         self.customActions = [NSMutableArray array];
     }
 
-    NSDictionary *action = $dict(title, kFKCustomActionTitle, [block copy], kFKCustomActionBlock);
+    NSDictionary *action = @{kFKCustomActionTitle : title, kFKCustomActionBlock: [block copy]};
     [self.customActions addObject:action];
 }
 
@@ -201,36 +176,36 @@
 ////////////////////////////////////////////////////////////////////////
 
 - (void)setAddress:(NSString *)address {
-    if (address != address_) {
+    if (address != _address) {
         [self updateAddress:address];
         [self reload];
     }
 }
 
 - (void)setUrl:(NSURL *)url {
-    if (url != url_) {
+    if (url != _url) {
         [self updateAddress:[url absoluteString]];
         [self reload];
     }
 }
 
 - (void)setTintColor:(UIColor *)tintColor {
-    if (tintColor != tintColor_) {
-        tintColor_ = tintColor;
+    if (tintColor != _tintColor) {
+        _tintColor = tintColor;
         [self customize];
     }
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
-    if (backgroundColor != backgroundColor_) {
-        backgroundColor_ = backgroundColor;
+    if (backgroundColor != _backgroundColor) {
+        _backgroundColor = backgroundColor;
         [self customize];
     }
 }
 
 - (void)setPresentedModally:(BOOL)presentedModally {
-    if (presentedModally != presentedModally_) {
-        presentedModally_ = presentedModally;
+    if (presentedModally != _presentedModally) {
+        _presentedModally = presentedModally;
 
         if (presentedModally) {
             UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
@@ -257,40 +232,40 @@
 ////////////////////////////////////////////////////////////////////////
 
 - (UIBarButtonItem *)backItem {
-    if (backItem_ == nil) {
+    if (_backItem == nil) {
         UIButton *button = [UIButton buttonWithImageNamed:@"iOSKit.bundle/browserBack"];
         [button addTarget:self.webView action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
 
-        backItem_ = [[UIBarButtonItem alloc] initWithCustomView:button];
+        _backItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
 
-    backItem_.enabled = self.webView.canGoBack;
+    _backItem.enabled = self.webView.canGoBack;
 
-    return backItem_;
+    return _backItem;
 }
 
 - (UIBarButtonItem *)forwardItem {
-    if (forwardItem_ == nil) {
+    if (_forwardItem == nil) {
         UIButton *button = [UIButton buttonWithImageNamed:@"iOSKit.bundle/browserForward"];
         [button addTarget:self.webView action:@selector(goForward) forControlEvents:UIControlEventTouchUpInside];
 
-        forwardItem_ = [[UIBarButtonItem alloc] initWithCustomView:button];
+        _forwardItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
 
-    forwardItem_.enabled = self.webView.canGoForward;
+    _forwardItem.enabled = self.webView.canGoForward;
 
-    return forwardItem_;
+    return _forwardItem;
 }
 
 - (UIBarButtonItem *)actionItem {
-    if (actionItem_ == nil) {
+    if (_actionItem == nil) {
         UIButton *button = [UIButton buttonWithImageNamed:@"iOSKit.bundle/browserAction"];
         [button addTarget:self action:@selector(showActionSheet) forControlEvents:UIControlEventTouchUpInside];
 
-        actionItem_ = [[UIBarButtonItem alloc] initWithCustomView:button];
+        _actionItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
 
-    return actionItem_;
+    return _actionItem;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -358,7 +333,7 @@
     } else if (buttonIndex == actionSheet.cancelButtonIndex) {
         // do nothing special
     } else if (buttonIndex >= customActionsBeginIndex) {
-        NSDictionary *action = [self.customActions objectAtIndex:buttonIndex - customActionsBeginIndex];
+        NSDictionary *action = [self.customActions objectAtIndex:(NSUInteger)(buttonIndex - customActionsBeginIndex)];
         dispatch_block_t block = [action valueForKey:kFKCustomActionBlock];
 
         if (block != nil) {
@@ -381,11 +356,11 @@
 
 - (void)updateAddress:(NSString *)address {
     [self willChangeValueForKey:@"address"];
-    address_ = address;
+    _address = address;
     [self didChangeValueForKey:@"address"];
 
     [self willChangeValueForKey:@"url"];
-    url_ = [NSURL URLWithString:address];
+    _url = [NSURL URLWithString:address];
     [self didChangeValueForKey:@"url"];
 }
 
@@ -414,11 +389,11 @@
     UIBarButtonItem *flexibleSpaceItem = [UIBarButtonItem flexibleSpaceItem];
 
     if (self.hasToolbar) {
-        self.toolbar.items = $array(fixedSpaceItem, self.backItem, flexibleSpaceItem, self.forwardItem, flexibleSpaceItem,
-                                    self.loadItem, flexibleSpaceItem, self.actionItem, fixedSpaceItem);;
+        self.toolbar.items = @[fixedSpaceItem, self.backItem, flexibleSpaceItem, self.forwardItem, flexibleSpaceItem,
+                                    self.loadItem, flexibleSpaceItem, self.actionItem, fixedSpaceItem];
     } else {
         UIBarButtonItem *widerFixedSpaceItem = [UIBarButtonItem spaceItemWithWidth:35.f];
-        [self.navigationItem setRightBarButtonItems:$array(self.actionItem, widerFixedSpaceItem, self.loadItem, widerFixedSpaceItem, self.forwardItem, widerFixedSpaceItem, self.backItem, fixedSpaceItem)];
+        [self.navigationItem setRightBarButtonItems:@[self.actionItem, widerFixedSpaceItem, self.loadItem, widerFixedSpaceItem, self.forwardItem, widerFixedSpaceItem, self.backItem, fixedSpaceItem]];
     }
 }
 

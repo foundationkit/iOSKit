@@ -116,8 +116,8 @@ static UIImage * fk_noiseImage;
         CFRelease(colorSpace);
         
         for (NSUInteger i=0; i<(kFKNoiseTileDimension * kFKNoiseIntensity); i++) {
-            int x = arc4random() % (imageDimension + 1);
-            int y = arc4random() % (imageDimension + 1);
+            int x = (int)(arc4random() % (imageDimension + 1));
+            int y = (int)(arc4random() % (imageDimension + 1));
             int opacity = arc4random() % 100;
             CGFloat whiteLevel = arc4random() % 100;
             
@@ -125,7 +125,7 @@ static UIImage * fk_noiseImage;
                                        point:CGPointMake(x, y)
                                        width:(kFKNoisePixelWidth * imageScale) 
                                      opacity:(opacity) 
-                                  whiteLevel:(whiteLevel/100.)];
+                                  whiteLevel:(whiteLevel/100.f)];
         }
         
         CGImageRef imageRef = CGBitmapContextCreateImage(context);

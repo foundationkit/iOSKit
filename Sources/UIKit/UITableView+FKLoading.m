@@ -40,7 +40,7 @@ static char cellsShowingIndicatorKey;
 }
 
 - (void)setAllowsMultipleLoadingIndicators:(BOOL)allowsMultipleLoadingIndicators {
-    [self associateValue:$bool(allowsMultipleLoadingIndicators) withKey:&allowsMultipleIndicatorsKey];
+    [self associateValue:@(allowsMultipleLoadingIndicators) withKey:&allowsMultipleIndicatorsKey];
 }
 
 - (BOOL)allowsMultipleLoadingIndicators {

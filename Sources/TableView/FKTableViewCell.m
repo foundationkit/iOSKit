@@ -5,8 +5,6 @@
 
 @implementation FKTableViewCell
 
-@synthesize selectedContentView = selectedContentView_;
-
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle
 ////////////////////////////////////////////////////////////////////////
@@ -17,9 +15,9 @@
 		contentView_.opaque = YES;
 		self.backgroundView = contentView_;
         
-		selectedContentView_ = [[FKTableViewSelectedCellView alloc] initWithFrame:CGRectZero];
-		selectedContentView_.opaque = YES;
-		self.selectedBackgroundView = selectedContentView_;
+		_selectedContentView = [[FKTableViewSelectedCellView alloc] initWithFrame:CGRectZero];
+		_selectedContentView.opaque = YES;
+		self.selectedBackgroundView = _selectedContentView;
     }
     
     return self;
@@ -34,7 +32,7 @@
     
 	CGRect bounds = self.bounds;
 	[contentView_ setFrame:bounds];
-	[selectedContentView_ setFrame:bounds];
+	[_selectedContentView setFrame:bounds];
 }
 
 - (void)setOpaque:(BOOL)opaque {
@@ -48,7 +46,7 @@
 	[contentView_ setNeedsDisplay];
     
 	if ([self isHighlighted] || [self isSelected]) {
-		[selectedContentView_ setNeedsDisplay];
+		[_selectedContentView setNeedsDisplay];
 	}
 }
 
@@ -57,7 +55,7 @@
 	[contentView_ setNeedsDisplayInRect:rect];
     
 	if([self isHighlighted] || [self isSelected]) {
-		[selectedContentView_ setNeedsDisplayInRect:rect];
+		[_selectedContentView setNeedsDisplayInRect:rect];
 	}
 }
 
@@ -74,7 +72,7 @@
 ////////////////////////////////////////////////////////////////////////
 
 - (void)setSelected:(BOOL)selected {
-	[selectedContentView_ setNeedsDisplay];
+	[_selectedContentView setNeedsDisplay];
     
 	if (!selected && self.selected) {
 		[contentView_ setNeedsDisplay];
@@ -84,7 +82,7 @@
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-	[selectedContentView_ setNeedsDisplay];
+	[_selectedContentView setNeedsDisplay];
     
 	if (!selected && self.selected) {
 		[contentView_ setNeedsDisplay];
@@ -94,7 +92,7 @@
 }
 
 - (void)setHighlighted:(BOOL)highlighted {
-	[selectedContentView_ setNeedsDisplay];
+	[_selectedContentView setNeedsDisplay];
     
 	if (!highlighted && self.highlighted) {
 		[contentView_ setNeedsDisplay];
@@ -104,7 +102,7 @@
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
-	[selectedContentView_ setNeedsDisplay];
+	[_selectedContentView setNeedsDisplay];
     
 	if (!highlighted && self.highlighted) {
 		[contentView_ setNeedsDisplay];

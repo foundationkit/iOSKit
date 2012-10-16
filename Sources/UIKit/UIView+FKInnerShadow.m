@@ -9,9 +9,9 @@
     
     CGMutablePathRef visiblePath = CGPathCreateMutable();
     CGPathMoveToPoint(visiblePath, NULL, bounds.size.width-radius, bounds.size.height);
-    CGPathAddArc(visiblePath, NULL, bounds.size.width-radius, radius, radius, 0.5f*M_PI, 1.5f*M_PI, YES);
+    CGPathAddArc(visiblePath, NULL, bounds.size.width-radius, radius, radius, (CGFloat)(0.5*M_PI), (CGFloat)(1.5*M_PI), YES);
     CGPathAddLineToPoint(visiblePath, NULL, radius, 0.f);
-    CGPathAddArc(visiblePath, NULL, radius, radius, radius, 1.5f*M_PI, 0.5f*M_PI, YES);
+    CGPathAddArc(visiblePath, NULL, radius, radius, radius, (CGFloat)(1.5*M_PI), (CGFloat)(0.5*M_PI), YES);
     CGPathAddLineToPoint(visiblePath, NULL, bounds.size.width-radius, bounds.size.height);
     CGPathCloseSubpath(visiblePath);
     

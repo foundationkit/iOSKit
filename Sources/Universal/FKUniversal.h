@@ -1,5 +1,7 @@
 // Part of iOSKit http://foundationk.it
 
+#import "UIDevice+FKAdditions.h"
+
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Detecting Interface Idiom
@@ -11,6 +13,10 @@ NS_INLINE BOOL $isPad(void) {
 
 NS_INLINE BOOL $isPhone(void) {
     return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone;
+}
+
+NS_INLINE BOOL $isPhone5(void) {
+    return [[UIDevice currentDevice] hasFourInchDisplay];
 }
 
 ////////////////////////////////////////////////////////////////////////

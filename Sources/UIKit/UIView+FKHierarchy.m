@@ -17,7 +17,7 @@ FKLoadCategory(UIViewFKHierarchy);
 }
 
 - (NSInteger)subviewIndex {
-	return [self.superview.subviews indexOfObject:self];
+	return (NSInteger)[self.superview.subviews indexOfObject:self];
 }
 
 - (UIView *)superviewWithClass:(Class)aClass {
@@ -95,7 +95,7 @@ FKLoadCategory(UIViewFKHierarchy);
 	return ([self.superview.subviews objectAtIndex:0] == self);
 }
 
-- (void)swapDepthsWithView:(UIView*)swapView {
+- (void)swapDepthsWithView:(UIView *)swapView {
 	[self.superview exchangeSubviewAtIndex:self.subviewIndex withSubviewAtIndex:swapView.subviewIndex];
 }
 

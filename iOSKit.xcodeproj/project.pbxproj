@@ -32,8 +32,6 @@
 		397F81BF14261227006B98BD /* UITableViewCell+FKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F81BD14261227006B98BD /* UITableViewCell+FKConcise.m */; };
 		39AA0F751429091A00C6956C /* NSIndexPath+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 39AA0F731429091A00C6956C /* NSIndexPath+FKAdditions.h */; };
 		39AA0F761429091A00C6956C /* NSIndexPath+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA0F741429091A00C6956C /* NSIndexPath+FKAdditions.m */; };
-		39AA0FB7142927D200C6956C /* UITableView+FKPlaceholder.h in Headers */ = {isa = PBXBuildFile; fileRef = 39AA0FB5142927D100C6956C /* UITableView+FKPlaceholder.h */; };
-		39AA0FB8142927D200C6956C /* UITableView+FKPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA0FB6142927D100C6956C /* UITableView+FKPlaceholder.m */; };
 		39ACE7441422709B0022D8F8 /* UIView+FKContentSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ACE7421422709B0022D8F8 /* UIView+FKContentSize.h */; };
 		39ACE7451422709B0022D8F8 /* UIView+FKContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ACE7431422709B0022D8F8 /* UIView+FKContentSize.m */; };
 		39ACE81614228DCC0022D8F8 /* UIViewController+FKLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */; };
@@ -84,9 +82,6 @@
 		9B54E81414269C2F00336F08 /* FKiOSMetrics.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81314269C2F00336F08 /* FKiOSMetrics.h */; };
 		9B54E81614269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81514269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h */; };
 		9B54E81A14269C8C00336F08 /* FKiOSConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81714269C8B00336F08 /* FKiOSConstants.h */; };
-		9B54E81B14269C8C00336F08 /* NSObject+FKiOSAssociatedObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81814269C8B00336F08 /* NSObject+FKiOSAssociatedObjects.h */; };
-		9B54E81C14269C8C00336F08 /* NSObject+FKiOSAssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B54E81914269C8B00336F08 /* NSObject+FKiOSAssociatedObjects.m */; };
-		9B54E81E14269CAB00336F08 /* UIEdgeInsets+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81D14269CAB00336F08 /* UIEdgeInsets+FKAdditions.h */; };
 		9B63F33314726E3F00E30D13 /* UIBarButtonItem+FKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B63F33114726E3F00E30D13 /* UIBarButtonItem+FKConcise.h */; };
 		9B63F33414726E3F00E30D13 /* UIBarButtonItem+FKConcise.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B63F33214726E3F00E30D13 /* UIBarButtonItem+FKConcise.m */; };
 		9B6C025B142BD444006F9812 /* FKiOSDrawing.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B6C025A142BD444006F9812 /* FKiOSDrawing.h */; };
@@ -174,8 +169,6 @@
 		397F81BD14261227006B98BD /* UITableViewCell+FKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+FKConcise.m"; sourceTree = "<group>"; };
 		39AA0F731429091A00C6956C /* NSIndexPath+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSIndexPath+FKAdditions.h"; path = "TableView/NSIndexPath+FKAdditions.h"; sourceTree = "<group>"; };
 		39AA0F741429091A00C6956C /* NSIndexPath+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSIndexPath+FKAdditions.m"; path = "TableView/NSIndexPath+FKAdditions.m"; sourceTree = "<group>"; };
-		39AA0FB5142927D100C6956C /* UITableView+FKPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+FKPlaceholder.h"; path = "TableView/UITableView+FKPlaceholder.h"; sourceTree = "<group>"; };
-		39AA0FB6142927D100C6956C /* UITableView+FKPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+FKPlaceholder.m"; path = "TableView/UITableView+FKPlaceholder.m"; sourceTree = "<group>"; };
 		39ACE7421422709B0022D8F8 /* UIView+FKContentSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKContentSize.h"; path = "UIKit/UIView+FKContentSize.h"; sourceTree = "<group>"; };
 		39ACE7431422709B0022D8F8 /* UIView+FKContentSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKContentSize.m"; path = "UIKit/UIView+FKContentSize.m"; sourceTree = "<group>"; };
 		39ACE81414228DC90022D8F8 /* UIViewController+FKLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+FKLoading.h"; path = "UIKit/UIViewController+FKLoading.h"; sourceTree = "<group>"; };
@@ -229,9 +222,6 @@
 		9B54E81314269C2F00336F08 /* FKiOSMetrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKiOSMetrics.h; path = Core/FKiOSMetrics.h; sourceTree = "<group>"; };
 		9B54E81514269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIInterfaceOrientation+FKAdditions.h"; path = "Core/UIInterfaceOrientation+FKAdditions.h"; sourceTree = "<group>"; };
 		9B54E81714269C8B00336F08 /* FKiOSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKiOSConstants.h; path = Core/FKiOSConstants.h; sourceTree = "<group>"; };
-		9B54E81814269C8B00336F08 /* NSObject+FKiOSAssociatedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+FKiOSAssociatedObjects.h"; path = "Core/NSObject+FKiOSAssociatedObjects.h"; sourceTree = "<group>"; };
-		9B54E81914269C8B00336F08 /* NSObject+FKiOSAssociatedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+FKiOSAssociatedObjects.m"; path = "Core/NSObject+FKiOSAssociatedObjects.m"; sourceTree = "<group>"; };
-		9B54E81D14269CAB00336F08 /* UIEdgeInsets+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIEdgeInsets+FKAdditions.h"; path = "Core/UIEdgeInsets+FKAdditions.h"; sourceTree = "<group>"; };
 		9B63F33114726E3F00E30D13 /* UIBarButtonItem+FKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+FKConcise.h"; sourceTree = "<group>"; };
 		9B63F33214726E3F00E30D13 /* UIBarButtonItem+FKConcise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+FKConcise.m"; sourceTree = "<group>"; };
 		9B6C025A142BD444006F9812 /* FKiOSDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKiOSDrawing.h; path = Core/FKiOSDrawing.h; sourceTree = "<group>"; };
@@ -362,8 +352,6 @@
 				39AA0F741429091A00C6956C /* NSIndexPath+FKAdditions.m */,
 				9BBA862E15DAD8F000A99D13 /* NSIndexSet+FKAdditions.h */,
 				9BBA862F15DAD8F000A99D13 /* NSIndexSet+FKAdditions.m */,
-				39AA0FB5142927D100C6956C /* UITableView+FKPlaceholder.h */,
-				39AA0FB6142927D100C6956C /* UITableView+FKPlaceholder.m */,
 			);
 			name = TableView;
 			sourceTree = "<group>";
@@ -504,9 +492,6 @@
 				9B6C025A142BD444006F9812 /* FKiOSDrawing.h */,
 				9B6C025C142BD583006F9812 /* FKiOSDrawing.m */,
 				9B54E81314269C2F00336F08 /* FKiOSMetrics.h */,
-				9B54E81814269C8B00336F08 /* NSObject+FKiOSAssociatedObjects.h */,
-				9B54E81914269C8B00336F08 /* NSObject+FKiOSAssociatedObjects.m */,
-				9B54E81D14269CAB00336F08 /* UIEdgeInsets+FKAdditions.h */,
 				9B54E81514269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h */,
 			);
 			name = Core;
@@ -593,13 +578,10 @@
 				9B54E81414269C2F00336F08 /* FKiOSMetrics.h in Headers */,
 				9B54E81614269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h in Headers */,
 				9B54E81A14269C8C00336F08 /* FKiOSConstants.h in Headers */,
-				9B54E81B14269C8C00336F08 /* NSObject+FKiOSAssociatedObjects.h in Headers */,
-				9B54E81E14269CAB00336F08 /* UIEdgeInsets+FKAdditions.h in Headers */,
 				39B07E67142888C700CBF1B8 /* FKiOSInternal.h in Headers */,
 				3931206C1428AD6B0095D5ED /* UITableViewCell+FKLoading.h in Headers */,
 				393120701428AF010095D5ED /* UITableView+FKLoading.h in Headers */,
 				39AA0F751429091A00C6956C /* NSIndexPath+FKAdditions.h in Headers */,
-				39AA0FB7142927D200C6956C /* UITableView+FKPlaceholder.h in Headers */,
 				9B6C025B142BD444006F9812 /* FKiOSDrawing.h in Headers */,
 				9B6C0260142C69E8006F9812 /* UIAlertView+FKError.h in Headers */,
 				9B6C02F1142C9FD2006F9812 /* FKTableViewCell.h in Headers */,
@@ -727,11 +709,9 @@
 				3921678F142666E90018BD5A /* UIApplication+FKAdditions.m in Sources */,
 				3921679314266A060018BD5A /* UIScreen+FKAdditions.m in Sources */,
 				3921679714266BCB0018BD5A /* UIScrollView+FKAdditions.m in Sources */,
-				9B54E81C14269C8C00336F08 /* NSObject+FKiOSAssociatedObjects.m in Sources */,
 				3931206D1428AD6B0095D5ED /* UITableViewCell+FKLoading.m in Sources */,
 				393120711428AF010095D5ED /* UITableView+FKLoading.m in Sources */,
 				39AA0F761429091A00C6956C /* NSIndexPath+FKAdditions.m in Sources */,
-				39AA0FB8142927D200C6956C /* UITableView+FKPlaceholder.m in Sources */,
 				9B6C025D142BD584006F9812 /* FKiOSDrawing.m in Sources */,
 				9B6C0261142C69E8006F9812 /* UIAlertView+FKError.m in Sources */,
 				9B6C02F2142C9FD2006F9812 /* FKTableViewCell.m in Sources */,
@@ -773,6 +753,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -783,11 +768,16 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "FoundationKit/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -798,14 +788,24 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "FoundationKit/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -814,15 +814,10 @@
 		39F5166A13C8E3F3008A9732 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv6,
-				);
 				DSTROOT = /tmp/iOSKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Sources/Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -835,15 +830,10 @@
 		39F5166B13C8E3F3008A9732 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv6,
-				);
 				DSTROOT = /tmp/iOSKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Sources/Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",

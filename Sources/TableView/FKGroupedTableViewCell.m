@@ -2,21 +2,19 @@
 
 @implementation FKGroupedTableViewCell
 
-@synthesize selectionView = selectionView_;
-
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle
 ////////////////////////////////////////////////////////////////////////
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
-        selectionView_ = [FKColoredCellSelectionView coloredSelectionViewForTableViewCell:self];
+        _selectionView = [FKColoredCellSelectionView coloredSelectionViewForTableViewCell:self];
         
         if (self.selectionGradientStartColor != nil) {
-            selectionView_.gradientStartColor = self.selectionGradientStartColor;
+            _selectionView.gradientStartColor = self.selectionGradientStartColor;
         }
         if (self.selectionGradientEndColor != nil) {
-            selectionView_.gradientEndColor = self.selectionGradientEndColor;
+            _selectionView.gradientEndColor = self.selectionGradientEndColor;
         }
     }
     

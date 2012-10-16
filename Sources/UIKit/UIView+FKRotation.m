@@ -1,6 +1,6 @@
 #import "UIView+FKRotation.h"
 #import "UIApplication+FKConcise.h"
-#import "NSObject+FKiOSAssociatedObjects.h"
+
 
 FKLoadCategory(UIViewFKRotation);
 
@@ -49,11 +49,11 @@ static char landscapeFrameKey;
 }
 
 - (void)setPortraitFrame:(CGRect)portraitFrame {
-    [self associateRect:portraitFrame withKey:&portraitFrameKey];
+    [self associateValue:[NSValue valueWithCGRect:portraitFrame] withKey:&portraitFrameKey];
 }
 
 - (void)setLandscapeFrame:(CGRect)landscapeFrame {
-    [self associateRect:landscapeFrame withKey:&landscapeFrameKey];
+    [self associateValue:[NSValue valueWithCGRect:landscapeFrame] withKey:&landscapeFrameKey];
 }
 
 

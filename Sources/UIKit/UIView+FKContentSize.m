@@ -18,7 +18,7 @@ static char excludedKey;
 }
 
 - (void)setExcludedFromScrollViewAutocalculation:(BOOL)excludedFromScrollViewAutocalculation {
-    [self associateValue:$bool(excludedFromScrollViewAutocalculation) withKey:&excludedKey];
+    [self associateValue:@(excludedFromScrollViewAutocalculation) withKey:&excludedKey];
 }
 
 - (BOOL)sizeToFitNeededHeightForWidth:(CGFloat)width {

@@ -11,9 +11,6 @@ void FKSystemSoundCompleted(SystemSoundID soundID, void *clientData);
 
 @implementation FKSoundEffect
 
-@synthesize soundID = soundID_;
-@synthesize delegate = delegate_;
-
 ////////////////////////////////////////////////////////////////////////
 #pragma mark Lifecycle
 ////////////////////////////////////////////////////////////////////////

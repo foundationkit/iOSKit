@@ -5,12 +5,6 @@
 
 @implementation FKColoredCellSelectionView
 
-@synthesize position = position_;
-@synthesize gradientStartColor = gradientStartColor_;
-@synthesize gradientEndColor = gradientEndColor_;
-@synthesize lineWidth = lineWidth_;
-@synthesize lineColor = lineColor_;
-
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle
 ////////////////////////////////////////////////////////////////////////
@@ -24,10 +18,10 @@
 
 - (id)initWithFrame:(CGRect)frame {
 	if ((self = [super initWithFrame:frame])) {
-        gradientStartColor_ = [UIColor whiteColor];
-        gradientEndColor_ = [UIColor colorWithRed:0.8667 green:0.8667 blue:0.8667 alpha:1.0000];
-        lineWidth_ = 1.f;
-        lineColor_ = [UIColor grayColor];
+        _gradientStartColor = [UIColor whiteColor];
+        _gradientEndColor = [UIColor colorWithRed:0.8667f green:0.8667f blue:0.8667f alpha:1.f];
+        _lineWidth = 1.f;
+        _lineColor = [UIColor grayColor];
         
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	}
@@ -52,7 +46,7 @@
 	CGFloat miny = CGRectGetMinY(rect);
     CGFloat midy = CGRectGetMidY(rect);
     CGFloat maxy = CGRectGetMaxY(rect);
-	CGGradientRef gradientRef = FKCreateGradientWithColors($array(self.gradientStartColor, self.gradientEndColor));
+	CGGradientRef gradientRef = FKCreateGradientWithColors(@[self.gradientStartColor, self.gradientEndColor]);
 	CGMutablePathRef path = CGPathCreateMutable();
     
 	CGContextSetAllowsAntialiasing(c, YES);
@@ -153,22 +147,22 @@
 ////////////////////////////////////////////////////////////////////////
 
 - (void)setPosition:(FKColoredCellSelectionViewPosition)position {
-	if (position_ != position) {
-		position_ = position;
+	if (position != _position) {
+		_position = position;
 		[self setNeedsDisplay];
 	}
 }
 
 - (void)setLineWidth:(CGFloat)lineWidth {
-    if (lineWidth_ != lineWidth) {
-        lineWidth_ = lineWidth;
+    if (lineWidth != _lineWidth) {
+        _lineWidth = lineWidth;
         [self setNeedsDisplay];
     }
 }
 
 - (void)setLineColor:(UIColor *)lineColor {
-    if (lineColor_ != lineColor) {
-        lineColor_ = lineColor;
+    if (_lineColor != lineColor) {
+        _lineColor = lineColor;
         [self setNeedsDisplay];
     }
 }

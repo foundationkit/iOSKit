@@ -2,10 +2,6 @@
 
 @implementation FKColoredAccessoryView
 
-@synthesize color = color_;
-@synthesize highlightedColor = highlightedColor_;
-@synthesize type = type_;
-
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle
 ////////////////////////////////////////////////////////////////////////
@@ -36,9 +32,9 @@
     if ((self = [super initWithFrame:frame])) {
 		self.backgroundColor = [UIColor clearColor];
         
-        color_ = [UIColor blackColor];
-        highlightedColor_ = [UIColor whiteColor];
-        type_ = FKColoredAccessoryViewTypeRight;
+        _color = [UIColor blackColor];
+        _highlightedColor = [UIColor whiteColor];
+        _type = FKColoredAccessoryViewTypeRight;
     }
     
     return self;

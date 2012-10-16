@@ -39,14 +39,14 @@ static char localizationEnabledKey;
 }
 
 - (void)setNibLocalizationEnabled:(BOOL)nibLocalizationEnabled {
-    [self associateValue:$bool(nibLocalizationEnabled) withKey:&localizationEnabledKey];
+    [self associateValue:@(nibLocalizationEnabled) withKey:&localizationEnabledKey];
 }
 
 - (BOOL)nibLocalizationEnabled {
     NSNumber *enabled = [self associatedValueForKey:&localizationEnabledKey];
     
     if (enabled == nil) {
-        [self associateValue:$bool(kFKNibLocalizationEnabledDefaultValue) withKey:&localizationEnabledKey];
+        [self associateValue:@(kFKNibLocalizationEnabledDefaultValue) withKey:&localizationEnabledKey];
         return kFKNibLocalizationEnabledDefaultValue;
     }
     
@@ -98,7 +98,7 @@ static char localizationEnabledKey;
 - (void)fk_localizeSegmentedControl {
     UISegmentedControl *segmentedControl = (UISegmentedControl *)self;
     
-    for (int index = 0; index < segmentedControl.numberOfSegments; index++) {
+    for (NSUInteger index = 0; index < segmentedControl.numberOfSegments; index++) {
         NSString *title = [segmentedControl titleForSegmentAtIndex:index];
         [segmentedControl setTitle:[self fk_localizedValueForString:title] forSegmentAtIndex:index];
     }
