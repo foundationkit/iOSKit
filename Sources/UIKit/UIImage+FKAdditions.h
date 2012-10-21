@@ -7,17 +7,23 @@
 #import <UIKit/UIKit.h>
 
 /**
- This category adds the possiblity to preload an image to UIImage for faster drawing.
+ This category adds various functionalities to UIImage
  */
 
 @interface UIImage (FKAdditions)
 
+/** Creates an image with a given size in a given color */
++ (UIImage *)imageWithSize:(CGSize)size color:(UIColor *)color;
+
+/**
+ This method preloads an image for faster drawing.
+ */
 - (UIImage *)preloadedImage;
 
 /**
  This method returns a new UIImage tinted with the given color.
  It calls imageTintedWithColor:fraction: with fraction 0.
- 
+
  @param color The Tint-Color
  @return A new image tinted with the given color
  */
@@ -26,10 +32,11 @@
 
 /**
  Creates and returns a new cropped image object.
- 
+
  @param rect A rectangle whose coordinates specify the area to create an image from in points.
  @return A new cropped image object.
  */
 - (UIImage *)imageCroppedToRect:(CGRect)rect;
+
 
 @end
