@@ -48,6 +48,7 @@
 #import "UIScrollView+FKAdditions.h"
 #import "UIScrollView+FKContentSize.h"
 #import "UITableView+FKLoading.h"
+#import "UITableViewCell+FKAdditions.h"
 #import "UITableViewCell+FKLoading.h"
 #import "UIView+FKAdditions.h"
 #import "UIView+FKAnimations.h"

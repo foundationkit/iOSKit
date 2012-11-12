@@ -97,6 +97,8 @@
 		9B82D41A1557217D00D01584 /* UIView+FKNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B82D4181557217D00D01584 /* UIView+FKNoise.m */; };
 		9B82D42A155724C800D01584 /* UIView+FKInnerShadow.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B82D428155724C800D01584 /* UIView+FKInnerShadow.h */; };
 		9B82D42B155724C800D01584 /* UIView+FKInnerShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B82D429155724C800D01584 /* UIView+FKInnerShadow.m */; };
+		9B8D782316514AA200FE2ECC /* UITableViewCell+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B8D782116514AA200FE2ECC /* UITableViewCell+FKAdditions.h */; };
+		9B8D782416514AA200FE2ECC /* UITableViewCell+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D782216514AA200FE2ECC /* UITableViewCell+FKAdditions.m */; };
 		9BBA863015DAD8F000A99D13 /* NSIndexSet+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBA862E15DAD8F000A99D13 /* NSIndexSet+FKAdditions.h */; };
 		9BBA863115DAD8F000A99D13 /* NSIndexSet+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBA862F15DAD8F000A99D13 /* NSIndexSet+FKAdditions.m */; };
 		9BBBF401143AF00D00071ABD /* UIButton+FKConcise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBBF3FF143AF00D00071ABD /* UIButton+FKConcise.h */; };
@@ -239,6 +241,8 @@
 		9B82D4181557217D00D01584 /* UIView+FKNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKNoise.m"; path = "UIKit/UIView+FKNoise.m"; sourceTree = "<group>"; };
 		9B82D428155724C800D01584 /* UIView+FKInnerShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKInnerShadow.h"; path = "UIKit/UIView+FKInnerShadow.h"; sourceTree = "<group>"; };
 		9B82D429155724C800D01584 /* UIView+FKInnerShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+FKInnerShadow.m"; path = "UIKit/UIView+FKInnerShadow.m"; sourceTree = "<group>"; };
+		9B8D782116514AA200FE2ECC /* UITableViewCell+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+FKAdditions.h"; path = "UIKit/UITableViewCell+FKAdditions.h"; sourceTree = "<group>"; };
+		9B8D782216514AA200FE2ECC /* UITableViewCell+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+FKAdditions.m"; path = "UIKit/UITableViewCell+FKAdditions.m"; sourceTree = "<group>"; };
 		9BBA862E15DAD8F000A99D13 /* NSIndexSet+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSIndexSet+FKAdditions.h"; path = "TableView/NSIndexSet+FKAdditions.h"; sourceTree = "<group>"; };
 		9BBA862F15DAD8F000A99D13 /* NSIndexSet+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSIndexSet+FKAdditions.m"; path = "TableView/NSIndexSet+FKAdditions.m"; sourceTree = "<group>"; };
 		9BBBF3FF143AF00D00071ABD /* UIButton+FKConcise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+FKConcise.h"; sourceTree = "<group>"; };
@@ -447,6 +451,8 @@
 				3931206F1428AF010095D5ED /* UITableView+FKLoading.m */,
 				3931206A1428AD6B0095D5ED /* UITableViewCell+FKLoading.h */,
 				3931206B1428AD6B0095D5ED /* UITableViewCell+FKLoading.m */,
+				9B8D782116514AA200FE2ECC /* UITableViewCell+FKAdditions.h */,
+				9B8D782216514AA200FE2ECC /* UITableViewCell+FKAdditions.m */,
 				39CFA60B1422437300DC3E57 /* UIView+FKAdditions.h */,
 				39CFA60C1422437400DC3E57 /* UIView+FKAdditions.m */,
 				39CFA60F14224AF400DC3E57 /* UIView+FKAnimations.h */,
@@ -605,6 +611,7 @@
 				9B82D4191557217D00D01584 /* UIView+FKNoise.h in Headers */,
 				9B82D42A155724C800D01584 /* UIView+FKInnerShadow.h in Headers */,
 				9BBA863015DAD8F000A99D13 /* NSIndexSet+FKAdditions.h in Headers */,
+				9B8D782316514AA200FE2ECC /* UITableViewCell+FKAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,6 +740,7 @@
 				9B82D41A1557217D00D01584 /* UIView+FKNoise.m in Sources */,
 				9B82D42B155724C800D01584 /* UIView+FKInnerShadow.m in Sources */,
 				9BBA863115DAD8F000A99D13 /* NSIndexSet+FKAdditions.m in Sources */,
+				9B8D782416514AA200FE2ECC /* UITableViewCell+FKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
