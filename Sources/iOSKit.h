@@ -42,6 +42,7 @@
 #import "UIColor+FKAdditions.h"
 #import "UIDevice+FKAdditions.h"
 #import "UIImage+FKAdditions.h"
+#import "UIImage+FKBlockDrawing.h"
 #import "UIImageView+FKAdditions.h"
 #import "UINavigationController+FKAppearance.h"
 #import "UIScreen+FKAdditions.h"
