@@ -132,6 +132,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[self stopLoading];
+    [self.actionSheet dismissWithClickedButtonIndex:-1 animated:NO];
 
 	[super viewWillDisappear:animated];
 }
