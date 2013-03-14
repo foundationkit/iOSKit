@@ -39,6 +39,7 @@
 // UIKit
 #import "UIApplication+FKAdditions.h"
 #import "UIApplication+FKNetwork.h"
+#import "UIBezierPath+FKDescription.h"
 #import "UIColor+FKAdditions.h"
 #import "UIDevice+FKAdditions.h"
 #import "UIImage+FKAdditions.h"
