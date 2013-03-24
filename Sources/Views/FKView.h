@@ -26,4 +26,7 @@ typedef void (^fk_draw_block)(UIView *view, CGContextRef context);
  */
 + (id)viewWithFrame:(CGRect)frame drawingBlock:(fk_draw_block)block;
 
+// Subclasses can override
++ (NSSet *)keyPathsForValuesAffectingDrawRect;
++ (NSSet *)keyPathsForValuesAffectingLayoutSubviews;
 @end
