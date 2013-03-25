@@ -1,5 +1,5 @@
 #import "UINavigationController+FKAppearance.h"
-#import "FKCompatibility.h"
+
 
 static NSMutableArray *appearanceStack = nil;
 
@@ -39,7 +39,7 @@ static NSMutableArray *appearanceStack = nil;
     if (appearanceStack == nil) {
         appearanceStack = [[NSMutableArray alloc] init];
     }
-    
+
     FKAppearanceSnapshot *snapshot = [FKAppearanceSnapshot snapshotFromNavigationController:self];
     [appearanceStack addObject:snapshot];
 }
@@ -50,13 +50,13 @@ static NSMutableArray *appearanceStack = nil;
 
 - (void)popAppearanceStyleAnimated:(BOOL)animated {
     FKAssert([UINavigationController appearanceStyleCount] > 0, @"There is no appearance snapshot to pop.");
-    
+
     if ([UINavigationController appearanceStyleCount] > 0) {
         FKAppearanceSnapshot *snapshot = [appearanceStack firstObject];
         [snapshot applyToNavigationController:self animated:animated];
         [appearanceStack removeObject:snapshot];
     }
-    
+
     if ([UINavigationController appearanceStyleCount] == 0) {
         appearanceStack = nil;
     }
@@ -69,36 +69,29 @@ static NSMutableArray *appearanceStack = nil;
 
 + (FKAppearanceSnapshot *)snapshotFromNavigationController:(UINavigationController *)navigationController {
     FKAppearanceSnapshot *snapshot = [[FKAppearanceSnapshot alloc] init];
-    
+
     snapshot->navigationBarTranslucent = navigationController.navigationBar.translucent;
     snapshot->navigationBarHidden = navigationController.navigationBarHidden;
     snapshot->navigationBarStyle = navigationController.navigationBar.barStyle;
     snapshot->statusBarStyle = [UIApplication sharedApplication].statusBarStyle;
     snapshot->navigationBarTintColor = navigationController.navigationBar.tintColor;
-    
-    IF_IOS5_OR_GREATER
-    (
-     snapshot->backgroundImageDefault = [navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault];
-     snapshot->backgroundImageLandscape = [navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsLandscapePhone];
-     snapshot->titleTextAttributes = navigationController.navigationBar.titleTextAttributes;
-     )
-    
+    snapshot->backgroundImageDefault = [navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsDefault];
+    snapshot->backgroundImageLandscape = [navigationController.navigationBar backgroundImageForBarMetrics:UIBarMetricsLandscapePhone];
+    snapshot->titleTextAttributes = navigationController.navigationBar.titleTextAttributes;
+
     return snapshot;
 }
 
 - (void)applyToNavigationController:(UINavigationController *)navigationController animated:(BOOL)animated {
     [[UIApplication sharedApplication] setStatusBarStyle:self->statusBarStyle animated:animated];
+
     navigationController.navigationBarHidden = self->navigationBarHidden;
     navigationController.navigationBar.barStyle = self->navigationBarStyle;
     navigationController.navigationBar.translucent = self->navigationBarTranslucent;
     navigationController.navigationBar.tintColor = self->navigationBarTintColor;
-    
-    IF_IOS5_OR_GREATER
-    (
-     [navigationController.navigationBar setBackgroundImage:self->backgroundImageDefault forBarMetrics:UIBarMetricsDefault];
-     [navigationController.navigationBar setBackgroundImage:self->backgroundImageLandscape forBarMetrics:UIBarMetricsLandscapePhone];
-     [navigationController.navigationBar setTitleTextAttributes:self->titleTextAttributes];
-     )
+    [navigationController.navigationBar setBackgroundImage:self->backgroundImageDefault forBarMetrics:UIBarMetricsDefault];
+    [navigationController.navigationBar setBackgroundImage:self->backgroundImageLandscape forBarMetrics:UIBarMetricsLandscapePhone];
+    [navigationController.navigationBar setTitleTextAttributes:self->titleTextAttributes];
 }
 
 @end

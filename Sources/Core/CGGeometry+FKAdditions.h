@@ -15,13 +15,6 @@ NS_INLINE CGRect FKRectWithClearedOrigin(CGRect rect) {
 }
 
 /**
- Applys UIEdgeInsets to a CGRect.
- */
-NS_INLINE CGRect FKRectInset(CGRect rect, UIEdgeInsets insets) {
-    return UIEdgeInsetsInsetRect(rect, insets);
-}
-
-/**
  Sets a new value for origin.x, leaves all other values unchanged.
  */
 NS_INLINE CGRect FKRectSetX(CGRect rect, CGFloat x) {
@@ -61,13 +54,6 @@ NS_INLINE CGRect FKRectSetOrigin(CGRect rect, CGPoint origin) {
  */
 NS_INLINE CGRect FKRectSetSize(CGRect rect, CGSize size) {
 	return CGRectMake(rect.origin.x, rect.origin.y, size.width, size.height);
-}
-
-/**
- Translates the origin of a rect by creating a new origin (origin.x+point.x, origin.y+point.y)
- */
-NS_INLINE CGRect FKRectAddPoint(CGRect rect, CGPoint point) {
-	return CGRectMake(rect.origin.x + point.x, rect.origin.y + point.y, rect.size.width, rect.size.height);
 }
 
 /**

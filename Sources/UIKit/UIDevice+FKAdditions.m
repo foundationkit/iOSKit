@@ -47,7 +47,6 @@ FKLoadCategory(UIDeviceFKAdditions);
     NSString *appShortVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]; 
     NSString *iphoneOSVersion = self.systemVersion;
     NSString *deviceType = self.hardwarePlatform;
-    NSString *deviceUUID = [self respondsToSelector:@selector(uniqueIdentifier)] ? self.uniqueIdentifier : @"UDID Not Supported anymore";
     NSString *deviceLang = [[NSLocale preferredLanguages] objectAtIndex:0];
     NSString *appPirated = [UIApplication sharedApplication].pirated ? @"\n-- POSSIBLY PIRATED --" : @"";
     
@@ -55,8 +54,8 @@ FKLoadCategory(UIDeviceFKAdditions);
         deviceType = [NSString stringWithFormat:@"%@ (Possibly Jailbroken)", deviceType];
     }
     
-    return [NSString stringWithFormat:@"%@ %@ %@\niOS: %@\nDevice: %@\nUUID: %@\nLang: %@%@", 
-            appName, appVersion, (appShortVersion ? appShortVersion : @""), iphoneOSVersion, deviceType, deviceUUID, deviceLang, appPirated];
+    return [NSString stringWithFormat:@"%@ %@ %@\niOS: %@\nDevice: %@\nLang: %@%@", 
+            appName, appVersion, (appShortVersion ? appShortVersion : @""), iphoneOSVersion, deviceType, deviceLang, appPirated];
 }
 
 - (NSString *)hardwarePlatform {

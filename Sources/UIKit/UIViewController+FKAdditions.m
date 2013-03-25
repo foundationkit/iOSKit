@@ -17,43 +17,6 @@ FKLoadCategory(UIViewControllerFKAdditions);
     return [self isViewLoaded] && self.view.window != nil;
 }
 
-- (void)displayDebugError:(NSError *)error {
-#ifdef FK_DEBUG
-	if (error == nil) {
-		return;
-	}
-    
-    UIAlertView *alertView = [UIAlertView alertViewWithError:error];
-    [alertView show];
-#endif
-}
-
-- (void)displayDetailedDebugError:(NSError *)error {
-#ifdef FK_DEBUG
-	if (error == nil) {
-		return;
-	}
-    
-    UIAlertView *alertView = [UIAlertView alertViewWithDetailedError:error];
-    [alertView show];
-#endif
-}
-
-- (void)displayDebugErrorString:(NSString *)string {
-#ifdef FK_DEBUG
-	if (string == nil || [string isBlank]) {
-		return;
-	}
-    
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" 
-                                                    message:string 
-                                                   delegate:nil 
-                                          cancelButtonTitle:@"OK" 
-                                          otherButtonTitles:nil];
-	[alert show];
-#endif
-}
-
 - (id)currentVisibleViewController {
     if ([self isKindOfClass:[UITabBarController class]]) {
         UITabBarController *tabBarController = (UITabBarController *)self;

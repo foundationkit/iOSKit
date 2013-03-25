@@ -29,30 +29,6 @@
 + (id)viewControllerFromSelfNamedNib;
 
 /**
- This method is for testing purposes only. If we are in debug-mode it displays 
- a UIAlertView with a short description of the given error, nothing otherwise.
- 
- @param error the error to display
- */
-- (void)displayDebugError:(NSError *)error;
-
-/**
- This method is for testing purposes only. If we are in debug-mode it displays 
- a UIAlertView with a detailed description of the given error, nothing otherwise.
- 
- @param error the error to display
- */
-- (void)displayDetailedDebugError:(NSError *)error;
-
-/**
- This method is for testing purposes only, it displays a UIAlertView with
- the given error-string, if we are in Debug-Mode and does nothing otherwise.
- 
- @param string the error string to display
- */
-- (void)displayDebugErrorString:(NSString *)string;
-
-/**
  Returns the currently visible viewController. If the viewController this method gets called on is
  a UITabBarController it returns the currently selected viewController, if the viewController is a
  UINavigationController is returns the topmost viewController in the navigation-stack. If the viewController

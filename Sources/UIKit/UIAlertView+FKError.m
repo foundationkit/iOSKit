@@ -5,7 +5,7 @@ FKLoadCategory(UIAlertViewFKError);
 @implementation UIAlertView (FKError)
 
 + (UIAlertView *)alertViewWithError:(NSError *)error {
-    return [[UIAlertView alloc] initWithTitle:$str(@"Error: %@",error.domain)
+    return [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Error: %@",error.domain]
                                       message:[error localizedDescription]
                                      delegate:nil 
                             cancelButtonTitle:@"OK" 
