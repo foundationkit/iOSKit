@@ -33,6 +33,7 @@
 #import "NSIndexSet+FKAdditions.h"
 
 // UIKit
+#import "UIAlertView+FKError.h"
 #import "UIApplication+FKAdditions.h"
 #import "UIBezierPath+FKDescription.h"
 #import "UIColor+FKAdditions.h"
