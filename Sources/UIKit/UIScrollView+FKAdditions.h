@@ -10,6 +10,8 @@
 
 @interface UIScrollView (FKAdditions)
 
+@property (nonatomic, readonly, getter = isAtBottom) BOOL atBottom;
+
 /** The currently visible Rect of the scrollView */
 @property (nonatomic, readonly) CGRect visibleRect;
 

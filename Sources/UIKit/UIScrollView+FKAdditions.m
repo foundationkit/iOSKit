@@ -4,6 +4,10 @@ FKLoadCategory(UIScrollViewFKAdditions);
 
 @implementation UIScrollView (FKAdditions)
 
+- (BOOL)isAtBottom {
+    return self.contentOffset.y + self.frame.size.height >= self.contentSize.height;
+}
+
 - (CGRect)visibleRect {
     CGRect visibleRect = (CGRect){.origin = self.contentOffset, .size = self.bounds.size};
     float theScale = 1.f / self.zoomScale;
