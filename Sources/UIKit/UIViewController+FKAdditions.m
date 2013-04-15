@@ -29,19 +29,21 @@ FKLoadCategory(UIViewControllerFKAdditions);
     return self;
 }
 
-- (void)addChildViewController:(UIViewController *)childController andRemoveOldChildViewController:(UIViewController *)oldChildController {
+- (void)addChildViewController:(UIViewController *)childController andRemoveOldChildViewController:(UIViewController *)oldChildController callAppearanceMethods:(BOOL)callAppearanceMethods {
     if (childController != oldChildController && childController.parentViewController != self) {
         // Remove old childVC
+        if (callAppearanceMethods) [oldChildController beginAppearanceTransition:NO animated:NO];
         [oldChildController willMoveToParentViewController:nil];
         [oldChildController.view removeFromSuperview];
         [oldChildController removeFromParentViewController];
+        if (callAppearanceMethods) [oldChildController endAppearanceTransition];
 
         // Add new childVC
+        if (callAppearanceMethods) [childController beginAppearanceTransition:YES animated:NO];
         [self addChildViewController:childController];
-
-        // Add view to hierarchy
         [self.view addSubview:childController.view];
         [childController didMoveToParentViewController:self];
+        if (callAppearanceMethods) [childController endAppearanceTransition];
     }
 }
 

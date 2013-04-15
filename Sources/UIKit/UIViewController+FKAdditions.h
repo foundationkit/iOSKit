@@ -41,6 +41,6 @@
 /**
  Shortcut method for iOS ViewController containment API
  */
-- (void)addChildViewController:(UIViewController *)childController andRemoveOldChildViewController:(UIViewController *)oldChildController;
+- (void)addChildViewController:(UIViewController *)childController andRemoveOldChildViewController:(UIViewController *)oldChildController callAppearanceMethods:(BOOL)callAppearanceMethods;
 
 @end
