@@ -10,9 +10,9 @@ FKLoadCategory(UIViewFKAnimations);
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:duration];
 	[UIView setAnimationTransition:transition forView:self.superview cache:YES];
-    
+
 	[self removeFromSuperview];
-    
+
 	[UIView commitAnimations];
 }
 
@@ -20,15 +20,15 @@ FKLoadCategory(UIViewFKAnimations);
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:duration];
 	[UIView setAnimationTransition:transition forView:self cache:YES];
-    
+
 	[self addSubview:view];
-    
+
 	[UIView commitAnimations];
 }
 
 - (void)setFrame:(CGRect)frame duration:(NSTimeInterval)duration {
     [UIView animateWithDuration:duration
-                          delay:0.0 
+                          delay:0.0
                         options:UIViewAnimationOptionAllowUserInteraction
                      animations:^{
                          self.frame = frame;
@@ -36,12 +36,14 @@ FKLoadCategory(UIViewFKAnimations);
 }
 
 - (void)setAlpha:(CGFloat)alpha duration:(NSTimeInterval)duration {
-    [UIView animateWithDuration:duration
-                          delay:0.0 
-                        options:UIViewAnimationOptionAllowUserInteraction
-                     animations:^{
-                         self.alpha = alpha;
-                     } completion:nil];
+    if (ABS(self.alpha - alpha) > 0.00001f) {
+        [UIView animateWithDuration:duration
+                              delay:0.0
+                            options:UIViewAnimationOptionAllowUserInteraction
+                         animations:^{
+                             self.alpha = alpha;
+                         } completion:nil];
+    }
 }
 
 - (void)fadeIn {
@@ -54,8 +56,8 @@ FKLoadCategory(UIViewFKAnimations);
 
 - (void)fadeOutAndRemoveFromSuperview {
 	[UIView animateWithDuration:kFKFadeDuration
-                          delay:0.0 
-                        options:UIViewAnimationOptionAllowUserInteraction 
+                          delay:0.0
+                        options:UIViewAnimationOptionAllowUserInteraction
                      animations:^{
                          self.alpha = 0.0f;
                      } completion:^(BOOL finished) {

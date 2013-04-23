@@ -26,4 +26,14 @@
  @param shadowsHidden If YES, the view-hierarchy gets traversed and all shadows get hidden. Otherwise they are shown.
  */
 - (void)setShadowsHidden:(BOOL)shadowsHidden;
+
+/**
+ Sets the width by using the meta tag.
+ 
+ <meta name="viewport" content="width=%@" />
+ 
+ @param width the width to set or the viewport
+ */
+- (void)setViewportWidth:(CGFloat)width;
+
 @end
