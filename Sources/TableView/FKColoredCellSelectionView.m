@@ -1,7 +1,7 @@
 #import "FKColoredCellSelectionView.h"
 #import "FKiOSDrawing.h"
 
-#define kFKDefaultMargin        10.f
+#define kFKDefaultMargin        8.f
 
 @implementation FKColoredCellSelectionView
 
@@ -40,7 +40,7 @@
 - (void)drawRect:(CGRect)aRect {
 	CGContextRef c = UIGraphicsGetCurrentContext();
 	CGRect rect = self.bounds;
-	CGFloat minx = CGRectGetMinX(rect) + 1.f;
+	CGFloat minx = CGRectGetMinX(rect);
     CGFloat midx = CGRectGetMidX(rect);
     CGFloat maxx = CGRectGetMaxX(rect);
 	CGFloat miny = CGRectGetMinY(rect);
@@ -170,7 +170,7 @@
 - (void)updatePositionForTableView:(UITableView *)tableView indexPath:(NSIndexPath *)indexPath {
     NSInteger sectionRows = [tableView numberOfRowsInSection:indexPath.section];
     NSInteger row = indexPath.row;
-    
+
     // first and last row?
     if (row == 0 && row == sectionRows - 1) {
         [self setPosition:FKColoredCellSelectionViewPositionSingle];
