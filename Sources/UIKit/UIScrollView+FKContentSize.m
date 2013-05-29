@@ -7,7 +7,6 @@ FKLoadCategory(UIScrollViewFKContentSize);
 #define kFKDefaultPadding 2.f
 
 
-BOOL FKViewIsScrollIndicator(UIView *view);
 BOOL FKViewUseForAutocalculation(UIView *view);
 CGPoint FKGetMaxPositions(UIScrollView *scrollView);
 

@@ -23,3 +23,6 @@
 - (void)autocalculateContentSizeWithPadding:(CGSize)padding;
 
 @end
+
+
+BOOL FKViewIsScrollIndicator(UIView *view);

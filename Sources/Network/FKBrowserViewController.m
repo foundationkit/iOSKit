@@ -389,12 +389,27 @@
     UIBarButtonItem *fixedSpaceItem = [UIBarButtonItem spaceItemWithWidth:kFKBrowserFixedSpaceItemWidth];
     UIBarButtonItem *flexibleSpaceItem = [UIBarButtonItem flexibleSpaceItem];
 
+    BOOL showActionItem = ![self.address isEqualToString:@"about:blank"] || self.customActions.count > 0;
+
     if (self.hasToolbar) {
-        self.toolbar.items = @[fixedSpaceItem, self.backItem, flexibleSpaceItem, self.forwardItem, flexibleSpaceItem,
-                                    self.loadItem, flexibleSpaceItem, self.actionItem, fixedSpaceItem];
+        NSMutableArray *items = [NSMutableArray arrayWithArray:@[fixedSpaceItem, self.backItem, flexibleSpaceItem, self.forwardItem, flexibleSpaceItem, self.loadItem, flexibleSpaceItem]];
+        if (showActionItem) {
+            [items addObject:self.actionItem];
+            [items addObject:fixedSpaceItem];
+        }
+        self.toolbar.items = items;
     } else {
         UIBarButtonItem *widerFixedSpaceItem = [UIBarButtonItem spaceItemWithWidth:35.f];
-        [self.navigationItem setRightBarButtonItems:@[self.actionItem, widerFixedSpaceItem, self.loadItem, widerFixedSpaceItem, self.forwardItem, widerFixedSpaceItem, self.backItem, fixedSpaceItem]];
+        NSMutableArray *items = [NSMutableArray arrayWithArray:@[self.loadItem, widerFixedSpaceItem,
+                                 self.forwardItem, widerFixedSpaceItem,
+                                 self.backItem, fixedSpaceItem]];
+
+        if (showActionItem) {
+            [items insertObject:widerFixedSpaceItem atIndex:0];
+            [items insertObject:self.actionItem atIndex:0];
+        }
+
+        [self.navigationItem setRightBarButtonItems:items];
     }
 }
 
