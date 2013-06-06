@@ -21,6 +21,7 @@
 @property (nonatomic, strong, readonly) UIActivityIndicatorView *activityView;
 
 - (void)showLoadingIndicator;
+- (void)showLoadingIndicatorWithColor:(UIColor *)color;
 - (void)hideLoadingIndicator;
 
 @end

@@ -72,15 +72,10 @@ NS_INLINE CGPoint FKRectCenter(CGRect rect) {
  */
 NS_INLINE CGSize FKSizeAspectScaleToSize(CGSize size, CGSize toSize) {
 	CGFloat aspect = 1.f;
-    
-	if (size.width > toSize.width) {
-		aspect = toSize.width / size.width;
-	}
-    
-	if (size.height > toSize.height) {
-		aspect = MIN(toSize.height / size.height, aspect);
-	}
-    
+
+	aspect = toSize.width / size.width;
+	aspect = MIN(toSize.height / size.height, aspect);
+
 	return CGSizeMake(size.width * aspect, size.height * aspect);
 }
 

@@ -30,6 +30,11 @@ static char previousAccessoryKey;
     self.accessoryView = self.activityView;
 }
 
+- (void)showLoadingIndicatorWithColor:(UIColor *)color {
+    [self showLoadingIndicator];
+    self.activityView.color = color;
+}
+
 - (void)hideLoadingIndicator {
     if (self.activityView != nil) {
         [self.activityView stopAnimating];
