@@ -1,10 +1,11 @@
 #import "UIViewController+FKLoading.h"
 #import "NSObject+FKReflection.h"
 
+
 FKLoadCategory(UIViewControllerFKLoading);
 
-
 #define kFKActivityViewMaxSize      37.f
+
 
 static char activityViewKey;
 static char replacedObjectKey;
@@ -12,12 +13,14 @@ static char replacedObjectKey;
 static CGRect FKCenteredSquareInRectConstrainedToSize(CGRect rect, CGFloat size);
 static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView *activityView);
 
+
 @interface UIViewController ()
 
 @property (nonatomic, strong, readwrite) UIActivityIndicatorView *activityView;
 @property (nonatomic, strong) id fk_replacedObject;
 
 @end
+
 
 @implementation UIViewController (FKLoading)
 
@@ -77,7 +80,9 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     // TODO: Resizing currently seems broken in iOS 5, we maybe have to roll our own activityIndicatorView
     activityView.frame = FKCenteredSquareInRectConstrainedToSize(viewToReplace.frame, kFKActivityViewMaxSize);
     activityView.autoresizingMask = viewToReplace.autoresizingMask;
-    
+
+    FKAssert(viewToReplace.metaData == nil, @"View MetaData is already set, will loose it");
+    viewToReplace.metaData = @(viewToReplace.hidden);
     viewToReplace.hidden = YES;
     self.fk_replacedObject = viewToReplace;
     
@@ -150,7 +155,11 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     
     // ActivityView was displayed instead of another view
     else if ([replacedObject isKindOfClass:[UIView class]]) {
-        [replacedObject setHidden:NO];
+        BOOL hiddenBefore = [[replacedObject metaData] boolValue];
+        if (!hiddenBefore) {
+            [replacedObject setHidden:NO];
+        }
+        [replacedObject setMetaData:nil];
     }
     
     [activityView stopAnimating];

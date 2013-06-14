@@ -14,6 +14,8 @@
 
 @interface FKNetworkActivityManager : NSObject
 
++ (NSUInteger)numberOfNetworkUsers;
+
 /**
  Adds a network user to the counting proxy. After this method is called with a networkUser != nil,
  the network activity indicator is shown.

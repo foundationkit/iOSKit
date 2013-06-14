@@ -24,6 +24,15 @@ NS_INLINE void FKUpdateNetworkActivityIndicatorVisibility() {
     }
 }
 
++ (NSUInteger)numberOfNetworkUsers {
+    __block NSUInteger count = 0;
+    dispatch_sync(network_queue(), ^{
+        count = networkUsers.count;
+    });
+
+    return count;
+}
+
 + (void)addNetworkUser:(id)networkUser {
     if (networkUser != nil) {
         dispatch_async(network_queue(), ^{
