@@ -25,25 +25,29 @@ FKLoadCategory(UIViewControllerFKAdditions);
         UINavigationController *navigationController = (UINavigationController *)self;
         return [[navigationController visibleViewController] currentVisibleViewController];
     }
-    
+
     return self;
 }
 
 - (void)addChildViewController:(UIViewController *)childController andRemoveOldChildViewController:(UIViewController *)oldChildController callAppearanceMethods:(BOOL)callAppearanceMethods {
     if (childController != oldChildController && childController.parentViewController != self) {
         // Remove old childVC
-        if (callAppearanceMethods) [oldChildController beginAppearanceTransition:NO animated:NO];
-        [oldChildController willMoveToParentViewController:nil];
-        [oldChildController.view removeFromSuperview];
-        [oldChildController removeFromParentViewController];
-        if (callAppearanceMethods) [oldChildController endAppearanceTransition];
+        if (oldChildController != nil) {
+            if (callAppearanceMethods) [oldChildController beginAppearanceTransition:NO animated:NO];
+            [oldChildController willMoveToParentViewController:nil];
+            [oldChildController.view removeFromSuperview];
+            [oldChildController removeFromParentViewController];
+            if (callAppearanceMethods) [oldChildController endAppearanceTransition];
+        }
 
         // Add new childVC
-        if (callAppearanceMethods) [childController beginAppearanceTransition:YES animated:NO];
-        [self addChildViewController:childController];
-        [self.view addSubview:childController.view];
-        [childController didMoveToParentViewController:self];
-        if (callAppearanceMethods) [childController endAppearanceTransition];
+        if (childController != nil) {
+            if (callAppearanceMethods) [childController beginAppearanceTransition:YES animated:NO];
+            [self addChildViewController:childController];
+            [self.view addSubview:childController.view];
+            [childController didMoveToParentViewController:self];
+            if (callAppearanceMethods) [childController endAppearanceTransition];
+        }
     }
 }
 
