@@ -3,4 +3,4 @@
 #import <UIKit/UIKit.h>
 
 
-CGPoint FKCentroidOfTouchesInView(NSArray *touches, UIView *view);
+CGPoint FKCentroidOfTouchesInView(NSSet *touches, UIView *view);
