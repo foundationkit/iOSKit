@@ -64,6 +64,8 @@
 		9B0B571614A6AD550071B6D2 /* UIView+FKAutoresizing.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B0B571514A6AD550071B6D2 /* UIView+FKAutoresizing.h */; };
 		9B16CE4A1477D26B007BDACD /* FKShadowedTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B16CE481477D26B007BDACD /* FKShadowedTableView.h */; };
 		9B16CE4B1477D26B007BDACD /* FKShadowedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B16CE491477D26B007BDACD /* FKShadowedTableView.m */; };
+		9B30EEE31778753F00056297 /* UITouch+FKCentroid.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B30EEE11778753E00056297 /* UITouch+FKCentroid.h */; };
+		9B30EEE41778753F00056297 /* UITouch+FKCentroid.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B30EEE21778753F00056297 /* UITouch+FKCentroid.m */; };
 		9B45437914953EF90076A950 /* FKView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B45437714953EF90076A950 /* FKView.h */; };
 		9B45437A14953EF90076A950 /* FKView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45437814953EF90076A950 /* FKView.m */; };
 		9B513470145E003900BC3DC5 /* FKColoredCellSelectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B51346E145E003900BC3DC5 /* FKColoredCellSelectionView.h */; };
@@ -200,6 +202,8 @@
 		9B0B571514A6AD550071B6D2 /* UIView+FKAutoresizing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+FKAutoresizing.h"; path = "UIKit/UIView+FKAutoresizing.h"; sourceTree = "<group>"; };
 		9B16CE481477D26B007BDACD /* FKShadowedTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKShadowedTableView.h; path = TableView/FKShadowedTableView.h; sourceTree = "<group>"; };
 		9B16CE491477D26B007BDACD /* FKShadowedTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKShadowedTableView.m; path = TableView/FKShadowedTableView.m; sourceTree = "<group>"; };
+		9B30EEE11778753E00056297 /* UITouch+FKCentroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITouch+FKCentroid.h"; path = "UIKit/UITouch+FKCentroid.h"; sourceTree = "<group>"; };
+		9B30EEE21778753F00056297 /* UITouch+FKCentroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITouch+FKCentroid.m"; path = "UIKit/UITouch+FKCentroid.m"; sourceTree = "<group>"; };
 		9B45437714953EF90076A950 /* FKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKView.h; path = Views/FKView.h; sourceTree = "<group>"; };
 		9B45437814953EF90076A950 /* FKView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKView.m; path = Views/FKView.m; sourceTree = "<group>"; };
 		9B51346E145E003900BC3DC5 /* FKColoredCellSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKColoredCellSelectionView.h; path = TableView/FKColoredCellSelectionView.h; sourceTree = "<group>"; };
@@ -435,6 +439,8 @@
 				9B8D782216514AA200FE2ECC /* UITableViewCell+FKAdditions.m */,
 				3931206A1428AD6B0095D5ED /* UITableViewCell+FKLoading.h */,
 				3931206B1428AD6B0095D5ED /* UITableViewCell+FKLoading.m */,
+				9B30EEE11778753E00056297 /* UITouch+FKCentroid.h */,
+				9B30EEE21778753F00056297 /* UITouch+FKCentroid.m */,
 				39CFA60B1422437300DC3E57 /* UIView+FKAdditions.h */,
 				39CFA60C1422437400DC3E57 /* UIView+FKAdditions.m */,
 				39CFA60F14224AF400DC3E57 /* UIView+FKAnimations.h */,
@@ -573,6 +579,7 @@
 				9B8D782316514AA200FE2ECC /* UITableViewCell+FKAdditions.h in Headers */,
 				9B8D7841165151EB00FE2ECC /* UIImage+FKBlockDrawing.h in Headers */,
 				9BB4A6AB16F1F60C0001EC76 /* UIBezierPath+FKDescription.h in Headers */,
+				9B30EEE31778753F00056297 /* UITouch+FKCentroid.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,7 +610,7 @@
 		39F5165613C8E3F2008A9732 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "NOUS Wissensmanagement GmbH";
 			};
 			buildConfigurationList = 39F5165913C8E3F2008A9732 /* Build configuration list for PBXProject "iOSKit" */;
@@ -701,6 +708,7 @@
 				9B8D782416514AA200FE2ECC /* UITableViewCell+FKAdditions.m in Sources */,
 				9B8D7842165151EB00FE2ECC /* UIImage+FKBlockDrawing.m in Sources */,
 				9BB4A6AC16F1F60C0001EC76 /* UIBezierPath+FKDescription.m in Sources */,
+				9B30EEE41778753F00056297 /* UITouch+FKCentroid.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,7 +727,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -744,9 +751,11 @@
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "FoundationKit/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -755,7 +764,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -773,6 +781,7 @@
 				GCC_WARN_SHADOW = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "FoundationKit/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;

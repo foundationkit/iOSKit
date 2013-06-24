@@ -48,6 +48,7 @@
 #import "UITableView+FKLoading.h"
 #import "UITableViewCell+FKAdditions.h"
 #import "UITableViewCell+FKLoading.h"
+#import "UITouch+FKCentroid.h"
 #import "UIView+FKAdditions.h"
 #import "UIView+FKAnimations.h"
 #import "UIView+FKAutoresizing.h"
