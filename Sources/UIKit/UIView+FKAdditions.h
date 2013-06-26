@@ -125,6 +125,11 @@ typedef enum {
  */
 - (void)positionNextToView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment;
 
+- (void)positionToLeftOfView:(UIView *)view;
+- (void)positionToLeftOfView:(UIView *)view padding:(CGFloat)padding;
+- (void)positionToLeftOfView:(UIView *)view alignment:(FKUIViewAlignment)alignment;
+- (void)positionToLeftOfView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment;
+
 /**
  Adds the subview to current view and centers it
  @param subview the view to add as centered subview

@@ -194,6 +194,43 @@ FKLoadCategory(UIViewFKAdditions);
 	}
 }
 
+- (void)positionToLeftOfView:(UIView *)view {
+	[self positionToLeftOfView:view padding:0.f];
+}
+
+- (void)positionToLeftOfView:(UIView *)view padding:(CGFloat)padding {
+	[self positionToLeftOfView:view padding:padding alignment:FKUIViewAlignmentUnchanged];
+}
+
+- (void)positionToLeftOfView:(UIView *)view alignment:(FKUIViewAlignment)alignment {
+	[self positionNextToView:view padding:0.f alignment:alignment];
+}
+
+- (void)positionToLeftOfView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment {
+	self.frameRight = view.frameLeft - padding;
+
+	switch (alignment) {
+		case FKUIViewAlignmentTopAligned:
+			self.frameTop = view.frameTop;
+			break;
+
+		case FKUIViewAlignmentBottomAligned:
+			self.frameBottom = view.frameBottom;
+			break;
+
+		case FKUIViewAlignmentCentered:
+			self.centerY = view.centerY;
+			break;
+
+        case FKUIViewAlignmentUnchanged:
+        case FKUIViewAlignmentLeftAligned:
+        case FKUIViewAlignmentRightAligned:
+        default:
+			// do nothing
+			break;
+	}
+}
+
 - (void)addCenteredSubview:(UIView *)subview {
 	[self addSubview:subview];
     [subview moveToCenterOfSuperview];
