@@ -62,6 +62,7 @@ FKLoadCategory(UIViewFKAnimations);
                          self.alpha = 0.0f;
                      } completion:^(BOOL finished) {
                          [self removeFromSuperview];
+                         self.alpha = 1.f;
                      }];
 }
 
