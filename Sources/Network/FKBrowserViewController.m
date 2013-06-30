@@ -24,12 +24,11 @@
 @property (nonatomic, strong, readwrite) UIToolbar *toolbar;
 @property (nonatomic, strong, readwrite) UIWebView *webView;
 
-@property (nonatomic, strong) UIBarButtonItem *backItem;
-@property (nonatomic, strong) UIBarButtonItem *forwardItem;
-@property (nonatomic, strong) UIBarButtonItem *loadItem;
-@property (nonatomic, strong) UIBarButtonItem *actionItem;
-
-@property (nonatomic, strong) UIActionSheet *actionSheet;
+@property (nonatomic, readwrite) UIBarButtonItem *backItem;
+@property (nonatomic, readwrite) UIBarButtonItem *forwardItem;
+@property (nonatomic, readwrite) UIBarButtonItem *loadItem;
+@property (nonatomic, readwrite) UIBarButtonItem *actionItem;
+@property (nonatomic, readwrite) UIActionSheet *actionSheet;
 
 @property (nonatomic, strong) NSMutableArray *customActions;
 
@@ -110,18 +109,6 @@
     [self layoutForOrientation:$appOrientation];
     [self customize];
 	[self reload];
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-
-    self.webView.delegate = nil;
-	self.webView = nil;
-    self.toolbar = nil;
-	self.backItem = nil;
-	self.forwardItem = nil;
-	self.loadItem = nil;
-	self.actionItem = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -317,9 +304,18 @@
 ////////////////////////////////////////////////////////////////////////
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSInteger customActionsBeginIndex = [MFMailComposeViewController canSendMail] ? 2 : 1;
+    NSInteger customActionsBeginIndex = [self hasValidAddress] ? ([MFMailComposeViewController canSendMail] ? 2 : 1) : 0;
 
-    if (buttonIndex == 0) {
+    if (buttonIndex == actionSheet.cancelButtonIndex) {
+        // do nothing special
+    } else if (buttonIndex >= customActionsBeginIndex) {
+        NSDictionary *action = [self.customActions objectAtIndex:(NSUInteger)(buttonIndex - customActionsBeginIndex)];
+        dispatch_block_t block = [action valueForKey:kFKCustomActionBlock];
+
+        if (block != nil) {
+            block();
+        }
+    } else if (buttonIndex == 0) {
         FKInterAppOpenSafari(self.url);
     } else if (buttonIndex == 1 && [MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
@@ -331,16 +327,9 @@
         if (composer != nil) {
             [self presentModalViewController:composer animated:YES];
         }
-    } else if (buttonIndex == actionSheet.cancelButtonIndex) {
-        // do nothing special
-    } else if (buttonIndex >= customActionsBeginIndex) {
-        NSDictionary *action = [self.customActions objectAtIndex:(NSUInteger)(buttonIndex - customActionsBeginIndex)];
-        dispatch_block_t block = [action valueForKey:kFKCustomActionBlock];
-
-        if (block != nil) {
-            block();
-        }
     }
+
+    self.actionSheet = nil;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -384,37 +373,39 @@
         [button addTarget:self action:@selector(reload) forControlEvents:UIControlEventTouchUpInside];
 
         self.loadItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-        self.loadItem.enabled = ![self.address isEqualToString:@"about:blank"];
+        self.loadItem.enabled = [self hasValidAddress];
     }
 
     UIBarButtonItem *fixedSpaceItem = [UIBarButtonItem spaceItemWithWidth:kFKBrowserFixedSpaceItemWidth];
     UIBarButtonItem *flexibleSpaceItem = [UIBarButtonItem flexibleSpaceItem];
 
-    BOOL showItems = ![self.address isEqualToString:@"about:blank"] || self.customActions.count > 0;
+    BOOL showBrowserItems = [self hasValidAddress];
+    BOOL showActionItem = showBrowserItems || self.customActions.count > 0;
+    NSMutableArray *items = [NSMutableArray new];
 
-    if (showItems) {
-        if (self.hasToolbar) {
-            NSMutableArray *items = [NSMutableArray arrayWithArray:@[fixedSpaceItem, self.backItem, flexibleSpaceItem, self.forwardItem, flexibleSpaceItem, self.loadItem, flexibleSpaceItem]];
+    if (self.hasToolbar) {
+        if (showBrowserItems) {
+            [items addObjectsFromArray:@[fixedSpaceItem, self.backItem, flexibleSpaceItem, self.forwardItem, flexibleSpaceItem, self.loadItem, flexibleSpaceItem]];
+        }
+
+        if (showActionItem) {
             [items addObject:self.actionItem];
             [items addObject:fixedSpaceItem];
-            self.toolbar.items = items;
-        } else {
-            UIBarButtonItem *widerFixedSpaceItem = [UIBarButtonItem spaceItemWithWidth:35.f];
-            NSMutableArray *items = [NSMutableArray arrayWithArray:@[self.loadItem, widerFixedSpaceItem,
-                                     self.forwardItem, widerFixedSpaceItem,
-                                     self.backItem, fixedSpaceItem]];
+        }
+        self.toolbar.items = items;
+    } else {
+        UIBarButtonItem *widerFixedSpaceItem = [UIBarButtonItem spaceItemWithWidth:35.f];
 
+        if (showBrowserItems) {
+            [items addObjectsFromArray:@[self.loadItem, widerFixedSpaceItem, self.forwardItem, widerFixedSpaceItem, self.backItem, fixedSpaceItem]];
+        }
+
+        if (showActionItem) {
             [items insertObject:widerFixedSpaceItem atIndex:0];
             [items insertObject:self.actionItem atIndex:0];
+        }
 
-            [self.navigationItem setRightBarButtonItems:items];
-        }
-    } else {
-        if (self.hasToolbar) {
-            self.toolbar.items = nil;
-        } else {
-            self.navigationItem.rightBarButtonItems = nil;
-        }
+        [self.navigationItem setRightBarButtonItems:items];
     }
 }
 
@@ -434,12 +425,14 @@
 }
 
 - (void)showActionSheet {
-    NSString *actionSheetTitle = self.address;
+    NSString *actionSheetTitle = nil;
 
-    actionSheetTitle = [actionSheetTitle stringByReplacingOccurrencesOfString:@"(^http://)|(/$)"
+    if ([self hasValidAddress]) {
+        actionSheetTitle = [self.address stringByReplacingOccurrencesOfString:@"(^http://)|(/$)"
                                                                    withString:@""
                                                                       options:NSRegularExpressionSearch
                                                                         range:NSMakeRange(0, actionSheetTitle.length)];
+    }
 
     [self.actionSheet dismissWithClickedButtonIndex:-1 animated:NO];
     self.actionSheet = [[UIActionSheet alloc] initWithTitle:actionSheetTitle
@@ -448,10 +441,12 @@
                                      destructiveButtonTitle:nil
                                           otherButtonTitles:nil];
 
-    [self.actionSheet addButtonWithTitle:_(@"Open in Safari")];
+    if ([self hasValidAddress]) {
+        [self.actionSheet addButtonWithTitle:_(@"Open in Safari")];
 
-    if ([MFMailComposeViewController canSendMail]) {
-        [self.actionSheet addButtonWithTitle:_(@"Mail Link")];
+        if ([MFMailComposeViewController canSendMail]) {
+            [self.actionSheet addButtonWithTitle:_(@"Mail Link")];
+        }
     }
 
     for (NSDictionary *action in self.customActions) {
@@ -471,6 +466,10 @@
 - (BOOL)hasToolbar {
     // we don't need a toolbar on iOS 5/iPad because we put the items in the navigationBar
     return $isPhone() || ![UINavigationItem instancesRespondToSelector:@selector(setRightBarButtonItems:)];
+}
+
+- (BOOL)hasValidAddress {
+    return ![self.address isEqualToString:@"about:blank"];
 }
 
 @end

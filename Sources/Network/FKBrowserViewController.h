@@ -27,6 +27,7 @@ typedef void(^fk_browser_fail_block)(FKBrowserViewController *browserViewControl
 @property (nonatomic, assign) BOOL fadeAnimationEnabled;
 /** The toolbar of the browserViewController. Customizable */
 @property (nonatomic, strong, readonly) UIToolbar *toolbar;
+
 @property (nonatomic, strong, readonly) UIWebView *webView;
 /** Is the toolbar visible or hidden */
 @property (nonatomic, assign) BOOL toolbarHidden;
@@ -39,6 +40,12 @@ typedef void(^fk_browser_fail_block)(FKBrowserViewController *browserViewControl
 @property (nonatomic, copy) fk_browser_load_block didFinishLoadBlock;
 /** Block that gets executed when loading of url failed */
 @property (nonatomic, copy) fk_browser_fail_block didFailToLoadBlock;
+
+@property (nonatomic, readonly) UIBarButtonItem *backItem;
+@property (nonatomic, readonly) UIBarButtonItem *forwardItem;
+@property (nonatomic, readonly) UIBarButtonItem *loadItem;
+@property (nonatomic, readonly) UIBarButtonItem *actionItem;
+@property (nonatomic, readonly) UIActionSheet *actionSheet;
 
 /**
  Creates a FKBrowserViewController with the given Address
