@@ -63,6 +63,10 @@ NS_INLINE CGPoint FKRectCenter(CGRect rect) {
 	return CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
 }
 
+NS_INLINE CGRect FKRectMakeWithCenterAndSize(CGPoint center, CGSize size) {
+    return CGRectMake(center.x - size.width/2.f, center.y - size.height/2.f, size.width, size.height);
+}
+
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - CGSize Helper
 ////////////////////////////////////////////////////////////////////////
