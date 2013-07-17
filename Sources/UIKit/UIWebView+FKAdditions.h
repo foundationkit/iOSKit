@@ -36,4 +36,7 @@
  */
 - (void)setViewportWidth:(CGFloat)width;
 
+
+- (BOOL)displaysValidWebsite;
+
 @end

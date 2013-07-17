@@ -34,4 +34,8 @@
     [self stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:format, width]];
 }
 
+- (BOOL)displaysValidWebsite {
+    return [self stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"].length > 0;
+}
+
 @end
