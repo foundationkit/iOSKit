@@ -91,6 +91,10 @@ typedef void(^fk_browser_fail_block)(FKBrowserViewController *browserViewControl
  Adds an action to the action menu
  */
 - (void)addActionWithTitle:(NSString *)title block:(dispatch_block_t)block;
+/**
+ Same as addActionWithTitle:block: but marks the button as destructive button. Last one wins, if there are more destructive actions specified.
+ */
+- (void)addDestructiveActionWithTitle:(NSString *)title block:(dispatch_block_t)block;
 
 /** 
  Performs a javascript command and returns the result.

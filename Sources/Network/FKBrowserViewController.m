@@ -17,6 +17,7 @@
 #define kFKBrowserDefaultBackgroundColor   [UIColor scrollViewTexturedBackgroundColor]
 #define kFKCustomActionTitle               @"kFKCustomActionTitle"
 #define kFKCustomActionBlock               @"kFKCustomActionBlock"
+#define kFKCustomActionDestructive         @"kFKCustomActionDestructive"
 
 
 @interface FKBrowserViewController () <UIWebViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
@@ -147,12 +148,11 @@
 }
 
 - (void)addActionWithTitle:(NSString *)title block:(dispatch_block_t)block {
-    if (self.customActions == nil) {
-        self.customActions = [NSMutableArray array];
-    }
+    [self addActionWithTitle:title block:block destructive:NO];
+}
 
-    NSDictionary *action = @{kFKCustomActionTitle : title, kFKCustomActionBlock: [block copy]};
-    [self.customActions addObject:action];
+- (void)addDestructiveActionWithTitle:(NSString *)title block:(dispatch_block_t)block {
+    [self addActionWithTitle:title block:block destructive:YES];
 }
 
 - (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)command {
@@ -451,12 +451,26 @@
 
     for (NSDictionary *action in self.customActions) {
         [self.actionSheet addButtonWithTitle:[action valueForKey:kFKCustomActionTitle]];
+
+        BOOL destructiveAction = [action[kFKCustomActionDestructive] boolValue];
+        if (destructiveAction) {
+            self.actionSheet.destructiveButtonIndex = self.actionSheet.numberOfButtons - 1;
+        }
     }
 
     [self.actionSheet addButtonWithTitle:_(@"Cancel")];
     [self.actionSheet setCancelButtonIndex:self.actionSheet.numberOfButtons - 1];
 
     [self.actionSheet showFromBarButtonItem:self.actionItem animated:YES];
+}
+
+- (void)addActionWithTitle:(NSString *)title block:(dispatch_block_t)block destructive:(BOOL)destructive {
+    if (self.customActions == nil) {
+        self.customActions = [NSMutableArray array];
+    }
+
+    NSDictionary *action = @{kFKCustomActionTitle : title, kFKCustomActionBlock: [block copy], kFKCustomActionDestructive : @(destructive)};
+    [self.customActions addObject:action];
 }
 
 - (void)handleDoneButtonPress:(id)sender {
