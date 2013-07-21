@@ -20,7 +20,7 @@
 #define kFKCustomActionDestructive         @"kFKCustomActionDestructive"
 
 
-@interface FKBrowserViewController () <UIWebViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
+@interface FKBrowserViewController () <UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong, readwrite) UIToolbar *toolbar;
 @property (nonatomic, strong, readwrite) UIWebView *webView;

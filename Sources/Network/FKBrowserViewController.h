@@ -12,7 +12,7 @@ typedef void(^fk_browser_fail_block)(FKBrowserViewController *browserViewControl
 /**
  This ViewController can be used to display an InApp-Browser.
  */
-@interface FKBrowserViewController : UIViewController
+@interface FKBrowserViewController : UIViewController <UIWebViewDelegate>
 
 /** The current address of the browser. You can use this to redirect the browser to the given address */
 @property (nonatomic, copy) NSString *address;
