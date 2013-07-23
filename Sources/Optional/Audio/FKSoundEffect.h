@@ -2,7 +2,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AudioToolbox/AudioServices.h>
-#import "FKiOSInternal.h"
+
 
 @protocol FKSoundEffectDelegate;
 
@@ -15,7 +15,7 @@
 /** The system sound ID of the soundEffect */
 @property (nonatomic, readonly) SystemSoundID soundID;
 /** The optional delegate that gets called when the soundEfeect starts/stops */
-@property (nonatomic, fk_weak) id<FKSoundEffectDelegate> delegate;
+@property (nonatomic, weak) id<FKSoundEffectDelegate> delegate;
 
 /**
  Creates a SoundEffect out of a file
@@ -24,6 +24,7 @@
  @return If successful, the SoundEffect encapsulating the SystemSound. Otherwise nil.
  */
 + (FKSoundEffect *)soundEffectWithContentsOfFile:(NSString *)path;
++ (FKSoundEffect *)soundEffectWithSoundID:(SystemSoundID)soundID;
 
 /**
  Starts playback of the SoundEffect. Calls the delegate.

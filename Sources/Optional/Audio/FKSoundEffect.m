@@ -9,7 +9,9 @@ void FKSystemSoundCompleted(SystemSoundID soundID, void *clientData);
 
 @end
 
-@implementation FKSoundEffect
+@implementation FKSoundEffect {
+    BOOL _soundIDCreated;
+}
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark Lifecycle
@@ -27,7 +29,8 @@ void FKSystemSoundCompleted(SystemSoundID soundID, void *clientData);
             
             if (error == kAudioServicesNoError) {
                 soundEffect = [[FKSoundEffect alloc] init];
-                soundEffect->soundID_ = soundID; 
+                soundEffect->_soundID = soundID;
+                soundEffect->_soundIDCreated = YES;
             }
         } 
     }
@@ -35,8 +38,17 @@ void FKSystemSoundCompleted(SystemSoundID soundID, void *clientData);
     return soundEffect;
 }
 
++ (FKSoundEffect *)soundEffectWithSoundID:(SystemSoundID)soundID {
+    FKSoundEffect *soundEffect = [[FKSoundEffect alloc] init];
+    soundEffect->_soundID = soundID;
+
+    return soundEffect;
+}
+
 -(void)dealloc {
-    AudioServicesDisposeSystemSoundID(soundID_);
+    if (_soundIDCreated) {
+        AudioServicesDisposeSystemSoundID(_soundID);
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -46,7 +58,7 @@ void FKSystemSoundCompleted(SystemSoundID soundID, void *clientData);
 - (void)play {
     [self fk_callDelegateWillStartPlaying];
     
-    AudioServicesAddSystemSoundCompletion(self.soundID, CFRunLoopGetCurrent(), NULL, FKSystemSoundCompleted, (__bridge_retained void*)self);
+    AudioServicesAddSystemSoundCompletion(self.soundID, CFRunLoopGetCurrent(), NULL, self.delegate != nil ? FKSystemSoundCompleted : NULL, (__bridge_retained void*)self);
     AudioServicesPlaySystemSound(self.soundID);
 }
 
@@ -55,14 +67,16 @@ void FKSystemSoundCompleted(SystemSoundID soundID, void *clientData);
 ////////////////////////////////////////////////////////////////////////
 
 - (void)fk_callDelegateWillStartPlaying {
-    if ([self.delegate respondsToSelector:@selector(soundEffectWillStartPlaying:)]) {
-        [self.delegate soundEffectWillStartPlaying:self];
+    id<FKSoundEffectDelegate> delegate = self.delegate;
+    if ([delegate respondsToSelector:@selector(soundEffectWillStartPlaying:)]) {
+        [delegate soundEffectWillStartPlaying:self];
     }
 }
 
 - (void)fk_callDelegateDidStopPlaying {
-    if ([self.delegate respondsToSelector:@selector(soundEffectDidFinishPlaying:)]) {
-        [self.delegate soundEffectDidFinishPlaying:self];
+    id<FKSoundEffectDelegate> delegate = self.delegate;
+    if ([delegate respondsToSelector:@selector(soundEffectDidFinishPlaying:)]) {
+        [delegate soundEffectDidFinishPlaying:self];
     }
 }
 
@@ -75,7 +89,6 @@ void FKSystemSoundCompleted(SystemSoundID soundID, void *clientData);
 void FKSystemSoundCompleted(SystemSoundID soundID, void *clientData) {
     if (clientData) {
         FKSoundEffect *soundEffect = (__bridge_transfer FKSoundEffect*)clientData;
-        
         [soundEffect fk_callDelegateDidStopPlaying];
     }
 }
