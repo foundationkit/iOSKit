@@ -316,8 +316,10 @@
             block();
         }
     } else if (buttonIndex == 0) {
+        [UIPasteboard generalPasteboard].string = self.address;
+    } else if (buttonIndex == 1) {
         FKInterAppOpenSafari(self.url);
-    } else if (buttonIndex == 1 && [MFMailComposeViewController canSendMail]) {
+    } else if (buttonIndex == 2 && [MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
 
         composer.navigationBar.tintColor = self.tintColor;
@@ -442,6 +444,7 @@
                                           otherButtonTitles:nil];
 
     if ([self hasValidAddress]) {
+        [self.actionSheet addButtonWithTitle:_(@"Copy Link")];
         [self.actionSheet addButtonWithTitle:_(@"Open in Safari")];
 
         if ([MFMailComposeViewController canSendMail]) {
