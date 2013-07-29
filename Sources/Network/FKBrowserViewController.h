@@ -104,3 +104,11 @@ typedef void(^fk_browser_fail_block)(FKBrowserViewController *browserViewControl
 - (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)command;
 
 @end
+
+
+@interface FKBrowserViewController (FKSubclass)
+
+- (void)showActionSheet;
+
+@end
+
