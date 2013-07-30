@@ -63,10 +63,8 @@
         _backgroundColor = kFKBrowserDefaultBackgroundColor;
 
         // Initialize toolbar here to make it customizable before view is created
-        if (self.hasToolbar) {
-            _toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
-        }
-
+        _toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
+        _toolbar.hidden = !self.hasToolbar;
         [self updateAddress:address];
     }
 
@@ -97,11 +95,9 @@
     self.webView.delegate = self;
     [self.view addSubview:self.webView];
 
-    if (self.hasToolbar) {
-        self.toolbar.frameWidth = self.view.boundsWidth;
-        self.toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
-        [self.view addSubview:self.toolbar];
-    }
+    self.toolbar.frameWidth = self.view.boundsWidth;
+    self.toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+    [self.view addSubview:self.toolbar];
 
     if (self.fadeAnimationEnabled) {
         self.webView.alpha = 0.f;
@@ -412,7 +408,7 @@
 }
 
 - (void)layoutForOrientation:(UIInterfaceOrientation)orientation {
-    CGFloat toolbarHeight = (self.toolbarHidden || !self.hasToolbar) ? 0.f : FKToolbarHeightForOrientation(orientation);
+    CGFloat toolbarHeight = self.toolbarHidden ? 0.f : FKToolbarHeightForOrientation(orientation);
 
     self.webView.frameHeight = self.view.boundsHeight - toolbarHeight;
     self.toolbar.frameTop = self.webView.frameBottom;

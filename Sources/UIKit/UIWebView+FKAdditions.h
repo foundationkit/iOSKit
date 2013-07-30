@@ -11,6 +11,8 @@
 
 /** The title of the document, evaluates javascript 'document.title' */
 @property (nonatomic, readonly) NSString *documentTitle;
+/** The text that is currently selected in the webView */
+@property (nonatomic, readonly) NSString *selectedText;
 
 /**
  Adjusts the scale-factor of the content of the webView.

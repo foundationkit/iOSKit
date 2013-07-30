@@ -6,6 +6,17 @@
     return [self stringByEvaluatingJavaScriptFromString:@"document.title"];
 }
 
+- (NSString *)selectedText {
+    // Idea taken from http://stackoverflow.com/a/13615064/268279
+    NSString *currentPasteboardString = [UIPasteboard generalPasteboard].string;
+    [[UIApplication sharedApplication] sendAction:@selector(copy:) to:nil from:self forEvent:nil];
+
+    NSString *selectedText = [UIPasteboard generalPasteboard].string;
+
+    [UIPasteboard generalPasteboard].string = currentPasteboardString;
+    return selectedText;
+}
+
 - (void)setContentTextSizeScaleFactor:(NSInteger)scaleFactor {
     NSString *scaleCommand = [[NSString alloc] initWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'", scaleFactor];
 
