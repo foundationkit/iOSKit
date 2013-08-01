@@ -306,7 +306,7 @@ FKLoadCategory(UIViewFKAdditions);
 ////////////////////////////////////////////////////////////////////////
 
 - (UIImage *)imageRepresentation {
-	UIGraphicsBeginImageContext(self.bounds.size);
+	UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.f);
 	[self.layer renderInContext:UIGraphicsGetCurrentContext()];
 	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
