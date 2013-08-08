@@ -68,7 +68,7 @@ NS_INLINE CGRect FKRectMakeWithCenterAndSize(CGPoint center, CGSize size) {
 }
 
 // Taken from https://github.com/github/Archimedes
-NS_INLINE CGRect CGRectFloor(CGRect rect) {
+NS_INLINE CGRect FKRectFloor(CGRect rect) {
     return CGRectMake((CGFloat)floor(rect.origin.x), (CGFloat)floor(rect.origin.y), (CGFloat)floor(rect.size.width), (CGFloat)floor(rect.size.height));
 }
 
