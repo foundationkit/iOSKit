@@ -243,10 +243,13 @@
 
 - (UIBarButtonItem *)actionItem {
     if (_actionItem == nil) {
-        UIButton *button = [UIButton buttonWithImageNamed:@"iOSKit.bundle/browserAction"];
-        [button addTarget:self action:@selector(showActionSheet) forControlEvents:UIControlEventTouchUpInside];
-
-        _actionItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+        if ([UIView instancesRespondToSelector:@selector(tintColor)]) {
+            _actionItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActionSheet)];
+        } else {
+            UIButton *button = [UIButton buttonWithImageNamed:@"iOSKit.bundle/browserAction"];
+            [button addTarget:self action:@selector(showActionSheet) forControlEvents:UIControlEventTouchUpInside];
+            _actionItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+        }
     }
 
     return _actionItem;
