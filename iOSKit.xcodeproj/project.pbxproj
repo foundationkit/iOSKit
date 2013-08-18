@@ -106,6 +106,8 @@
 		9BDD922F148A8FE6008E21A1 /* FKBrowserViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BDD922D148A8FE6008E21A1 /* FKBrowserViewController.h */; };
 		9BDD9230148A8FE6008E21A1 /* FKBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDD922E148A8FE6008E21A1 /* FKBrowserViewController.m */; };
 		9BDD9264148AA9BD008E21A1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BDD9263148AA9BD008E21A1 /* MessageUI.framework */; };
+		9BEF57AB17C12BCE002FACDF /* FKBlurringView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BEF57A917C12BCE002FACDF /* FKBlurringView.h */; };
+		9BEF57AC17C12BCE002FACDF /* FKBlurringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEF57AA17C12BCE002FACDF /* FKBlurringView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -246,6 +248,8 @@
 		9BDD9232148A9AE8008E21A1 /* iOSKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = iOSKit.bundle; path = Resources/iOSKit.bundle; sourceTree = "<group>"; };
 		9BDD9263148AA9BD008E21A1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		9BE4253C14470FA40036D399 /* FKAudioFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FKAudioFunctions.h; sourceTree = "<group>"; };
+		9BEF57A917C12BCE002FACDF /* FKBlurringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKBlurringView.h; path = Views/FKBlurringView.h; sourceTree = "<group>"; };
+		9BEF57AA17C12BCE002FACDF /* FKBlurringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKBlurringView.m; path = Views/FKBlurringView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -463,6 +467,8 @@
 		9B45437614953EB30076A950 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9BEF57A917C12BCE002FACDF /* FKBlurringView.h */,
+				9BEF57AA17C12BCE002FACDF /* FKBlurringView.m */,
 				9B45437714953EF90076A950 /* FKView.h */,
 				9B45437814953EF90076A950 /* FKView.m */,
 			);
@@ -573,6 +579,7 @@
 				9B8D7841165151EB00FE2ECC /* UIImage+FKBlockDrawing.h in Headers */,
 				9BB4A6AB16F1F60C0001EC76 /* UIBezierPath+FKDescription.h in Headers */,
 				9B30EEE31778753F00056297 /* UITouch+FKCentroid.h in Headers */,
+				9BEF57AB17C12BCE002FACDF /* FKBlurringView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +669,7 @@
 				39CFA5F01422348700DC3E57 /* UIColor+FKAdditions.m in Sources */,
 				39CFA5F4142234A600DC3E57 /* UIView+FKRotation.m in Sources */,
 				39CFA5F81422398E00DC3E57 /* UIDevice+FKAdditions.m in Sources */,
+				9BEF57AC17C12BCE002FACDF /* FKBlurringView.m in Sources */,
 				39CFA5FC14223C1300DC3E57 /* UIImageView+FKAdditions.m in Sources */,
 				39CFA60014223CBE00DC3E57 /* UIScrollView+FKContentSize.m in Sources */,
 				39CFA60A1422423500DC3E57 /* UIView+FKHierarchy.m in Sources */,

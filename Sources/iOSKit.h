@@ -64,4 +64,5 @@
 #import "FKUniversal.h"
 
 // Views
+#import "FKBlurringView.h"
 #import "FKView.h"
