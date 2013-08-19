@@ -117,12 +117,19 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
 
 - (void)showLoadingIndicatorInToolbar:(UIToolbar *)toolbar insteadOfItem:(UIBarButtonItem *)itemToReplace {
     [self hideLoadingIndicator];
-    
+    if (toolbar.items.count == 0) {
+        return;
+    }
+
     // attach original toolbar items to toolbar for later retreival
     FKAssert(toolbar.metaData == nil, @"UIToolbar MetaData is already set, will loose it");
     toolbar.metaData = toolbar.items;
-    
+
     NSUInteger indexOfItemToReplace = [toolbar.items indexOfObject:itemToReplace];
+    if (indexOfItemToReplace == NSNotFound) {
+        return;
+    }
+    
     NSMutableArray *items = [[NSMutableArray alloc] initWithArray:toolbar.items];
     UIActivityIndicatorView *activityView = self.activityView;
     UIBarButtonItem *activityItem = FKBarButtonItemWithActivityView(activityView);
@@ -148,8 +155,10 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     // ActivityView was in Toolbar
     else if ([replacedObject isKindOfClass:[UIToolbar class]]) {
         [activityView stopAnimating];
-        [replacedObject setItems:[replacedObject metaData] animated:YES];
-        [replacedObject setMetaData:nil];
+        if ([[replacedObject metaData] isKindOfClass:[NSArray class]]) {
+            [replacedObject setItems:[replacedObject metaData] animated:YES];
+            [replacedObject setMetaData:nil];
+        }
         return;
     }
     
