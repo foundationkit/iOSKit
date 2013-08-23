@@ -58,6 +58,10 @@
 
 - (id)initWithAddress:(NSString *)address {
     if ((self = [super initWithNibName:nil bundle:nil])) {
+        if (![address hasPrefix:@"http"]) {
+            address = [@"http://" stringByAppendingString:address];
+        }
+
         _fadeAnimationEnabled = YES;
         _tintColor = kFKBrowserDefaultTintColor;
         _backgroundColor = kFKBrowserDefaultBackgroundColor;
