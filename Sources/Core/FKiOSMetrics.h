@@ -4,7 +4,7 @@
 #import "FKUniversal.h"
 
 
-NS_INLINE CGFloat FKToolbarHeightForOrientation(UIInterfaceOrientation orientation) {
+NS_INLINE CGFloat FKBarHeightForOrientation(UIInterfaceOrientation orientation) {
 	if ($isPad() || UIInterfaceOrientationIsPortrait(orientation)) {
         return 44.f;
     }

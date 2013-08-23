@@ -12,6 +12,6 @@
  
  @param backgroundColor the color of the selectedBackgroundView
  */
-- (void)setSelectedBackgroundColor:(UIColor *)backgroundColor;
+- (void)fkit_setSelectedBackgroundColor:(UIColor *)backgroundColor;
 
 @end

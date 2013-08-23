@@ -11,11 +11,11 @@
 
 @interface UITableView (FKLoading)
 
-@property (nonatomic, assign) BOOL allowsMultipleLoadingIndicators;
+@property (nonatomic, assign, setter = fkit_setAllowsMultipleLoadingIndicators:) BOOL fkit_allowsMultipleLoadingIndicators;
 
-- (void)showLoadingIndicatorAtIndexPath:(NSIndexPath *)indexPath;
-- (void)hideLoadingIndicatorAtIndexPath:(NSIndexPath *)indexPath;
+- (void)fkit_showLoadingIndicatorAtIndexPath:(NSIndexPath *)indexPath;
+- (void)fkit_hideLoadingIndicatorAtIndexPath:(NSIndexPath *)indexPath;
 // hides all loading indicators
-- (void)hideLoadingIndicators;
+- (void)fkit_hideLoadingIndicators;
 
 @end

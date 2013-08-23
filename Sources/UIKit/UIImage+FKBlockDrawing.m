@@ -3,7 +3,7 @@
 
 @implementation UIImage (FKBlockDrawing)
 
-+ (UIImage *)imageWithIdentifier:(NSString *)identifier size:(CGSize)size isOpaque:(BOOL)opaque drawingBlock:(fk_drawing_block)drawingBlock {
++ (UIImage *)fkit_imageWithIdentifier:(NSString *)identifier size:(CGSize)size isOpaque:(BOOL)opaque drawingBlock:(fk_drawing_block)drawingBlock {
     UIImage *image = identifier.length > 0 ? [[self fk_imageCache] objectForKey:identifier] : nil;
 
     if (image == nil && (image = [self fk_imageWithSize:size isOpaque:opaque context:NULL drawingBlock:drawingBlock])) {
@@ -15,11 +15,11 @@
     return image;
 }
 
-+ (UIImage *)imageWithIdentifier:(NSString *)identifier size:(CGSize)size drawingBlock:(fk_drawing_block)drawingBlock {
-    return [self imageWithIdentifier:identifier size:size isOpaque:NO drawingBlock:drawingBlock];
++ (UIImage *)fkit_imageWithIdentifier:(NSString *)identifier size:(CGSize)size drawingBlock:(fk_drawing_block)drawingBlock {
+    return [self fkit_imageWithIdentifier:identifier size:size isOpaque:NO drawingBlock:drawingBlock];
 }
 
-+ (void)invalidateCachedImageWithIdentifier:(NSString *)identifier {
++ (void)fkit_invalidateCachedImageWithIdentifier:(NSString *)identifier {
     if (identifier.length > 0) {
         [[self fk_imageCache] removeObjectForKey:identifier];
     }

@@ -12,21 +12,21 @@
 @interface UIViewController (FKAdditions)
 
 /** checks if the view of the viewController is currently visible */
-@property (nonatomic, readonly, getter = isViewVisible) BOOL viewVisible;
+@property (nonatomic, readonly, getter = fkit_isViewVisible) BOOL fkit_viewVisible;
 
 /**
  Returns a viewController with nibName = nil and bundle = nil
  
  @return a new viewController without nib and bundle
  */
-+ (id)viewController;
++ (id)fkit_viewController;
 
 /**
  Returns a viewController with nibName = [self className] and bundle = nil
  
  @return a new viewController with a self-named nib and bundle = nil
  */
-+ (id)viewControllerFromSelfNamedNib;
++ (id)fkit_viewControllerFromSelfNamedNib;
 
 /**
  Returns the currently visible viewController. If the viewController this method gets called on is
@@ -36,11 +36,11 @@
  
  @return the currently visible viewcontroller
  */
-- (id)currentVisibleViewController;
+- (id)fkit_currentVisibleViewController;
 
 /**
  Shortcut method for iOS ViewController containment API
  */
-- (void)addChildViewController:(UIViewController *)childController andRemoveOldChildViewController:(UIViewController *)oldChildController callAppearanceMethods:(BOOL)callAppearanceMethods;
+- (void)fkit_addChildViewController:(UIViewController *)childController andRemoveOldChildViewController:(UIViewController *)oldChildController callAppearanceMethods:(BOOL)callAppearanceMethods;
 
 @end

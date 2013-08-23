@@ -12,7 +12,7 @@
  
  @return UIBarButtonItem with style UIBarButtonItemFlexibleSpace.
  */
-+ (UIBarButtonItem *)flexibleSpaceItem;
++ (UIBarButtonItem *)fkit_flexibleSpaceItem;
 
 /**
  Creates a UIBarButtonItem acting as a fixed-width spacer.
@@ -20,6 +20,6 @@
  @param width the width of the fixed-space item
  @return UIBarButtonItem with style UIBarButtonSystemItemFixedSpace
  */
-+ (UIBarButtonItem *)spaceItemWithWidth:(CGFloat)width;
++ (UIBarButtonItem *)fkit_spaceItemWithWidth:(CGFloat)width;
 
 @end

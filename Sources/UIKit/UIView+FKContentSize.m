@@ -7,8 +7,8 @@ static char excludedKey;
 
 @implementation UIView (FKContentSize)
 
-- (BOOL)excludedFromScrollViewAutocalculation {
-    NSNumber *excluded = (NSNumber *)[self associatedValueForKey:&excludedKey];
+- (BOOL)fkit_excludedFromScrollViewAutocalculation {
+    NSNumber *excluded = (NSNumber *)[self fkit_associatedValueForKey:&excludedKey];
     
     if (excluded != nil) {
         return [excluded boolValue];
@@ -17,11 +17,11 @@ static char excludedKey;
     return NO;
 }
 
-- (void)setExcludedFromScrollViewAutocalculation:(BOOL)excludedFromScrollViewAutocalculation {
-    [self associateValue:@(excludedFromScrollViewAutocalculation) withKey:&excludedKey];
+- (void)fkit_setExcludedFromScrollViewAutocalculation:(BOOL)excludedFromScrollViewAutocalculation {
+    [self fkit_associateValue:@(excludedFromScrollViewAutocalculation) withKey:&excludedKey];
 }
 
-- (BOOL)sizeToFitNeededHeightForWidth:(CGFloat)width {
+- (BOOL)fkit_sizeToFitNeededHeightForWidth:(CGFloat)width {
     self.frameWidth = width;
     
     // size to fit content height
@@ -65,8 +65,8 @@ static char excludedKey;
     }
 }
 
-- (BOOL)sizeToFitNeededHeight {
-    return [self sizeToFitNeededHeightForWidth:self.frameWidth];
+- (BOOL)fkit_sizeToFitNeededHeight {
+    return [self fkit_sizeToFitNeededHeightForWidth:self.frameWidth];
 }
 
 @end

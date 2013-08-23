@@ -4,7 +4,7 @@ FKLoadCategory(UIImageFKAdditions);
 
 @implementation UIImage (FKAdditions)
 
-+ (UIImage *)imageWithSize:(CGSize)size color:(UIColor *)color {
++ (UIImage *)fkit_imageWithSize:(CGSize)size color:(UIColor *)color {
     CGRect rect = (CGRect){CGPointZero, size};
     UIImage *image = nil;
 
@@ -22,7 +22,7 @@ FKLoadCategory(UIImageFKAdditions);
     return image;
 }
 
-- (UIImage *)preloadedImage {
+- (UIImage *)fkit_preloadedImage {
     CGImageRef image = self.CGImage;
 
     // make a bitmap context of a suitable size to draw to, forcing decode
@@ -49,13 +49,13 @@ FKLoadCategory(UIImageFKAdditions);
     return cachedImage;
 }
 
-- (UIImage *)imageTintedWithColor:(UIColor *)color {
+- (UIImage *)fkit_imageTintedWithColor:(UIColor *)color {
 	// This method is designed for use with template images, i.e. solid-coloured mask-like images.
-	return [self imageTintedWithColor:color fraction:0.f]; // default to a fully tinted mask of the image.
+	return [self fkit_imageTintedWithColor:color fraction:0.f]; // default to a fully tinted mask of the image.
 }
 
 
-- (UIImage *)imageTintedWithColor:(UIColor *)color fraction:(CGFloat)fraction {
+- (UIImage *)fkit_imageTintedWithColor:(UIColor *)color fraction:(CGFloat)fraction {
 	if (color) {
 		// Construct new image the same size as this one.
 		UIImage *image;
@@ -85,7 +85,7 @@ FKLoadCategory(UIImageFKAdditions);
 	return self;
 }
 
-- (UIImage *)imageCroppedToRect:(CGRect)rect {
+- (UIImage *)fkit_imageCroppedToRect:(CGRect)rect {
 	// CGImageCreateWithImageInRect's `rect` parameter is in pixels of the image's coordinates system. Convert from points.
 	CGFloat scale = self.scale;
 	rect = CGRectMake(rect.origin.x * scale, rect.origin.y * scale, rect.size.width * scale, rect.size.height * scale);

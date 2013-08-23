@@ -17,7 +17,7 @@ typedef dispatch_block_t fk_drawing_block;
  @param drawingBlock the block that executes the drawing
  @return the image created from the drawing code
 */
-+ (UIImage *)imageWithIdentifier:(NSString *)identifier size:(CGSize)size isOpaque:(BOOL)opaque drawingBlock:(fk_drawing_block)drawingBlock;
++ (UIImage *)fkit_imageWithIdentifier:(NSString *)identifier size:(CGSize)size isOpaque:(BOOL)opaque drawingBlock:(fk_drawing_block)drawingBlock;
 
 /**
  Returns a non-opaque (possibly cached) image with the given size and drawing code
@@ -27,13 +27,13 @@ typedef dispatch_block_t fk_drawing_block;
  @param drawingBlock the block that executes the drawing
  @return the image created from the drawing code
  */
-+ (UIImage *)imageWithIdentifier:(NSString *)identifier size:(CGSize)size drawingBlock:(fk_drawing_block)drawingBlock;
++ (UIImage *)fkit_imageWithIdentifier:(NSString *)identifier size:(CGSize)size drawingBlock:(fk_drawing_block)drawingBlock;
 
 /**
  Clears the image with the given identifier from the cache
 
  @param identifier the unique identifier for the image
  */
- + (void)invalidateCachedImageWithIdentifier:(NSString *)identifier;
+ + (void)fkit_invalidateCachedImageWithIdentifier:(NSString *)identifier;
 
 @end

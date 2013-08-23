@@ -10,6 +10,6 @@
  @param indexPaths an Array of NSIndexPath objects
  @return an index set
  */
-+ (NSIndexSet *)indexSetWithRowsOfIndexPaths:(NSArray *)indexPaths;
++ (NSIndexSet *)fkit_indexSetWithRowsOfIndexPaths:(NSArray *)indexPaths;
 
 @end

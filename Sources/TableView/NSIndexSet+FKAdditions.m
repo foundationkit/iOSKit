@@ -2,7 +2,7 @@
 
 @implementation NSIndexSet (FKAdditions)
 
-+ (NSIndexSet *)indexSetWithRowsOfIndexPaths:(NSArray *)indexPaths {
++ (NSIndexSet *)fkit_indexSetWithRowsOfIndexPaths:(NSArray *)indexPaths {
     NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSet];
 
     for (NSIndexPath *indexPath in indexPaths) {

@@ -13,14 +13,14 @@
 
 @interface UIScrollView (FKContentSize)
 
-- (void)autocalculateContentHeight;
-- (void)autocalculateContentHeightWithPadding:(CGFloat)padding;
+- (void)fkit_autocalculateContentHeight;
+- (void)fkit_autocalculateContentHeightWithPadding:(CGFloat)padding;
 
-- (void)autocalculateContentWidth;
-- (void)autocalculateContentWidthWithPadding:(CGFloat)padding;
+- (void)fkit_autocalculateContentWidth;
+- (void)fkit_autocalculateContentWidthWithPadding:(CGFloat)padding;
 
-- (void)autocalculateContentSize;
-- (void)autocalculateContentSizeWithPadding:(CGSize)padding;
+- (void)fkit_autocalculateContentSize;
+- (void)fkit_autocalculateContentSizeWithPadding:(CGSize)padding;
 
 @end
 

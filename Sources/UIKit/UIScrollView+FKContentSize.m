@@ -16,31 +16,31 @@ CGPoint FKGetMaxPositions(UIScrollView *scrollView);
 
 @implementation UIScrollView (FKContentSize)
 
-- (void)autocalculateContentHeight {
-	[self autocalculateContentHeightWithPadding:kFKDefaultPadding];
+- (void)fkit_autocalculateContentHeight {
+	[self fkit_autocalculateContentHeightWithPadding:kFKDefaultPadding];
 }
 
-- (void)autocalculateContentHeightWithPadding:(CGFloat)padding {
+- (void)fkit_autocalculateContentHeightWithPadding:(CGFloat)padding {
 	CGFloat maxHeight = FKGetMaxPositions(self).y;
     
     self.contentSize = CGSizeMake(self.bounds.size.width, maxHeight + padding);
 }
 
-- (void)autocalculateContentWidth {
-    [self autocalculateContentWidthWithPadding:kFKDefaultPadding];
+- (void)fkit_autocalculateContentWidth {
+    [self fkit_autocalculateContentWidthWithPadding:kFKDefaultPadding];
 }
 
-- (void)autocalculateContentWidthWithPadding:(CGFloat)padding {
+- (void)fkit_autocalculateContentWidthWithPadding:(CGFloat)padding {
     CGFloat maxWidth = FKGetMaxPositions(self).x;
     
     self.contentSize = CGSizeMake(maxWidth + padding, self.bounds.size.height);
 }
 
-- (void)autocalculateContentSize {
-    [self autocalculateContentSizeWithPadding:CGSizeMake(kFKDefaultPadding, kFKDefaultPadding)];
+- (void)fkit_autocalculateContentSize {
+    [self fkit_autocalculateContentSizeWithPadding:CGSizeMake(kFKDefaultPadding, kFKDefaultPadding)];
 }
 
-- (void)autocalculateContentSizeWithPadding:(CGSize)padding {
+- (void)fkit_autocalculateContentSizeWithPadding:(CGSize)padding {
     CGPoint maxPositions = FKGetMaxPositions(self);
     
     self.contentSize = CGSizeMake(maxPositions.x+padding.width, maxPositions.y+padding.height); 
@@ -77,7 +77,7 @@ BOOL FKViewIsScrollIndicator(UIView *view) {
 }
 
 BOOL FKViewUseForAutocalculation(UIView *view) {
-    return view.alpha > 0.f && view.hidden == NO && !FKViewIsScrollIndicator(view) && !view.excludedFromScrollViewAutocalculation;
+    return view.alpha > 0.f && view.hidden == NO && !FKViewIsScrollIndicator(view) && !view.fkit_excludedFromScrollViewAutocalculation;
 }
 
 CGPoint FKGetMaxPositions(UIScrollView *scrollView) {

@@ -4,7 +4,7 @@ FKLoadCategory(UIAlertViewFKError);
 
 @implementation UIAlertView (FKError)
 
-+ (UIAlertView *)alertViewWithError:(NSError *)error {
++ (UIAlertView *)fkit_alertViewWithError:(NSError *)error {
     return [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Error: %@",error.domain]
                                       message:[error localizedDescription]
                                      delegate:nil 
@@ -12,7 +12,7 @@ FKLoadCategory(UIAlertViewFKError);
                             otherButtonTitles:nil];
 }
 
-+ (UIAlertView *)alertViewWithDetailedError:(NSError *)error {
++ (UIAlertView *)fkit_alertViewWithDetailedError:(NSError *)error {
     NSArray *options = [error localizedRecoveryOptions];
 	NSUInteger count = [options count];
 	NSString *cancelTitle = @"OK";

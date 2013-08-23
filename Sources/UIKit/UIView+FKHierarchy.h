@@ -11,15 +11,14 @@
 
 @interface UIView (FKHierarchy)
 
-@property (nonatomic, readonly) UIViewController *viewController;
-@property (nonatomic, readonly) NSInteger subviewIndex;
+@property (nonatomic, readonly) UIViewController *fkit_viewController;
 
-- (UIView *)superviewWithClass:(Class)aClass;                        // strict:NO
-- (UIView *)superviewWithClass:(Class)aClass strict:(BOOL)strict;
+- (UIView *)fkit_superviewWithClass:(Class)aClass;                        // strict:NO
+- (UIView *)fkit_superviewWithClass:(Class)aClass strict:(BOOL)strict;
 
-- (UIView *)descendantOrSelfWithClass:(Class)aClass;                 // strict:NO
-- (UIView *)descendantOrSelfWithClass:(Class)aClass strict:(BOOL)strict;
+- (UIView *)fkit_descendantOrSelfWithClass:(Class)aClass;                 // strict:NO
+- (UIView *)fkit_descendantOrSelfWithClass:(Class)aClass strict:(BOOL)strict;
 
-- (void)removeAllSubviews;
+- (void)fkit_removeAllSubviews;
 
 @end

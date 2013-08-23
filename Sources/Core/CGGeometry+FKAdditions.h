@@ -93,8 +93,8 @@ NS_INLINE CGSize FKSizeAspectScaleToSize(CGSize size, CGSize toSize) {
  Creates a size that has integral width and height
  */
 NS_INLINE CGSize FKSizeIntegral(CGSize size) {
-    return CGSizeMake((CGFloat)round((double)size.width), 
-                      (CGFloat)round((double)size.height));
+    return CGSizeMake((CGFloat)ceil((double)size.width),
+                      (CGFloat)ceil((double)size.height));
 }
 
 

@@ -18,10 +18,10 @@
 
 @interface UITableViewCell (FKLoading)
 
-@property (nonatomic, strong, readonly) UIActivityIndicatorView *activityView;
+@property (nonatomic, strong, readonly) UIActivityIndicatorView *fkit_activityView;
 
-- (void)showLoadingIndicator;
-- (void)showLoadingIndicatorWithColor:(UIColor *)color;
-- (void)hideLoadingIndicator;
+- (void)fkit_showLoadingIndicator;
+- (void)fkit_showLoadingIndicatorWithColor:(UIColor *)color;
+- (void)fkit_hideLoadingIndicator;
 
 @end

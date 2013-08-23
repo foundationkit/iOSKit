@@ -16,7 +16,7 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
 
 @interface UIViewController ()
 
-@property (nonatomic, strong, readwrite) UIActivityIndicatorView *activityView;
+@property (nonatomic, strong, readwrite, setter = fkit_setActivityView:) UIActivityIndicatorView *fkit_activityView;
 @property (nonatomic, strong) id fk_replacedObject;
 
 @end
@@ -24,45 +24,45 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
 
 @implementation UIViewController (FKLoading)
 
-- (void)setActivityView:(UIActivityIndicatorView *)activityView {
-    [self associateValue:activityView withKey:&activityViewKey];
+- (void)fkit_setActivityView:(UIActivityIndicatorView *)activityView {
+    [self fkit_associateValue:activityView withKey:&activityViewKey];
 }
 
-- (UIActivityIndicatorView *)activityView {
-    UIActivityIndicatorView *activityView = (UIActivityIndicatorView *)[self associatedValueForKey:&activityViewKey];
+- (UIActivityIndicatorView *)fkit_activityView {
+    UIActivityIndicatorView *activityView = (UIActivityIndicatorView *)[self fkit_associatedValueForKey:&activityViewKey];
     
     // create activityView when it is first read
     if (activityView == nil) {
         activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-        self.activityView = activityView;
+        self.fkit_activityView = activityView;
     }
     
     return activityView;
 }
 
 - (void)setFk_replacedObject:(id)replacedObject {
-    [self associateValue:replacedObject withKey:&replacedObjectKey];
+    [self fkit_associateValue:replacedObject withKey:&replacedObjectKey];
 }
 
 - (id)fk_replacedObject {
-    return [self associatedValueForKey:&replacedObjectKey];
+    return [self fkit_associatedValueForKey:&replacedObjectKey];
 }
 
-- (void)showCenteredLoadingIndicator {
+- (void)fkit_showCenteredLoadingIndicator {
     UIViewAutoresizing autoresizingMask = (UIViewAutoresizingFlexibleTopMargin |
                                            UIViewAutoresizingFlexibleRightMargin |
                                            UIViewAutoresizingFlexibleBottomMargin | 
                                            UIViewAutoresizingFlexibleLeftMargin);
     
-    [self showLoadingIndicatorAtPoint:CGPointMake(self.view.bounds.size.width/2.f, self.view.bounds.size.height/2.f) 
-                     autoresizingMask:autoresizingMask];
+    [self fkit_showLoadingIndicatorAtPoint:CGPointMake(self.view.bounds.size.width/2.f, self.view.bounds.size.height/2.f)
+                          autoresizingMask:autoresizingMask];
    
 }
 
-- (void)showLoadingIndicatorAtPoint:(CGPoint)center autoresizingMask:(UIViewAutoresizing)autoresizingMask {
-    [self hideLoadingIndicator];
+- (void)fkit_showLoadingIndicatorAtPoint:(CGPoint)center autoresizingMask:(UIViewAutoresizing)autoresizingMask {
+    [self fkit_hideLoadingIndicator];
     
-    UIActivityIndicatorView *activityView = self.activityView;
+    UIActivityIndicatorView *activityView = self.fkit_activityView;
     
     activityView.center = center;
     activityView.frame = CGRectIntegral(activityView.frame);
@@ -72,17 +72,17 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     [activityView startAnimating]; 
 }
 
-- (void)showLoadingIndicatorInsteadOfView:(UIView *)viewToReplace {
-    [self hideLoadingIndicator];
+- (void)fkit_showLoadingIndicatorInsteadOfView:(UIView *)viewToReplace {
+    [self fkit_hideLoadingIndicator];
     
-    UIActivityIndicatorView *activityView = self.activityView;
+    UIActivityIndicatorView *activityView = self.fkit_activityView;
     
     // TODO: Resizing currently seems broken in iOS 5, we maybe have to roll our own activityIndicatorView
     activityView.frame = FKCenteredSquareInRectConstrainedToSize(viewToReplace.frame, kFKActivityViewMaxSize);
     activityView.autoresizingMask = viewToReplace.autoresizingMask;
 
-    FKAssert(viewToReplace.metaData == nil, @"View MetaData is already set, will loose it");
-    viewToReplace.metaData = @(viewToReplace.hidden);
+    FKAssert(viewToReplace.fkit_metaData == nil, @"View MetaData is already set, will loose it");
+    viewToReplace.fkit_metaData = @(viewToReplace.hidden);
     viewToReplace.hidden = YES;
     self.fk_replacedObject = viewToReplace;
     
@@ -90,10 +90,10 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     [activityView startAnimating];
 }
 
-- (void)showLoadingIndicatorOnTopOfView:(UIView *)view {
-    [self hideLoadingIndicator];
+- (void)fkit_showLoadingIndicatorOnTopOfView:(UIView *)view {
+    [self fkit_hideLoadingIndicator];
     
-    UIActivityIndicatorView *activityView = self.activityView;
+    UIActivityIndicatorView *activityView = self.fkit_activityView;
     
     activityView.frame = FKCenteredSquareInRectConstrainedToSize(view.frame, kFKActivityViewMaxSize);
     activityView.autoresizingMask = view.autoresizingMask;
@@ -102,10 +102,10 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     [activityView startAnimating];
 }
 
-- (void)showLoadingIndicatorInNavigationBar {
-    [self hideLoadingIndicator];
+- (void)fkit_showLoadingIndicatorInNavigationBar {
+    [self fkit_hideLoadingIndicator];
     
-    UIActivityIndicatorView *activityView = self.activityView;
+    UIActivityIndicatorView *activityView = self.fkit_activityView;
     UIBarButtonItem *barButtonItemToReplace = self.navigationItem.rightBarButtonItem;
     UIBarButtonItem *activityItem = FKBarButtonItemWithActivityView(activityView);
     
@@ -115,15 +115,15 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     [activityView startAnimating];
 }
 
-- (void)showLoadingIndicatorInToolbar:(UIToolbar *)toolbar insteadOfItem:(UIBarButtonItem *)itemToReplace {
-    [self hideLoadingIndicator];
+- (void)fkit_showLoadingIndicatorInToolbar:(UIToolbar *)toolbar insteadOfItem:(UIBarButtonItem *)itemToReplace {
+    [self fkit_hideLoadingIndicator];
     if (toolbar.items.count == 0) {
         return;
     }
 
     // attach original toolbar items to toolbar for later retreival
-    FKAssert(toolbar.metaData == nil, @"UIToolbar MetaData is already set, will loose it");
-    toolbar.metaData = toolbar.items;
+    FKAssert(toolbar.fkit_metaData == nil, @"UIToolbar MetaData is already set, will loose it");
+    toolbar.fkit_metaData = toolbar.items;
 
     NSUInteger indexOfItemToReplace = [toolbar.items indexOfObject:itemToReplace];
     if (indexOfItemToReplace == NSNotFound) {
@@ -131,7 +131,7 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     }
     
     NSMutableArray *items = [[NSMutableArray alloc] initWithArray:toolbar.items];
-    UIActivityIndicatorView *activityView = self.activityView;
+    UIActivityIndicatorView *activityView = self.fkit_activityView;
     UIBarButtonItem *activityItem = FKBarButtonItemWithActivityView(activityView);
     
     self.fk_replacedObject = toolbar;
@@ -141,9 +141,9 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     [activityView startAnimating];
 }
 
-- (void)hideLoadingIndicator {
+- (void)fkit_hideLoadingIndicator {
     id replacedObject = self.fk_replacedObject;
-    UIActivityIndicatorView *activityView = self.activityView;
+    UIActivityIndicatorView *activityView = self.fkit_activityView;
     
     // ActivityView was in NavigationBar
     if ([replacedObject isKindOfClass:[UIBarButtonItem class]]) {
@@ -155,20 +155,20 @@ static UIBarButtonItem* FKBarButtonItemWithActivityView(UIActivityIndicatorView 
     // ActivityView was in Toolbar
     else if ([replacedObject isKindOfClass:[UIToolbar class]]) {
         [activityView stopAnimating];
-        if ([[replacedObject metaData] isKindOfClass:[NSArray class]]) {
-            [replacedObject setItems:[replacedObject metaData] animated:YES];
-            [replacedObject setMetaData:nil];
+        if ([[replacedObject fkit_metaData] isKindOfClass:[NSArray class]]) {
+            [replacedObject setItems:[replacedObject fkit_metaData] animated:YES];
+            [replacedObject fkit_setMetaData:nil];
         }
         return;
     }
     
     // ActivityView was displayed instead of another view
     else if ([replacedObject isKindOfClass:[UIView class]]) {
-        BOOL hiddenBefore = [[replacedObject metaData] boolValue];
+        BOOL hiddenBefore = [[replacedObject fkit_metaData] boolValue];
         if (!hiddenBefore) {
             [replacedObject setHidden:NO];
         }
-        [replacedObject setMetaData:nil];
+        [replacedObject fkit_setMetaData:nil];
     }
     
     [activityView stopAnimating];

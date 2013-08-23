@@ -14,46 +14,46 @@ static char cellsShowingIndicatorKey;
 
 @implementation UITableView (FKLoading)
 
-- (void)showLoadingIndicatorAtIndexPath:(NSIndexPath *)indexPath {
+- (void)fkit_showLoadingIndicatorAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self cellForRowAtIndexPath:indexPath];
     
-    if (!self.allowsMultipleLoadingIndicators) {
-        [self hideLoadingIndicators];
+    if (!self.fkit_allowsMultipleLoadingIndicators) {
+        [self fkit_hideLoadingIndicators];
     }
     
-    [cell showLoadingIndicator];
+    [cell fkit_showLoadingIndicator];
     [self.fk_cellsShowingLoadingIndicator addObject:indexPath];
 }
 
-- (void)hideLoadingIndicatorAtIndexPath:(NSIndexPath *)indexPath {
+- (void)fkit_hideLoadingIndicatorAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self cellForRowAtIndexPath:indexPath];
     
-    [cell hideLoadingIndicator];
+    [cell fkit_hideLoadingIndicator];
     [self.fk_cellsShowingLoadingIndicator removeObject:indexPath];
 }
 
 // hides all loading indicators
-- (void)hideLoadingIndicators {
+- (void)fkit_hideLoadingIndicators {
     for (NSIndexPath *indexPath in self.fk_cellsShowingLoadingIndicator) {
-        [self hideLoadingIndicatorAtIndexPath:indexPath];
+        [self fkit_hideLoadingIndicatorAtIndexPath:indexPath];
     }
 }
 
-- (void)setAllowsMultipleLoadingIndicators:(BOOL)allowsMultipleLoadingIndicators {
-    [self associateValue:@(allowsMultipleLoadingIndicators) withKey:&allowsMultipleIndicatorsKey];
+- (void)fkit_setAllowsMultipleLoadingIndicators:(BOOL)allowsMultipleLoadingIndicators {
+    [self fkit_associateValue:@(allowsMultipleLoadingIndicators) withKey:&allowsMultipleIndicatorsKey];
 }
 
-- (BOOL)allowsMultipleLoadingIndicators {
-    return [[self associatedValueForKey:&allowsMultipleIndicatorsKey] boolValue];
+- (BOOL)fkit_allowsMultipleLoadingIndicators {
+    return [[self fkit_associatedValueForKey:&allowsMultipleIndicatorsKey] boolValue];
 }
 
 - (NSMutableSet *)fk_cellsShowingLoadingIndicator {
-    NSMutableSet *cells = (NSMutableSet *)[self associatedValueForKey:&cellsShowingIndicatorKey];
+    NSMutableSet *cells = (NSMutableSet *)[self fkit_associatedValueForKey:&cellsShowingIndicatorKey];
     
     // lazy loading
     if (cells == nil) {
         cells = [NSMutableSet set];
-        [self associateValue:cells withKey:&cellsShowingIndicatorKey];
+        [self fkit_associateValue:cells withKey:&cellsShowingIndicatorKey];
     }
     
     return cells;

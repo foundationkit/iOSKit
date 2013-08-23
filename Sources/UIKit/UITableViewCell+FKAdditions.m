@@ -2,7 +2,7 @@
 
 @implementation UITableViewCell (FKAdditions)
 
-- (void)setSelectedBackgroundColor:(UIColor *)backgroundColor {
+- (void)fkit_setSelectedBackgroundColor:(UIColor *)backgroundColor {
     UIView *backgroundView = self.selectedBackgroundView;
 
     if (backgroundView == nil || ![backgroundView isMemberOfClass:[UIView class]]) {

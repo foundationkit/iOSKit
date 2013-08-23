@@ -4,7 +4,7 @@ FKLoadCategory(UIViewFKHierarchy);
 
 @implementation UIView (FKHierarchy)
 
-- (UIViewController *)viewController {
+- (UIViewController *)fkit_viewController {
     for (UIView* view = self; view != nil; view = view.superview) {
         UIResponder* nextResponder = view.nextResponder;
         
@@ -16,18 +16,14 @@ FKLoadCategory(UIViewFKHierarchy);
     return nil;
 }
 
-- (NSInteger)subviewIndex {
-	return (NSInteger)[self.superview.subviews indexOfObject:self];
+- (UIView *)fkit_superviewWithClass:(Class)aClass {
+	return [self fkit_superviewWithClass:aClass strict:NO];
 }
 
-- (UIView *)superviewWithClass:(Class)aClass {
-	return [self superviewWithClass:aClass strict:NO];
-}
-
-- (UIView *)superviewWithClass:(Class)aClass strict:(BOOL)strict {
+- (UIView *)fkit_superviewWithClass:(Class)aClass strict:(BOOL)strict {
 	UIView *view = self.superview;
     
-	while(view) {
+	while (view != nil) {
 		if(strict && [view isMemberOfClass:aClass]) {
 			break;
 		} else if(!strict && [view isKindOfClass:aClass]) {
@@ -40,19 +36,19 @@ FKLoadCategory(UIViewFKHierarchy);
 	return view;
 }
 
-- (UIView*)descendantOrSelfWithClass:(Class)aClass {
-    return [self descendantOrSelfWithClass:aClass strict:NO];
+- (UIView*)fkit_descendantOrSelfWithClass:(Class)aClass {
+    return [self fkit_descendantOrSelfWithClass:aClass strict:NO];
 }
 
-- (UIView *)descendantOrSelfWithClass:(Class)aClass strict:(BOOL)strict {
+- (UIView *)fkit_descendantOrSelfWithClass:(Class)aClass strict:(BOOL)strict {
     if (strict && [self isMemberOfClass:aClass]) {
         return self;
     } else if (!strict && [self isKindOfClass:aClass]) {
         return self;
     }
     
-    for (UIView* child in self.subviews) {
-        UIView* viewWithClass = [child descendantOrSelfWithClass:aClass strict:strict];
+    for (UIView *child in self.subviews) {
+        UIView *viewWithClass = [child fkit_descendantOrSelfWithClass:aClass strict:strict];
         
         if (viewWithClass != nil) {
             return viewWithClass;
@@ -62,42 +58,11 @@ FKLoadCategory(UIViewFKHierarchy);
     return nil;
 }
 
-- (void)removeAllSubviews {
+- (void)fkit_removeAllSubviews {
     while (self.subviews.count > 0) {
         UIView* child = self.subviews.lastObject;
         [child removeFromSuperview];
     }
 }
-
-- (void)bringToFront {
-	[self.superview bringSubviewToFront:self];
-}
-
-- (void)sendToBack {
-	[self.superview sendSubviewToBack:self];
-}
-
-- (void)bringOneLevelUp {
-	NSInteger currentIndex = self.subviewIndex;
-	[self.superview exchangeSubviewAtIndex:currentIndex withSubviewAtIndex:currentIndex+1];
-}
-
-- (void)sendOneLevelDown {
-	NSInteger currentIndex = self.subviewIndex;
-	[self.superview exchangeSubviewAtIndex:currentIndex withSubviewAtIndex:currentIndex-1];
-}
-
-- (BOOL)isInFront {
-	return (self.superview.subviews.lastObject == self);
-}
-
-- (BOOL)isAtBack {
-	return ([self.superview.subviews objectAtIndex:0] == self);
-}
-
-- (void)swapDepthsWithView:(UIView *)swapView {
-	[self.superview exchangeSubviewAtIndex:self.subviewIndex withSubviewAtIndex:swapView.subviewIndex];
-}
-
 
 @end

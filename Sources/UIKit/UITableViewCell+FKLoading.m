@@ -8,14 +8,14 @@ static char previousAccessoryKey;
 @interface UITableViewCell ()
 
 // re-define as read/write
-@property (nonatomic, strong, readwrite) UIActivityIndicatorView *activityView;
+@property (nonatomic, strong, readwrite, setter = fkit_setActivityView:) UIActivityIndicatorView *fkit_activityView;
 @property (nonatomic, strong) UIView *fk_previousAccessory;
 
 @end
 
 @implementation UITableViewCell (FKLoading)
 
-- (void)showLoadingIndicator {
+- (void)fkit_showLoadingIndicator {
     if ([self.accessoryView isKindOfClass:[UIActivityIndicatorView class]]) {
         return;
     }
@@ -24,42 +24,42 @@ static char previousAccessoryKey;
     self.fk_previousAccessory = self.accessoryView;
     
     // set activityIndicator as new accessoryView
-    self.activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    [self.activityView startAnimating];
+    self.fkit_activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [self.fkit_activityView startAnimating];
     
-    self.accessoryView = self.activityView;
+    self.accessoryView = self.fkit_activityView;
 }
 
-- (void)showLoadingIndicatorWithColor:(UIColor *)color {
-    [self showLoadingIndicator];
-    self.activityView.color = color;
+- (void)fkit_showLoadingIndicatorWithColor:(UIColor *)color {
+    [self fkit_showLoadingIndicator];
+    self.fkit_activityView.color = color;
 }
 
-- (void)hideLoadingIndicator {
-    if (self.activityView != nil) {
-        [self.activityView stopAnimating];
+- (void)fkit_hideLoadingIndicator {
+    if (self.fkit_activityView != nil) {
+        [self.fkit_activityView stopAnimating];
         
         // restore previous state
         self.accessoryView = self.fk_previousAccessory;
-        self.activityView = nil;
+        self.fkit_activityView = nil;
         self.fk_previousAccessory = nil;
     }
 }
 
-- (void)setActivityView:(UIActivityIndicatorView *)activityView {
-    [self associateValue:activityView withKey:&activityViewKey];
+- (void)fkit_setActivityView:(UIActivityIndicatorView *)activityView {
+    [self fkit_associateValue:activityView withKey:&activityViewKey];
 }
 
-- (UIActivityIndicatorView *)activityView {
-    return (UIActivityIndicatorView *)[self associatedValueForKey:&activityViewKey];
+- (UIActivityIndicatorView *)fkit_activityView {
+    return (UIActivityIndicatorView *)[self fkit_associatedValueForKey:&activityViewKey];
 }
 
 - (void)setFk_previousAccessory:(UIView *)previousAccessory {
-    [self associateValue:previousAccessory withKey:&previousAccessoryKey];
+    [self fkit_associateValue:previousAccessory withKey:&previousAccessoryKey];
 }
 
 - (UIView *)fk_previousAccessory {
-    return (UIView *)[self associatedValueForKey:&previousAccessoryKey];
+    return (UIView *)[self fkit_associatedValueForKey:&previousAccessoryKey];
 }
 
 @end

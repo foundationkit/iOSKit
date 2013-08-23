@@ -217,7 +217,7 @@
 
 - (UIBarButtonItem *)backItem {
     if (_backItem == nil) {
-        UIButton *button = [UIButton buttonWithImageNamed:@"iOSKit.bundle/browserBack"];
+        UIButton *button = [UIButton fkit_buttonWithImageNamed:@"iOSKit.bundle/browserBack"];
         [button addTarget:self.webView action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
 
         _backItem = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -230,7 +230,7 @@
 
 - (UIBarButtonItem *)forwardItem {
     if (_forwardItem == nil) {
-        UIButton *button = [UIButton buttonWithImageNamed:@"iOSKit.bundle/browserForward"];
+        UIButton *button = [UIButton fkit_buttonWithImageNamed:@"iOSKit.bundle/browserForward"];
         [button addTarget:self.webView action:@selector(goForward) forControlEvents:UIControlEventTouchUpInside];
 
         _forwardItem = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -246,7 +246,7 @@
         if ([UIView instancesRespondToSelector:@selector(tintColor)]) {
             _actionItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActionSheet)];
         } else {
-            UIButton *button = [UIButton buttonWithImageNamed:@"iOSKit.bundle/browserAction"];
+            UIButton *button = [UIButton fkit_buttonWithImageNamed:@"iOSKit.bundle/browserAction"];
             [button addTarget:self action:@selector(showActionSheet) forControlEvents:UIControlEventTouchUpInside];
             _actionItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         }
@@ -266,7 +266,7 @@
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
-    [self showLoadingIndicatorInNavigationBar];
+    [self fkit_showLoadingIndicatorInNavigationBar];
     [FKNetworkActivityManager addNetworkUser:self];
 
     [self updateUI];
@@ -274,10 +274,10 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     if (self.fadeAnimationEnabled) {
-        [self.webView fadeIn];
+        [self.webView fkit_fadeIn];
     }
 
-    [self hideLoadingIndicator];
+    [self fkit_hideLoadingIndicator];
     [FKNetworkActivityManager removeNetworkUser:self];
 
     [self updateUI];
@@ -288,7 +288,7 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    [self hideLoadingIndicator];
+    [self fkit_hideLoadingIndicator];
     [FKNetworkActivityManager removeNetworkUser:self];
 
     [self updateUI];
@@ -359,7 +359,7 @@
     if (self.webView.loading) {
         self.title = _(@"Loading...");
 
-        UIButton *button = [UIButton buttonWithImageNamed:@"iOSKit.bundle/browserStop"];
+        UIButton *button = [UIButton fkit_buttonWithImageNamed:@"iOSKit.bundle/browserStop"];
         [button addTarget:self action:@selector(stopLoading) forControlEvents:UIControlEventTouchUpInside];
 
         self.loadItem = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -367,18 +367,18 @@
         if (self.titleToDisplay != nil) {
             self.title = self.titleToDisplay;
         } else {
-            self.title = self.webView.documentTitle;
+            self.title = self.webView.fkit_documentTitle;
         }
 
-        UIButton *button = [UIButton buttonWithImageNamed:@"iOSKit.bundle/browserRefresh"];
+        UIButton *button = [UIButton fkit_buttonWithImageNamed:@"iOSKit.bundle/browserRefresh"];
         [button addTarget:self action:@selector(reload) forControlEvents:UIControlEventTouchUpInside];
 
         self.loadItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         self.loadItem.enabled = [self hasValidAddress];
     }
 
-    UIBarButtonItem *fixedSpaceItem = [UIBarButtonItem spaceItemWithWidth:kFKBrowserFixedSpaceItemWidth];
-    UIBarButtonItem *flexibleSpaceItem = [UIBarButtonItem flexibleSpaceItem];
+    UIBarButtonItem *fixedSpaceItem = [UIBarButtonItem fkit_spaceItemWithWidth:kFKBrowserFixedSpaceItemWidth];
+    UIBarButtonItem *flexibleSpaceItem = [UIBarButtonItem fkit_flexibleSpaceItem];
 
     BOOL showBrowserItems = [self hasValidAddress];
     BOOL showActionItem = showBrowserItems || self.customActions.count > 0;
@@ -395,7 +395,7 @@
         }
         self.toolbar.items = items;
     } else {
-        UIBarButtonItem *widerFixedSpaceItem = [UIBarButtonItem spaceItemWithWidth:35.f];
+        UIBarButtonItem *widerFixedSpaceItem = [UIBarButtonItem fkit_spaceItemWithWidth:35.f];
 
         if (showBrowserItems) {
             [items addObjectsFromArray:@[self.loadItem, widerFixedSpaceItem, self.forwardItem, widerFixedSpaceItem, self.backItem, fixedSpaceItem]];
@@ -411,7 +411,7 @@
 }
 
 - (void)layoutForOrientation:(UIInterfaceOrientation)orientation {
-    CGFloat toolbarHeight = self.toolbarHidden ? 0.f : FKToolbarHeightForOrientation(orientation);
+    CGFloat toolbarHeight = self.toolbarHidden ? 0.f : FKBarHeightForOrientation(orientation);
 
     self.webView.frameHeight = self.view.boundsHeight - toolbarHeight;
     self.toolbar.frameTop = self.webView.frameBottom;

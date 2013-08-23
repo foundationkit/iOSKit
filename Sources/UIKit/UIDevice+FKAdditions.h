@@ -13,28 +13,24 @@
 @interface UIDevice (FKAdditions)
 
 /** The IP Address of the device, only works on WIFI */
-@property (nonatomic, readonly) NSString *ipAddress;
+@property (nonatomic, readonly) NSString *fkit_ipAddress;
 /**
  A verbose description of the current device and application, useful for error reports
  Includes the App name, version, a check if it was pirated, the device type, UDID (as long
  as supported) etc.
  */
-@property (nonatomic, readonly) NSString *debugInformation;
+@property (nonatomic, readonly) NSString *fkit_debugInformation;
 /** The current hardware platform of the device */
-@property (nonatomic, readonly) NSString *hardwarePlatform;
-/** A non-bulletproof check for jailbroken devices */
-@property (nonatomic, readonly, getter = isJailbroken) BOOL jailbroken;
-/** Check for crappy (slow) devices, currently includes iPhones up to 3GS and the iPad 1 */
-@property (nonatomic, readonly) BOOL isCrappy;
+@property (nonatomic, readonly) NSString *fkit_hardwarePlatform;
 /** Check for the simulator */
-@property (nonatomic, readonly) BOOL isSimulator;
+@property (nonatomic, readonly) BOOL fkit_isSimulator;
 /** Check if Device has 4 inch Display */
-@property (nonatomic, readonly) BOOL hasFourInchDisplay;
+@property (nonatomic, readonly) BOOL fkit_hasFourInchDisplay;
 
 /**
  Simulates a memory warning on the device, if we are in debug-mode. 
  Does nothing otherwise.
  */
-- (void)simulateMemoryWarning;
+- (void)fkit_simulateMemoryWarning;
 
 @end

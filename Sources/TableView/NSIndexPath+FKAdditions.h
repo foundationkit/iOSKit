@@ -17,7 +17,7 @@
  @param section the section index of the indexPaths
  @return an array of indexPaths in the given section, starting from startRow to endRow
  */
-+ (NSArray *)indexPathsFromRow:(NSInteger)startRow toRow:(NSInteger)endRow inSection:(NSInteger)section;
++ (NSArray *)fkit_indexPathsFromRow:(NSInteger)startRow toRow:(NSInteger)endRow inSection:(NSInteger)section;
 
 /*
  This method is a shortcut for [NSIndexPath indexPathForRow:0 inSection:section].
@@ -25,7 +25,7 @@
  @param section the section we want the indexPath of the first row of
  @return the indexPath for row 0 in the given section
  */
-+ (NSIndexPath *)indexPathForFirstRowInSection:(NSInteger)section;
++ (NSIndexPath *)fkit_indexPathForFirstRowInSection:(NSInteger)section;
 
 /*
  This method is a shortcut for [NSIndexPath indexPathForRow:row inSection:0].
@@ -33,6 +33,6 @@
  @param row the row of the index path
  @return the indexPath for the row "row" in the section 0
  */
-+ (NSIndexPath *)indexPathForRowInFirstSection:(NSInteger)row;
++ (NSIndexPath *)fkit_indexPathForRowInFirstSection:(NSInteger)row;
 
 @end

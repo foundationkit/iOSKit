@@ -13,12 +13,12 @@
 @interface UIImage (FKAdditions)
 
 /** Creates an image with a given size in a given color */
-+ (UIImage *)imageWithSize:(CGSize)size color:(UIColor *)color;
++ (UIImage *)fkit_imageWithSize:(CGSize)size color:(UIColor *)color;
 
 /**
  This method preloads an image for faster drawing.
  */
-- (UIImage *)preloadedImage;
+- (UIImage *)fkit_preloadedImage;
 
 /**
  This method returns a new UIImage tinted with the given color.
@@ -27,8 +27,8 @@
  @param color The Tint-Color
  @return A new image tinted with the given color
  */
-- (UIImage *)imageTintedWithColor:(UIColor *)color;
-- (UIImage *)imageTintedWithColor:(UIColor *)color fraction:(CGFloat)fraction;
+- (UIImage *)fkit_imageTintedWithColor:(UIColor *)color;
+- (UIImage *)fkit_imageTintedWithColor:(UIColor *)color fraction:(CGFloat)fraction;
 
 /**
  Creates and returns a new cropped image object.
@@ -36,7 +36,7 @@
  @param rect A rectangle whose coordinates specify the area to create an image from in points.
  @return A new cropped image object.
  */
-- (UIImage *)imageCroppedToRect:(CGRect)rect;
+- (UIImage *)fkit_imageCroppedToRect:(CGRect)rect;
 
 
 @end

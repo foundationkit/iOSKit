@@ -1,5 +1,4 @@
 #import "UIDevice+FKAdditions.h"
-#import "UIApplication+FKAdditions.h"
 #import "FKUniversal.h"
 #include <sys/sysctl.h>
 #include <ifaddrs.h>
@@ -9,7 +8,7 @@ FKLoadCategory(UIDeviceFKAdditions);
 
 @implementation UIDevice (FKAdditions)
 
-- (NSString *)ipAddress {
+- (NSString *)fkit_ipAddress {
     NSString *address = @"error";
     struct ifaddrs *interfaces = NULL;
     struct ifaddrs *temp_addr = NULL;
@@ -41,24 +40,19 @@ FKLoadCategory(UIDeviceFKAdditions);
     return address;
 }
 
-- (NSString *)debugInformation {
+- (NSString *)fkit_debugInformation {
     NSString *appName = FKApplicationName();
     NSString *appVersion = FKApplicationVersion();
     NSString *appShortVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]; 
     NSString *iphoneOSVersion = self.systemVersion;
-    NSString *deviceType = self.hardwarePlatform;
+    NSString *deviceType = self.fkit_hardwarePlatform;
     NSString *deviceLang = [[NSLocale preferredLanguages] objectAtIndex:0];
-    NSString *appPirated = [UIApplication sharedApplication].pirated ? @"\n-- POSSIBLY PIRATED --" : @"";
-    
-    if ([UIDevice currentDevice].jailbroken) {
-        deviceType = [NSString stringWithFormat:@"%@ (Possibly Jailbroken)", deviceType];
-    }
-    
-    return [NSString stringWithFormat:@"%@ %@ %@\niOS: %@\nDevice: %@\nLang: %@%@", 
-            appName, appVersion, (appShortVersion ? appShortVersion : @""), iphoneOSVersion, deviceType, deviceLang, appPirated];
+
+    return [NSString stringWithFormat:@"%@ %@ %@\niOS: %@\nDevice: %@\nLang: %@",
+            appName, appVersion, (appShortVersion ? appShortVersion : @""), iphoneOSVersion, deviceType, deviceLang];
 }
 
-- (NSString *)hardwarePlatform {
+- (NSString *)fkit_hardwarePlatform {
     size_t size;
     sysctlbyname("hw.machine", NULL, &size, NULL, 0);
     char *machine = malloc(size);
@@ -69,44 +63,7 @@ FKLoadCategory(UIDeviceFKAdditions);
     return platform;
 }
 
-- (BOOL)isJailbroken {
-    BOOL jailbroken = NO;
-    NSString *cydiaPath = @"/Applications/Cydia.app";
-    NSString *aptPath = @"/private/var/lib/apt/";
-    NSFileManager *fileManger = [[NSFileManager alloc] init];
-    
-    if ([fileManger fileExistsAtPath:cydiaPath]) {
-        jailbroken = YES;
-    }
-    
-    if ([fileManger fileExistsAtPath:aptPath]) {
-        jailbroken = YES;
-    }
-    
-    return jailbroken;
-}
-
-- (BOOL)isCrappy {
-    static BOOL isCrappyDevice = YES;
-    
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        BOOL isSimulator = NO;
-        BOOL isIPad2 = ($isPad() && [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]);
-        BOOL hasRetina = [[UIScreen mainScreen] scale] > 1.f;
-        
-#if TARGET_IPHONE_SIMULATOR
-        isSimulator = YES;
-#endif
-        if (isIPad2 || hasRetina || isSimulator) {
-            isCrappyDevice = NO;
-        }
-    });
-    
-    return isCrappyDevice;
-}
-
-- (BOOL)isSimulator {
+- (BOOL)fkit_isSimulator {
 #if TARGET_IPHONE_SIMULATOR
     return YES;
 #else
@@ -114,13 +71,13 @@ FKLoadCategory(UIDeviceFKAdditions);
 #endif
 }
 
-- (void)simulateMemoryWarning {
+- (void)fkit_simulateMemoryWarning {
 #ifdef FK_DEBUG
     CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), (CFStringRef)@"UISimulatedMemoryWarningNotification", NULL, NULL, true);
 #endif
 }
 
-- (BOOL)hasFourInchDisplay {
+- (BOOL)fkit_hasFourInchDisplay {
     return ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && [UIScreen mainScreen].bounds.size.height == 568.f);
 }
 

@@ -8,7 +8,7 @@
 
 @interface UIAlertView (FKError)
 
-+ (UIAlertView *)alertViewWithError:(NSError *)error;
-+ (UIAlertView *)alertViewWithDetailedError:(NSError *)error;
++ (UIAlertView *)fkit_alertViewWithError:(NSError *)error;
++ (UIAlertView *)fkit_alertViewWithDetailedError:(NSError *)error;
 
 @end

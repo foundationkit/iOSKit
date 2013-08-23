@@ -1,5 +1,4 @@
 #import "FKInterApp.h"
-#import "NSString+FKiOSAdditions.h"
 
 
 BOOL FKInterAppApplicationIsInstalled(NSString *appScheme) {
@@ -34,7 +33,7 @@ BOOL FKInterAppOpenSafari(NSURL *url) {
 
 BOOL FKInterAppOpenPhone(NSString *phoneNumber) {
     if (phoneNumber != nil) {
-        NSString *appScheme = [kFKInterAppSchemePhone stringByAppendingString:[phoneNumber sanitizedPhoneNumber]];
+        NSString *appScheme = [kFKInterAppSchemePhone stringByAppendingString:[phoneNumber fkit_sanitizedPhoneNumber]];
       
         return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appScheme]];
     }
@@ -44,7 +43,7 @@ BOOL FKInterAppOpenPhone(NSString *phoneNumber) {
 
 BOOL FKInterAppOpenMessages(NSString *phoneNumber) {
     if (phoneNumber != nil) {
-        NSString *appScheme = [kFKInterAppSchemeMessages stringByAppendingString:[phoneNumber sanitizedPhoneNumber]];
+        NSString *appScheme = [kFKInterAppSchemeMessages stringByAppendingString:[phoneNumber fkit_sanitizedPhoneNumber]];
         
         return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appScheme]];
     }

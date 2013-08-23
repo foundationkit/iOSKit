@@ -8,8 +8,3 @@ CGGradientRef FKCreateGradientWithColorsAndLocations(NSArray *colors, NSArray *l
 
 void FKDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect rect);
 void FKDrawRoundedRect(CGContextRef context, CGRect rect, CGFloat cornerRadius);
-
-/**
- This function draws a rounded rect with iOS 5's new style of UITableViews (grouped)
- */
-void FKDrawInsetBeveledRoundedRect(CGContextRef context, CGRect rect, CGFloat radius, UIColor *fillColor);

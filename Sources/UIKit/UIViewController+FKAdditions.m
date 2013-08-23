@@ -5,31 +5,31 @@ FKLoadCategory(UIViewControllerFKAdditions);
 
 @implementation UIViewController (FKAdditions)
 
-+ (id)viewController {
++ (id)fkit_viewController {
     return [[[self class] alloc] initWithNibName:nil bundle:nil];
 }
 
-+ (id)viewControllerFromSelfNamedNib {
++ (id)fkit_viewControllerFromSelfNamedNib {
     return [[[self class] alloc] initWithNibName:NSStringFromClass([self class]) bundle:nil];
 }
 
-- (BOOL)isViewVisible {
+- (BOOL)fkit_isViewVisible {
     return [self isViewLoaded] && self.view.window != nil;
 }
 
-- (id)currentVisibleViewController {
+- (id)fkit_currentVisibleViewController {
     if ([self isKindOfClass:[UITabBarController class]]) {
         UITabBarController *tabBarController = (UITabBarController *)self;
-        return [tabBarController.selectedViewController currentVisibleViewController];
+        return [tabBarController.selectedViewController fkit_currentVisibleViewController];
     } else if ([self isKindOfClass:[UINavigationController class]]) {
         UINavigationController *navigationController = (UINavigationController *)self;
-        return [[navigationController visibleViewController] currentVisibleViewController];
+        return [[navigationController visibleViewController] fkit_currentVisibleViewController];
     }
 
     return self;
 }
 
-- (void)addChildViewController:(UIViewController *)childController andRemoveOldChildViewController:(UIViewController *)oldChildController callAppearanceMethods:(BOOL)callAppearanceMethods {
+- (void)fkit_addChildViewController:(UIViewController *)childController andRemoveOldChildViewController:(UIViewController *)oldChildController callAppearanceMethods:(BOOL)callAppearanceMethods {
     if (childController != oldChildController && childController.parentViewController != self) {
         // Remove old childVC
         if (oldChildController != nil) {

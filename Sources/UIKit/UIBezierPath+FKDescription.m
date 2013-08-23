@@ -10,14 +10,14 @@ void CGPathEnumerationCallback(void *info, const CGPathElement *element);
 #pragma mark - UIBezierPath+FKDescription
 ////////////////////////////////////////////////////////////////////////
 
-- (void)enumerateElementsUsingBlock:(fk_bezierPath_block)handler {
+- (void)fkit_enumerateElementsUsingBlock:(fk_bezierPath_block)handler {
     CGPathRef cgPath = self.CGPath;
 
     
     CGPathApply(cgPath, (__bridge_retained void*)([handler copy]), CGPathEnumerationCallback);
 }
 
-- (NSString *)pathDescription {
+- (NSString *)fkit_pathDescription {
     CGPathRef cgPath = self.CGPath;
     CGRect bounds = CGPathGetPathBoundingBox(cgPath);
     CGRect controlPointBounds = CGPathGetBoundingBox(cgPath);
@@ -27,7 +27,7 @@ void CGPathEnumerationCallback(void *info, const CGPathElement *element);
     [mutableDescription appendFormat:@"  Bounds: %@\n", NSStringFromCGRect(bounds)];
     [mutableDescription appendFormat:@"  Control Point Bounds: %@\n", NSStringFromCGRect(controlPointBounds)];
 
-    [self enumerateElementsUsingBlock:^(const CGPathElement *element) {
+    [self fkit_enumerateElementsUsingBlock:^(const CGPathElement *element) {
         [mutableDescription appendFormat:@"    %@\n", [self fk_descriptionForPathElement:element]];
     }];
 

@@ -7,15 +7,15 @@ FKLoadCategory(UIImageViewFKAdditions);
 
 @implementation UIImageView (FKAdditions)
 
-+ (UIImageView *)imageViewNamed:(NSString *)imageName {
++ (UIImageView *)fkit_imageViewNamed:(NSString *)imageName {
     return [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
 }
 
-- (void)setImage:(UIImage *)image animated:(BOOL)animated {
-    [self setImage:image duration:(animated ? kFKFadeAnimationDuration : 0.)];
+- (void)fkit_setImage:(UIImage *)image animated:(BOOL)animated {
+    [self fkit_setImage:image duration:(animated ? kFKFadeAnimationDuration : 0.)];
 }
 
-- (void)setImage:(UIImage *)image duration:(NSTimeInterval)duration {
+- (void)fkit_setImage:(UIImage *)image duration:(NSTimeInterval)duration {
     if (duration > 0.) {
         CATransition *transition = [CATransition animation];
         

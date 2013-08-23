@@ -5,11 +5,11 @@ FKLoadCategory(UIScreenFKAdditions);
 
 @implementation UIScreen (FKAdditions)
 
-- (CGRect)currentBounds {
-	return [self boundsForOrientation:$appOrientation];
+- (CGRect)fkit_currentBounds {
+	return [self fkit_boundsForOrientation:$appOrientation];
 }
 
-- (CGRect)boundsForOrientation:(UIInterfaceOrientation)orientation {
+- (CGRect)fkit_boundsForOrientation:(UIInterfaceOrientation)orientation {
 	CGRect bounds = [self bounds];
     
 	if (UIInterfaceOrientationIsLandscape(orientation)) {
@@ -21,7 +21,7 @@ FKLoadCategory(UIScreenFKAdditions);
 	return bounds;
 }
 
-- (BOOL)isRetinaDisplay {
+- (BOOL)fkit_isRetinaDisplay {
 	static dispatch_once_t predicate;
 	static BOOL answer;
     

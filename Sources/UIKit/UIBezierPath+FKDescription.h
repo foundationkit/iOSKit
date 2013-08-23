@@ -11,9 +11,9 @@ typedef void(^fk_bezierPath_block)(const CGPathElement *element);
 
 @interface UIBezierPath (FKDescription)
 
-- (void)enumerateElementsUsingBlock:(fk_bezierPath_block)handler;
+- (void)fkit_enumerateElementsUsingBlock:(fk_bezierPath_block)handler;
 
 /** A human-readable description of the elements of a bezier Path */
-- (NSString *)pathDescription;
+- (NSString *)fkit_pathDescription;
 
 @end

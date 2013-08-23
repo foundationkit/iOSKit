@@ -2,7 +2,7 @@
 
 @implementation UIButton (FKConcise)
 
-+ (UIButton *)buttonWithImage:(UIImage *)image {
++ (UIButton *)fkit_buttonWithImage:(UIImage *)image {
     UIButton *button = nil;
     
     if (image != nil) {
@@ -14,8 +14,8 @@
     return button;
 }
 
-+ (UIButton *)buttonWithImageNamed:(NSString *)imageName {
-    return [self buttonWithImage:[UIImage imageNamed:imageName]];
++ (UIButton *)fkit_buttonWithImageNamed:(NSString *)imageName {
+    return [self fkit_buttonWithImage:[UIImage imageNamed:imageName]];
     
 }
 

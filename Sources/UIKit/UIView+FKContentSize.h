@@ -12,13 +12,13 @@
 
 @interface UIView (FKContentSize)
 
-@property (nonatomic, assign) BOOL excludedFromScrollViewAutocalculation;
+@property (nonatomic, assign, setter = fkit_setExcludedFromScrollViewAutocalculation:) BOOL fkit_excludedFromScrollViewAutocalculation;
 
 
 /**
  Calls [self sizeToFitNeededHeightForWidth:self.frame.size.width]
  */
-- (BOOL)sizeToFitNeededHeight;
+- (BOOL)fkit_sizeToFitNeededHeight;
 
 /**
  This method acts differently, based on the type of view it gets executed. If there is no
@@ -27,6 +27,6 @@
  
  @return YES in case of a special size-action, NO otherwise
  */
-- (BOOL)sizeToFitNeededHeightForWidth:(CGFloat)width;
+- (BOOL)fkit_sizeToFitNeededHeightForWidth:(CGFloat)width;
 
 @end

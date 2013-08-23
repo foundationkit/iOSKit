@@ -11,9 +11,9 @@
 
 @interface UIScreen (FKAdditions)
 
-@property (nonatomic, readonly) CGRect currentBounds;
-@property (nonatomic, readonly) BOOL isRetinaDisplay;
+@property (nonatomic, readonly) CGRect fkit_currentBounds;
+@property (nonatomic, readonly) BOOL fkit_isRetinaDisplay;
 
-- (CGRect)boundsForOrientation:(UIInterfaceOrientation)orientation;
+- (CGRect)fkit_boundsForOrientation:(UIInterfaceOrientation)orientation;
 
 @end

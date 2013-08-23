@@ -9,26 +9,26 @@ static char landscapeFrameKey;
 
 @implementation UIView (FKRotation)
 
-+ (id)viewWithPortraitFrame:(CGRect)portraitFrame landscapeFrame:(CGRect)landscapeFrame {
++ (id)fkit_viewWithPortraitFrame:(CGRect)portraitFrame landscapeFrame:(CGRect)landscapeFrame {
     UIView *view = [[[self class] alloc] initWithFrame:portraitFrame];
     
-    view.portraitFrame = portraitFrame;
-    view.landscapeFrame = landscapeFrame;
+    view.fkit_portraitFrame = portraitFrame;
+    view.fkit_landscapeFrame = landscapeFrame;
     
     return view;
 }
 
-+ (id)viewWithPortraitFrame:(CGRect)portraitFrame landscapeOrigin:(CGPoint)landscapeOrigin {
-    return [self viewWithPortraitFrame:portraitFrame landscapeFrame:(CGRect){landscapeOrigin, portraitFrame.size}];
++ (id)fkit_viewWithPortraitFrame:(CGRect)portraitFrame landscapeOrigin:(CGPoint)landscapeOrigin {
+    return [self fkit_viewWithPortraitFrame:portraitFrame landscapeFrame:(CGRect){landscapeOrigin, portraitFrame.size}];
 }
 
-- (BOOL)hasPortraitOrLandscapeFrame {
-    return !CGRectIsEmpty(self.portraitFrame) || !CGRectIsEmpty(self.landscapeFrame);
+- (BOOL)fkit_hasPortraitOrLandscapeFrame {
+    return !CGRectIsEmpty(self.fkit_portraitFrame) || !CGRectIsEmpty(self.fkit_landscapeFrame);
 }
 
-- (CGRect)portraitFrame {
+- (CGRect)fkit_portraitFrame {
     // read associated object for portrait frame
-    NSValue *portraitFrameValue = (NSValue *)[self associatedValueForKey:&portraitFrameKey];
+    NSValue *portraitFrameValue = (NSValue *)[self fkit_associatedValueForKey:&portraitFrameKey];
     
     if (portraitFrameValue != nil) {
         return [portraitFrameValue CGRectValue];
@@ -37,9 +37,9 @@ static char landscapeFrameKey;
     }
 }
 
-- (CGRect)landscapeFrame {
+- (CGRect)fkit_landscapeFrame {
     // read associated object for landscape frame
-    NSValue *landscapeFrameValue = (NSValue *)[self associatedValueForKey:&landscapeFrameKey];
+    NSValue *landscapeFrameValue = (NSValue *)[self fkit_associatedValueForKey:&landscapeFrameKey];
     
     if (landscapeFrameValue != nil) {
         return [landscapeFrameValue CGRectValue];
@@ -48,57 +48,57 @@ static char landscapeFrameKey;
     }
 }
 
-- (void)setPortraitFrame:(CGRect)portraitFrame {
-    [self associateValue:[NSValue valueWithCGRect:portraitFrame] withKey:&portraitFrameKey];
+- (void)fkit_setPortraitFrame:(CGRect)portraitFrame {
+    [self fkit_associateValue:[NSValue valueWithCGRect:portraitFrame] withKey:&portraitFrameKey];
 }
 
-- (void)setLandscapeFrame:(CGRect)landscapeFrame {
-    [self associateValue:[NSValue valueWithCGRect:landscapeFrame] withKey:&landscapeFrameKey];
+- (void)fkit_setLandscapeFrame:(CGRect)landscapeFrame {
+    [self fkit_associateValue:[NSValue valueWithCGRect:landscapeFrame] withKey:&landscapeFrameKey];
 }
 
 
-- (CGRect)frameForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (CGRect)fkit_frameForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
-        return self.portraitFrame;
+        return self.fkit_portraitFrame;
     } else {
-        return self.landscapeFrame;
+        return self.fkit_landscapeFrame;
     }
 }
 
-- (void)animateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+- (void)fkit_animateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [UIView animateWithDuration:duration animations:^{
-        [self setFrameForInterfaceOrientation:toInterfaceOrientation];
+        [self fkit_setFrameForInterfaceOrientation:toInterfaceOrientation];
     }];
 }
 
-- (void)layoutView {
-    [self setFrameForInterfaceOrientation:$appOrientation];
+- (void)fkit_layoutView {
+    [self fkit_setFrameForInterfaceOrientation:$appOrientation];
 }
 
-- (void)setFrameForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (void)fkit_setFrameForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     if (UIInterfaceOrientationIsPortrait(interfaceOrientation)) {
-        CGRect portraitFrame = self.portraitFrame;
+        CGRect portraitFrame = self.fkit_portraitFrame;
         
         self.frame = portraitFrame;
     } else {
-        CGRect landscapeFrame = self.landscapeFrame;
+        CGRect landscapeFrame = self.fkit_landscapeFrame;
         
         self.frame = landscapeFrame;
     }
 }
 
-- (void)setSubviewFramesForInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-    [self setSubviewFramesForInterfaceOrientation:toInterfaceOrientation recursive:NO];
+- (void)fkit_setSubviewFramesForInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    [self fkit_setSubviewFramesForInterfaceOrientation:toInterfaceOrientation recursive:NO];
 }
 
-- (void)setSubviewFramesForInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation recursive:(BOOL)recursive {
+- (void)fkit_setSubviewFramesForInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation recursive:(BOOL)recursive {
     for (UIView *view in self.subviews) {
-        if (view.hasPortraitOrLandscapeFrame) {
-            [view setFrameForInterfaceOrientation:toInterfaceOrientation];
+        if (view.fkit_hasPortraitOrLandscapeFrame) {
+            [view fkit_setFrameForInterfaceOrientation:toInterfaceOrientation];
         }
         
         if (recursive) {
-            [view setSubviewFramesForInterfaceOrientation:toInterfaceOrientation recursive:recursive];
+            [view fkit_setSubviewFramesForInterfaceOrientation:toInterfaceOrientation recursive:recursive];
         }
     } 
 }

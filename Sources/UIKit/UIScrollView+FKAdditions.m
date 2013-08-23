@@ -4,11 +4,11 @@ FKLoadCategory(UIScrollViewFKAdditions);
 
 @implementation UIScrollView (FKAdditions)
 
-- (BOOL)isAtBottom {
+- (BOOL)fkit_isAtBottom {
     return self.contentOffset.y + self.frame.size.height >= self.contentSize.height;
 }
 
-- (CGRect)visibleRect {
+- (CGRect)fkit_visibleRect {
     CGRect visibleRect = (CGRect){.origin = self.contentOffset, .size = self.bounds.size};
     float theScale = 1.f / self.zoomScale;
     
@@ -20,15 +20,15 @@ FKLoadCategory(UIScrollViewFKAdditions);
     return visibleRect;
 }
 
-- (void)scrollToTop {
-	[self scrollToTopAnimated:NO];
+- (void)fkit_scrollToTop {
+	[self fkit_scrollToTopAnimated:NO];
 }
 
-- (void)scrollToTopAnimated:(BOOL)animated {
+- (void)fkit_scrollToTopAnimated:(BOOL)animated {
 	[self setContentOffset:CGPointMake(0.f, 0.f) animated:animated];
 }
 
-- (void)setContentAndScrollIndicatorInset:(UIEdgeInsets)contentInset {
+- (void)fkit_setContentAndScrollIndicatorInset:(UIEdgeInsets)contentInset {
     self.contentInset = contentInset;
     self.scrollIndicatorInsets = contentInset;
 }

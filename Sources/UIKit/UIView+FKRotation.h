@@ -12,11 +12,11 @@
 @interface UIView (FKRotation)
 
 /** property to specify a frame for portrait orientation */
-@property (nonatomic, assign) CGRect portraitFrame;
+@property (nonatomic, assign, setter = fkit_setPortraitFrame:) CGRect fkit_portraitFrame;
 /** property to specify a frame for landscape orientation */
-@property (nonatomic, assign) CGRect landscapeFrame;
+@property (nonatomic, assign, setter = fkit_setLandscapeFrame:) CGRect fkit_landscapeFrame;
 /** specifies whether at least a portrait or landscape frame was set for this view */
-@property (nonatomic, readonly) BOOL hasPortraitOrLandscapeFrame;
+@property (nonatomic, readonly) BOOL fkit_hasPortraitOrLandscapeFrame;
 
 /**
  This creates a view with the portrait frame and sets it's portraitFrame/landscapeFrame properties
@@ -25,7 +25,7 @@
  @param landscapeFrame the landscape frame of the view
  @return a UIView that was created with initWithFrame:portraitFrame and has a portraitFrame and landscapeFrame set
  */
-+ (id)viewWithPortraitFrame:(CGRect)portraitFrame landscapeFrame:(CGRect)landscapeFrame;
++ (id)fkit_viewWithPortraitFrame:(CGRect)portraitFrame landscapeFrame:(CGRect)landscapeFrame;
 
 /**
  This creates a view with the portrait frame and sets it's portraitFrame/landscapeFrame properties
@@ -34,7 +34,7 @@
  @param landscapeOrigin the origin of the frame of the view in landscape orientation
  @return a UIView that was created with initWithFrame:portraitFrame and it's landscapeFrame is set to [landscapeOrigin, portraitFrame.size]
  */
-+ (id)viewWithPortraitFrame:(CGRect)portraitFrame landscapeOrigin:(CGPoint)landscapeOrigin;
++ (id)fkit_viewWithPortraitFrame:(CGRect)portraitFrame landscapeOrigin:(CGPoint)landscapeOrigin;
 
 /**
  * Returns the frame set for the given interface orientation
@@ -42,7 +42,7 @@
  * @param interfaceOrientation the interface orientation that is used the determine the frame
  * @return the frame that is set for the given interface orientation
  */
-- (CGRect)frameForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+- (CGRect)fkit_frameForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 
 /**
  * Animates the frame to the frame for the given interface orientation
@@ -50,19 +50,19 @@
  * @param toInterfaceOrientation the interface orientation that specifies the frame used
  * @param duration the duration of the animation
  */
-- (void)animateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration;
+- (void)fkit_animateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration;
 
 /**
  * Sets the frame of the UIView to the frame for the current statusBarOrientation
  */
-- (void)layoutView;
+- (void)fkit_layoutView;
 
 /**
  * Sets the frame of the UIView to the frame for the given interface orientation
  *
  * @param interfaceOrientation the interface orientation that specifies the frame used
  */
-- (void)setFrameForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+- (void)fkit_setFrameForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 
 /**
  * Sets the frames of all subviews that support rotation (hasPortraitAndLandscapeFrames == YES) (not recursive!) 
@@ -70,7 +70,7 @@
  *
  * @param interfaceOrientation the interface orientation that specifies the frame used
  */
-- (void)setSubviewFramesForInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation;
+- (void)fkit_setSubviewFramesForInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation;
 
 /**
  * Sets the frames of all subviews that support rotation (hasPortraitAndLandscapeFrames == YES)
@@ -79,6 +79,6 @@
  * @param interfaceOrientation the interface orientation that specifies the frame used
  * @param recursive flag that indicates if the method should be called recursively over whole view-hierarchy
  */
-- (void)setSubviewFramesForInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation recursive:(BOOL)recursive;
+- (void)fkit_setSubviewFramesForInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation recursive:(BOOL)recursive;
 
 @end
