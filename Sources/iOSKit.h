@@ -28,6 +28,7 @@
 // UIKit
 #import "UIAlertView+FKError.h"
 #import "UIBezierPath+FKDescription.h"
+#import "UICollectionReusableView+FKAdditions.h"
 #import "UIColor+FKAdditions.h"
 #import "UIDevice+FKAdditions.h"
 #import "UIImage+FKAdditions.h"
@@ -39,6 +40,7 @@
 #import "UITableView+FKLoading.h"
 #import "UITableViewCell+FKAdditions.h"
 #import "UITableViewCell+FKLoading.h"
+#import "UITableViewHeaderFooterView+FKAdditions.h"
 #import "UITouch+FKCentroid.h"
 #import "UIView+FKAdditions.h"
 #import "UIView+FKAnimations.h"

@@ -70,6 +70,10 @@
 		9B6C025D142BD584006F9812 /* FKiOSDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C025C142BD583006F9812 /* FKiOSDrawing.m */; };
 		9B6C0260142C69E8006F9812 /* UIAlertView+FKError.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B6C025E142C69D7006F9812 /* UIAlertView+FKError.h */; };
 		9B6C0261142C69E8006F9812 /* UIAlertView+FKError.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6C025F142C69DE006F9812 /* UIAlertView+FKError.m */; };
+		9B82A30A17C77B2B00A74903 /* UICollectionReusableView+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B82A30817C77B2B00A74903 /* UICollectionReusableView+FKAdditions.h */; };
+		9B82A30B17C77B2B00A74903 /* UICollectionReusableView+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B82A30917C77B2B00A74903 /* UICollectionReusableView+FKAdditions.m */; };
+		9B82A30E17C77B3E00A74903 /* UITableViewHeaderFooterView+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B82A30C17C77B3E00A74903 /* UITableViewHeaderFooterView+FKAdditions.h */; };
+		9B82A30F17C77B3E00A74903 /* UITableViewHeaderFooterView+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B82A30D17C77B3E00A74903 /* UITableViewHeaderFooterView+FKAdditions.m */; };
 		9B8D782316514AA200FE2ECC /* UITableViewCell+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B8D782116514AA200FE2ECC /* UITableViewCell+FKAdditions.h */; };
 		9B8D782416514AA200FE2ECC /* UITableViewCell+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D782216514AA200FE2ECC /* UITableViewCell+FKAdditions.m */; };
 		9B8D7841165151EB00FE2ECC /* UIImage+FKBlockDrawing.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B8D783F165151EB00FE2ECC /* UIImage+FKBlockDrawing.h */; };
@@ -189,6 +193,10 @@
 		9B6C025C142BD583006F9812 /* FKiOSDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKiOSDrawing.m; path = Core/FKiOSDrawing.m; sourceTree = "<group>"; };
 		9B6C025E142C69D7006F9812 /* UIAlertView+FKError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+FKError.h"; path = "UIKit/UIAlertView+FKError.h"; sourceTree = "<group>"; };
 		9B6C025F142C69DE006F9812 /* UIAlertView+FKError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+FKError.m"; path = "UIKit/UIAlertView+FKError.m"; sourceTree = "<group>"; };
+		9B82A30817C77B2B00A74903 /* UICollectionReusableView+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UICollectionReusableView+FKAdditions.h"; path = "UIKit/UICollectionReusableView+FKAdditions.h"; sourceTree = "<group>"; };
+		9B82A30917C77B2B00A74903 /* UICollectionReusableView+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UICollectionReusableView+FKAdditions.m"; path = "UIKit/UICollectionReusableView+FKAdditions.m"; sourceTree = "<group>"; };
+		9B82A30C17C77B3E00A74903 /* UITableViewHeaderFooterView+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewHeaderFooterView+FKAdditions.h"; path = "UIKit/UITableViewHeaderFooterView+FKAdditions.h"; sourceTree = "<group>"; };
+		9B82A30D17C77B3E00A74903 /* UITableViewHeaderFooterView+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewHeaderFooterView+FKAdditions.m"; path = "UIKit/UITableViewHeaderFooterView+FKAdditions.m"; sourceTree = "<group>"; };
 		9B82D40215570F5900D01584 /* FKAudioRouteChange.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FKAudioRouteChange.h; sourceTree = "<group>"; };
 		9B82D40315570F5900D01584 /* FKAudioRouteChange.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FKAudioRouteChange.m; sourceTree = "<group>"; };
 		9B8D782116514AA200FE2ECC /* UITableViewCell+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+FKAdditions.h"; path = "UIKit/UITableViewCell+FKAdditions.h"; sourceTree = "<group>"; };
@@ -363,6 +371,8 @@
 				9B6C025F142C69DE006F9812 /* UIAlertView+FKError.m */,
 				9BB4A6A916F1F60C0001EC76 /* UIBezierPath+FKDescription.h */,
 				9BB4A6AA16F1F60C0001EC76 /* UIBezierPath+FKDescription.m */,
+				9B82A30817C77B2B00A74903 /* UICollectionReusableView+FKAdditions.h */,
+				9B82A30917C77B2B00A74903 /* UICollectionReusableView+FKAdditions.m */,
 				39CFA5ED1422348600DC3E57 /* UIColor+FKAdditions.h */,
 				39CFA5EE1422348600DC3E57 /* UIColor+FKAdditions.m */,
 				39CFA5F51422398E00DC3E57 /* UIDevice+FKAdditions.h */,
@@ -385,6 +395,8 @@
 				9B8D782216514AA200FE2ECC /* UITableViewCell+FKAdditions.m */,
 				3931206A1428AD6B0095D5ED /* UITableViewCell+FKLoading.h */,
 				3931206B1428AD6B0095D5ED /* UITableViewCell+FKLoading.m */,
+				9B82A30C17C77B3E00A74903 /* UITableViewHeaderFooterView+FKAdditions.h */,
+				9B82A30D17C77B3E00A74903 /* UITableViewHeaderFooterView+FKAdditions.m */,
 				9B30EEE11778753E00056297 /* UITouch+FKCentroid.h */,
 				9B30EEE21778753F00056297 /* UITouch+FKCentroid.m */,
 				39CFA60B1422437300DC3E57 /* UIView+FKAdditions.h */,
@@ -490,6 +502,7 @@
 				3931206C1428AD6B0095D5ED /* UITableViewCell+FKLoading.h in Headers */,
 				393120701428AF010095D5ED /* UITableView+FKLoading.h in Headers */,
 				39AA0F751429091A00C6956C /* NSIndexPath+FKAdditions.h in Headers */,
+				9B82A30A17C77B2B00A74903 /* UICollectionReusableView+FKAdditions.h in Headers */,
 				9B6C025B142BD444006F9812 /* FKiOSDrawing.h in Headers */,
 				9B6C0260142C69E8006F9812 /* UIAlertView+FKError.h in Headers */,
 				39CC1E0F142F229F0017578F /* UIImage+FKAdditions.h in Headers */,
@@ -498,6 +511,7 @@
 				9BCBDF431472747C0074BFEB /* UIWebView+FKAdditions.h in Headers */,
 				9BCA532414891A5700918E87 /* FKInterApp.h in Headers */,
 				9BDD922F148A8FE6008E21A1 /* FKBrowserViewController.h in Headers */,
+				9B82A30E17C77B3E00A74903 /* UITableViewHeaderFooterView+FKAdditions.h in Headers */,
 				9B45437914953EF90076A950 /* FKView.h in Headers */,
 				9B0B571614A6AD550071B6D2 /* UIView+FKAutoresizing.h in Headers */,
 				9BBA863015DAD8F000A99D13 /* NSIndexSet+FKAdditions.h in Headers */,
@@ -591,6 +605,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B82A30B17C77B2B00A74903 /* UICollectionReusableView+FKAdditions.m in Sources */,
 				39CFA5F01422348700DC3E57 /* UIColor+FKAdditions.m in Sources */,
 				39CFA5F4142234A600DC3E57 /* UIView+FKRotation.m in Sources */,
 				39CFA5F81422398E00DC3E57 /* UIDevice+FKAdditions.m in Sources */,
@@ -617,6 +632,7 @@
 				9BBBF402143AF00D00071ABD /* UIButton+FKConcise.m in Sources */,
 				9B63F33414726E3F00E30D13 /* UIBarButtonItem+FKConcise.m in Sources */,
 				9BCBDF441472747C0074BFEB /* UIWebView+FKAdditions.m in Sources */,
+				9B82A30F17C77B3E00A74903 /* UITableViewHeaderFooterView+FKAdditions.m in Sources */,
 				9BCA532514891A5700918E87 /* FKInterApp.m in Sources */,
 				9BDD9230148A8FE6008E21A1 /* FKBrowserViewController.m in Sources */,
 				9B45437A14953EF90076A950 /* FKView.m in Sources */,
