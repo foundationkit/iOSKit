@@ -303,7 +303,16 @@
 ////////////////////////////////////////////////////////////////////////
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSInteger customActionsBeginIndex = [self hasValidAddress] ? ([MFMailComposeViewController canSendMail] ? 2 : 1) : 0;
+    NSInteger customActionsBeginIndex =  0;
+    if ([self hasValidAddress]) {
+        customActionsBeginIndex += 2; // copy link, safari
+        if (FKInterAppChromeIsInstalled()) {
+            customActionsBeginIndex++;
+        }
+        if ([MFMailComposeViewController canSendMail]) {
+            customActionsBeginIndex++;
+        }
+    }
 
     if (buttonIndex == actionSheet.cancelButtonIndex) {
         // do nothing special
@@ -318,13 +327,15 @@
         [UIPasteboard generalPasteboard].string = self.address;
     } else if (buttonIndex == 1) {
         FKInterAppOpenSafari(self.url);
-    } else if (buttonIndex == 2 && [MFMailComposeViewController canSendMail]) {
+    } else if (buttonIndex == 2 && FKInterAppChromeIsInstalled()) {
+        FKInterAppOpenChrome(self.url);
+    } else if ((buttonIndex == 2 && !FKInterAppChromeIsInstalled() && [MFMailComposeViewController canSendMail]) ||
+               (buttonIndex == 3 && FKInterAppChromeIsInstalled() && [MFMailComposeViewController canSendMail])) {
         MFMailComposeViewController *composer = [[MFMailComposeViewController alloc] init];
 
         composer.navigationBar.tintColor = self.tintColor;
         [composer setMailComposeDelegate:self];
         [composer setMessageBody:self.address isHTML:NO];
-
         if (composer != nil) {
             [self presentModalViewController:composer animated:YES];
         }
@@ -445,6 +456,9 @@
     if ([self hasValidAddress]) {
         [self.actionSheet addButtonWithTitle:_(@"Copy Link")];
         [self.actionSheet addButtonWithTitle:_(@"Open in Safari")];
+        if (FKInterAppChromeIsInstalled()) {
+            [self.actionSheet addButtonWithTitle:_(@"Open in Chrome")];
+        }
 
         if ([MFMailComposeViewController canSendMail]) {
             [self.actionSheet addButtonWithTitle:_(@"Mail Link")];

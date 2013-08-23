@@ -68,3 +68,63 @@ BOOL FKInterAppOpenAppStoreReview(NSString *appID) {
     
     return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlPath]];
 }
+
+BOOL FKInterAppChromeIsInstalled(void) {
+    return FKInterAppApplicationIsInstalled(kFKInterAppSchemeChromeHTTP) || FKInterAppApplicationIsInstalled(kFKInterAppSchemeChromeHTTPS);
+}
+
+BOOL __attribute__((overloadable)) FKInterAppOpenChrome(NSURL *URL) {
+    return FKInterAppOpenChrome(URL, nil, YES);
+}
+
+BOOL __attribute__((overloadable)) FKInterAppOpenChrome(NSURL *URL, NSURL *callbackURL, BOOL createNewTab) {
+    NSURL *chromeSimpleURL = [NSURL URLWithString:kFKInterAppSchemeChromeHTTP];
+    NSURL *chromeCallbackURL = [NSURL URLWithString:kFKInterAppSchemeChromeXCallback];
+
+    if ([[UIApplication sharedApplication] canOpenURL:chromeCallbackURL]) {
+        NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+        NSString *scheme = [URL.scheme lowercaseString];
+
+        if ([scheme isEqualToString:@"http"] || [scheme isEqualToString:@"https"]) {
+            NSMutableString *chromeURLString = [NSMutableString string];
+            [chromeURLString appendFormat:@"%@//x-callback-url/open/?x-source=%@&url=%@",
+             kFKInterAppSchemeChromeXCallback,
+             [appName fkit_URLEncodedString],
+             [[URL absoluteString] fkit_URLEncodedString]];
+
+            if (callbackURL != nil) {
+                [chromeURLString appendFormat:@"&x-success=%@", [[callbackURL absoluteString] fkit_URLEncodedString]];
+            }
+
+            if (createNewTab) {
+                [chromeURLString appendString:@"&create-new-tab"];
+            }
+
+            NSURL *chromeURL = [NSURL URLWithString:chromeURLString];
+            return [[UIApplication sharedApplication] openURL:chromeURL];
+        }
+    } else if ([[UIApplication sharedApplication] canOpenURL:chromeSimpleURL]) {
+        NSString *scheme = [URL.scheme lowercaseString];
+
+        // Replace the URL Scheme with the Chrome equivalent.
+        NSString *chromeScheme = nil;
+        if ([scheme isEqualToString:@"http"]) {
+            chromeScheme = kFKInterAppSchemeChromeHTTP;
+        } else if ([scheme isEqualToString:@"https"]) {
+            chromeScheme = kFKInterAppSchemeChromeHTTPS;
+        }
+
+        if (chromeScheme != nil) {
+            NSString *absoluteString = [URL absoluteString];
+            NSRange rangeForScheme = [absoluteString rangeOfString:@":"];
+            NSString *urlNoScheme = [absoluteString substringFromIndex:rangeForScheme.location + 1];
+            NSString *chromeURLString = [chromeScheme stringByAppendingString:urlNoScheme];
+            NSURL *chromeURL = [NSURL URLWithString:chromeURLString];
+
+            return [[UIApplication sharedApplication] openURL:chromeURL];
+        }
+    }
+
+    return NO;
+}
+

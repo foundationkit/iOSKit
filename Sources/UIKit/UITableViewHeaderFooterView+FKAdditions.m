@@ -6,5 +6,4 @@
     return NSStringFromClass([self class]);
 }
 
-
 @end

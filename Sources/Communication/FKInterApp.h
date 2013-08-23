@@ -10,15 +10,18 @@
  Apps are installed.
  */
 
-#define kFKInterAppIDFacebook       @"284882215"
-#define kFKInterAppIDTwitter        @"333903271"
-#define kFKInterAppIDiBooks         @"364709193"
+#define kFKInterAppIDFacebook               @"284882215"
+#define kFKInterAppIDTwitter                @"333903271"
+#define kFKInterAppIDiBooks                 @"364709193"
 
-#define kFKInterAppSchemeFacebook   @"fb://"
-#define kFKInterAppSchemeTwitter    @"twitter://"
-#define kFKInterAppSchemeiBooks     @"itms-books://"
-#define kFKInterAppSchemePhone      @"tel://"
-#define kFKInterAppSchemeMessages   @"sms://"
+#define kFKInterAppSchemeFacebook           @"fb://"
+#define kFKInterAppSchemeTwitter            @"twitter://"
+#define kFKInterAppSchemeiBooks             @"itms-books://"
+#define kFKInterAppSchemePhone              @"tel://"
+#define kFKInterAppSchemeMessages           @"sms://"
+#define kFKInterAppSchemeChromeHTTP         @"googlechrome:"
+#define kFKInterAppSchemeChromeHTTPS        @"googlechromes:"
+#define kFKInterAppSchemeChromeXCallback    @"googlechrome-x-callback:"
 
 /**
  Checks if the App with the given scheme is installed
@@ -99,3 +102,7 @@ BOOL FKInterAppOpenAppStore(NSString *appID);
  @return YES if the communication was successful, NO otherwise
  */
 BOOL FKInterAppOpenAppStoreReview(NSString *appID);
+
+BOOL FKInterAppChromeIsInstalled(void);
+BOOL __attribute__((overloadable)) FKInterAppOpenChrome(NSURL *URL);
+BOOL __attribute__((overloadable)) FKInterAppOpenChrome(NSURL *URL, NSURL *callbackURL, BOOL createNewTab);
