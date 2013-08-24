@@ -36,7 +36,8 @@ NS_INLINE void FKUpdateNetworkActivityIndicatorVisibility() {
 + (void)addNetworkUser:(id)networkUser {
     if (networkUser != nil) {
         dispatch_async(network_queue(), ^{
-            [networkUsers addObject:networkUser];
+            uintptr_t address = (uintptr_t)networkUser;
+            [networkUsers addObject:@(address)];
             FKUpdateNetworkActivityIndicatorVisibility();
         });
     }
@@ -45,7 +46,8 @@ NS_INLINE void FKUpdateNetworkActivityIndicatorVisibility() {
 + (void)removeNetworkUser:(id)networkUser {
     if (networkUser != nil) {
         dispatch_async(network_queue(), ^{
-            [networkUsers removeObject:networkUser];
+            uintptr_t address = (uintptr_t)networkUser;
+            [networkUsers removeObject:@(address)];
             FKUpdateNetworkActivityIndicatorVisibility();
         });
     }
