@@ -58,7 +58,7 @@
 
 - (id)initWithAddress:(NSString *)address {
     if ((self = [super initWithNibName:nil bundle:nil])) {
-        if (![address hasPrefix:@"http"]) {
+        if (address != nil && ![address hasPrefix:@"http"]) {
             address = [@"http://" stringByAppendingString:address];
         }
 
