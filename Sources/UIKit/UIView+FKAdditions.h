@@ -63,7 +63,7 @@ typedef enum {
  
  @param view the view which acts as a top border of the current view
  */
-- (void)positionUnderView:(UIView *)view;
+- (void)fkit_positionUnderView:(UIView *)view;
 
 /**
  Positions the current view under the given view with a specified padding.
@@ -72,7 +72,7 @@ typedef enum {
  @param view the view which acts as a left border of the current view
  @param padding the distance between view.frameBottom and self.frameTop
  */
-- (void)positionUnderView:(UIView *)view padding:(CGFloat)padding;
+- (void)fkit_positionUnderView:(UIView *)view padding:(CGFloat)padding;
 
 /**
  Positions the current view under the given view with a specified padding and alignment.
@@ -80,7 +80,7 @@ typedef enum {
  @param view the view which acts as a top border of the current view
  @param alignment Specifies whether origin.x is changed to align to the left, center or right
  */
-- (void)positionUnderView:(UIView *)view alignment:(FKUIViewAlignment)alignment;
+- (void)fkit_positionUnderView:(UIView *)view alignment:(FKUIViewAlignment)alignment;
 
 /**
  Positions the current view under the given view with a specified padding.
@@ -89,7 +89,7 @@ typedef enum {
  @param padding the distance between view.frameBottom and self.frameTop
  @param alignment Specifies whether origin.x is changed to align to the left, center or right
  */
-- (void)positionUnderView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment;
+- (void)fkit_positionUnderView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment;
 
 /**
  Positions the current view right next to the given view.
@@ -97,7 +97,7 @@ typedef enum {
  
  @param view the view which acts as a left border of the current view
  */
-- (void)positionNextToView:(UIView *)view;
+- (void)fkit_positionNextToView:(UIView *)view;
 
 /**
  Positions the current view right next to the given view with a specified padding.
@@ -106,7 +106,7 @@ typedef enum {
  @param view the view which acts as a left border of the current view
  @param padding the distance between view.frameRight and self.frameLeft
  */
-- (void)positionNextToView:(UIView *)view padding:(CGFloat)padding;
+- (void)fkit_positionNextToView:(UIView *)view padding:(CGFloat)padding;
 
 /**
  Positions the current view right next to the given view with a specified padding and alignment.
@@ -114,7 +114,7 @@ typedef enum {
  @param view the view which acts as a left border of the current view
  @param alignment Specifies whether origin.y is changed to align to the top, center or bottom
  */
-- (void)positionNextToView:(UIView *)view alignment:(FKUIViewAlignment)alignment;
+- (void)fkit_positionNextToView:(UIView *)view alignment:(FKUIViewAlignment)alignment;
 
 /**
  Positions the current view right next to the given view with a specified padding.
@@ -123,88 +123,88 @@ typedef enum {
  @param padding the distance between view.frameRight and self.frameLeft
  @param alignment Specifies whether origin.y is changed to align to the top, center or bottom
  */
-- (void)positionNextToView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment;
+- (void)fkit_positionNextToView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment;
 
-- (void)positionToLeftOfView:(UIView *)view;
-- (void)positionToLeftOfView:(UIView *)view padding:(CGFloat)padding;
-- (void)positionToLeftOfView:(UIView *)view alignment:(FKUIViewAlignment)alignment;
-- (void)positionToLeftOfView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment;
+- (void)fkit_positionToLeftOfView:(UIView *)view;
+- (void)fkit_positionToLeftOfView:(UIView *)view padding:(CGFloat)padding;
+- (void)fkit_positionToLeftOfView:(UIView *)view alignment:(FKUIViewAlignment)alignment;
+- (void)fkit_positionToLeftOfView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment;
 
 /**
  Adds the subview to current view and centers it
  @param subview the view to add as centered subview
  */
-- (void)addCenteredSubview:(UIView *)subview;
+- (void)fkit_addCenteredSubview:(UIView *)subview;
 /**
  Centers the view within it's superview
  */
-- (void)moveToCenterOfSuperview;
+- (void)fkit_moveToCenterOfSuperview;
 
 /**
  Sets a border on the view's layer with the specified width and color. The cornerRadius is set to 0.
  @param borderWidth the width of the border
  @param borderColor the color of the border
  */
-- (void)setBorderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
+- (void)fkit_setBorderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
 /**
  Sets a border on the view's layer with the specified width, color and cornerRadius.
  @param borderWidth the width of the border
  @param borderColor the color of the border
  @param cornerRadius the radius of the border
  */
-- (void)setBorderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor cornerRadius:(CGFloat)cornerRadius;
+- (void)fkit_setBorderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor cornerRadius:(CGFloat)cornerRadius;
 /**
  Sets a shadow on the view's layer with the specified offset, radius and opacity
  @param offset the offset of the shadow
  @param radius the radius of the shadow
  @param opacity the opacity of the shadow
  */
-- (void)setShadowWithOffset:(CGSize)offset radius:(CGFloat)radius opacity:(CGFloat)opacity;
+- (void)fkit_setShadowWithOffset:(CGSize)offset radius:(CGFloat)radius opacity:(CGFloat)opacity;
 /**
  Adds a linear gradientLayer as a sublayer on the current view's layer with the specified start- and endColor
  @param startColor the color used at the top of the view
  @param endColor the color used at the bottom of the view
  */
-- (void)setGradientBackgroundWithStartColor:(UIColor *)startColor endColor:(UIColor *)endColor;
+- (void)fkit_setGradientBackgroundWithStartColor:(UIColor *)startColor endColor:(UIColor *)endColor;
 
 /**
  Sets a border on the view's layer with the specified color and a width of 2pt, if we are in Debug-Mode.
  Does nothing otherwise.
  @param color the color of the border
  */
-- (void)enableDebugBorderWithColor:(UIColor *)color;
+- (void)fkit_enableDebugBorderWithColor:(UIColor *)color;
 /**
  Sets a border on the view's layer with a random color and a width of 2pt, if we are in Debug-Mode.
  Does nothing otherwise.
  */
-- (void)enableDebugBorderWithRandomColor;
+- (void)fkit_enableDebugBorderWithRandomColor;
 /**
  Sets a border on the view's layer with an orange color and a width of 2pt, if we are in Debug-Mode.
  Does nothing otherwise.
  */
-- (void)enableDebugBorder;
+- (void)fkit_enableDebugBorder;
 
 /**
  Returns an image representation of the current view
  @return a UIImage with the contents of the view
  */
-- (UIImage *)imageRepresentation;
+- (UIImage *)fkit_imageRepresentation;
 
 /**
  Recursively sets the property 'scrollsToTop' to NO for all subviews of the given view.
  
  @param view the view, which subviews should not scrollToTop
  */
-+ (void)disableScrollsToTopOnAllSubviewsOfView:(UIView *)view;
++ (void)fkit_disableScrollsToTopOnAllSubviewsOfView:(UIView *)view;
 
 /**
  Calls + disableScrollsToTopOnAllSubviewsView: with self.
  */
-- (void)disableScrollsToTopOnAllSubviews;
+- (void)fkit_disableScrollsToTopOnAllSubviews;
 
 /**
  Removes all gesture recognizers that are attached to the view
  */
-- (void)removeAllGestureRecognizers;
+- (void)fkit_removeAllGestureRecognizers;
 
 @end

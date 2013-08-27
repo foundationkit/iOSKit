@@ -120,19 +120,19 @@ FKLoadCategory(UIViewFKAdditions);
 #pragma mark - Relative Positioning
 ////////////////////////////////////////////////////////////////////////
 
-- (void)positionUnderView:(UIView *)view {
-	[self positionUnderView:view padding:0.f];
+- (void)fkit_positionUnderView:(UIView *)view {
+	[self fkit_positionUnderView:view padding:0.f];
 }
 
-- (void)positionUnderView:(UIView *)view padding:(CGFloat)padding {
-	[self positionUnderView:view padding:padding alignment:FKUIViewAlignmentUnchanged];
+- (void)fkit_positionUnderView:(UIView *)view padding:(CGFloat)padding {
+	[self fkit_positionUnderView:view padding:padding alignment:FKUIViewAlignmentUnchanged];
 }
 
-- (void)positionUnderView:(UIView *)view alignment:(FKUIViewAlignment)alignment {
-	[self positionUnderView:view padding:0.f alignment:alignment];
+- (void)fkit_positionUnderView:(UIView *)view alignment:(FKUIViewAlignment)alignment {
+	[self fkit_positionUnderView:view padding:0.f alignment:alignment];
 }
 
-- (void)positionUnderView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment {
+- (void)fkit_positionUnderView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment {
 	self.frameTop = view.frameBottom + padding;
     
 	switch (alignment) {
@@ -157,19 +157,19 @@ FKLoadCategory(UIViewFKAdditions);
 	}
 }
 
-- (void)positionNextToView:(UIView *)view {
-	[self positionNextToView:view padding:0.f];
+- (void)fkit_positionNextToView:(UIView *)view {
+	[self fkit_positionNextToView:view padding:0.f];
 }
 
-- (void)positionNextToView:(UIView *)view padding:(CGFloat)padding {
-	[self positionNextToView:view padding:padding alignment:FKUIViewAlignmentUnchanged];
+- (void)fkit_positionNextToView:(UIView *)view padding:(CGFloat)padding {
+	[self fkit_positionNextToView:view padding:padding alignment:FKUIViewAlignmentUnchanged];
 }
 
-- (void)positionNextToView:(UIView *)view alignment:(FKUIViewAlignment)alignment {
-	[self positionNextToView:view padding:0.f alignment:alignment];
+- (void)fkit_positionNextToView:(UIView *)view alignment:(FKUIViewAlignment)alignment {
+	[self fkit_positionNextToView:view padding:0.f alignment:alignment];
 }
 
-- (void)positionNextToView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment {
+- (void)fkit_positionNextToView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment {
 	self.frameLeft = view.frameRight + padding;
     
 	switch (alignment) {
@@ -194,19 +194,19 @@ FKLoadCategory(UIViewFKAdditions);
 	}
 }
 
-- (void)positionToLeftOfView:(UIView *)view {
-	[self positionToLeftOfView:view padding:0.f];
+- (void)fkit_positionToLeftOfView:(UIView *)view {
+	[self fkit_positionToLeftOfView:view padding:0.f];
 }
 
-- (void)positionToLeftOfView:(UIView *)view padding:(CGFloat)padding {
-	[self positionToLeftOfView:view padding:padding alignment:FKUIViewAlignmentUnchanged];
+- (void)fkit_positionToLeftOfView:(UIView *)view padding:(CGFloat)padding {
+	[self fkit_positionToLeftOfView:view padding:padding alignment:FKUIViewAlignmentUnchanged];
 }
 
-- (void)positionToLeftOfView:(UIView *)view alignment:(FKUIViewAlignment)alignment {
-	[self positionNextToView:view padding:0.f alignment:alignment];
+- (void)fkit_positionToLeftOfView:(UIView *)view alignment:(FKUIViewAlignment)alignment {
+	[self fkit_positionNextToView:view padding:0.f alignment:alignment];
 }
 
-- (void)positionToLeftOfView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment {
+- (void)fkit_positionToLeftOfView:(UIView *)view padding:(CGFloat)padding alignment:(FKUIViewAlignment)alignment {
 	self.frameRight = view.frameLeft - padding;
 
 	switch (alignment) {
@@ -231,12 +231,12 @@ FKLoadCategory(UIViewFKAdditions);
 	}
 }
 
-- (void)addCenteredSubview:(UIView *)subview {
+- (void)fkit_addCenteredSubview:(UIView *)subview {
 	[self addSubview:subview];
-    [subview moveToCenterOfSuperview];
+    [subview fkit_moveToCenterOfSuperview];
 }
 
-- (void)moveToCenterOfSuperview {
+- (void)fkit_moveToCenterOfSuperview {
 	self.center = CGPointMake(self.superview.boundsWidth/2.f, self.superview.boundsHeight/2.f);
 }
 
@@ -244,11 +244,11 @@ FKLoadCategory(UIViewFKAdditions);
 #pragma mark - Shadows/Borders
 ////////////////////////////////////////////////////////////////////////
 
-- (void)setBorderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor {
-    [self setBorderWidth:borderWidth borderColor:borderColor cornerRadius:0.f];
+- (void)fkit_setBorderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor {
+    [self fkit_setBorderWidth:borderWidth borderColor:borderColor cornerRadius:0.f];
 }
 
-- (void)setBorderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor cornerRadius:(CGFloat)cornerRadius {
+- (void)fkit_setBorderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor cornerRadius:(CGFloat)cornerRadius {
 	CALayer *layer = self.layer;
     
 	layer.masksToBounds = YES;
@@ -257,7 +257,7 @@ FKLoadCategory(UIViewFKAdditions);
 	layer.borderColor = [borderColor CGColor];
 }
 
-- (void)setShadowWithOffset:(CGSize)offset radius:(CGFloat)radius opacity:(CGFloat)opacity {
+- (void)fkit_setShadowWithOffset:(CGSize)offset radius:(CGFloat)radius opacity:(CGFloat)opacity {
     CALayer *layer = self.layer;
     
 	layer.masksToBounds = NO;
@@ -266,7 +266,7 @@ FKLoadCategory(UIViewFKAdditions);
 	layer.shadowOpacity = opacity;
 }
 
-- (void)setGradientBackgroundWithStartColor:(UIColor *)startColor endColor:(UIColor *)endColor {
+- (void)fkit_setGradientBackgroundWithStartColor:(UIColor *)startColor endColor:(UIColor *)endColor {
 	CAGradientLayer *gradient = [CAGradientLayer layer];
     
 	gradient.frame = self.bounds;
@@ -275,27 +275,27 @@ FKLoadCategory(UIViewFKAdditions);
 	[self.layer insertSublayer:gradient atIndex:0];
 }
 
-- (void)enableDebugBorderWithColor:(UIColor *)color {
+- (void)fkit_enableDebugBorderWithColor:(UIColor *)color {
     FKLogDebug(@"[Enabling debug border for view %@]", self);
     
 #ifdef FK_DEBUG
-    [self setBorderWidth:2.f borderColor:color];
+    [self fkit_setBorderWidth:2.f borderColor:color];
 #endif
 }
 
-- (void)enableDebugBorderWithRandomColor {
-	[self enableDebugBorderWithColor:[UIColor randomColor]];
+- (void)fkit_enableDebugBorderWithRandomColor {
+	[self fkit_enableDebugBorderWithColor:[UIColor randomColor]];
 }
 
-- (void)enableDebugBorder {
-	[self enableDebugBorderWithColor:[UIColor orangeColor]];
+- (void)fkit_enableDebugBorder {
+	[self fkit_enableDebugBorderWithColor:[UIColor orangeColor]];
 }
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Gestures
 ////////////////////////////////////////////////////////////////////////
 
-- (void)removeAllGestureRecognizers {
+- (void)fkit_removeAllGestureRecognizers {
     for (UIGestureRecognizer *gestureRecognizer in self.gestureRecognizers) {
         [self removeGestureRecognizer:gestureRecognizer];
     }
@@ -305,7 +305,7 @@ FKLoadCategory(UIViewFKAdditions);
 #pragma mark - Image Representation
 ////////////////////////////////////////////////////////////////////////
 
-- (UIImage *)imageRepresentation {
+- (UIImage *)fkit_imageRepresentation {
 	UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0.f);
 	[self.layer renderInContext:UIGraphicsGetCurrentContext()];
 	UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
@@ -318,18 +318,18 @@ FKLoadCategory(UIViewFKAdditions);
 #pragma mark - Scrolling
 ////////////////////////////////////////////////////////////////////////
 
-+ (void)disableScrollsToTopOnAllSubviewsOfView:(UIView *)view {
++ (void)fkit_disableScrollsToTopOnAllSubviewsOfView:(UIView *)view {
     for (UIView *subview in view.subviews) {
         if ([subview isKindOfClass:[UIScrollView class]]) {
             ((UIScrollView *)subview).scrollsToTop = NO;
         }
         
-        [self disableScrollsToTopOnAllSubviewsOfView:subview];
+        [self fkit_disableScrollsToTopOnAllSubviewsOfView:subview];
     }
 }
 
-- (void)disableScrollsToTopOnAllSubviews {
-    [UIView disableScrollsToTopOnAllSubviewsOfView:self];
+- (void)fkit_disableScrollsToTopOnAllSubviews {
+    [UIView fkit_disableScrollsToTopOnAllSubviewsOfView:self];
 }
 
 @end
