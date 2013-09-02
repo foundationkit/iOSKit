@@ -7,6 +7,8 @@ FKAudioRouteChangeReason FKAudioRouteChangeReasonFromReason(SInt32 reason);
 
 static fk_audio_route_change_block routeChangeBlock;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 void FKRegisterAudioRouteChangeBlock(fk_audio_route_change_block block) {
     // Only register listener the first time a change block is registered
@@ -22,6 +24,8 @@ void FKDeregisterAudioRouteChangeBlock(void) {
     routeChangeBlock = nil;
     AudioSessionRemovePropertyListenerWithUserData(kAudioSessionProperty_AudioRouteChange,FKAudioRouteChangeCallback, (void *)NULL);
 }
+
+#pragma clang diagnostic pop
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Callback Function

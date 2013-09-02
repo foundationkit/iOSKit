@@ -221,7 +221,12 @@
 
 - (UIBarButtonItem *)backItem {
     if (_backItem == nil) {
-        UIButton *button = [UIButton fkit_buttonWithImageNamed:@"iOSKit.bundle/browserBack"];
+        UIImage *image = [UIImage imageNamed:@"iOSKit.bundle/browserBack"];
+        if ([image respondsToSelector:@selector(imageWithRenderingMode:)]) {
+            image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        }
+
+        UIButton *button = [UIButton fkit_buttonWithImage:image];
         [button addTarget:self.webView action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
 
         _backItem = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -234,7 +239,12 @@
 
 - (UIBarButtonItem *)forwardItem {
     if (_forwardItem == nil) {
-        UIButton *button = [UIButton fkit_buttonWithImageNamed:@"iOSKit.bundle/browserForward"];
+        UIImage *image = [UIImage imageNamed:@"iOSKit.bundle/browserForward"];
+        if ([image respondsToSelector:@selector(imageWithRenderingMode:)]) {
+            image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        }
+
+        UIButton *button = [UIButton fkit_buttonWithImage:image];
         [button addTarget:self.webView action:@selector(goForward) forControlEvents:UIControlEventTouchUpInside];
 
         _forwardItem = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -374,7 +384,12 @@
     if (self.webView.loading) {
         self.title = _(@"Loading...");
 
-        UIButton *button = [UIButton fkit_buttonWithImageNamed:@"iOSKit.bundle/browserStop"];
+        UIImage *image = [UIImage imageNamed:@"iOSKit.bundle/browserStop"];
+        if ([image respondsToSelector:@selector(imageWithRenderingMode:)]) {
+            image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        }
+
+        UIButton *button = [UIButton fkit_buttonWithImage:image];
         [button addTarget:self action:@selector(stopLoading) forControlEvents:UIControlEventTouchUpInside];
 
         self.loadItem = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -385,7 +400,12 @@
             self.title = self.webView.fkit_documentTitle;
         }
 
-        UIButton *button = [UIButton fkit_buttonWithImageNamed:@"iOSKit.bundle/browserRefresh"];
+        UIImage *image = [UIImage imageNamed:@"iOSKit.bundle/browserRefresh"];
+        if ([image respondsToSelector:@selector(imageWithRenderingMode:)]) {
+            image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        }
+
+        UIButton *button = [UIButton fkit_buttonWithImage:image];
         [button addTarget:self action:@selector(reload) forControlEvents:UIControlEventTouchUpInside];
 
         self.loadItem = [[UIBarButtonItem alloc] initWithCustomView:button];
@@ -436,8 +456,14 @@
 - (void)customize {
     self.view.backgroundColor = self.backgroundColor;
     self.webView.scalesPageToFit = YES;
-    self.navigationController.navigationBar.tintColor = self.tintColor;
-    self.toolbar.tintColor = self.tintColor;
+
+    if ([UIToolbar instancesRespondToSelector:@selector(setBarTintColor:)]) {
+        self.navigationController.navigationBar.barTintColor = self.tintColor;
+        self.toolbar.barTintColor = self.tintColor;
+    } else {
+        self.navigationController.navigationBar.tintColor = self.tintColor;
+        self.toolbar.tintColor = self.tintColor;
+    }
 }
 
 - (void)showActionSheet {
