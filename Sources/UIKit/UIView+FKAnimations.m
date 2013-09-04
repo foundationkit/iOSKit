@@ -18,8 +18,8 @@ FKLoadCategory(UIViewFKAnimations);
 - (void)fkit_setAlpha:(CGFloat)alpha duration:(NSTimeInterval)duration {
     if (ABS(self.alpha - alpha) > 0.00001f) {
         [UIView animateWithDuration:duration
-                              delay:0.0
-                            options:UIViewAnimationOptionAllowUserInteraction
+                              delay:0.
+                            options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionBeginFromCurrentState
                          animations:^{
                              self.alpha = alpha;
                          } completion:nil];

@@ -25,7 +25,7 @@ FKLoadCategory(UIScrollViewFKAdditions);
 }
 
 - (void)fkit_scrollToTopAnimated:(BOOL)animated {
-	[self setContentOffset:CGPointMake(0.f, 0.f) animated:animated];
+	[self setContentOffset:CGPointMake(0.f, -self.contentInset.top) animated:animated];
 }
 
 - (void)fkit_setContentAndScrollIndicatorInset:(UIEdgeInsets)contentInset {
