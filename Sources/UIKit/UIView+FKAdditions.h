@@ -1,6 +1,7 @@
 // Part of iOSKit http://foundationk.it
 //
 // imageRepresentation derived from Sam Soffes' SSToolkit: http://github.com/samsoffes/sstoolkit
+// addParallaxEffect derived from JaviSoto‘s Gist: https://gist.github.com/JaviSoto/6516942
 
 #import <UIKit/UIKit.h>
 
@@ -206,5 +207,7 @@ typedef enum {
  Removes all gesture recognizers that are attached to the view
  */
 - (void)fkit_removeAllGestureRecognizers;
+
+- (void)fkit_addParallaxEffectWithMaxOffset:(CGFloat)maxOffset;
 
 @end

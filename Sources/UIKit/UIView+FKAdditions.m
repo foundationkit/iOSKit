@@ -332,4 +332,26 @@ FKLoadCategory(UIViewFKAdditions);
     [UIView fkit_disableScrollsToTopOnAllSubviewsOfView:self];
 }
 
+////////////////////////////////////////////////////////////////////////
+#pragma mark - Parallax
+////////////////////////////////////////////////////////////////////////
+
+- (void)fkit_addParallaxEffectWithMaxOffset:(CGFloat)maxOffset; {
+    UIInterpolatingMotionEffect *parallaxEffectX = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x"
+                                                                                                   type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+    UIInterpolatingMotionEffect *parallaxEffectY = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y"
+                                                                                                   type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+
+    parallaxEffectX.minimumRelativeValue = @(-maxOffset);
+    parallaxEffectX.maximumRelativeValue = @(maxOffset);
+
+    parallaxEffectY.minimumRelativeValue = parallaxEffectX.minimumRelativeValue;
+    parallaxEffectY.maximumRelativeValue = parallaxEffectX.maximumRelativeValue;
+
+    UIMotionEffectGroup *effectGroup = [[UIMotionEffectGroup alloc] init];
+    effectGroup.motionEffects = @[parallaxEffectX, parallaxEffectY];
+
+    [self addMotionEffect:effectGroup];
+}
+
 @end
