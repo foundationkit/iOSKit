@@ -529,7 +529,7 @@
 }
 
 - (BOOL)hasValidAddress {
-    return ![self.address isEqualToString:@"about:blank"];
+    return ![self.address isEqualToString:@"about:blank"] && ![self.url isFileURL];
 }
 
 @end
