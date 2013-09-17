@@ -13,7 +13,10 @@
 
     NSString *selectedText = [UIPasteboard generalPasteboard].string;
 
-    [UIPasteboard generalPasteboard].string = currentPasteboardString;
+    if ([currentPasteboardString isKindOfClass:[NSString class]]) {
+        [UIPasteboard generalPasteboard].string = currentPasteboardString;
+    }
+    
     return selectedText;
 }
 
