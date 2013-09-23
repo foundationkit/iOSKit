@@ -221,9 +221,11 @@
 
 - (UIBarButtonItem *)backItem {
     if (_backItem == nil) {
-        UIImage *image = [UIImage imageNamed:@"iOSKit.bundle/browserBack"];
-        if ([image respondsToSelector:@selector(imageWithRenderingMode:)]) {
-            image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        UIImage *image = nil;
+        if ([UIView instancesRespondToSelector:@selector(tintColor)]) {
+            image = [[UIImage imageNamed:@"iOSKit.bundle/browser-back"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        } else {
+            image = [UIImage imageNamed:@"iOSKit.bundle/browser-back-legacy"];
         }
 
         UIButton *button = [UIButton fkit_buttonWithImage:image];
@@ -239,9 +241,11 @@
 
 - (UIBarButtonItem *)forwardItem {
     if (_forwardItem == nil) {
-        UIImage *image = [UIImage imageNamed:@"iOSKit.bundle/browserForward"];
-        if ([image respondsToSelector:@selector(imageWithRenderingMode:)]) {
-            image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        UIImage *image = nil;
+        if ([UIView instancesRespondToSelector:@selector(tintColor)]) {
+            image = [[UIImage imageNamed:@"iOSKit.bundle/browser-forward"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        } else {
+            image = [UIImage imageNamed:@"iOSKit.bundle/browser-forward-legacy"];
         }
 
         UIButton *button = [UIButton fkit_buttonWithImage:image];
@@ -260,7 +264,7 @@
         if ([UIView instancesRespondToSelector:@selector(tintColor)]) {
             _actionItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showActionSheet)];
         } else {
-            UIButton *button = [UIButton fkit_buttonWithImageNamed:@"iOSKit.bundle/browserAction"];
+            UIButton *button = [UIButton fkit_buttonWithImageNamed:@"iOSKit.bundle/browser-action"];
             [button addTarget:self action:@selector(showActionSheet) forControlEvents:UIControlEventTouchUpInside];
             _actionItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         }
@@ -382,11 +386,13 @@
 
 - (void)updateUI {
     if (self.webView.loading) {
-        self.title = _(@"Loading...");
+        self.title = _(@"Loading…");
 
-        UIImage *image = [UIImage imageNamed:@"iOSKit.bundle/browserStop"];
-        if ([image respondsToSelector:@selector(imageWithRenderingMode:)]) {
-            image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        UIImage *image = nil;
+        if ([UIView instancesRespondToSelector:@selector(tintColor)]) {
+            image = [[UIImage imageNamed:@"iOSKit.bundle/browser-cancel"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        } else {
+            image = [UIImage imageNamed:@"iOSKit.bundle/browser-cancel-legacy"];
         }
 
         UIButton *button = [UIButton fkit_buttonWithImage:image];
@@ -400,9 +406,11 @@
             self.title = self.webView.fkit_documentTitle;
         }
 
-        UIImage *image = [UIImage imageNamed:@"iOSKit.bundle/browserRefresh"];
-        if ([image respondsToSelector:@selector(imageWithRenderingMode:)]) {
-            image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        UIImage *image = nil;
+        if ([UIView instancesRespondToSelector:@selector(tintColor)]) {
+            image = [[UIImage imageNamed:@"iOSKit.bundle/browser-reload"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        } else {
+            image = [UIImage imageNamed:@"iOSKit.bundle/browser-reload-legacy"];
         }
 
         UIButton *button = [UIButton fkit_buttonWithImage:image];

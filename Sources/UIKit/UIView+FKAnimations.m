@@ -8,7 +8,7 @@ FKLoadCategory(UIViewFKAnimations);
 
 - (void)fkit_setFrame:(CGRect)frame duration:(NSTimeInterval)duration {
     [UIView animateWithDuration:duration
-                          delay:0.0
+                          delay:0.
                         options:UIViewAnimationOptionAllowUserInteraction
                      animations:^{
                          self.frame = frame;
