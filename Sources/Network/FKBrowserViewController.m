@@ -57,11 +57,15 @@
 }
 
 - (id)initWithAddress:(NSString *)address {
-    if ((self = [super initWithNibName:nil bundle:nil])) {
-        if (address != nil && ![address hasPrefix:@"http"]) {
-            address = [@"http://" stringByAppendingString:address];
-        }
+    if (address != nil && ![address hasPrefix:@"http"]) {
+        address = [@"http://" stringByAppendingString:address];
+    }
 
+    return [self initWithURL:[NSURL URLWithString:address]];
+}
+
+- (id)initWithURL:(NSURL *)url {
+    if ((self = [super initWithNibName:nil bundle:nil])) {
         _fadeAnimationEnabled = YES;
         _tintColor = kFKBrowserDefaultTintColor;
         _backgroundColor = kFKBrowserDefaultBackgroundColor;
@@ -69,14 +73,12 @@
         // Initialize toolbar here to make it customizable before view is created
         _toolbar = [[UIToolbar alloc] initWithFrame:CGRectZero];
         _toolbar.hidden = !self.hasToolbar;
-        [self updateAddress:address];
+
+        _url = url;
+        _address = url.absoluteString;
     }
 
     return self;
-}
-
-- (id)initWithURL:(NSURL *)url {
-    return [self initWithAddress:[url absoluteString]];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
