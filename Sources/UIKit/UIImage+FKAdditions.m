@@ -85,6 +85,14 @@ FKLoadCategory(UIImageFKAdditions);
 	return self;
 }
 
+- (UIImage *)fkit_imageScaledToSize:(CGSize)newSize {
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.);
+    [self drawInRect:CGRectMake(0.f, 0.f, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
 - (UIImage *)fkit_imageCroppedToRect:(CGRect)rect {
 	// CGImageCreateWithImageInRect's `rect` parameter is in pixels of the image's coordinates system. Convert from points.
 	CGFloat scale = self.scale;

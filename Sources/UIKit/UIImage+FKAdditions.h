@@ -30,6 +30,8 @@
 - (UIImage *)fkit_imageTintedWithColor:(UIColor *)color;
 - (UIImage *)fkit_imageTintedWithColor:(UIColor *)color fraction:(CGFloat)fraction;
 
+- (UIImage *)fkit_imageScaledToSize:(CGSize)newSize;
+
 /**
  Creates and returns a new cropped image object.
 

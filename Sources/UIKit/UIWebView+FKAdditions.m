@@ -7,16 +7,8 @@
 }
 
 - (NSString *)fkit_selectedText {
-    // Idea taken from http://stackoverflow.com/a/13615064/268279
-    NSString *currentPasteboardString = [UIPasteboard generalPasteboard].string;
-    [[UIApplication sharedApplication] sendAction:@selector(copy:) to:nil from:self forEvent:nil];
-
-    NSString *selectedText = [UIPasteboard generalPasteboard].string;
-
-    if ([currentPasteboardString isKindOfClass:[NSString class]]) {
-        [UIPasteboard generalPasteboard].string = currentPasteboardString;
-    }
-    
+    // Idea taken from http://stackoverflow.com/a/6260979
+    NSString *selectedText = [self stringByEvaluatingJavaScriptFromString:@"window.getSelection().toString()"];
     return selectedText;
 }
 
