@@ -78,6 +78,8 @@
 		9B8D782416514AA200FE2ECC /* UITableViewCell+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D782216514AA200FE2ECC /* UITableViewCell+FKAdditions.m */; };
 		9B8D7841165151EB00FE2ECC /* UIImage+FKBlockDrawing.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B8D783F165151EB00FE2ECC /* UIImage+FKBlockDrawing.h */; };
 		9B8D7842165151EB00FE2ECC /* UIImage+FKBlockDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8D7840165151EB00FE2ECC /* UIImage+FKBlockDrawing.m */; };
+		9BA2D01F182AA87C003ACAD4 /* FKHairlineView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BA2D01D182AA87C003ACAD4 /* FKHairlineView.h */; };
+		9BA2D020182AA87C003ACAD4 /* FKHairlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA2D01E182AA87C003ACAD4 /* FKHairlineView.m */; };
 		9BB4A6AB16F1F60C0001EC76 /* UIBezierPath+FKDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BB4A6A916F1F60C0001EC76 /* UIBezierPath+FKDescription.h */; };
 		9BB4A6AC16F1F60C0001EC76 /* UIBezierPath+FKDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4A6AA16F1F60C0001EC76 /* UIBezierPath+FKDescription.m */; };
 		9BBA863015DAD8F000A99D13 /* NSIndexSet+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBA862E15DAD8F000A99D13 /* NSIndexSet+FKAdditions.h */; };
@@ -203,6 +205,8 @@
 		9B8D782216514AA200FE2ECC /* UITableViewCell+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+FKAdditions.m"; path = "UIKit/UITableViewCell+FKAdditions.m"; sourceTree = "<group>"; };
 		9B8D783F165151EB00FE2ECC /* UIImage+FKBlockDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+FKBlockDrawing.h"; path = "UIKit/UIImage+FKBlockDrawing.h"; sourceTree = "<group>"; };
 		9B8D7840165151EB00FE2ECC /* UIImage+FKBlockDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FKBlockDrawing.m"; path = "UIKit/UIImage+FKBlockDrawing.m"; sourceTree = "<group>"; };
+		9BA2D01D182AA87C003ACAD4 /* FKHairlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKHairlineView.h; path = Views/FKHairlineView.h; sourceTree = "<group>"; };
+		9BA2D01E182AA87C003ACAD4 /* FKHairlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKHairlineView.m; path = Views/FKHairlineView.m; sourceTree = "<group>"; };
 		9BB4A6A916F1F60C0001EC76 /* UIBezierPath+FKDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBezierPath+FKDescription.h"; path = "UIKit/UIBezierPath+FKDescription.h"; sourceTree = "<group>"; };
 		9BB4A6AA16F1F60C0001EC76 /* UIBezierPath+FKDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBezierPath+FKDescription.m"; path = "UIKit/UIBezierPath+FKDescription.m"; sourceTree = "<group>"; };
 		9BBA862E15DAD8F000A99D13 /* NSIndexSet+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSIndexSet+FKAdditions.h"; path = "TableView/NSIndexSet+FKAdditions.h"; sourceTree = "<group>"; };
@@ -425,6 +429,8 @@
 			children = (
 				9BEF57A917C12BCE002FACDF /* FKBlurringView.h */,
 				9BEF57AA17C12BCE002FACDF /* FKBlurringView.m */,
+				9BA2D01D182AA87C003ACAD4 /* FKHairlineView.h */,
+				9BA2D01E182AA87C003ACAD4 /* FKHairlineView.m */,
 				9B45437714953EF90076A950 /* FKView.h */,
 				9B45437814953EF90076A950 /* FKView.m */,
 			);
@@ -477,6 +483,7 @@
 			files = (
 				3913939913C9B8450049DA61 /* Prefix.pch in Headers */,
 				391393AD13C9B84C0049DA61 /* UIApplication+FKConcise.h in Headers */,
+				9BA2D01F182AA87C003ACAD4 /* FKHairlineView.h in Headers */,
 				391393AF13C9B84C0049DA61 /* UIScreen+FKConcise.h in Headers */,
 				391393B113C9B84C0049DA61 /* FKUniversal.h in Headers */,
 				391393B413C9C1310049DA61 /* iOSKit.h in Headers */,
@@ -622,6 +629,7 @@
 				39DF5D781424B62000090805 /* FKNetworkActivityManager.m in Sources */,
 				397F81BF14261227006B98BD /* UITableViewCell+FKConcise.m in Sources */,
 				3921679314266A060018BD5A /* UIScreen+FKAdditions.m in Sources */,
+				9BA2D020182AA87C003ACAD4 /* FKHairlineView.m in Sources */,
 				3921679714266BCB0018BD5A /* UIScrollView+FKAdditions.m in Sources */,
 				3931206D1428AD6B0095D5ED /* UITableViewCell+FKLoading.m in Sources */,
 				393120711428AF010095D5ED /* UITableView+FKLoading.m in Sources */,

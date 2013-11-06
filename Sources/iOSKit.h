@@ -57,4 +57,5 @@
 
 // Views
 #import "FKBlurringView.h"
+#import "FKHairlineView.h"
 #import "FKView.h"
