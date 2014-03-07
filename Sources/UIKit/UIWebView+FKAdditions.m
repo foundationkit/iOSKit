@@ -41,7 +41,9 @@
 }
 
 - (BOOL)fkit_displaysValidWebsite {
-    return [self stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"].length > 0;
+    return ([self stringByEvaluatingJavaScriptFromString:@"document.body.innerHTML"].length > 0 &&
+            self.request.URL != nil &&
+            ![self.request.URL.absoluteString isEqualToString:@"about:blank"]);
 }
 
 @end

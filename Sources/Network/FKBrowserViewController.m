@@ -388,7 +388,7 @@
 
 - (void)updateUI {
     if (self.webView.loading) {
-        self.title = _(@"Loading…");
+        self.title = _(@"Loading …");
 
         UIImage *image = nil;
         if ([UIView instancesRespondToSelector:@selector(tintColor)]) {
