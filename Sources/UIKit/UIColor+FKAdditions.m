@@ -177,9 +177,9 @@ FKLoadCategory(UIColorFKAdditions);
     CGFloat g = FKLimitFloat(self.green, 0.f, 1.f);
     CGFloat b = FKLimitFloat(self.blue, 0.f, 1.f);
 
-	return (UInt32)((((int)roundf(r * 255)) << 16)
-            | (((int)roundf(g * 255)) << 8)
-            | (((int)roundf(b * 255))));
+	return (UInt32)((((int)round(r * 255)) << 16)
+            | (((int)round(g * 255)) << 8)
+            | (((int)round(b * 255))));
 }
 
 - (NSString *)stringRepresentation {
@@ -204,7 +204,7 @@ FKLoadCategory(UIColorFKAdditions);
 }
 
 - (NSString *)hexStringRepresentation {
-	return [NSString stringWithFormat:@"%0.6lX", self.RGBHex];
+	return [NSString stringWithFormat:@"%0.6lX", (unsigned long)self.RGBHex];
 }
 
 @end

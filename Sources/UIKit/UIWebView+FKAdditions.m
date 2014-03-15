@@ -13,7 +13,7 @@
 }
 
 - (void)fkit_setContentTextSizeScaleFactor:(NSInteger)scaleFactor {
-    NSString *scaleCommand = [[NSString alloc] initWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'", scaleFactor];
+    NSString *scaleCommand = [[NSString alloc] initWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%ld%%'", (long)scaleFactor];
 
     [self stringByEvaluatingJavaScriptFromString:scaleCommand];
 }

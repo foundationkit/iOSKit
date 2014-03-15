@@ -257,7 +257,7 @@ FKLoadCategory(UIViewFKAdditions);
 	layer.borderColor = [borderColor CGColor];
 }
 
-- (void)fkit_setShadowWithOffset:(CGSize)offset radius:(CGFloat)radius opacity:(CGFloat)opacity {
+- (void)fkit_setShadowWithOffset:(CGSize)offset radius:(CGFloat)radius opacity:(float)opacity {
     CALayer *layer = self.layer;
     
 	layer.masksToBounds = NO;

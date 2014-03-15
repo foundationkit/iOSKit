@@ -160,7 +160,7 @@ typedef enum {
  @param radius the radius of the shadow
  @param opacity the opacity of the shadow
  */
-- (void)fkit_setShadowWithOffset:(CGSize)offset radius:(CGFloat)radius opacity:(CGFloat)opacity;
+- (void)fkit_setShadowWithOffset:(CGSize)offset radius:(CGFloat)radius opacity:(float)opacity;
 /**
  Adds a linear gradientLayer as a sublayer on the current view's layer with the specified start- and endColor
  @param startColor the color used at the top of the view

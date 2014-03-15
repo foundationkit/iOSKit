@@ -10,7 +10,7 @@ FKLoadCategory(UIScrollViewFKAdditions);
 
 - (CGRect)fkit_visibleRect {
     CGRect visibleRect = (CGRect){.origin = self.contentOffset, .size = self.bounds.size};
-    float theScale = 1.f / self.zoomScale;
+    CGFloat theScale = 1.f / self.zoomScale;
     
     visibleRect.origin.x *= theScale;
     visibleRect.origin.y *= theScale;
