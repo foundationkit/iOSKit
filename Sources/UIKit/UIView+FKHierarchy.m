@@ -16,11 +16,11 @@ FKLoadCategory(UIViewFKHierarchy);
     return nil;
 }
 
-- (UIView *)fkit_superviewWithClass:(Class)aClass {
+- (id)fkit_superviewWithClass:(Class)aClass {
 	return [self fkit_superviewWithClass:aClass strict:NO];
 }
 
-- (UIView *)fkit_superviewWithClass:(Class)aClass strict:(BOOL)strict {
+- (id)fkit_superviewWithClass:(Class)aClass strict:(BOOL)strict {
 	UIView *view = self.superview;
     
 	while (view != nil) {
@@ -36,11 +36,11 @@ FKLoadCategory(UIViewFKHierarchy);
 	return view;
 }
 
-- (UIView*)fkit_descendantOrSelfWithClass:(Class)aClass {
+- (id)fkit_descendantOrSelfWithClass:(Class)aClass {
     return [self fkit_descendantOrSelfWithClass:aClass strict:NO];
 }
 
-- (UIView *)fkit_descendantOrSelfWithClass:(Class)aClass strict:(BOOL)strict {
+- (id)fkit_descendantOrSelfWithClass:(Class)aClass strict:(BOOL)strict {
     if (strict && [self isMemberOfClass:aClass]) {
         return self;
     } else if (!strict && [self isKindOfClass:aClass]) {

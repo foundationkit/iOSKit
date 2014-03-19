@@ -13,11 +13,11 @@
 
 @property (nonatomic, readonly) UIViewController *fkit_viewController;
 
-- (UIView *)fkit_superviewWithClass:(Class)aClass;                        // strict:NO
-- (UIView *)fkit_superviewWithClass:(Class)aClass strict:(BOOL)strict;
+- (id)fkit_superviewWithClass:(Class)aClass;                        // strict:NO
+- (id)fkit_superviewWithClass:(Class)aClass strict:(BOOL)strict;
 
-- (UIView *)fkit_descendantOrSelfWithClass:(Class)aClass;                 // strict:NO
-- (UIView *)fkit_descendantOrSelfWithClass:(Class)aClass strict:(BOOL)strict;
+- (id)fkit_descendantOrSelfWithClass:(Class)aClass;                 // strict:NO
+- (id)fkit_descendantOrSelfWithClass:(Class)aClass strict:(BOOL)strict;
 
 - (void)fkit_removeAllSubviews;
 
