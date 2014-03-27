@@ -61,6 +61,8 @@
 		9B30EEE41778753F00056297 /* UITouch+FKCentroid.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B30EEE21778753F00056297 /* UITouch+FKCentroid.m */; };
 		9B45437914953EF90076A950 /* FKView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B45437714953EF90076A950 /* FKView.h */; };
 		9B45437A14953EF90076A950 /* FKView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B45437814953EF90076A950 /* FKView.m */; };
+		9B527AF118E461A300F14C5A /* UIResponder+FKFirstResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B527AEF18E461A300F14C5A /* UIResponder+FKFirstResponder.h */; };
+		9B527AF218E461A300F14C5A /* UIResponder+FKFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B527AF018E461A300F14C5A /* UIResponder+FKFirstResponder.m */; };
 		9B54E81014269B7D00336F08 /* CGGeometry+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E80F14269B7D00336F08 /* CGGeometry+FKAdditions.h */; };
 		9B54E81414269C2F00336F08 /* FKiOSMetrics.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81314269C2F00336F08 /* FKiOSMetrics.h */; };
 		9B54E81614269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B54E81514269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h */; };
@@ -186,6 +188,8 @@
 		9B30EEE21778753F00056297 /* UITouch+FKCentroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITouch+FKCentroid.m"; path = "UIKit/UITouch+FKCentroid.m"; sourceTree = "<group>"; };
 		9B45437714953EF90076A950 /* FKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKView.h; path = Views/FKView.h; sourceTree = "<group>"; };
 		9B45437814953EF90076A950 /* FKView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKView.m; path = Views/FKView.m; sourceTree = "<group>"; };
+		9B527AEF18E461A300F14C5A /* UIResponder+FKFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIResponder+FKFirstResponder.h"; path = "UIKit/UIResponder+FKFirstResponder.h"; sourceTree = "<group>"; };
+		9B527AF018E461A300F14C5A /* UIResponder+FKFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIResponder+FKFirstResponder.m"; path = "UIKit/UIResponder+FKFirstResponder.m"; sourceTree = "<group>"; };
 		9B54E80F14269B7D00336F08 /* CGGeometry+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CGGeometry+FKAdditions.h"; path = "Core/CGGeometry+FKAdditions.h"; sourceTree = "<group>"; };
 		9B54E81314269C2F00336F08 /* FKiOSMetrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKiOSMetrics.h; path = Core/FKiOSMetrics.h; sourceTree = "<group>"; };
 		9B54E81514269C6600336F08 /* UIInterfaceOrientation+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIInterfaceOrientation+FKAdditions.h"; path = "Core/UIInterfaceOrientation+FKAdditions.h"; sourceTree = "<group>"; };
@@ -387,6 +391,8 @@
 				9B8D7840165151EB00FE2ECC /* UIImage+FKBlockDrawing.m */,
 				39CFA5F914223C1200DC3E57 /* UIImageView+FKAdditions.h */,
 				39CFA5FA14223C1200DC3E57 /* UIImageView+FKAdditions.m */,
+				9B527AEF18E461A300F14C5A /* UIResponder+FKFirstResponder.h */,
+				9B527AF018E461A300F14C5A /* UIResponder+FKFirstResponder.m */,
 				3921679014266A060018BD5A /* UIScreen+FKAdditions.h */,
 				3921679114266A060018BD5A /* UIScreen+FKAdditions.m */,
 				3921679414266BCA0018BD5A /* UIScrollView+FKAdditions.h */,
@@ -495,6 +501,7 @@
 				39CFA6091422423500DC3E57 /* UIView+FKHierarchy.h in Headers */,
 				39CFA60D1422437500DC3E57 /* UIView+FKAdditions.h in Headers */,
 				39CFA61114224AF800DC3E57 /* UIView+FKAnimations.h in Headers */,
+				9B527AF118E461A300F14C5A /* UIResponder+FKFirstResponder.h in Headers */,
 				39ACE7441422709B0022D8F8 /* UIView+FKContentSize.h in Headers */,
 				39ACE81614228DCC0022D8F8 /* UIViewController+FKLoading.h in Headers */,
 				393A299E142359C50056CB37 /* UIViewController+FKAdditions.h in Headers */,
@@ -623,6 +630,7 @@
 				39CFA60E1422437500DC3E57 /* UIView+FKAdditions.m in Sources */,
 				39CFA61214224AF800DC3E57 /* UIView+FKAnimations.m in Sources */,
 				39ACE7451422709B0022D8F8 /* UIView+FKContentSize.m in Sources */,
+				9B527AF218E461A300F14C5A /* UIResponder+FKFirstResponder.m in Sources */,
 				39ACE81714228DCC0022D8F8 /* UIViewController+FKLoading.m in Sources */,
 				393A299F142359C50056CB37 /* UIViewController+FKAdditions.m in Sources */,
 				39DF5CDF1424A08C00090805 /* FKColoredAccessoryView.m in Sources */,

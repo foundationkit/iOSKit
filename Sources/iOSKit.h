@@ -34,6 +34,7 @@
 #import "UIImage+FKAdditions.h"
 #import "UIImage+FKBlockDrawing.h"
 #import "UIImageView+FKAdditions.h"
+#import "UIResponder+FKFirstResponder.h"
 #import "UIScreen+FKAdditions.h"
 #import "UIScrollView+FKAdditions.h"
 #import "UIScrollView+FKContentSize.h"
