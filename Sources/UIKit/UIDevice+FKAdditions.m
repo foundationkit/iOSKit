@@ -73,9 +73,12 @@ FKLoadCategory(UIDeviceFKAdditions);
 
 - (void)fkit_simulateMemoryWarning {
 #ifdef FK_DEBUG
-//    CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), (CFStringRef)@"UISimulatedMemoryWarningNotification", NULL, NULL, true);
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     SEL selector = NSSelectorFromString([NSString stringWithFormat:@"%@ormMe%@ing", @"_perf", @"moryWarn"]);
     [[UIApplication sharedApplication] performSelector:selector];
+#pragma clang diagnostic pop
 
     NSLog(@"Simulated memory warning.");
 #endif
