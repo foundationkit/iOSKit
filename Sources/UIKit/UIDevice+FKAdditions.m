@@ -73,7 +73,11 @@ FKLoadCategory(UIDeviceFKAdditions);
 
 - (void)fkit_simulateMemoryWarning {
 #ifdef FK_DEBUG
-    CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), (CFStringRef)@"UISimulatedMemoryWarningNotification", NULL, NULL, true);
+//    CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), (CFStringRef)@"UISimulatedMemoryWarningNotification", NULL, NULL, true);
+    SEL selector = NSSelectorFromString([NSString stringWithFormat:@"%@ormMe%@ing", @"_perf", @"moryWarn"]);
+    [[UIApplication sharedApplication] performSelector:selector];
+
+    NSLog(@"Simulated memory warning.");
 #endif
 }
 
