@@ -4,16 +4,22 @@ FKLoadCategory(UIImageFKAdditions);
 
 @implementation UIImage (FKAdditions)
 
-+ (UIImage *)fkit_imageWithSize:(CGSize)size color:(UIColor *)color {
++ (UIImage *)fkit_imageWithSize:(CGSize)size color:(UIColor *)color
+{
+    return [self fkit_imageWithSize:size color:color cornerRadius:0.f];
+}
+
++ (UIImage *)fkit_imageWithSize:(CGSize)size color:(UIColor *)color cornerRadius:(CGFloat)cornerRadius
+{
     CGRect rect = (CGRect){CGPointZero, size};
     UIImage *image = nil;
 
-    UIGraphicsBeginImageContext(size);
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0.f);
     {
-        CGContextRef context = UIGraphicsGetCurrentContext();
+        UIBezierPath *path = cornerRadius > 0.f ? [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:cornerRadius] : [UIBezierPath bezierPathWithRect:rect];
 
-        CGContextSetFillColorWithColor(context, color.CGColor);
-        CGContextFillRect(context, rect);
+        [color setFill];
+        [path fill];
 
         image = UIGraphicsGetImageFromCurrentImageContext();
     }

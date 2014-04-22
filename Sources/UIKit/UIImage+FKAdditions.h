@@ -12,8 +12,9 @@
 
 @interface UIImage (FKAdditions)
 
-/** Creates an image with a given size in a given color */
+/** Creates an image with a given size in a given color and corner radius */
 + (UIImage *)fkit_imageWithSize:(CGSize)size color:(UIColor *)color;
++ (UIImage *)fkit_imageWithSize:(CGSize)size color:(UIColor *)color cornerRadius:(CGFloat)cornerRadius;
 
 /**
  This method preloads an image for faster drawing.
