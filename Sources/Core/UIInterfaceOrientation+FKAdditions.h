@@ -31,6 +31,9 @@ NS_INLINE NSString* FKInterfaceOrientationDescription(UIInterfaceOrientation int
             
         case UIInterfaceOrientationLandscapeRight:
             return $stringify(UIInterfaceOrientationLandscapeRight);
+
+        case UIInterfaceOrientationUnknown:
+            break;
     }
     
     // should never happen

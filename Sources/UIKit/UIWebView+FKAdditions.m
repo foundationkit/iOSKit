@@ -37,7 +37,7 @@
                         "meta.setAttribute( 'content', 'width = %@ px' ); "
                         "document.getElementsByTagName('head')[0].appendChild(meta)");
 
-    [self stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:format, width]];
+    [self stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:format, @(width)]];
 }
 
 - (BOOL)fkit_displaysValidWebsite {
