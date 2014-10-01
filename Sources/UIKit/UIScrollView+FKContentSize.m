@@ -53,23 +53,15 @@ CGPoint FKGetMaxPositions(UIScrollView *scrollView);
 ////////////////////////////////////////////////////////////////////////
 
 BOOL FKViewIsScrollIndicator(UIView *view) {
-    static CGFloat scrollIndicatorWidth = 5.f;
-
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        if (![UIView instancesRespondToSelector:@selector(snapshotViewAfterScreenUpdates:)]) {
-            scrollIndicatorWidth = 7.f;
-        }
-    });
-
-    // TODO: Is there a better way to detect the scrollIndicators?
     if ([view isKindOfClass:[UIImageView class]]) {
-        if (CGRectGetHeight(view.frame) == scrollIndicatorWidth || CGRectGetWidth(view.frame) == scrollIndicatorWidth) {
-            id image = [view performSelector:@selector(image)];
-            
-            if ([image isKindOfClass:NSClassFromString([NSString stringWithFormat:@"_%@Res%@le%@",@"UI", @"izab", @"Image"])]) {
-                return YES;
-            }
+        CGRect frame = view.frame;
+        //iOS versions < 7.0 use 7.0 pts for the scrollbar width, as does iPhone 6 plus
+        if (ABS(frame.size.width - 7.f) < 0.001f || ABS(frame.size.height - 7.f) < 0.001f) {
+            return YES;
+        }
+        //iOS versions >= 7.0 use 3.5 pts for the scrollbar width, apart from iPhone 6 plus
+        if (ABS(frame.size.width - 3.5f) < 0.001f || ABS(frame.size.height - 3.5f) < 0.001f) {
+            return YES;
         }
     }
     
